@@ -19,6 +19,7 @@ namespace MentorBilling
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            Settings.Settings.ConsumeJSONSettings(Configuration);
         }
 
         public IConfiguration Configuration { get; }
