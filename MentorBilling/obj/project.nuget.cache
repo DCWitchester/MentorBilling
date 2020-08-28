@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "BxG8QtjEf5K43o5i07vHFF5nLGcg1nhFtKo+7SkJ/G/y2JLqbTEhS1wO2phAz6TuszkhWUbeILwg3xK7PNyZDA==",
+  "dgSpecHash": "zxRuu5fayB9Gkd8/e+SiXZOjsyPsUwMJpxOMGEMKaTqa1IJfzfuH4Y2F049yD1a5pg9bxJ9xf2mGzYE0zp9bDQ==",
   "success": true,
   "projectFilePath": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\DCW\\.nuget\\packages\\npgsql\\4.1.4\\npgsql.4.1.4.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+  ],
   "logs": []
 }
