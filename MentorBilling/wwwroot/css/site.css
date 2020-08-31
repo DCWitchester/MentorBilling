@@ -23,6 +23,14 @@ app {
 .top-row {
     height: 3.5rem;
     display: flex;
+    background: linear-gradient(90deg, rgba(237,123,8,1) 0%, rgba(35,104,158,1) 76%);
+    align-items: center;
+}
+
+.top-row-mentor {
+    height: 3.5rem;
+    display: flex;
+    background: linear-gradient(90deg, rgba(237,123,8,1) 0%, rgba(35,104,158,1) 76%);
     align-items: center;
 }
 
