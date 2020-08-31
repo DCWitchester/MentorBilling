@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MentorBilling.Data;
 using System.Net.Http;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace MentorBilling
 {

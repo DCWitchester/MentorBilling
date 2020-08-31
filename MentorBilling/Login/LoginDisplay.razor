@@ -1,0 +1,24 @@
+﻿@inject NavigationManager Navigation
+@inject AuthenticationStateProvider auth
+
+<div>
+    @switch (Settings.UserSettings.UserState)
+        {
+            case Miscellaneous.UserState.UserStates.loggingIn:
+                <div>
+                    <lable>...</lable>
+                </div>
+                break;
+            case Miscellaneous.UserState.UserStates.loggedIn:
+                <div>
+                    <label>Bine ati venit @Settings.UserSettings.LoggedInUser.DisplayName</label>
+                </div>
+                break;
+            case Miscellaneous.UserState.UserStates.loggedOut:
+                <div>
+                    <button class="btn-primary-login">Login</button>
+                    <button class="btn-primary-login">Register</button>
+                </div>
+                break;
+        }
+</div>

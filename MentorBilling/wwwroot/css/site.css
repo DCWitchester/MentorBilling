@@ -8,6 +8,30 @@ a, .btn-link {
     color: #0366d6;
 }
 
+/*#region Button region*/
+.btn-primary-login {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-style: double;
+    border-color: snow;
+    border-radius: 15px;
+    padding: 0px 15px;
+    margin: 10px;
+    outline: none;
+}
+
+    .btn-primary-login:hover {
+        outline: none;
+    }
+
+    .btn-primary-login:focus {
+        outline: none;
+        border-radius: 15px;
+        border-color: snow;
+        background-color: orange;
+    }
+/*#endregion Button endrgion*/
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
