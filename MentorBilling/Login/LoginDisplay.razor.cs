@@ -8,9 +8,6 @@ namespace MentorBilling.Login
 {
     public partial class LoginDisplay
     {
-        Boolean isLoggedIn { get; set; } = false;
-
-        User user = new User();
 
     }
 }
