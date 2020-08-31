@@ -44,6 +44,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "EASendMail": {
+              "target": "Package",
+              "version": "[7.7.0.3, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.4, )"

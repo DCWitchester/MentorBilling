@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zxRuu5fayB9Gkd8/e+SiXZOjsyPsUwMJpxOMGEMKaTqa1IJfzfuH4Y2F049yD1a5pg9bxJ9xf2mGzYE0zp9bDQ==",
+  "dgSpecHash": "8G3r5dtvNsZb1wjbmUPbww5C7r8755x1ryaw4N17w6QsTjep/p2zLFVMP8vtRLg8NC1CA/krIdEWYAeznVJ5FA==",
   "success": true,
   "projectFilePath": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DCW\\.nuget\\packages\\easendmail\\7.7.0.3\\easendmail.7.7.0.3.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\npgsql\\4.1.4\\npgsql.4.1.4.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],

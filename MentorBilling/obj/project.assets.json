@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "EASendMail/7.7.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/EASendMail.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/EASendMail.dll": {}
+        }
+      },
       "Npgsql/4.1.4": {
         "type": "package",
         "dependencies": {
@@ -26,6 +35,31 @@
     }
   },
   "libraries": {
+    "EASendMail/7.7.0.3": {
+      "sha512": "7yuyYrSgOZu9/L1Kgn5lb0e7WgH1jWS/UKrvZmiWpmmr3d+gv3kI+glF9QMqy0zb88yMHC8QJvAfYGb8J2Dv8Q==",
+      "type": "package",
+      "path": "easendmail/7.7.0.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "easendmail.7.7.0.3.nupkg.sha512",
+        "easendmail.nuspec",
+        "lib/net11/EASendMail.dll",
+        "lib/net20-cf/EASendMail.dll",
+        "lib/net20/EASendMail.dll",
+        "lib/net35-cf/EASendMail.dll",
+        "lib/net35/EASendMail.dll",
+        "lib/net40/EASendMail.dll",
+        "lib/net45/EASendMail.dll",
+        "lib/net461/EASendMail.dll",
+        "lib/netcoreapp2.1/EASendMail.deps.json",
+        "lib/netcoreapp2.1/EASendMail.dll",
+        "lib/portable-win81+wpa81/EASendMail.winmd",
+        "lib/uap10.0/EASendMail.winmd",
+        "tools/init.ps1"
+      ]
+    },
     "Npgsql/4.1.4": {
       "sha512": "qLwnSF7GAAxxrNFH3EprG352CJbhTCIDkk9PJ3/6aBeMOZBq+QMI1Yxsi9aUrBJwE51PaMLIYw0eq/bv9CGQTw==",
       "type": "package",
@@ -74,6 +108,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "EASendMail >= 7.7.0.3",
       "Npgsql >= 4.1.4"
     ]
   },
@@ -122,6 +157,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "EASendMail": {
+            "target": "Package",
+            "version": "[7.7.0.3, )"
+          },
           "Npgsql": {
             "target": "Package",
             "version": "[4.1.4, )"
