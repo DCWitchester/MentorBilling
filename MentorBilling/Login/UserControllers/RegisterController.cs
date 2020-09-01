@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Login.UserControllers
 {
@@ -11,7 +8,7 @@ namespace MentorBilling.Login.UserControllers
         /// <summary>
         /// the email bound to a given Email TextBox
         /// </summary>
-        [Required(ErrorMessage = "Numele de utilizator este camp obligatoriu")]
+        [Required(ErrorMessage = "Adresa de email este camp obligatoriu")]
         public String Email { get; set; } = String.Empty;
 
         /// <summary>
@@ -40,13 +37,13 @@ namespace MentorBilling.Login.UserControllers
         /// </summary>
         public String PasswordMatch { get; set; } = String.Empty;
 
-        [Range(typeof(bool),"true","true",ErrorMessage ="Parola nu corespunde cu campul de varificare")]
+        [Range(typeof(bool),"true","true",ErrorMessage ="Parola nu corespunde cu campul de verificare")]
         public Boolean DoPasswordsMatch { get => Password == PasswordMatch; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Deja exista un utilizator legat de acesta adresa de email")]
-        public Boolean EmailAlreadyExist { get; set; }
+        [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator legat de acesta adresa de email")]
+        public Boolean EmailAlreadyExists { get; set; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Deja exista un utilizator cu aceast nume")]
-        public Boolean UsernameAlreadyExist { get; set; }
+        [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator cu aceast nume")]
+        public Boolean UsernameAlreadyExists { get; set; }
     }
 }

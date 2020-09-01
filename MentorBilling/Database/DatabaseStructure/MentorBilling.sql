@@ -167,7 +167,7 @@ COMMENT ON COLUMN users.abonamente.dimensiune_maxima_grup IS 'Coloana aceasta va
 COMMENT ON COLUMN users.abonamente.valoare_lunara IS 'Coloana aceasta va contine valoarea lunara de baza a unui abonament. Aceasta poate suferi costuri aditionale.';
 
 INSERT INTO users.abonamente(id,denumire,activ) VALUES(0,'Utilizator inactiv',false);
-INSERT INTO users.abonamente(id,denumire,activ) VALUES(1,'Utilizator de trial',false);
+INSERT INTO users.abonamente(id,denumire,activ) VALUES('Utilizator de trial',false);
 
 --#endregion Abonamente
 
@@ -181,7 +181,8 @@ CREATE TABLE users.abonamente_utilizatori (
   ultima_plata timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
   perioada_activa integer NOT NULL DEFAULT 30,
   dimensiune_maxima_grup integer NOT NULL DEFAULT 1,
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT false,
+  UNIQUE(utilizator_id,abonament_id)
 );
 
 ALTER TABLE users.abonamente_utilizatori OWNER TO postgres;
