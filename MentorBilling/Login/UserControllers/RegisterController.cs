@@ -42,5 +42,11 @@ namespace MentorBilling.Login.UserControllers
 
         [Range(typeof(bool),"true","true",ErrorMessage ="Parola nu corespunde cu campul de varificare")]
         public Boolean DoPasswordsMatch { get => Password == PasswordMatch; }
+
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Deja exista un utilizator legat de acesta adresa de email")]
+        public Boolean EmailAlreadyExist { get; set; }
+
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Deja exista un utilizator cu aceast nume")]
+        public Boolean UsernameAlreadyExist { get; set; }
     }
 }
