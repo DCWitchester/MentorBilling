@@ -16,6 +16,7 @@ namespace MentorBilling.Miscellaneous
         /// the mail client that will make the connection
         /// </summary>
         SmtpClient Client { get; set; }
+#pragma warning disable IDE1006
         /// <summary>
         /// the mail sender
         /// </summary>
@@ -40,6 +41,7 @@ namespace MentorBilling.Miscellaneous
         /// the atachements list
         /// </summary>
         List<String> mailAtachements { get; set; } = new List<String>();
+#pragma warning restore IDE1006
         #endregion
         #region Setters
         /// <summary>

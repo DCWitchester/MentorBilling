@@ -13,7 +13,8 @@ namespace MentorBilling.Database.DatabaseLink
 
         public static Boolean CheckUser()
         {
-
+#warning TBD
+            return false;
         }
     }
 }
