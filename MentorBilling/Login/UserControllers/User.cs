@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Formatters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace MentorBilling.Login.UserControllers
 
         public String DisplayName
         {
-            get => surname + " " + name;
+            get => String.IsNullOrWhiteSpace(surname) && String.IsNullOrWhiteSpace(name) ? username : surname + " " + name;
         }
         #endregion
     }
