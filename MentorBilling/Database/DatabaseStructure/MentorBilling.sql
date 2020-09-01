@@ -166,6 +166,9 @@ COMMENT ON COLUMN users.abonamente.perioada_plata IS 'Coloana aceasta va contine
 COMMENT ON COLUMN users.abonamente.dimensiune_maxima_grup IS 'Coloana aceasta va contine dimensiunea maxima admisa a grupului';
 COMMENT ON COLUMN users.abonamente.valoare_lunara IS 'Coloana aceasta va contine valoarea lunara de baza a unui abonament. Aceasta poate suferi costuri aditionale.';
 
+INSERT INTO users.abonamente(id,denumire,activ) VALUES(0,'Utilizator inactiv',false);
+INSERT INTO users.abonamente(id,denumire,activ) VALUES(1,'Utilizator de trial',false);
+
 --#endregion Abonamente
 
 --#region Abonamente Utilizatori
