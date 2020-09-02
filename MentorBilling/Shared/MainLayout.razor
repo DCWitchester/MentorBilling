@@ -1,7 +1,19 @@
 ﻿@inherits LayoutComponentBase
 
+@if (Settings.GlobalDisplaySettings.MessageWaiting)
+{
+    <div id="dark_cover"></div>
+    <div class="overlay">
+        @switch (Settings.GlobalDisplaySettings.CurrentError) 
+            {
+                case Messages.MessageSettings.MessageTypes.DatabaseError:
+                    <MentorBilling.Messages.DatabaseConnectionError />
+                    break;
+            }
+    </div>
+}
 
-@if (Settings.UserSettings.UserState == Miscellaneous.UserState.UserStates.loggingIn) 
+@if (Settings.UserSettings.UserState == Miscellaneous.UserState.UserStates.loggingIn)
 {
     <div class="sidebar">
         <NavMenu />

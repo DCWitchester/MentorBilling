@@ -3,6 +3,7 @@ using MentorBilling.Login.UserControllers;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,11 @@ namespace MentorBilling.Database.DatabaseLink
         static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
 
         #region RegistrationFunctions
+        /// <summary>
+        /// this function will check if there is already an account with the current register controllers username
+        /// </summary>
+        /// <param name="registerController">the current register controller</param>
+        /// <returns>wether another account with the same username exists or not</returns>
         public static Boolean CheckUsername(RegisterController registerController)
         {
             String sqlCommand = "SELECT COUNT(*) FROM users.utilizatori WHERE nume_utilizator = :p_username";
@@ -23,6 +29,11 @@ namespace MentorBilling.Database.DatabaseLink
             return result;
         }
 
+        /// <summary>
+        /// this function will check if there is already an account bound to the current registers email adress
+        /// </summary>
+        /// <param name="registerController">the current register controller</param>
+        /// <returns>wether another account with the same username exists or not</returns>
         public static Boolean CheckEmail(RegisterController registerController)
         {
             String sqlCommand = "SELECT COUNT(*) FROM users.utilizatori WHERE email = :p_email";
@@ -33,11 +44,19 @@ namespace MentorBilling.Database.DatabaseLink
             return result;
         }
 
-        public static Boolean RegisterUser(RegisterController registerController)
+        /// <summary>
+        /// this function will register a new user in the database and then return it
+        /// </summary>
+        /// <param name="registerController">the register controller for the new user</param>
+        /// <returns>the newly added user</returns>
+        public static User RegisterUser(RegisterController registerController)
         {
-            String sqlCommand = "INSERT INTO users.utilizatori(nume_utilizator,email,parola,nume,prenume) " +
-                                    "VALUES(:p_username,:p_email,:p_password,:p_surname,:p_name)";
-            NpgsqlParameter[] npgsqlParameter =
+            //the insert returning command will return a single column based on the new insert
+            String queryCommand = "INSERT INTO users.utilizatori(nume_utilizator,email,parola,nume,prenume) " +
+                                    "VALUES(:p_username,:p_email,:p_password,:p_surname,:p_name) " +
+                                    "RETURNING *";
+            //we bind the parameters to the registerController properties
+            NpgsqlParameter[] queryParameters =
             {
                 new NpgsqlParameter("p_username",registerController.Username),
                 new NpgsqlParameter("p_email",registerController.Email),
@@ -45,7 +64,24 @@ namespace MentorBilling.Database.DatabaseLink
                 new NpgsqlParameter("p_surname",registerController.Surname),
                 new NpgsqlParameter("p_name",registerController.Name)
             };
-            return false;
+            //if we are unable to connect to the database we return a null object
+            //this should never happen since they will be on the same server though better safe than sorry
+            if (!PgSqlConnection.OpenConnection()) return null;
+            //once done we run the sqlCommand and retrieve the values to a new DataTable
+            DataTable dt = PgSqlConnection.ExecuteReaderToDataTable(queryCommand,queryParameters);
+            //once that is done we close the fucking connection
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            //before initializing a new user from the dataTable
+            User newUser = new User
+            {
+                ID = (Int64)dt.Rows[0]["ID"],
+                Username = dt.Rows[0]["NUME_UTILIZATOR"].ToString(),
+                Email = dt.Rows[0]["EMAIL"].ToString(),
+                Name = dt.Rows[0]["PRENUME"].ToString(),
+                Surname = dt.Rows[0]["NUME"].ToString()
+            };
+            //then finally return the new user
+            return newUser;
         }
         #endregion
     }

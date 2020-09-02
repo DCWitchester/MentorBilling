@@ -56,3 +56,5 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\staticwebassets\
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.pdb
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.genruntimeconfig.cache
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Messages\DatabaseConnectionError.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Messages\DatabaseConnectionError.razor.g.cs

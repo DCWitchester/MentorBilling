@@ -1,4 +1,6 @@
-﻿<h1>Inregistrare</h1>
+﻿@inject IJSRuntime JSRuntime
+
+<h1>Inregistrare</h1>
 <div>
     <!--The Main EditForm for the Login-->
     <EditForm Model="@RegisterController" OnValidSubmit="@(e => FormValidate(true))" OnInvalidSubmit="@(e=>FormValidate(false))">
@@ -11,7 +13,7 @@
             <label class="col-form-label">Nume</label>
             <!--The Main Input Box for the Surname-->
             <div>
-                <InputText class="form-control" placeholder="Nume" @bind-Value="RegisterController.Surname" />
+                <InputText class="form-control" id="tbSurname" placeholder="Nume" @bind-Value="RegisterController.Surname" />
             </div>
         </div>
         <!--The Div containing the Label, InputText for the Name-->
@@ -71,7 +73,7 @@
         </div>
         <!--The main validation button-->
         <div class="form-group text-center mb-0">
-            <button type="submit" class="btn btn-primary" id="BtnLogin" @onclick="FormCheck">Inregistrare</button>
+            <button type="submit" class="btn btn-primary-validate" id="BtnLogin" @onclick="FormCheck">Inregistrare</button>
         </div>
     </EditForm>
 </div>
