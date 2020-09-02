@@ -6,10 +6,11 @@ namespace MentorBilling.Settings
 {
     public class Settings
     {
+
+#pragma warning disable IDE1006 // Naming Styles
         /// <summary>
         /// the global databaseConnectionSetting property
         /// </summary>
-#pragma warning disable IDE1006 // Naming Styles
         private static DatabaseConnectionSettings databaseConnectionSettings { get; set; } = new DatabaseConnectionSettings();
 #pragma warning restore IDE1006 // Naming Styles
 

@@ -32,6 +32,21 @@ namespace MentorBilling.Database.DatabaseLink
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
             return result;
         }
+
+        public static Boolean RegisterUser(RegisterController registerController)
+        {
+            String sqlCommand = "INSERT INTO users.utilizatori(nume_utilizator,email,parola,nume,prenume) " +
+                                    "VALUES(:p_username,:p_email,:p_password,:p_surname,:p_name)";
+            NpgsqlParameter[] npgsqlParameter =
+            {
+                new NpgsqlParameter("p_username",registerController.Username),
+                new NpgsqlParameter("p_email",registerController.Email),
+                new NpgsqlParameter("p_password",registerController.Password),
+                new NpgsqlParameter("p_surname",registerController.Surname),
+                new NpgsqlParameter("p_name",registerController.Name)
+            };
+            return false;
+        }
         #endregion
     }
 }

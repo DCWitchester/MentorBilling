@@ -15,12 +15,14 @@ namespace MentorBilling.Login.Pages
         {
             RegisterController.EmailAlreadyExists = UserFunctions.CheckEmail(RegisterController);
             RegisterController.UsernameAlreadyExists = UserFunctions.CheckUsername(RegisterController);
-            String x = "";
         }
 
         private void FormValidate(Boolean valid)
         {
-            String x = "";
+            if (valid)
+            {
+
+            }
         }
     }
 }
