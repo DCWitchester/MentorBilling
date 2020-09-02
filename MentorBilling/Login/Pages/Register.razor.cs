@@ -32,6 +32,7 @@ namespace MentorBilling.Login.Pages
         {
             if (valid)
             {
+                User newUser = UserFunctions.RegisterUser(RegisterController);
 #warning TBD
             }
             else
