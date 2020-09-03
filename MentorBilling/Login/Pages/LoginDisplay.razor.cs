@@ -17,6 +17,7 @@ namespace MentorBilling.Login.Pages
         {
             MainPage.ComponentDisplay.CallRegister(DisplaySettings);
             JSRuntime.InvokeVoidAsync("blurElement");
+            MessageDisplaySettings.ChangeMessageType(Messages.MessageSettings.MessageTypes.DatabaseError);
         }
     }
 }

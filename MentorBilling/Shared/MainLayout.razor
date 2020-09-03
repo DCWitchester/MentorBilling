@@ -1,12 +1,14 @@
 ﻿@inherits LayoutComponentBase
+@using Messages
+@inject MessageDisplaySettings MessageDisplaySettings
 
-@if (Settings.GlobalDisplaySettings.MessageWaiting)
+@if (MessageDisplaySettings.MessageWaiting)
 {
     <div id="dark_cover"></div>
     <div class="overlay">
-        @switch (Settings.GlobalDisplaySettings.CurrentError) 
-            {
-                case Messages.MessageSettings.MessageTypes.DatabaseError:
+        @switch (MessageDisplaySettings.CurrentError)
+        {
+            case Messages.MessageSettings.MessageTypes.DatabaseError:
                     <MentorBilling.Messages.DatabaseConnectionError />
                     break;
             }

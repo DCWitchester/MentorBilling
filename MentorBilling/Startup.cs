@@ -13,6 +13,7 @@ using MentorBilling.Data;
 using System.Net.Http;
 using Microsoft.AspNetCore.Components.Authorization;
 using MentorBilling.MainPage;
+using MentorBilling.Messages;
 
 namespace MentorBilling
 {
@@ -33,7 +34,13 @@ namespace MentorBilling
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            #region Special Page Controllers
+            //the main service for the main page controller
             services.AddSingleton<DisplaySettings>();
+            //the main service for the messageDisplayController
+            services.AddSingleton<MessageDisplaySettings>();
+            services.AddHttpContextAccessor();
+            #endregion
 
             // Server Side Blazor doesn't register HttpClient by default
             if (!services.Any(x => x.ServiceType == typeof(HttpClient)))

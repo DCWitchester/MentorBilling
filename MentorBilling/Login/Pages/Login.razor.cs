@@ -8,7 +8,7 @@ namespace MentorBilling.Login.Pages
 {
     public partial class Login
     {
-        LoginController PageController = new LoginController();
+        readonly LoginController PageController = new LoginController();
 
         void ValidateLogin()
         {
