@@ -1,1 +1,23 @@
-﻿
+﻿@inject DisplaySettings DisplaySettings
+
+@switch (DisplaySettings.PageComponents)
+{
+    case ComponentDisplay.Components.login:
+        {
+            <div class="center-screen">
+                <MentorBilling.Login.Pages.Login />
+            </div>
+            break;
+        }
+    case ComponentDisplay.Components.register:
+        {
+            <div class="center-screen">
+                <MentorBilling.Login.Pages.Register />
+            </div>
+            break;
+        }
+    default:
+        {
+            break;
+        }
+}

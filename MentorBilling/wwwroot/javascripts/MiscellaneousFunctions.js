@@ -6,3 +6,9 @@
 function removeElementFocus() {
     window.focus();
 }
+
+function blurElement(id)
+{
+    const element = docu.getElementById(id);
+    element.focus()
+}

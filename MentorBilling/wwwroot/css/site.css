@@ -8,6 +8,16 @@ a, .btn-link {
     color: #0366d6;
 }
 
+/* #region Simple display settings */
+.center-screen {
+    width: 50%;
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translate( -50%, 0%);
+    transform: translate( -50%, 0%);
+}
+/* #endregion simple display settings */
+
 /*#region Message Display*/
 .overlay {
     background: #fff;
@@ -83,6 +93,7 @@ a, .btn-link {
         border-color: snow;
         background-color: orange;
     }
+
 /*#endregion Button endrgion*/
 
 .btn-primary {
