@@ -14,6 +14,7 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Components.Authorization;
 using MentorBilling.MainPage;
 using MentorBilling.Messages;
+using Microsoft.AspNetCore.Http;
 
 namespace MentorBilling
 {
@@ -39,6 +40,7 @@ namespace MentorBilling
             services.AddSingleton<DisplaySettings>();
             //the main service for the messageDisplayController
             services.AddSingleton<MessageDisplaySettings>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddHttpContextAccessor();
             #endregion
 
