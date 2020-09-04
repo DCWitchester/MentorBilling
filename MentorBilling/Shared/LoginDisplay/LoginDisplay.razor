@@ -1,24 +1,31 @@
 ﻿@inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime
 @inject MentorBilling.MainPage.DisplaySettings DisplaySettings
-@inject MentorBilling.Messages.MessageDisplaySettings MessageDisplaySettings 
+@inject LoginDisplayController LoginDisplayController
 
 <div>
-    @switch (Settings.UserSettings.UserState)
+    <!--The Main Switch Controller-->
+    @switch (LoginDisplayController.UserState)
     {
         case Miscellaneous.UserState.UserStates.loggingIn:
+            <!--In case the user is Logging In-->
             <div>
                 <label>...</label>
             </div>
             break;
         case Miscellaneous.UserState.UserStates.loggedIn:
+            <!--In case the user aslready is logged in-->
+            <!--We Display the Welcome Message for now-->
             <div>
                 <label>Bine ati venit @Settings.UserSettings.LoggedInUser.DisplayName</label>
             </div>
             break;
         case Miscellaneous.UserState.UserStates.loggedOut:
+            <!--In case the user isn't logged in-->
             <div>
+                <!--The Login Button-->
                 <button class="btn-primary-login" @onclick="LoginClick">Login</button>
+                <!--The Register Button-->
                 <button class="btn-primary-login" @onclick="RegisterClick">Register</button>
             </div>
             break;

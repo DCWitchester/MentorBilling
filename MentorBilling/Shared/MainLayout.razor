@@ -8,7 +8,7 @@
     <div class="overlay">
         @switch (MessageDisplaySettings.CurrentError)
         {
-            case Messages.MessageSettings.MessageTypes.DatabaseError:
+            case Messages.MessageDisplay.MessageTypes.DatabaseError:
                     <MentorBilling.Messages.DatabaseConnectionError />
                     break;
             }
@@ -24,7 +24,7 @@
 
 <div class="main">
     <div class="top-row px-4">
-        <MentorBilling.Login.Pages.LoginDisplay />
+        <MentorBilling.Shared.LoginDisplay.LoginDisplay/>
         <a href="http://www.mentorsoft.ro/" style="color:snow" target="_blank">About</a>
     </div>
 

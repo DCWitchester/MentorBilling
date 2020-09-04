@@ -12,19 +12,19 @@ namespace MentorBilling.Messages
         /// <summary>
         /// the messageWaiting property
         /// </summary>
-        private static Boolean messageWaiting { get; set; } = false;
+        private Boolean messageWaiting { get; set; } = false;
 
 
         /// <summary>
         /// the CurrentError property for the message display
         /// </summary>
-        private static MessageSettings.MessageTypes currentError { get; set; } = MessageSettings.MessageTypes.None;
+        private MessageDisplay.MessageTypes currentError { get; set; } = MessageDisplay.MessageTypes.None;
 #pragma warning restore IDE1006 // Naming Styles
 
         /// <summary>
         /// the main caller for the messageWaiting property
         /// </summary>
-        public static Boolean MessageWaiting
+        public Boolean MessageWaiting
         {
             get => messageWaiting;
         }
@@ -32,7 +32,7 @@ namespace MentorBilling.Messages
         /// <summary>
         /// the main caller for the currentError property
         /// </summary>
-        public static MessageSettings.MessageTypes CurrentError
+        public MessageDisplay.MessageTypes CurrentError
         {
             get => currentError;
         }
@@ -46,12 +46,12 @@ namespace MentorBilling.Messages
         /// this function will call the Message for Display
         /// </summary>
         /// <param name="message">the message that should be displayed</param>
-        public void ChangeMessageType(MessageSettings.MessageTypes message)
+        public void ChangeMessageType(MessageDisplay.MessageTypes message)
         {
             //we set the message
             currentError = message;
             //if there is a message we also call the display
-            if (message == MessageSettings.MessageTypes.None) messageWaiting = false;
+            if (message == MessageDisplay.MessageTypes.None) messageWaiting = false;
             else messageWaiting = true;
             //before notifying the change
             NotifyStateChanged();

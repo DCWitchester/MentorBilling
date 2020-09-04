@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace MentorBilling.MainPage
+namespace MentorBilling.Shared.LoginDisplay
 {
-    public partial class MainDisplay
+    public partial class LoginDisplay
     {
         #region DisplayController
         /// <summary>
@@ -14,7 +13,6 @@ namespace MentorBilling.MainPage
         /// </summary>
         protected override void OnInitialized()
         {
-            //we add the Change Handler
             DisplaySettings.OnChange += OnMyChangeHandler;
             base.OnInitialized();
         }
@@ -33,5 +31,19 @@ namespace MentorBilling.MainPage
             await InvokeAsync(() => StateHasChanged());
         }
         #endregion
+        /// <summary>
+        /// the main Login Click for the page
+        /// </summary>
+        private void LoginClick()
+        {
+            MainPage.ComponentDisplay.CallLogin(DisplaySettings);
+        }
+        /// <summary>
+        /// the main Register Click on the page
+        /// </summary>
+        private void RegisterClick()
+        {
+            MainPage.ComponentDisplay.CallRegister(DisplaySettings);
+        }
     }
 }

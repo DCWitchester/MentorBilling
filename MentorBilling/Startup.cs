@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using MentorBilling.MainPage;
 using MentorBilling.Messages;
 using Microsoft.AspNetCore.Http;
+using MentorBilling.Shared.LoginDisplay;
 
 namespace MentorBilling
 {
@@ -40,6 +41,8 @@ namespace MentorBilling
             services.AddSingleton<DisplaySettings>();
             //the main service for the messageDisplayController
             services.AddSingleton<MessageDisplaySettings>();
+            //the main service for the LoginDisplayController
+            services.AddSingleton<LoginDisplayController>();
             //the main services for httpContextAccessors
             //might not be used
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

@@ -5,6 +5,7 @@ using Microsoft.JSInterop;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MentorBilling.Messages;
 
 namespace MentorBilling.Login.Pages
 {
@@ -39,6 +40,10 @@ namespace MentorBilling.Login.Pages
             if (valid)
             {
                 User newUser = UserFunctions.RegisterUser(RegisterController);
+                if (newUser == null)
+                {
+                    MessageDisplay.CallDatabaseError(MessageDisplaySettings);
+                }
 #warning TBD
             }
             else
