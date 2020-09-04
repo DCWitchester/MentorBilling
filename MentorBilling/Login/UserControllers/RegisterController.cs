@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MentorBilling.Database.DatabaseLink;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MentorBilling.Login.UserControllers
@@ -47,13 +48,13 @@ namespace MentorBilling.Login.UserControllers
         /// the error for trying to make an account on an already in use email
         /// </summary>
         [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator legat de acesta adresa de email")]
-        public Boolean EmailAlreadyExists { get; set; }
+        public Boolean EmailAlreadyExists { get => UserFunctions.CheckEmail(this);}
 
         /// <summary>
         /// the error for trying to make an account with the same username as another
         /// </summary>
         [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator cu aceast nume")]
-        public Boolean UsernameAlreadyExists { get; set; }
+        public Boolean UsernameAlreadyExists { get => UserFunctions.CheckUsername(this);}
 
         /// <summary>
         /// the error for trying to make an account with an invalid email Adress

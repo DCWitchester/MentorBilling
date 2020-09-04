@@ -21,16 +21,7 @@ namespace MentorBilling.Login.Pages
         /// the main Register Controller for the page
         /// </summary>
         private readonly RegisterController RegisterController = new RegisterController();
-
-        /// <summary>
-        /// this function validates errors not directly bound to fields
-        /// </summary>
-        private void FormCheck()
-        {
-            RegisterController.EmailAlreadyExists = UserFunctions.CheckEmail(RegisterController);
-            RegisterController.UsernameAlreadyExists = UserFunctions.CheckUsername(RegisterController);
-        }
-
+  
         /// <summary>
         /// the main validation for the form
         /// </summary>
