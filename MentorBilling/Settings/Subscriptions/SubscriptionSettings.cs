@@ -12,7 +12,9 @@ namespace MentorBilling.Settings.Subscriptions
         /// </summary>
         public enum Subscriptions
         {
+            //the intial inactive subscription
             InactiveSubscription = 0,
+            //the initial active subscription
             ActiveTrialSubscription = 1
         }
     }

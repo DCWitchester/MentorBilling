@@ -39,15 +39,34 @@ namespace MentorBilling.Login.Pages
         {
             if (valid)
             {
+                //if the registerController has been validated
+                //we register the controller to the database retrieving the newly created user
                 User newUser = UserFunctions.RegisterUser(RegisterController);
+                //if the creation of the user has failed we call the database connection error
                 if (newUser == null)
                 {
                     MessageDisplay.CallDatabaseError(MessageDisplaySettings);
+                    //we return so as not to continue code execution
+                    return;
                 }
+                //seeing as we now have our user we need to initialize the new Subscription for it
+                if (!SubscriptionFunctions.GenerateInactiveSubscription(newUser))
+                {
+                    //if we fail we call error
+                    MessageDisplay.CallDatabaseError(MessageDisplaySettings);
+                    //we return so as not to continue code execution
+                    return;
+                }
+                //if this point has been reached a new user has been created and we need to send an activation Link
+                //Miscellaneous.
+
+
+
 #warning TBD
             }
             else
             {
+                String x = "";
                 //we can't access the base html objects from c# so we need JavaScripts(Damn the elders of the Internet)
                 await JSRuntime.InvokeVoidAsync("focusElement","tbSurname");
                 //the call the StateHasChanged to force a page refresh

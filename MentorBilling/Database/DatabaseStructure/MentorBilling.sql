@@ -27,7 +27,7 @@ CREATE TABLE users.utilizatori (
   nume varchar NOT NULL DEFAULT (''),
   prenume varchar NOT NULL DEFAULT (''),
   sysadmin boolean NOT NULL DEFAULT false,
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.utilizatori OWNER TO postgres;
@@ -45,7 +45,7 @@ CREATE TABLE users.grupuri (
   id bigserial PRIMARY KEY NOT NULL,
   denumire varchar NOT NULL DEFAULT (''),
   administrator_grup bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.grupuri OWNER TO postgres;
@@ -63,7 +63,7 @@ CREATE TABLE users.grupuri_utilizatori (
   id bigserial PRIMARY KEY NOT NULL,
   grup_id bigint NOT NULL DEFAULT 0 REFERENCES users.grupuri(id),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.grupuri_utilizatori OWNER TO postgres;
@@ -81,7 +81,7 @@ CREATE TABLE users.drepturi (
   id bigserial PRIMARY KEY NOT NULL,
   drept varchar NOT NULL DEFAULT (''),
   tip_drept integer NOT NULL DEFAULT 0,
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.drepturi OWNER TO postgres;
@@ -99,7 +99,7 @@ CREATE TABLE users.drepturi_utilizatori (
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id), 
   drept_id bigint NOT NULL DEFAULT 0 REFERENCES users.drepturi(id),
   valoare_drept varchar NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.drepturi_utilizatori OWNER TO postgres;
@@ -118,7 +118,7 @@ COMMENT ON COLUMN users.drepturi_utilizatori.valoare_drept IS 'Coloana asta va c
 CREATE TABLE users.clase_drepturi_predefinite (
   id bigserial PRIMARY KEY NOT NULL,
   denumire varchar NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.clase_drepturi_predefinite OWNER TO postgres;
@@ -134,7 +134,7 @@ CREATE TABLE users.clase_drepturi (
   drept_id bigint NOT NULL DEFAULT 0 REFERENCES users.drepturi(id),
   clasa_id bigint NOT NULL DEFAULT 0 references users.clase_drepturi_predefinite(id),
   valoare_drept varchar NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.clase_drepturi OWNER TO postgres;
@@ -156,7 +156,7 @@ CREATE TABLE users.abonamente (
   explicatii varchar NOT NULL DEFAULT (''),
   perioada_plata integer NOT NULL DEFAULT 30,
   dimensiune_maxima_grup integer NOT NULL DEFAULT 1,
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE users.abonamente OWNER TO postgres;
@@ -167,7 +167,7 @@ COMMENT ON COLUMN users.abonamente.dimensiune_maxima_grup IS 'Coloana aceasta va
 COMMENT ON COLUMN users.abonamente.valoare_lunara IS 'Coloana aceasta va contine valoarea lunara de baza a unui abonament. Aceasta poate suferi costuri aditionale.';
 
 INSERT INTO users.abonamente(id,denumire,activ) VALUES(0,'Utilizator inactiv',false);
-INSERT INTO users.abonamente(id,denumire,activ) VALUES('Utilizator de trial',false);
+INSERT INTO users.abonamente(denumire,activ) VALUES('Utilizator de trial',false);
 
 --#endregion Abonamente
 
@@ -181,7 +181,7 @@ CREATE TABLE users.abonamente_utilizatori (
   ultima_plata timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
   perioada_activa integer NOT NULL DEFAULT 30,
   dimensiune_maxima_grup integer NOT NULL DEFAULT 1,
-  activ boolean NOT NULL DEFAULT false,
+  activ boolean NOT NULL DEFAULT true,
   UNIQUE(utilizator_id,abonament_id)
 );
 
@@ -216,7 +216,7 @@ CREATE TABLE seller.furnizori (
   email varchar NOT NULL DEFAULT (''),
   sigla bytea NOT NULL DEFAULT (''),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE seller.furnizori OWNER TO postgres;
@@ -235,7 +235,7 @@ CREATE TABLE seller.conturi_bancare_furnizori (
   furnizor_id bigint NOT NULL DEFAULT 0 REFERENCES seller.furnizori(id),
   cont varchar NOT NULL DEFAULT (''),
   banca varchar NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE seller.conturi_bancare_furnizori OWNER TO postgres;
@@ -257,7 +257,7 @@ CREATE TABLE seller.delegati (
   mijloc_transport varchar NOT NULL DEFAULT (''),
   numar_mijloc_transpot varchar NOT NULL DEFAULT (''),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE seller.delegati OWNER TO postgres;
@@ -274,7 +274,7 @@ CREATE TABLE seller.utilizatori_last_used (
   furnizori_last_used bigint NOT NULL DEFAULT 0 REFERENCES seller.furnizori(id),
   conturi_bancare_last_used bigint NOT NULL DEFAULT 0 REFERENCES seller.conturi_bancare_furnizori(id),
   delegati_last_used bigint NOT NULL DEFAULT 0 REFERENCES seller.delegati(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE seller.utilizatori_last_used OWNER TO postgres;
@@ -303,7 +303,7 @@ CREATE TABLE glossary.tari (
   cod_tara_iso_m49 VARCHAR(3) NOT NULL DEFAULT (''),
   den_tara_ro VARCHAR NOT NULL DEFAULT (''),
   den_tara_en VARCHAR NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 --Owner Alter
@@ -557,7 +557,7 @@ CREATE TABLE glossary.judete (
   id bigserial PRIMARY KEY NOT NULL,
   cod_judet VARCHAR(2) NOT NULL DEFAULT (''),
   den_judet VARCHAR NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE glossary.judete OWNER TO postgres;
@@ -696,7 +696,7 @@ CREATE TABLE settings.plaje_documente (
   serie varchar NOT NULL DEFAULT (''),
   tip_document integer NOT NULL DEFAULT 0,
   creator_plaja bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE settings.plaje_documente OWNER TO postgres;
@@ -713,7 +713,7 @@ CREATE TABLE settings.utilizatori_plaje (
   id bigserial PRIMARY KEY NOT NULL,
   plaje_document_id bigint NOT NULL DEFAULT 0 REFERENCES settings.plaje_documente(id),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE settings.utilizatori_plaje OWNER TO postgres;
@@ -731,7 +731,7 @@ CREATE TABLE settings.setari (
   id bigserial PRIMARY KEY NOT NULL,
   setare varchar NOT NULL DEFAULT (''),
   tip_setare integer NOT NULL DEFAULT 0,
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE settings.setari OWNER TO postgres;
@@ -748,7 +748,7 @@ CREATE TABLE settings.setari_utilizatori (
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori,
   setare_id bigint NOT NULL DEFAULT 0 REFERENCES settings.setari(id),
   valoare_setare varchar NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE settings.setari_utilizatori OWNER TO postgres;
@@ -799,7 +799,7 @@ CREATE TABLE buyer.cumparatori (
   tara bigint NOT NULL DEFAULT 0 REFERENCES glossary.tari(id),
   judetul bigint NOT NULL DEFAULT 0 REFERENCES glossary.judete(id),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE buyer.cumparatori OWNER TO postgres;
@@ -819,7 +819,7 @@ CREATE TABLE buyer.conturi_bancare_cumparatori (
   cumparatori_id bigint NOT NULL DEFAULT 0 REFERENCES buyer.cumparatori(id),
   cont varchar NOT NULL DEFAULT (''),
   banca varchar NOT NULL DEFAULT (''),
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE buyer.conturi_bancare_cumparatori OWNER TO postgres;
@@ -908,7 +908,7 @@ CREATE TABLE invoice.date_expeditie (
   factura_id bigint NOT NULL DEFAULT 0 REFERENCES invoice.factura(id),
   delegat_id bigint NOT NULL DEFAULT 0 REFERENCES seller.delegati(id),
   data_expediere timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
-  activ boolean NOT NULL DEFAULT false
+  activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE invoice.date_expeditie OWNER TO postgres;
@@ -931,7 +931,7 @@ CREATE SCHEMA log AUTHORIZATION postgres;
 CREATE TABLE log.log_utilizatori (
     id bigserial PRIMARY KEY NOT NULL,
     utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-    ip_logare varchar NOT NULL DEFAULT '',
+    ip_logare varchar NOT NULL DEFAULT (''),
     ora_logare timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
     logged boolean NOT NULL DEFAULT false,
     date_logare json NOT NULL DEFAULT ('{}')
@@ -947,9 +947,10 @@ COMMENT ON TABLE log.log_utilizatori IS 'Tabela curenta contine toate logarile s
 
 CREATE TABLE log.log_actiuni (
     id bigserial PRIMARY KEY NOT NULL,
-    ip_actiune varchar NOT NULL DEFAULT '',
+    ip_actiune varchar NOT NULL DEFAULT (''),
     ora_actiune timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
     actiune varchar NOT NULL DEFAULT (''),
+    comanda varchar NOT NULL DEFAULT (''),
     utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id)
 );
 

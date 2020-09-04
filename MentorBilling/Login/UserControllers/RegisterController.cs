@@ -37,13 +37,28 @@ namespace MentorBilling.Login.UserControllers
         /// </summary>
         public String PasswordMatch { get; set; } = String.Empty;
 
+        /// <summary>
+        /// the errors for password does not match
+        /// </summary>
         [Range(typeof(bool),"true","true",ErrorMessage ="Parola nu corespunde cu campul de verificare")]
         public Boolean DoPasswordsMatch { get => Password == PasswordMatch; }
 
+        /// <summary>
+        /// the error for trying to make an account on an already in use email
+        /// </summary>
         [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator legat de acesta adresa de email")]
         public Boolean EmailAlreadyExists { get; set; }
 
+        /// <summary>
+        /// the error for trying to make an account with the same username as another
+        /// </summary>
         [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator cu aceast nume")]
         public Boolean UsernameAlreadyExists { get; set; }
+
+        /// <summary>
+        /// the error for trying to make an account with an invalid email Adress
+        /// </summary>
+        [Range(typeof(bool),"true","true",ErrorMessage = "Adresa de email introdusa nu este valida")]
+        public Boolean IsEmailValid { get => Miscellaneous.MailCheck.TestMail(Email); }
     }
 }

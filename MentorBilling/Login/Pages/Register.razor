@@ -36,6 +36,7 @@
                 <!--The Validation Message bound to the specific error-->
                 <ValidationMessage For="@(()=>RegisterController.Email)" />
                 <ValidationMessage For="@(()=>RegisterController.EmailAlreadyExists)" />
+                <ValidationMessage For="@(()=>RegisterController.IsEmailValid)"/>
             </div>
         </div>
         <!--The Div containing the Label, InputText and ValidationMessage for the Username-->

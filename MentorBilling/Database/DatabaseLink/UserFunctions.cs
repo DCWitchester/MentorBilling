@@ -13,6 +13,9 @@ namespace MentorBilling.Database.DatabaseLink
 {
     public class UserFunctions
     {
+        /// <summary>
+        /// the database connection for the current class
+        /// </summary>
         static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
 
         #region RegistrationFunctions
@@ -54,8 +57,10 @@ namespace MentorBilling.Database.DatabaseLink
         public static User RegisterUser(RegisterController registerController)
         {
             #region LogAction
-            //First we format the Action to register
-            String Action = String.Format("INSERT INTO users.utilizatori(nume_utilizator,email,parola,nume,prenume) " +
+            //the action for the log
+            String Action = "A fost inregistrat un nou utilizator la adresa de email: " + registerController.Email;
+            //First we format the command to register
+            String command = String.Format("INSERT INTO users.utilizatori(nume_utilizator,email,parola,nume,prenume) " +
                                     "VALUES({0},{1},{2},{3},{4}) RETURNING *", 
                                     registerController.Username, 
                                     registerController.Email, 
@@ -87,7 +92,7 @@ namespace MentorBilling.Database.DatabaseLink
             //once that is done we close the fucking connection
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
             //we will log the current action
-            ActionLog.LogAction(Action, IP);
+            ActionLog.LogAction(Action, IP, command);
             //before initializing a new user from the dataTable
             User newUser = new User
             {
