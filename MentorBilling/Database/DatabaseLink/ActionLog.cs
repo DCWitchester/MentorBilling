@@ -3,6 +3,7 @@ using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace MentorBilling.Database.DatabaseLink
@@ -15,6 +16,7 @@ namespace MentorBilling.Database.DatabaseLink
         {
             String QueryCommand = "INSERT INTO log.log_utilizatori(actiune) VALUES(:p_action)";
             NpgsqlParameter QueryParameter = new NpgsqlParameter("p_action",Action);
+            if()
         }
     }
 }

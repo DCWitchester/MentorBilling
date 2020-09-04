@@ -11,7 +11,7 @@ namespace MentorBilling.MainPage
         /// <summary>
         /// the property for the page Components
         /// </summary>
-        private ComponentDisplay.Components pageComponents { get; set; } = ComponentDisplay.Components.register;
+        private ComponentDisplay.Components pageComponents { get; set; } = ComponentDisplay.Components.none;
 #pragma warning restore IDE1006 // Naming Styles
         /// <summary>
         /// the main caller for the pageComponents property

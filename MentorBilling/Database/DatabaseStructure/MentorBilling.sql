@@ -931,6 +931,7 @@ CREATE SCHEMA log AUTHORIZATION postgres;
 CREATE TABLE log.log_utilizatori (
     id bigserial PRIMARY KEY NOT NULL,
     utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+    ip_logare varchar NOT NULL DEFAULT '',
     ora_logare timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
     logged boolean NOT NULL DEFAULT false,
     date_logare json NOT NULL DEFAULT ('{}')
@@ -946,6 +947,7 @@ COMMENT ON TABLE log.log_utilizatori IS 'Tabela curenta contine toate logarile s
 
 CREATE TABLE log.log_actiuni (
     id bigserial PRIMARY KEY NOT NULL,
+    ip_actiune varchar NOT NULL DEFAULT '',
     ora_actiune timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
     actiune varchar NOT NULL DEFAULT (''),
     utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id)
