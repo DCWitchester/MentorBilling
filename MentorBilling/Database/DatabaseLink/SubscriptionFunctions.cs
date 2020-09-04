@@ -51,9 +51,27 @@ namespace MentorBilling.Database.DatabaseLink
             ActionLog.LogAction(Action, IP, Command);
             return true;
         }
-        public static Boolean ActivateSubscription(User user)
+        public static Boolean ActivateTrialSubscription(User user)
         {
-
+            Int64 currentSubscriptionID = (Int64)Settings.Subscriptions.SubscriptionSettings.Subscriptions.InactiveSubscription;
+            Int64 newSubscriptionID = (Int64)Settings.Subscriptions.SubscriptionSettings.Subscriptions.ActiveTrialSubscription;
+            #region Action Log
+            String Action = "Activat abonamentul de trial pentru utilizatorul " + user.Email;
+            #endregion
+            String queryCommand = "UPDATE users.abonamente_utilizatori " +
+                                    "SET abonament_id = :p_new_subscription," +
+                                    " ultima_plata = :p_new_date " +
+                                    "WHERE utilizator_id = :p_user_id AND abonament_id = :p_old_subscription";
+            NpgsqlParameter[] queryParameters =
+            {
+                new NpgsqlParameter("p_new_subscription",newSubscriptionID),
+                new NpgsqlParameter("p_old_subscription",currentSubscriptionID),
+                new NpgsqlParameter("p_user_id",user.ID),
+                new NpgsqlParameter("p_new_date",DateTime.Now)
+            };
+            if (!PgSqlConnection.OpenConnection()) return false;
+            
+            return false;
         }
         #endregion
     }
