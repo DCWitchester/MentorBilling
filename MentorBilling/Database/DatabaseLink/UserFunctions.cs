@@ -1,5 +1,7 @@
 ﻿using MentorBilling.Database.DatabaseController;
 using MentorBilling.Login.UserControllers;
+using MentorBilling.Miscellaneous;
+using Microsoft.AspNetCore.Http;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -51,6 +53,19 @@ namespace MentorBilling.Database.DatabaseLink
         /// <returns>the newly added user</returns>
         public static User RegisterUser(RegisterController registerController)
         {
+            #region LogAction
+            //First we format the Action to register
+            String Action = String.Format("INSERT INTO users.utilizatori(nume_utilizator,email,parola,nume,prenume) " +
+                                    "VALUES({0},{1},{2},{3},{4}) RETURNING *", 
+                                    registerController.Username, 
+                                    registerController.Email, 
+                                    registerController.Password, 
+                                    registerController.Surname, 
+                                    registerController.Name
+                                    );
+            //then we will create a new ipFunctions for the httpContextAccessor
+            String IP = IPFunctions.GetWANIp();
+            #endregion
             //the insert returning command will return a single column based on the new insert
             String queryCommand = "INSERT INTO users.utilizatori(nume_utilizator,email,parola,nume,prenume) " +
                                     "VALUES(:p_username,:p_email,:p_password,:p_surname,:p_name) " +
@@ -71,6 +86,8 @@ namespace MentorBilling.Database.DatabaseLink
             DataTable dt = PgSqlConnection.ExecuteReaderToDataTable(queryCommand,queryParameters);
             //once that is done we close the fucking connection
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            //we will log the current action
+            ActionLog.LogAction(Action, IP);
             //before initializing a new user from the dataTable
             User newUser = new User
             {

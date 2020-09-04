@@ -40,6 +40,8 @@ namespace MentorBilling
             services.AddSingleton<DisplaySettings>();
             //the main service for the messageDisplayController
             services.AddSingleton<MessageDisplaySettings>();
+            //the main services for httpContextAccessors
+            //might not be used
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddHttpContextAccessor();
             #endregion

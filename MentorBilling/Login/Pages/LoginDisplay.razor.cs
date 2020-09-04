@@ -14,8 +14,6 @@ namespace MentorBilling.Login.Pages
         private void LoginClick()
         {
             MainPage.ComponentDisplay.CallLogin(DisplaySettings);
-            IPFunctions iPFunctions = new IPFunctions(new HttpContextAccessor());
-            iPFunctions.GetIP();
         }
         private void RegisterClick()
         {
