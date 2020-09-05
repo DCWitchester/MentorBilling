@@ -45,19 +45,31 @@ namespace MentorBilling.Database.DatabaseLink
             if (PgSqlConnection.OpenConnection()) return false;
             //else we execute the command
             PgSqlConnection.ExecuteNonQuery(queryCommand, queryParameters);
+            //we also log the action on the same connection
+            ActionLog.LogAction(Action, IP, Command, PgSqlConnection);
             //and return true
-            Miscellaneous.NormalConnectionClose(PgSqlConnection);
-            //we also log the action
-            ActionLog.LogAction(Action, IP, Command);
-            return true;
+            return Miscellaneous.NormalConnectionClose(PgSqlConnection);
         }
+
+        /// <summary>
+        /// this function will activate the trial subscription for an account
+        /// </summary>
+        /// <param name="user">the user for which the trial will activate</param>
+        /// <returns>the state of the command</returns>
         public static Boolean ActivateTrialSubscription(User user)
         {
+            //this function can only ocur when a client has an inactive subscription
+            //we get the ID for the inactive subscription
             Int64 currentSubscriptionID = (Int64)Settings.Subscriptions.SubscriptionSettings.Subscriptions.InactiveSubscription;
+            //then the ID for the trial subscription
             Int64 newSubscriptionID = (Int64)Settings.Subscriptions.SubscriptionSettings.Subscriptions.ActiveTrialSubscription;
+            //we prepare the action log
             #region Action Log
+            //set the action
             String Action = "Activat abonamentul de trial pentru utilizatorul " + user.Email;
+            //retrieve the IP
             String IP = IPFunctions.GetWANIp();
+            //then format the command
             String command = String.Format("UPDATE users.abonamente_utilizatori " +
                                     "SET abonament_id = {0}" +
                                     " ultima_plata = {1} " +
@@ -68,10 +80,12 @@ namespace MentorBilling.Database.DatabaseLink
                                     currentSubscriptionID
                                     );
             #endregion
+            //we set the queryCommand
             String queryCommand = "UPDATE users.abonamente_utilizatori " +
                                     "SET abonament_id = :p_new_subscription," +
                                     " ultima_plata = :p_new_date " +
                                     "WHERE utilizator_id = :p_user_id AND abonament_id = :p_old_subscription";
+            //and initialize the parameters
             NpgsqlParameter[] queryParameters =
             {
                 new NpgsqlParameter("p_new_subscription",newSubscriptionID),
@@ -79,9 +93,14 @@ namespace MentorBilling.Database.DatabaseLink
                 new NpgsqlParameter("p_user_id",user.ID),
                 new NpgsqlParameter("p_new_date",DateTime.Now)
             };
+            //if we fail to open the connection we return false;
             if (!PgSqlConnection.OpenConnection()) return false;
+            //if not we execute the command with the attached parameters
             PgSqlConnection.ExecuteNonQuery(queryCommand, queryParameters);
-            return false;
+            //and log the action on the same connection
+            ActionLog.LogAction(Action, IP, command, PgSqlConnection);
+            //before returning true;
+            return Miscellaneous.NormalConnectionClose(PgSqlConnection);
         }
         #endregion
     }

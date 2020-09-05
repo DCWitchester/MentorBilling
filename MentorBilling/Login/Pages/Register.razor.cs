@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MentorBilling.Messages;
+using MentorBilling.Miscellaneous;
 
 namespace MentorBilling.Login.Pages
 {
@@ -49,9 +50,7 @@ namespace MentorBilling.Login.Pages
                     return;
                 }
                 //if this point has been reached a new user has been created and we need to send an activation Link
-                //Miscellaneous.
-
-
+                //Miscellaneous
 
 #warning TBD
             }

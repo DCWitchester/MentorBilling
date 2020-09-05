@@ -83,7 +83,16 @@ namespace MentorBilling.Miscellaneous
         {
             set => mailSubject = value;
         }
-
+        #region Default Values
+        /// <summary>
+        /// this is the default email adress for sending emails
+        /// </summary>
+        public String GetDefaultEmail => "helpdesk.mentorsoft@gmail.com";
+        /// <summary>
+        /// this is the default emai password
+        /// </summary>
+        public String GetAppPath => "vpyuufezmukqmfav";
+        #endregion Default Values
         /// <summary>
         /// this function will add an atachement to the email
         /// </summary>
