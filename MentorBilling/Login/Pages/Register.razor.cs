@@ -50,6 +50,7 @@ namespace MentorBilling.Login.Pages
                     return;
                 }
                 //if this point has been reached a new user has been created and we need to send an activation Link
+                //as such we need to send them a link to activate the email;
                 //Miscellaneous
 
 #warning TBD

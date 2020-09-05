@@ -41,6 +41,10 @@ namespace MentorBilling.Miscellaneous
         /// the atachements list
         /// </summary>
         List<String> mailAtachements { get; set; } = new List<String>();
+        /// <summary>
+        /// the mail body formating
+        /// </summary>
+        Boolean IsMailHtml { get; set; } = false;
 #pragma warning restore IDE1006
         #endregion
         #region Setters
@@ -82,6 +86,13 @@ namespace MentorBilling.Miscellaneous
         public String SetMailSubject
         {
             set => mailSubject = value;
+        }
+        /// <summary>
+        /// this function will set the email body to html formatting
+        /// </summary>
+        public Boolean FormatMailBody
+        {
+            set => IsMailHtml = value;
         }
         #region Default Values
         /// <summary>
@@ -178,6 +189,24 @@ namespace MentorBilling.Miscellaneous
             SetMailBody = mailBody;
         }
         /// <summary>
+        /// the caller for the class with a specific email and recepient with the specific subject and body
+        /// </summary>
+        /// <param name="username">the emails username</param>
+        /// <param name="password">the emails password</param>
+        /// <param name="recepient">the emails recepient</param>
+        /// <param name="mailSubject">the emails subject</param>
+        /// <param name="mailBody">the emails body</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        public SendMailSmtp(String username, String password, String recepient, String mailSubject, String mailBody, Boolean isBodyHtml)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
+        }
+        /// <summary>
         /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
         /// </summary>
         /// <param name="username">the emails username</param>
@@ -185,7 +214,7 @@ namespace MentorBilling.Miscellaneous
         /// <param name="recepient">the emails recepient</param>
         /// <param name="mailSubject">the emails subject</param>
         /// <param name="mailBody">the emails body</param>
-        /// <param name="attachementList">the email attachement</param>
+        /// <param name="attachement">the email attachement</param>
         public SendMailSmtp(String username, String password, String recepient, String mailSubject, String mailBody, String attachement)
         {
             SetSenderAdress = username;
@@ -196,6 +225,26 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachement);
         }
         /// <summary>
+        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
+        /// </summary>
+        /// <param name="username">the emails username</param>
+        /// <param name="password">the emails password</param>
+        /// <param name="recepient">the emails recepient</param>
+        /// <param name="mailSubject">the emails subject</param>
+        /// <param name="mailBody">the emails body</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        /// <param name="attachement">the email attachement</param>
+        public SendMailSmtp(String username, String password, String recepient, String mailSubject, String mailBody, Boolean isBodyHtml, String attachement)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
+            AddAtachement(attachement);
+        }
+        /// <summary>
         /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
@@ -203,8 +252,27 @@ namespace MentorBilling.Miscellaneous
         /// <param name="recepient">the emails recepient</param>
         /// <param name="mailSubject">the emails subject</param>
         /// <param name="mailBody">the emails body</param>
-        /// <param name="attachementList">the email attachements array</param>
+        /// <param name="attachements">the email attachements array</param>
         public SendMailSmtp(String username, String password, String recepient, String mailSubject, String mailBody, String[] attachements)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            AddAtachement(attachements);
+        }
+        /// <summary>
+        /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
+        /// </summary>
+        /// <param name="username">the emails username</param>
+        /// <param name="password">the emails password</param>
+        /// <param name="recepient">the emails recepient</param>
+        /// <param name="mailSubject">the emails subject</param>
+        /// <param name="mailBody">the emails body</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        /// <param name="attachements">the email attachements array</param>
+        public SendMailSmtp(String username, String password, String recepient, String mailSubject, String mailBody, Boolean isBodyHtml, String[] attachements)
         {
             SetSenderAdress = username;
             SetMailPassword = password;
@@ -229,6 +297,26 @@ namespace MentorBilling.Miscellaneous
             SetMailReceiver = recepient;
             SetMailSubject = mailSubject;
             SetMailBody = mailBody;
+            AddAtachement(attachementList);
+        }
+        /// <summary>
+        /// the caller for the class with a specific email and recepient with the specific subject and body and multiple attachements
+        /// </summary>
+        /// <param name="username">the emails username</param>
+        /// <param name="password">the emails password</param>
+        /// <param name="recepient">the emails recepient</param>
+        /// <param name="mailSubject">the emails subject</param>
+        /// <param name="mailBody">the emails body</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        /// <param name="attachementList">the email attachements list</param>
+        public SendMailSmtp(String username, String password, String recepient, String mailSubject, String mailBody, Boolean isBodyHtml, List<String> attachementList)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
             AddAtachement(attachementList);
         }
         #endregion
@@ -284,6 +372,7 @@ namespace MentorBilling.Miscellaneous
             InitializaClient();
             InitializeMail(mailSender, mailReceiver);
             Mail.Body = mailBody;
+            Mail.IsBodyHtml = IsMailHtml;
             Mail.Subject = mailSubject;
             foreach (String atachement in mailAtachements)
             {
@@ -348,6 +437,25 @@ namespace MentorBilling.Miscellaneous
             SendMail();
         }
         /// <summary>
+        /// this function will set the username and password from the settings and send the current mail from the given adress to the given recepient with the given subject and body
+        /// </summary>
+        /// <param name="username">the mail username</param>
+        /// <param name="password">the mail password</param>
+        /// <param name="recepient">the recepient of the curent email</param>
+        /// <param name="mailSubject">the current emails subject</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        /// <param name="mailBody">the current emails body</param>
+        public void SendMail(String username, String password, String recepient, String mailSubject, Boolean isBodyHtml, String mailBody)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
+            SendMail();
+        }
+        /// <summary>
         /// this function will set the username and password from the settings and send the current mail from the given adress to the given recepient with the given subject and body and attachement
         /// </summary>
         /// <param name="username">the mail username</param>
@@ -355,7 +463,7 @@ namespace MentorBilling.Miscellaneous
         /// <param name="recepient">the recepient of the curent email</param>
         /// <param name="mailSubject">the current emails subject</param>
         /// <param name="mailBody">the current emails body</param>
-        /// <param name="attachementList">the current emails attachement</param>
+        /// <param name="attachement">the current emails attachement</param>
         public void SendMail(String username, String password, String recepient, String mailSubject, String mailBody, String attachement)
         {
             SetSenderAdress = username;
@@ -367,6 +475,27 @@ namespace MentorBilling.Miscellaneous
             SendMail();
         }
         /// <summary>
+        /// this function will set the username and password from the settings and send the current mail from the given adress to the given recepient with the given subject and body and attachement
+        /// </summary>
+        /// <param name="username">the mail username</param>
+        /// <param name="password">the mail password</param>
+        /// <param name="recepient">the recepient of the curent email</param>
+        /// <param name="mailSubject">the current emails subject</param>
+        /// <param name="mailBody">the current emails body</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        /// <param name="attachement">the current emails attachement</param>
+        public void SendMail(String username, String password, String recepient, String mailSubject, String mailBody, Boolean isBodyHtml, String attachement)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
+            AddAtachement(attachement);
+            SendMail();
+        }
+        /// <summary>
         /// this function will set the username and password from the settings and send the current mail from the given adress to the given recepient with the given subject and body and attachements
         /// </summary>
         /// <param name="username">the mail username</param>
@@ -374,7 +503,7 @@ namespace MentorBilling.Miscellaneous
         /// <param name="recepient">the recepient of the curent email</param>
         /// <param name="mailSubject">the current emails subject</param>
         /// <param name="mailBody">the current emails body</param>
-        /// <param name="attachementList">the current emails attachements array</param>
+        /// <param name="attachements">the current emails attachements array</param>
         public void SendMail(String username, String password, String recepient, String mailSubject, String mailBody, String[] attachements)
         {
             SetSenderAdress = username;
@@ -382,6 +511,27 @@ namespace MentorBilling.Miscellaneous
             SetMailReceiver = recepient;
             SetMailSubject = mailSubject;
             SetMailBody = mailBody;
+            AddAtachement(attachements);
+            SendMail();
+        }
+        /// <summary>
+        /// this function will set the username and password from the settings and send the current mail from the given adress to the given recepient with the given subject and body and attachements
+        /// </summary>
+        /// <param name="username">the mail username</param>
+        /// <param name="password">the mail password</param>
+        /// <param name="recepient">the recepient of the curent email</param>
+        /// <param name="mailSubject">the current emails subject</param>
+        /// <param name="mailBody">the current emails body</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        /// <param name="attachements">the current emails attachements array</param>
+        public void SendMail(String username, String password, String recepient, String mailSubject, String mailBody, Boolean isBodyHtml, String[] attachements)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
             AddAtachement(attachements);
             SendMail();
         }
@@ -401,6 +551,27 @@ namespace MentorBilling.Miscellaneous
             SetMailReceiver = recepient;
             SetMailSubject = mailSubject;
             SetMailBody = mailBody;
+            AddAtachement(attachementList);
+            SendMail();
+        }
+        /// <summary>
+        /// this function will set the username and password from the settings and send the current mail from the given adress to the given recepient with the given subject and body and attachements
+        /// </summary>
+        /// <param name="username">the mail username</param>
+        /// <param name="password">the mail password</param>
+        /// <param name="recepient">the recepient of the curent email</param>
+        /// <param name="mailSubject">the current emails subject</param>
+        /// <param name="mailBody">the current emails body</param>
+        /// <param name="isBodyHtml">the formatting of the email body</param>
+        /// <param name="attachementList">the current emails attachements list</param>
+        public void SendMail(String username, String password, String recepient, String mailSubject, String mailBody, Boolean isBodyHtml, List<String> attachementList)
+        {
+            SetSenderAdress = username;
+            SetMailPassword = password;
+            SetMailReceiver = recepient;
+            SetMailSubject = mailSubject;
+            SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
             AddAtachement(attachementList);
             SendMail();
         }
