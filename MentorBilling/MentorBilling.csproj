@@ -13,4 +13,8 @@
     <None Include="wwwroot\javascripts\MiscellaneousFunctions.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Miscellaneous\Emails\" />
+  </ItemGroup>
+
 </Project>
