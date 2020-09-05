@@ -27,6 +27,20 @@ namespace MentorBilling.Database.DatabaseLink
             if (!PgSqlConnection.OpenConnection()) return;
             PgSqlConnection.ExecuteNonQuery(QueryCommand, QueryParameter);
         }
+
+        /// <summary>
+        /// this function will log a given action
+        /// </summary>
+        /// <param name="Action">the given action</param>
+        /// <param name="connection">the open connection received from the caller</param>
+        public static void LogAction(String Action, PosgreSqlConnection connection)
+        {
+            String QueryCommand = "INSERT INTO log.log_actiuni(actiune) VALUES(:p_action)";
+            NpgsqlParameter QueryParameter = new NpgsqlParameter("p_action", Action);
+            if (!(connection.connection.State == System.Data.ConnectionState.Open) && !connection.OpenConnection()) return;
+            connection.ExecuteNonQuery(QueryCommand, QueryParameter);
+        }
+
         /// <summary>
         /// this function will log a given action to a specific IP Adress
         /// </summary>
@@ -43,6 +57,25 @@ namespace MentorBilling.Database.DatabaseLink
             if (!PgSqlConnection.OpenConnection()) return;
             PgSqlConnection.ExecuteNonQuery(QueryCommand, QueryParameters);
         }
+
+        /// <summary>
+        /// this function will log a given action to a specific IP Adress
+        /// </summary>
+        /// <param name="Action">the given action</param>
+        /// <param name="IP">the ip adress</param>
+        /// <param name="connection">the open connection received from the caller</param>
+        public static void LogAction(String Action, String IP, PosgreSqlConnection connection)
+        {
+            String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune) VALUES(:p_action,:p_ip)";
+            NpgsqlParameter[] QueryParameters =
+            {
+                new NpgsqlParameter("p_action", Action),
+                new NpgsqlParameter("p_ip",IP)
+            };
+            if (!(connection.connection.State == System.Data.ConnectionState.Open) && !connection.OpenConnection()) return;
+            connection.ExecuteNonQuery(QueryCommand, QueryParameters);
+        }
+
         /// <summary>
         /// this function will log a given action to a specific IP Adress with the database command
         /// </summary>
@@ -61,6 +94,27 @@ namespace MentorBilling.Database.DatabaseLink
             if (!PgSqlConnection.OpenConnection()) return;
             PgSqlConnection.ExecuteNonQuery(QueryCommand, QueryParameters);
         }
+
+        /// <summary>
+        /// this function will log a given action to a specific IP Adress with the database command
+        /// </summary>
+        /// <param name="Action">the given action</param>
+        /// <param name="IP">the ip adress</param>
+        /// <param name="Command">the database command</param>
+        /// <param name="connection">the open connection received from the caller</param>
+        public static void LogAction(String Action, String IP, String Command, PosgreSqlConnection connection)
+        {
+            String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune,comanda) VALUES(:p_action,:p_ip,:p_command)";
+            NpgsqlParameter[] QueryParameters =
+            {
+                new NpgsqlParameter("p_action", Action),
+                new NpgsqlParameter("p_ip",IP),
+                new NpgsqlParameter("p_command",Command)
+            };
+            if (!(connection.connection.State == System.Data.ConnectionState.Open) && !connection.OpenConnection()) return;
+            connection.ExecuteNonQuery(QueryCommand, QueryParameters);
+        }
+
         /// <summary>
         /// this fucntion will log a given action to a specific user
         /// </summary>
@@ -77,6 +131,25 @@ namespace MentorBilling.Database.DatabaseLink
             if (!PgSqlConnection.OpenConnection()) return;
             PgSqlConnection.ExecuteNonQuery(QueryCommand, QueryParameters);
         }
+
+        /// <summary>
+        /// this fucntion will log a given action to a specific user
+        /// </summary>
+        /// <param name="Action">the given action</param>
+        /// <param name="User">the specific user</param>
+        /// <param name="connection">the open connection received from the caller</param>
+        public static void LogAction(String Action, User User, PosgreSqlConnection connection)
+        {
+            String QueryCommand = "INSERT INTO log.log_actiuni(actiune,utilizator_id) VALUES(:p_action,:p_user_id)";
+            NpgsqlParameter[] QueryParameters =
+            {
+                new NpgsqlParameter("p_action",Action),
+                new NpgsqlParameter("p_user_id",User.ID)
+            };
+            if (!(connection.connection.State == System.Data.ConnectionState.Open) && !connection.OpenConnection()) return;
+            connection.ExecuteNonQuery(QueryCommand, QueryParameters);
+        }
+
         /// <summary>
         /// this fucntion will log a given action to a specific user with the database command
         /// </summary>
@@ -95,6 +168,27 @@ namespace MentorBilling.Database.DatabaseLink
             if (!PgSqlConnection.OpenConnection()) return;
             PgSqlConnection.ExecuteNonQuery(QueryCommand, QueryParameters);
         }
+
+        /// <summary>
+        /// this fucntion will log a given action to a specific user with the database command
+        /// </summary>
+        /// <param name="Action">the given action</param>
+        /// <param name="User">the specific user</param>
+        /// <param name="Command">the database command</param>
+        /// <param name="connection">the open connection received from the caller</param>
+        public static void LogAction(String Action, User User, String Command, PosgreSqlConnection connection)
+        {
+            String QueryCommand = "INSERT INTO log.log_actiuni(actiune,utilizator_id,comanda) VALUES(:p_action,:p_user_id,:p_command)";
+            NpgsqlParameter[] QueryParameters =
+            {
+                new NpgsqlParameter("p_action",Action),
+                new NpgsqlParameter("p_user_id",User.ID),
+                new NpgsqlParameter("p_command",Command)
+            };
+            if (!(connection.connection.State == System.Data.ConnectionState.Open) && !connection.OpenConnection()) return;
+            connection.ExecuteNonQuery(QueryCommand, QueryParameters);
+        }
+
         /// <summary>
         /// this function will log a given action to a specific user on a specific ip adress
         /// </summary>
@@ -113,6 +207,27 @@ namespace MentorBilling.Database.DatabaseLink
             if (!PgSqlConnection.OpenConnection()) return;
             PgSqlConnection.ExecuteNonQuery(QueryCommand, QueryParameters);
         }
+
+        /// <summary>
+        /// this function will log a given action to a specific user on a specific ip adress
+        /// </summary>
+        /// <param name="Action">the given action</param>
+        /// <param name="IP">the specific ip adress</param>
+        /// <param name="User">the specific user</param>
+        /// <param name="connection">the open connection received from the caller</param>
+        public static void LogAction(String Action, String IP, User User, PosgreSqlConnection connection)
+        {
+            String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune,utilizator_id) VALUES(:p_action,:p_ip,:p_user_id)";
+            NpgsqlParameter[] QueryParameters =
+            {
+                new NpgsqlParameter("p_action", Action),
+                new NpgsqlParameter("p_ip",IP),
+                new NpgsqlParameter("p_user_id",User.ID)
+            };
+            if (!(connection.connection.State == System.Data.ConnectionState.Open) && !connection.OpenConnection()) return;
+            connection.ExecuteNonQuery(QueryCommand, QueryParameters);
+        }
+
         /// <summary>
         /// this function will log a given action to a specific user on a specific ip adress the database command
         /// </summary>
@@ -132,6 +247,28 @@ namespace MentorBilling.Database.DatabaseLink
             };
             if (!PgSqlConnection.OpenConnection()) return;
             PgSqlConnection.ExecuteNonQuery(QueryCommand, QueryParameters);
+        }
+
+        /// <summary>
+        /// this function will log a given action to a specific user on a specific ip adress the database command
+        /// </summary>
+        /// <param name="Action">the given action</param>
+        /// <param name="IP">the specific ip adress</param>
+        /// <param name="User">the specific user</param>
+        /// <param name="Command">the database command</param>
+        /// <param name="connection">the open connection received from the caller</param>
+        public static void LogAction(String Action, String IP, User User, String Command, PosgreSqlConnection connection)
+        {
+            String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune,utilizator_id,comanda) VALUES(:p_action,:p_ip,:p_user_id,:p_command)";
+            NpgsqlParameter[] QueryParameters =
+            {
+                new NpgsqlParameter("p_action", Action),
+                new NpgsqlParameter("p_ip",IP),
+                new NpgsqlParameter("p_user_id",User.ID),
+                new NpgsqlParameter("p_command",Command)
+            };
+            if (!(connection.connection.State == System.Data.ConnectionState.Open) && !connection.OpenConnection()) return;
+            connection.ExecuteNonQuery(QueryCommand, QueryParameters);
         }
     }
 }

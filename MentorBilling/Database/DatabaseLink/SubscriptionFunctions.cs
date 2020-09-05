@@ -57,6 +57,16 @@ namespace MentorBilling.Database.DatabaseLink
             Int64 newSubscriptionID = (Int64)Settings.Subscriptions.SubscriptionSettings.Subscriptions.ActiveTrialSubscription;
             #region Action Log
             String Action = "Activat abonamentul de trial pentru utilizatorul " + user.Email;
+            String IP = IPFunctions.GetWANIp();
+            String command = String.Format("UPDATE users.abonamente_utilizatori " +
+                                    "SET abonament_id = {0}" +
+                                    " ultima_plata = {1} " +
+                                    "WHERE utilizator_id = {2} AND abonament_id = {3}",
+                                    newSubscriptionID,
+                                    DateTime.Now,
+                                    user.ID,
+                                    currentSubscriptionID
+                                    );
             #endregion
             String queryCommand = "UPDATE users.abonamente_utilizatori " +
                                     "SET abonament_id = :p_new_subscription," +
@@ -70,7 +80,7 @@ namespace MentorBilling.Database.DatabaseLink
                 new NpgsqlParameter("p_new_date",DateTime.Now)
             };
             if (!PgSqlConnection.OpenConnection()) return false;
-            
+            PgSqlConnection.ExecuteNonQuery(queryCommand, queryParameters);
             return false;
         }
         #endregion
