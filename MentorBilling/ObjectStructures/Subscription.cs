@@ -26,6 +26,10 @@ namespace MentorBilling.ObjectStructures
         /// </summary>
         private String explanations { get; set; } = String.Empty;
         /// <summary>
+        /// the last payment made for the subscription
+        /// </summary>
+        private DateTime lastPayment { get; set; } = new DateTime();
+        /// <summary>
         /// the base active period of the Subscription
         /// </summary>
         private Int32 activePeriod { get; set; } = new Int32();
@@ -68,7 +72,14 @@ namespace MentorBilling.ObjectStructures
             get => explanations;
             set => explanations = value;
         }
-
+        /// <summary>
+        /// the main caller fot the lastPayment property
+        /// </summary>
+        public DateTime LastPayment
+        {
+            get => lastPayment;
+            set => lastPayment = value;
+        }
         /// <summary>
         /// the main caller for the active period property
         /// </summary>
@@ -77,6 +88,10 @@ namespace MentorBilling.ObjectStructures
             get => activePeriod;
             set => activePeriod = value;
         }
+        /// <summary>
+        /// the main checker for the validity of the subscription
+        /// </summary>
+        public Boolean IsSubscriptionValid => lastPayment.AddDays(activePeriod) > DateTime.Now;
         #endregion
 
     }

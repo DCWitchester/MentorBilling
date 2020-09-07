@@ -118,6 +118,8 @@ namespace MentorBilling.Database.DatabaseLink
             NpgsqlParameter queryParameter = new NpgsqlParameter("p_user_id",id);
             if (PgSqlConnection.OpenConnection()) return null;
             DataTable result = PgSqlConnection.ExecuteReaderToDataTable(queryCommand, queryParameter);
+            //we close the connection
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
             if(result != null && result.Rows.Count > 0)
                 return new User
                 {
@@ -128,6 +130,20 @@ namespace MentorBilling.Database.DatabaseLink
                     Surname     = result.Rows[0]["NUME"].ToString()
                 };
             return null;
+        }
+        /// <summary>
+        /// this is the main function for retrieving the sysadmin rigths for a given user
+        /// </summary>
+        /// <param name="user">the given user</param>
+        /// <returns>the sysadmin rights</returns>
+        public static Boolean CheckAdministratorRights(User user)
+        {
+            String queryCommand = "SELECT sysadmin FROM users.utilizatori WHERE id = :p_user_id";
+            NpgsqlParameter queryParameter = new NpgsqlParameter("p_user_id", user.ID);
+            if (PgSqlConnection.OpenConnection()) return false;
+            return (Boolean)PgSqlConnection.ExecuteScalar(queryCommand, queryParameter) ?
+                    Miscellaneous.NormalConnectionClose(PgSqlConnection):
+                    Miscellaneous.ErrorConnectionClose(PgSqlConnection);
         }
         #endregion 
     }

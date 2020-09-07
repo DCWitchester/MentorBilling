@@ -1,9 +1,11 @@
 ﻿using MentorBilling.Database.DatabaseController;
 using MentorBilling.Login.UserControllers;
 using MentorBilling.Miscellaneous;
+using MentorBilling.ObjectStructures;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -101,6 +103,44 @@ namespace MentorBilling.Database.DatabaseLink
             ActionLog.LogAction(Action, IP, command, PgSqlConnection);
             //before returning true;
             return Miscellaneous.NormalConnectionClose(PgSqlConnection);
+        }
+        #endregion
+        #region Login
+        /// <summary>
+        /// this function will retrieve a given users active subscription
+        /// </summary>
+        /// <param name="user">the given user</param>
+        /// <returns>the active subscription</returns>
+        public static Subscription GetSubscriptionForUser(User user)
+        {
+            //the select command that will retrieve the data from the server
+            String queryCommand = "SELECT au.id AS id, a.denumire AS name, au.valoare_lunara AS monthly_fee, " +
+                                        "au.valoare_lunara AS monthly_pay, a.explicatii AS explanations" +
+                                        "au.ultima_plata AS last_payment, au.perioada_activa AS active_period " +
+                                        "FROM users.abonamente_utilizatori AS au " +
+                                        "LEFT JOIN users.abonamente AS a " +
+                                        "ON au.abonament_id = a.id " +
+                                        "WHERE au.utilizator_id = :p_user_id AND au.activ";
+            //the command parameters
+            NpgsqlParameter queryParameters = new NpgsqlParameter(":p_user_id",user.ID);
+            //if we fail to open the connection we return a null object
+            if (!PgSqlConnection.OpenConnection()) return null;
+            //else we execute the reader on the table
+            DataTable result = PgSqlConnection.ExecuteReaderToDataTable(queryCommand,queryParameters);
+            //and close the connection once done
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            //afterwards we return the newly created subscription
+            if (result != null && result.Rows.Count > 0)
+                return new Subscription
+                {
+                    ID = (Int64)result.Rows[0]["ID"],
+                    Name = result.Rows[0]["NAME"].ToString(),
+                    MonthlyFee = (Double)result.Rows[0]["MONTHLY_FEE"],
+                    Explanations = result.Rows[0]["EXPLANATIONS"].ToString(),
+                    ActivePeriod = (Int32)result.Rows[0]["ACTIVE_PERIOD"],
+                    LastPayment = (DateTime)result.Rows[0]["LAST_PAYMENT"]
+                };
+            else return null;
         }
         #endregion
     }

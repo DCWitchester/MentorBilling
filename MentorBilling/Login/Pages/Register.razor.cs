@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MentorBilling.Messages;
 using MentorBilling.Miscellaneous;
+using MentorBilling.MainPage;
 
 namespace MentorBilling.Login.Pages
 {
@@ -51,7 +52,10 @@ namespace MentorBilling.Login.Pages
                 }
                 //if this point has been reached a new user has been created and we need to send an activation Link
                 //as such we need to send them a link to activate the email;
-                //Miscellaneous
+                Miscellaneous.Emails.Email.SendValidationEmail(newUser);
+                //not that the pesky things are done we must login
+                //though before we do that we will leave the register page
+                ComponentDisplay.CallMain(DisplaySettings);
                 
 #warning TBD
             }
