@@ -52,12 +52,11 @@ namespace MentorBilling.Login.Pages
                 //if this point has been reached a new user has been created and we need to send an activation Link
                 //as such we need to send them a link to activate the email;
                 //Miscellaneous
-
+                
 #warning TBD
             }
             else
             {
-                String x = "";
                 //we can't access the base html objects from c# so we need JavaScripts(Damn the elders of the Internet)
                 await JSRuntime.InvokeVoidAsync("focusElement","tbSurname");
                 //the call the StateHasChanged to force a page refresh

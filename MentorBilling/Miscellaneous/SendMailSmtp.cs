@@ -102,7 +102,15 @@ namespace MentorBilling.Miscellaneous
         /// <summary>
         /// this is the default emai password
         /// </summary>
-        public String GetAppPath => "vpyuufezmukqmfav";
+        public String GetAppPassword => "vpyuufezmukqmfav";
+        /// <summary>
+        /// this function will set the default sender and app password for the email
+        /// </summary>
+        public void SetDefaultSender() 
+        {
+            mailSender = GetDefaultEmail;
+            mailPassword = GetAppPassword;
+        }
         #endregion Default Values
         /// <summary>
         /// this function will add an atachement to the email
@@ -279,6 +287,7 @@ namespace MentorBilling.Miscellaneous
             SetMailReceiver = recepient;
             SetMailSubject = mailSubject;
             SetMailBody = mailBody;
+            FormatMailBody = isBodyHtml;
             AddAtachement(attachements);
         }
         /// <summary>

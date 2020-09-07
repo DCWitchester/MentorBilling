@@ -1,4 +1,6 @@
-﻿using MentorBilling.Miscellaneous;
+﻿using EASendMail;
+using MentorBilling.Login.UserControllers;
+using MentorBilling.Miscellaneous;
 using System;
 using System.Collections.Generic;
 using System.Linq;

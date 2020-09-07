@@ -106,5 +106,29 @@ namespace MentorBilling.Database.DatabaseLink
             return newUser;
         }
         #endregion
+        #region Validation Functions
+        /// <summary>
+        /// this function will retreive a user from the database based on the ID value
+        /// </summary>
+        /// <param name="id">the id value</param>
+        /// <returns>the user retrieved from the database</returns>
+        public static User RetrieveUser(Int64 id)
+        {
+            String queryCommand = "SELECT * FROM users.utilizatori WHERE id = :p_user_id";
+            NpgsqlParameter queryParameter = new NpgsqlParameter("p_user_id",id);
+            if (PgSqlConnection.OpenConnection()) return null;
+            DataTable result = PgSqlConnection.ExecuteReaderToDataTable(queryCommand, queryParameter);
+            if(result != null && result.Rows.Count > 0)
+                return new User
+                {
+                    ID          = (Int64)result.Rows[0]["ID"],
+                    Username    = result.Rows[0]["NUME_UTILIZATOR"].ToString(),
+                    Email       = result.Rows[0]["EMAIL"].ToString(),
+                    Name        = result.Rows[0]["PRENUME"].ToString(),
+                    Surname     = result.Rows[0]["NUME"].ToString()
+                };
+            return null;
+        }
+        #endregion 
     }
 }
