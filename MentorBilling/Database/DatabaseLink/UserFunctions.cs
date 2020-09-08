@@ -88,22 +88,24 @@ namespace MentorBilling.Database.DatabaseLink
             //this should never happen since they will be on the same server though better safe than sorry
             if (!PgSqlConnection.OpenConnection()) return null;
             //once done we run the sqlCommand and retrieve the values to a new DataTable
-            DataTable dt = PgSqlConnection.ExecuteReaderToDataTable(queryCommand,queryParameters);
+            DataTable result = PgSqlConnection.ExecuteReaderToDataTable(queryCommand,queryParameters);
             //once that is done we close the fucking connection
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
             //we will log the current action
             ActionLog.LogAction(Action, IP, command);
             //before initializing a new user from the dataTable
-            User newUser = new User
-            {
-                ID = (Int64)dt.Rows[0]["ID"],
-                Username = dt.Rows[0]["NUME_UTILIZATOR"].ToString(),
-                Email = dt.Rows[0]["EMAIL"].ToString(),
-                Name = dt.Rows[0]["PRENUME"].ToString(),
-                Surname = dt.Rows[0]["NUME"].ToString()
-            };
-            //then finally return the new user
-            return newUser;
+            if (result != null && result.Rows.Count > 0)
+                //then finally return the new user
+                return new User
+                {
+                    ID = (Int64)result.Rows[0]["ID"],
+                    Username = result.Rows[0]["NUME_UTILIZATOR"].ToString(),
+                    Email = result.Rows[0]["EMAIL"].ToString(),
+                    Name = result.Rows[0]["PRENUME"].ToString(),
+                    Surname = result.Rows[0]["NUME"].ToString()
+                };
+            else
+                return null;
         }
         #endregion
         #region Validation Functions

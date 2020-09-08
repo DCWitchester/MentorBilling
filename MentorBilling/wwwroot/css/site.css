@@ -94,6 +94,29 @@ a, .btn-link {
         background-color: orange;
     }
 
+.btn-primary-mentor {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-style: double;
+    border-color: snow;
+    border-radius: 15px 50px;
+    padding: 5px 15px;
+    margin: 10px;
+    outline: none;
+}
+
+    .btn-primary-mentor:hover {
+        color: #fff;
+        outline: none;
+    }
+
+    .btn-primary-mentor:focus {
+        outline: none;
+        border-radius: 15px 50px;
+        border-color: snow;
+        background-color: orange;
+    }
+
 /*#endregion Button endrgion*/
 
 .btn-primary {

@@ -23,6 +23,10 @@ namespace MentorBilling.Settings
         /// </summary>
         public static UserState.UserStates UserState = Miscellaneous.UserState.UserStates.loggedOut;
         /// <summary>
+        /// the main group for the user
+        /// </summary>
+        public static Group UserGroup { get; set; } = new Group();
+        /// <summary>
         /// the active subscription for the current user
         /// </summary>
         public static Subscription ActiveSubscription { get; set; } = new Subscription();

@@ -115,7 +115,7 @@ namespace MentorBilling.Database.DatabaseLink
         {
             //the select command that will retrieve the data from the server
             String queryCommand = "SELECT au.id AS id, a.denumire AS name, au.valoare_lunara AS monthly_fee, " +
-                                        "au.valoare_lunara AS monthly_pay, a.explicatii AS explanations" +
+                                        "a.id as subcsription_type, a.explicatii AS explanations" +
                                         "au.ultima_plata AS last_payment, au.perioada_activa AS active_period " +
                                         "FROM users.abonamente_utilizatori AS au " +
                                         "LEFT JOIN users.abonamente AS a " +
@@ -138,7 +138,8 @@ namespace MentorBilling.Database.DatabaseLink
                     MonthlyFee = (Double)result.Rows[0]["MONTHLY_FEE"],
                     Explanations = result.Rows[0]["EXPLANATIONS"].ToString(),
                     ActivePeriod = (Int32)result.Rows[0]["ACTIVE_PERIOD"],
-                    LastPayment = (DateTime)result.Rows[0]["LAST_PAYMENT"]
+                    LastPayment = (DateTime)result.Rows[0]["LAST_PAYMENT"],
+                    SubscriptionType = (Int64)result.Rows[0]["SUBSCRIPTION_TYPE"]
                 };
             else return null;
         }

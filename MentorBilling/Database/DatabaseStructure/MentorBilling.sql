@@ -168,6 +168,7 @@ COMMENT ON COLUMN users.abonamente.valoare_lunara IS 'Coloana aceasta va contine
 
 INSERT INTO users.abonamente(id,denumire,activ) VALUES(0,'Utilizator inactiv',false);
 INSERT INTO users.abonamente(denumire,activ) VALUES('Utilizator de trial',false);
+INSERT INTO users.abonamente(denumire,activ) VALUES('Utilizator de grup',false);
 
 --#endregion Abonamente
 

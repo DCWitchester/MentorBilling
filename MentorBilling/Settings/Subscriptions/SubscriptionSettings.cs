@@ -15,7 +15,9 @@ namespace MentorBilling.Settings.Subscriptions
             //the intial inactive subscription
             InactiveSubscription = 0,
             //the initial active subscription
-            ActiveTrialSubscription = 1
+            ActiveTrialSubscription = 1,
+            //the subscription for a user that is part of a group
+            ActiveGroupSubscription = 2
         }
     }
 }
