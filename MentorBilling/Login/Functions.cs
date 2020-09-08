@@ -1,6 +1,8 @@
 ﻿using MentorBilling.Login.UserControllers;
+using MentorBilling.Messages;
 using MentorBilling.Miscellaneous;
 using MentorBilling.Settings.Subscriptions;
+using MentorBilling.Shared.LoginDisplay;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
 using System.Collections.Generic;
@@ -34,15 +36,31 @@ namespace MentorBilling.Login
             {
                 //if the user is not part of an active group we check if he has an active subscription
                 Settings.UserSettings.ActiveSubscription = Database.DatabaseLink.SubscriptionFunctions.GetSubscriptionForUser(user);
-                if(Settings.UserSettings.ActiveSubscription.SubscriptionType == (Int64)SubscriptionSettings.Subscriptions.ActiveGroupSubscription)
+                //if the active subscription is by chance a group subscription that has no group or the active subscription is invalid
+                if(Settings.UserSettings.ActiveSubscription.SubscriptionType == (Int64)SubscriptionSettings.Subscriptions.ActiveGroupSubscription 
+                    || !Settings.UserSettings.ActiveSubscription.IsSubscriptionValid) 
                 {
-
+                    //we force to activate a subscription
+                    Messages.MessageDisplay.CallSubscriptionError(controllers.MessageDisplaySettings);
+                    return;
                 }
+                return;
             }
-
-
-            Settings.UserSettings.ActiveSubscription = Database.DatabaseLink.SubscriptionFunctions.GetSubscriptionForUser(user);
-            //Settings.UserSettings.HasSysadminRights = Database.DatabaseLink.UserFunctions.CheckAdministratorRights(user);
+            //if we reach this point the the user is part of a group
+            //so we retrieve his active subscription from the administrator
+            Settings.UserSettings.ActiveSubscription = Database.DatabaseLink.SubscriptionFunctions.GetSubscriptionForUser(Settings.UserSettings.UserGroup.Administrator);
+            //and one final check 
+            if (!Settings.UserSettings.ActiveSubscription.IsSubscriptionValid)
+            {
+                //we force to activate a subscription
+                Messages.MessageDisplay.CallSubscriptionError(controllers.MessageDisplaySettings);
+                return;
+            }
+            //now all we have to do is be happy for the user is logged in
+            //oh and set the pages
+            MessageDisplay.CallMain(controllers.MessageDisplaySettings);
+            UserState.CallLoggedIn(controllers.LoginDisplayController);
+            MainPage.ComponentDisplay.CallMain(controllers.DisplaySettings);
 #warning TBD: Login Logic
         }
     }
