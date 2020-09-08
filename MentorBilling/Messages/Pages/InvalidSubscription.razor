@@ -1,0 +1,25 @@
+﻿@inject MessageDisplaySettings MessageDisplaySettings
+@inject MentorBilling.MainPage.DisplaySettings DisplaySettings 
+
+<div>
+    <h2>
+        Atentie contul nu are un abonament valid configurat.
+        <br />
+        Pentru a putea folosi in continuare programul va rugam sa configurati un abonament.
+        <br/>
+        <button class="btn-primary-mentor" @onclick="LeaveError">OK</button>
+    </h2>
+</div>
+
+@code {
+    /// <summary>
+    /// the single function on the page so a cs would be overkill
+    /// </summary>
+    public void LeaveError()
+    {
+        //we move to the subscription
+        MentorBilling.MainPage.ComponentDisplay.CallSubscription(DisplaySettings);
+        //and hide the error messages
+        MessageDisplay.CallMain(MessageDisplaySettings);
+    }
+}

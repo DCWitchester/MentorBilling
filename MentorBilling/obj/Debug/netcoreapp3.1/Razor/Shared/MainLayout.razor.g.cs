@@ -106,8 +106,8 @@ using Messages;
 #line hidden
 #nullable disable
             __builder.AddContent(4, "                    ");
-            __builder.OpenComponent<MentorBilling.Messages.DatabaseConnectionError>(5);
-            __builder.CloseComponent();
+            __builder.OpenElement(5, "MentorBilling.Messages.DatabaseConnectionError");
+            __builder.CloseElement();
             __builder.AddMarkupContent(6, "\r\n");
 #nullable restore
 #line 13 "F:\MentorBilling\MBilling\MentorBilling\Shared\MainLayout.razor"

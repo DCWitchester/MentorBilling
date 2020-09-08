@@ -9,9 +9,12 @@
         @switch (MessageDisplaySettings.CurrentError)
         {
             case Messages.MessageDisplay.MessageTypes.DatabaseError:
-                    <MentorBilling.Messages.DatabaseConnectionError />
-                    break;
-            }
+                <MentorBilling.Messages.Pages.DatabaseConnectionError />
+                break;
+            case MessageDisplay.MessageTypes.InvalidSubscription:
+                <MentorBilling.Messages.Pages.InvalidSubscription />
+                break;
+        }
     </div>
 }
 

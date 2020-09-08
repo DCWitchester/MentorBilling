@@ -17,7 +17,9 @@ namespace MentorBilling.MainPage
             //the main page will display the login page
             login = 1,
             //the main page will display the register page
-            register = 2
+            register = 2,
+            //the main page will display the subscriptions
+            subscriptions = 3,
 
         }
         /// <summary>
@@ -28,11 +30,19 @@ namespace MentorBilling.MainPage
             displaySettings.ChangePage(Components.login);
         }
         /// <summary>
-        /// this function will redirect you to the registe page
+        /// this function will redirect you to the register page
         /// </summary>
         public static void CallRegister(DisplaySettings displaySettings)
         {
             displaySettings.ChangePage(Components.register);
+        }
+        /// <summary>
+        /// this function will redirect you to the subscription page
+        /// </summary>
+        /// <param name="displaySettings"></param>
+        public static void CallSubscription(DisplaySettings displaySettings)
+        {
+            displaySettings.ChangePage(Components.subscriptions);
         }
         /// <summary>
         /// this function will redirect you back to the main page

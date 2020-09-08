@@ -15,7 +15,9 @@ namespace MentorBilling.Messages
             //no error to display
             None = 0,
             //database Error to dispaly
-            DatabaseError = 1
+            DatabaseError = 1,
+            //the invalid subscription message
+            InvalidSubscription = 2
         }
         /// <summary>
         /// this function will display the database error message
@@ -32,6 +34,14 @@ namespace MentorBilling.Messages
         public static void CallMain(MessageDisplaySettings messageDisplaySettings)
         {
             messageDisplaySettings.ChangeMessageType(MessageTypes.None);
+        }
+        /// <summary>
+        /// this function will remove the error message
+        /// </summary>
+        /// <param name="messageDisplaySettings"></param>
+        public static void CallSubscriptionError(MessageDisplaySettings messageDisplaySettings)
+        {
+            messageDisplaySettings.ChangeMessageType(MessageTypes.InvalidSubscription);
         }
     }
 }
