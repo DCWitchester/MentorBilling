@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MentorBilling.Database.DatabaseLink;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,22 +25,12 @@ namespace MentorBilling.Login.UserControllers
         /// the main item for the password validity
         /// </summary>
         [Range(typeof(bool), "true", "true", ErrorMessage = "Combinatia utilizator\\parola nu exista.")]
-        public Boolean IsPasswordValid { get; set; }
+        public Boolean IsPasswordValid { get => UserFunctions.CheckAccountValidity(this); }
 
         /// <summary>
         /// the main item for the user/email validity
         /// </summary>
         [Range(typeof(bool), "true", "true", ErrorMessage = "Numele de utilizator sau adresa de email introdusa nu are nici un cont atribuit")]
-        public Boolean DoesUsernameExist { get; set; }
-
-        /// <summary>
-        /// this function validates the password by comparing it to an existing password
-        /// </summary>
-        /// <param name="RetrievedPassword">the existing password</param>
-        public void CheckPassword(String RetrievedPassword)
-        {
-            IsPasswordValid = RetrievedPassword == Password;
-        }
-
+        public Boolean DoesUsernameExist { get => UserFunctions.CheckUsernameOrEmail(this); }
     }
 }

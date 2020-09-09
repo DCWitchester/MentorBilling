@@ -8,9 +8,9 @@ namespace MentorBilling.MiscellaneousPages
     public partial class ValidateAccount
     {
         [Parameter]
-        public String AccountID { get; set; }
+        public String Account { get; set; }
 
-        User User { get; set; }
+        User User { get; set; } = new User();
 
         protected override async Task OnInitializedAsync()
         {
@@ -24,7 +24,7 @@ namespace MentorBilling.MiscellaneousPages
         Int64 RetrieveParameter()
         {
             Miscellaneous.Encryption encryption = new Miscellaneous.Encryption();
-            return Convert.ToInt64(encryption.Decrypt(AccountID));
+            return Convert.ToInt64(encryption.Decrypt(Account));
         }
 
         /// <summary>

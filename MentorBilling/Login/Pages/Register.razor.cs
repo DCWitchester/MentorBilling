@@ -16,8 +16,11 @@ namespace MentorBilling.Login.Pages
         //the onAfterRenderAsync is raised after every form refresh
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+            if (firstRender)
+            {
                 //we can't access the base html objects from c# so we need JavaScripts(Damn the elders of the Internet)
                 await JSRuntime.InvokeVoidAsync("focusElement", "tbSurname");
+            }
         }
         /// <summary>
         /// the main Register Controller for the page
@@ -56,8 +59,12 @@ namespace MentorBilling.Login.Pages
                 //not that the pesky things are done we must login
                 //though before we do that we will leave the register page
                 ComponentDisplay.CallMain(DisplaySettings);
-                
-#warning TBD
+                //now we also Login the user
+                Functions.Login(newUser, new Controllers {
+                    DisplaySettings = DisplaySettings,
+                    MessageDisplaySettings = MessageDisplaySettings,
+                    LoginDisplayController = LoginDisplayController
+                });
             }
             else
             {

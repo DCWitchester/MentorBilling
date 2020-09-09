@@ -1,9 +1,12 @@
 ﻿@inject IJSRuntime JSRuntime
+@inject MentorBilling.Messages.MessageDisplaySettings MessageDisplaySettings
+@inject MentorBilling.MainPage.DisplaySettings DisplaySettings
+@inject MentorBilling.Shared.LoginDisplay.LoginDisplayController LoginDisplayController
 
 <h1>Login</h1>
 <div>
     <!--The Main EditForm for the Login-->
-    <EditForm Model="@PageController">
+    <EditForm Model="@PageController" OnValidSubmit="@(e => ValidateLogin(true))" OnInvalidSubmit="@(e => ValidateLogin(false))">
         <!--The DataAnnotationsValidator binds the page to the object errors-->
         <DataAnnotationsValidator />
         <!--Then we add the elements-->
@@ -34,7 +37,7 @@
         <ValidationMessage For="@(()=>PageController.DoesUsernameExist)" />
         <!--The main validation button-->
         <div class="form-group text-center mb-0">
-            <button type="submit" class="btn btn-primary" id="BtnLogin">Login</button>
+            <button type="submit" class="btn btn-primary-validate" id="BtnLogin">Login</button>
         </div>
     </EditForm>
 </div>

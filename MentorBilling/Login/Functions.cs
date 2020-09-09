@@ -25,6 +25,7 @@ namespace MentorBilling.Login
             {
                 //we log in the user
                 Settings.UserSettings.UserState = UserState.UserStates.loggedIn;
+                UserState.CallLoggedIn(controllers.LoginDisplayController);
                 Database.DatabaseLink.UserLog.LoginUser(user);
                 return;
             }
@@ -41,9 +42,11 @@ namespace MentorBilling.Login
                     || !Settings.UserSettings.ActiveSubscription.IsSubscriptionValid) 
                 {
                     //we force to activate a subscription
-                    Messages.MessageDisplay.CallSubscriptionError(controllers.MessageDisplaySettings);
+                    MessageDisplay.CallSubscriptionError(controllers.MessageDisplaySettings);
                     return;
                 }
+                Database.DatabaseLink.UserLog.LoginUser(user);
+                SetPagesToMain(controllers);
                 return;
             }
             //if we reach this point the the user is part of a group
@@ -53,15 +56,24 @@ namespace MentorBilling.Login
             if (!Settings.UserSettings.ActiveSubscription.IsSubscriptionValid)
             {
                 //we force to activate a subscription
-                Messages.MessageDisplay.CallSubscriptionError(controllers.MessageDisplaySettings);
+                MessageDisplay.CallSubscriptionError(controllers.MessageDisplaySettings);
                 return;
             }
             //now all we have to do is be happy for the user is logged in
+            Database.DatabaseLink.UserLog.LoginUser(user);
             //oh and set the pages
+            SetPagesToMain(controllers);
+            //at this point the login is done
+        }
+        /// <summary>
+        /// this function will set all controllers to their main functionality
+        /// </summary>
+        /// <param name="controllers">the controllers</param>
+        public static void SetPagesToMain(Controllers controllers)
+        {
             MessageDisplay.CallMain(controllers.MessageDisplaySettings);
             UserState.CallLoggedIn(controllers.LoginDisplayController);
             MainPage.ComponentDisplay.CallMain(controllers.DisplaySettings);
-#warning TBD: Login Logic
         }
     }
 }

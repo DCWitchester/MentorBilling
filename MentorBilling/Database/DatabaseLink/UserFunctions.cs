@@ -108,6 +108,71 @@ namespace MentorBilling.Database.DatabaseLink
                 return null;
         }
         #endregion
+        #region Login Functions
+        /// <summary>
+        /// this function will check if there is already an account with the current login controllers username or email
+        /// </summary>
+        /// <param name="registerController">the current login controller</param>
+        /// <returns>wether another account with the controllers username or email exists or not</returns>
+        public static Boolean CheckUsernameOrEmail(LoginController loginController)
+        {
+            String sqlCommand = "SELECT COUNT(*) FROM users.utilizatori WHERE nume_utilizator = :p_username OR email = :p_username";
+            NpgsqlParameter npgsqlParameter = new NpgsqlParameter(":p_username", loginController.Username);
+            if (!PgSqlConnection.OpenConnection()) return false;
+            Boolean result = (Int64)PgSqlConnection.ExecuteScalar(sqlCommand, npgsqlParameter) > 0;
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            return result;
+        }
+        /// <summary>
+        /// this function will check if a valid account is linked to the username-password or email-password 
+        /// </summary>
+        /// <param name="loginController">the given login controller</param>
+        /// <returns></returns>
+        public static Boolean CheckAccountValidity(LoginController loginController)
+        {
+            String queryCommand = "SELECT COUNT(*) FROM users.utilizatori WHERE (nume_utilizator = :p_username OR email = :p_email) AND parola = :p_password AND activ";
+            NpgsqlParameter[] queryParameters =
+            {
+                new NpgsqlParameter("p_username",loginController.Username),
+                new NpgsqlParameter("p_email",loginController.Username),
+                new NpgsqlParameter("p_password",loginController.Password)
+            };
+            if (!PgSqlConnection.OpenConnection()) return false;
+            Boolean result = (Int64)PgSqlConnection.ExecuteScalar(queryCommand, queryParameters) > 0;
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            return result;
+        }
+        /// <summary>
+        /// this function will retrieve the account linked to the username-password or email-password
+        /// </summary>
+        /// <param name="loginController"></param>
+        /// <returns></returns>
+        public static User RetrieveUser(LoginController loginController)
+        {
+            String queryCommand = "SELECT * FROM users.utilizatori WHERE (nume_utilizator = :p_username OR email = :p_email) AND parola = :p_password AND activ";
+            NpgsqlParameter[] queryParameters =
+            {
+                new NpgsqlParameter("p_username",loginController.Username),
+                new NpgsqlParameter("p_email",loginController.Username),
+                new NpgsqlParameter("p_password",loginController.Password)
+            };
+            if (!PgSqlConnection.OpenConnection()) return null;
+            DataTable result = PgSqlConnection.ExecuteReaderToDataTable(queryCommand, queryParameters);
+            //we close the connection
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            if (result != null && result.Rows.Count > 0)
+                return new User
+                {
+                    ID = (Int64)result.Rows[0]["ID"],
+                    Username = result.Rows[0]["NUME_UTILIZATOR"].ToString(),
+                    Email = result.Rows[0]["EMAIL"].ToString(),
+                    Name = result.Rows[0]["PRENUME"].ToString(),
+                    Surname = result.Rows[0]["NUME"].ToString()
+                };
+            else
+                return null;
+        }
+        #endregion
         #region Validation Functions
         /// <summary>
         /// this function will retreive a user from the database based on the ID value
@@ -118,7 +183,7 @@ namespace MentorBilling.Database.DatabaseLink
         {
             String queryCommand = "SELECT * FROM users.utilizatori WHERE id = :p_user_id";
             NpgsqlParameter queryParameter = new NpgsqlParameter("p_user_id",id);
-            if (PgSqlConnection.OpenConnection()) return null;
+            if (!PgSqlConnection.OpenConnection()) return null;
             DataTable result = PgSqlConnection.ExecuteReaderToDataTable(queryCommand, queryParameter);
             //we close the connection
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
@@ -142,7 +207,7 @@ namespace MentorBilling.Database.DatabaseLink
         {
             String queryCommand = "SELECT sysadmin FROM users.utilizatori WHERE id = :p_user_id";
             NpgsqlParameter queryParameter = new NpgsqlParameter("p_user_id", user.ID);
-            if (PgSqlConnection.OpenConnection()) return false;
+            if (! PgSqlConnection.OpenConnection()) return false;
             return (Boolean)PgSqlConnection.ExecuteScalar(queryCommand, queryParameter) ?
                     Miscellaneous.NormalConnectionClose(PgSqlConnection):
                     Miscellaneous.ErrorConnectionClose(PgSqlConnection);

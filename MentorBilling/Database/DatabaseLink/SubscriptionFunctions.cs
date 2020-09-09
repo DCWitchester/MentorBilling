@@ -41,10 +41,10 @@ namespace MentorBilling.Database.DatabaseLink
             NpgsqlParameter[] queryParameters =
             {
                 new NpgsqlParameter("p_user_id",user.ID),
-                new NpgsqlParameter("p_abonament_id",currentSubsciptionID)
+                new NpgsqlParameter("p_subscription_id",currentSubsciptionID)
             };
             //if the connection fails we return false
-            if (PgSqlConnection.OpenConnection()) return false;
+            if (!PgSqlConnection.OpenConnection()) return false;
             //else we execute the command
             PgSqlConnection.ExecuteNonQuery(queryCommand, queryParameters);
             //we also log the action on the same connection
@@ -115,7 +115,7 @@ namespace MentorBilling.Database.DatabaseLink
         {
             //the select command that will retrieve the data from the server
             String queryCommand = "SELECT au.id AS id, a.denumire AS name, au.valoare_lunara AS monthly_fee, " +
-                                        "a.id as subcsription_type, a.explicatii AS explanations" +
+                                        "a.id as subscription_type, a.explicatii AS explanations, " +
                                         "au.ultima_plata AS last_payment, au.perioada_activa AS active_period " +
                                         "FROM users.abonamente_utilizatori AS au " +
                                         "LEFT JOIN users.abonamente AS a " +

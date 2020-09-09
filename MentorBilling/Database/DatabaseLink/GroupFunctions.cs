@@ -22,11 +22,11 @@ namespace MentorBilling.Database.DatabaseLink
         public static Group GetUserGroup(User user)
         {
             String queryCommand = "SELECT g.id AS id, g.denumire AS name, u.id AS admin_id," +
-                                    "u.nume_utilizator AS admin_username, u.nume AS admin_surname" +
+                                    "u.nume_utilizator AS admin_username, u.nume AS admin_surname, " +
                                     "u.prenume AS admin_name " +
-                                    "FROM grupuri_utilizatori AS gu " +
-                                    "LEFT JOIN grupuri AS g ON gu.grup_id = g.id " +
-                                    "LEFT JOIN utilizatori AS u ON u.id = g.administrator_grup " +
+                                    "FROM users.grupuri_utilizatori AS gu " +
+                                    "LEFT JOIN users.grupuri AS g ON gu.grup_id = g.id " +
+                                    "LEFT JOIN users.utilizatori AS u ON u.id = g.administrator_grup " +
                                     "WHERE gu.utilizator_id = :p_user_id AND gu.activ AND g.activ";
             NpgsqlParameter queryParameter = new NpgsqlParameter("p_user_id", user.ID);
             if (!PgSqlConnection.OpenConnection()) return null;

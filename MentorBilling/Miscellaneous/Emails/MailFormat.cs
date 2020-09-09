@@ -28,8 +28,7 @@ namespace MentorBilling.Miscellaneous.Emails
 #if DEBUG
         static String getValidationWebAdress => "localhost:44359/validateAccount/";
 #else
-#error TBD Validation Email
-        String getValidationWebAdress => "";
+        String getValidationWebAdress => "192.168.13.13:5678/validateAccount/";
 #endif
 
         public static String GetValidationEmail(User user)

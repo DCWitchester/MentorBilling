@@ -14,13 +14,32 @@ namespace MentorBilling.Login.Pages
         //the onAfterRenderAsync is raised after every form refresh
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            //we can't access the base html objects from c# so we need JavaScripts(Damn the elders of the Internet)
-            await JSRuntime.InvokeVoidAsync("focusElement", "tbUsername");
+            if (firstRender)
+            {
+                //we can't access the base html objects from c# so we need JavaScripts(Damn the elders of the Internet)
+                await JSRuntime.InvokeVoidAsync("focusElement", "tbUsername");
+            }
         }
 
-        void ValidateLogin()
+        /// <summary>
+        /// the main validation for the for the page
+        /// </summary>
+        /// <param name="ControllerState">the controller state</param>
+        void ValidateLogin(Boolean ControllerState)
         {
-#warning TBD FormValidate
+            //if the controller state is valid
+            if (ControllerState)
+            {
+                //we retrieve the logged in user
+                User loggedUser =  Database.DatabaseLink.UserFunctions.RetrieveUser(PageController);
+                //then login the user
+                Functions.Login(loggedUser, new Miscellaneous.Controllers {
+                    DisplaySettings = DisplaySettings,
+                    MessageDisplaySettings = MessageDisplaySettings,
+                    LoginDisplayController = LoginDisplayController
+                });
+            }
+
         }
     }
 }
