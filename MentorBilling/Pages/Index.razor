@@ -5,3 +5,12 @@
 Welcome to your new app.
 
 <MentorBilling.MainPage.MainDisplay/>
+
+<button @onclick="ResendMail">Retrimite Email</button>
+
+@functions{
+    void ResendMail()
+    {
+        //MentorBilling.Miscellaneous.Emails.Email.SendValidationEmail(MentorBilling.Settings.UserSettings.LoggedInUser);
+    }
+}

@@ -1,8 +1,3 @@
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.AssemblyInfoInputs.cache
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.AssemblyInfo.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csproj.CoreCompileInputs.cache
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.MvcApplicationPartsAssemblyInfo.cache
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.RazorComponent.input.cache
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\appsettings.Development.json
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\appsettings.json
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -16,12 +11,18 @@ F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\MentorBilling.Vi
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\MentorBilling.Views.pdb
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\EASendMail.dll
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Npgsql.dll
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.AssemblyInfoInputs.cache
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.AssemblyInfo.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csproj.CoreCompileInputs.cache
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.MvcApplicationPartsAssemblyInfo.cache
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.RazorComponent.input.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Login\Pages\Login.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Login\Pages\Register.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\MainPage\MainDisplay.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Messages\Pages\DatabaseConnectionError.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Messages\Pages\InvalidSubscription.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\MiscellaneousPages\ResetPassword.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\MiscellaneousPages\ValidateAccount.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
@@ -41,6 +42,7 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Login\Page
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\MainPage\MainDisplay.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Messages\Pages\DatabaseConnectionError.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Messages\Pages\InvalidSubscription.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\MiscellaneousPages\ResetPassword.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\MiscellaneousPages\ValidateAccount.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs

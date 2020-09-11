@@ -1,18 +1,16 @@
-﻿@inject DisplaySettings DisplaySettings
-
-@switch (DisplaySettings.PageComponents)
+﻿@switch (InstanceController.DisplaySettings.PageComponents)
 {
     case ComponentDisplay.Components.login:
         {
             <div class="center-screen">
-                <MentorBilling.Login.Pages.Login />
+                <MentorBilling.Login.Pages.Login InstanceController="@InstanceController"/>
             </div>
             break;
         }
     case ComponentDisplay.Components.register:
         {
             <div class="center-screen">
-                <MentorBilling.Login.Pages.Register />
+                <MentorBilling.Login.Pages.Register InstanceController="@InstanceController" />
             </div>
             break;
         }

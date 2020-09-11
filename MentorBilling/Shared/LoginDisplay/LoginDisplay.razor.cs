@@ -1,6 +1,8 @@
 ﻿using EASendMail;
+using MentorBilling.ControllerService;
 using MentorBilling.Login.UserControllers;
 using MentorBilling.Miscellaneous;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +12,14 @@ namespace MentorBilling.Shared.LoginDisplay
 {
     public partial class LoginDisplay
     {
+        [Parameter] public InstanceController InstanceController { get; set;}
         #region DisplayController
         /// <summary>
         /// the main initialization of the page
         /// </summary>
         protected override void OnInitialized()
         {
-            DisplaySettings.OnChange += OnMyChangeHandler;
+            InstanceController.DisplaySettings.OnChange += OnMyChangeHandler;
             base.OnInitialized();
         }
         /// <summary>
@@ -24,7 +27,7 @@ namespace MentorBilling.Shared.LoginDisplay
         /// </summary>
         public void Dispose()
         {
-            DisplaySettings.OnChange -= OnMyChangeHandler;
+            InstanceController.DisplaySettings.OnChange -= OnMyChangeHandler;
         }
         /// <summary>
         /// the  main handler for the state change
@@ -39,14 +42,14 @@ namespace MentorBilling.Shared.LoginDisplay
         /// </summary>
         private void LoginClick()
         {
-            MainPage.ComponentDisplay.CallLogin(DisplaySettings);
+            MainPage.ComponentDisplay.CallLogin(InstanceController.DisplaySettings);
         }
         /// <summary>
         /// the main Register Click on the page
         /// </summary>
         private void RegisterClick()
         {
-            MainPage.ComponentDisplay.CallRegister(DisplaySettings);
+            MainPage.ComponentDisplay.CallRegister(InstanceController.DisplaySettings);
         }
     }
 }

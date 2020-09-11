@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 using MentorBilling.Messages;
 using MentorBilling.Miscellaneous;
 using MentorBilling.MainPage;
+using Microsoft.AspNetCore.Components;
+using MentorBilling.ControllerService;
 
 namespace MentorBilling.Login.Pages
 {
     public partial class Register
     {
+        [Parameter] public InstanceController InstanceController { get; set; }
         //the onAfterRenderAsync is raised after every form refresh
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -41,7 +44,7 @@ namespace MentorBilling.Login.Pages
                 //if the creation of the user has failed we call the database connection error
                 if (newUser == null)
                 {
-                    MessageDisplay.CallDatabaseError(MessageDisplaySettings);
+                    MessageDisplay.CallDatabaseError(InstanceController.MessageDisplaySettings);
                     //we return so as not to continue code execution
                     return;
                 }
@@ -49,7 +52,7 @@ namespace MentorBilling.Login.Pages
                 if (!SubscriptionFunctions.GenerateInactiveSubscription(newUser))
                 {
                     //if we fail we call error
-                    MessageDisplay.CallDatabaseError(MessageDisplaySettings);
+                    MessageDisplay.CallDatabaseError(InstanceController.MessageDisplaySettings);
                     //we return so as not to continue code execution
                     return;
                 }
@@ -58,13 +61,9 @@ namespace MentorBilling.Login.Pages
                 Miscellaneous.Emails.Email.SendValidationEmail(newUser);
                 //not that the pesky things are done we must login
                 //though before we do that we will leave the register page
-                ComponentDisplay.CallMain(DisplaySettings);
+                ComponentDisplay.CallMain(InstanceController.DisplaySettings);
                 //now we also Login the user
-                Functions.Login(newUser, new Controllers {
-                    DisplaySettings = DisplaySettings,
-                    MessageDisplaySettings = MessageDisplaySettings,
-                    LoginDisplayController = LoginDisplayController
-                });
+                Functions.Login(newUser, InstanceController);
             }
             else
             {
@@ -83,7 +82,7 @@ namespace MentorBilling.Login.Pages
             //if the creation of the user has failed we call the database connection error
             if (newUser == null)
             {
-                MessageDisplay.CallDatabaseError(MessageDisplaySettings);
+                MessageDisplay.CallDatabaseError(InstanceController.MessageDisplaySettings);
                 //we return so as not to continue code execution
                 return;
             }
@@ -91,7 +90,7 @@ namespace MentorBilling.Login.Pages
             if (!SubscriptionFunctions.GenerateInactiveSubscription(newUser))
             {
                 //if we fail we call error
-                MessageDisplay.CallDatabaseError(MessageDisplaySettings);
+                MessageDisplay.CallDatabaseError(InstanceController.MessageDisplaySettings);
                 //we return so as not to continue code execution
                 return;
             }
@@ -100,7 +99,7 @@ namespace MentorBilling.Login.Pages
             Miscellaneous.Emails.Email.SendValidationEmail(newUser);
             //not that the pesky things are done we must login
             //though before we do that we will leave the register page
-            ComponentDisplay.CallMain(DisplaySettings);
+            ComponentDisplay.CallMain(InstanceController.DisplaySettings);
         }
     }
 }

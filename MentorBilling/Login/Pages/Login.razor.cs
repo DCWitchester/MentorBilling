@@ -1,4 +1,6 @@
-﻿using MentorBilling.Login.UserControllers;
+﻿using MentorBilling.ControllerService;
+using MentorBilling.Login.UserControllers;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ namespace MentorBilling.Login.Pages
 {
     public partial class Login
     {
+        [Parameter] public InstanceController InstanceController { get; set; }
         readonly LoginController PageController = new LoginController();
 
         //the onAfterRenderAsync is raised after every form refresh
@@ -33,11 +36,7 @@ namespace MentorBilling.Login.Pages
                 //we retrieve the logged in user
                 User loggedUser =  Database.DatabaseLink.UserFunctions.RetrieveUser(PageController);
                 //then login the user
-                Functions.Login(loggedUser, new Miscellaneous.Controllers {
-                    DisplaySettings = DisplaySettings,
-                    MessageDisplaySettings = MessageDisplaySettings,
-                    LoginDisplayController = LoginDisplayController
-                });
+                Functions.Login(loggedUser, InstanceController);
             }
 
         }

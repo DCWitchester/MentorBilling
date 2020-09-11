@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MentorBilling.ControllerService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,13 +8,14 @@ namespace MentorBilling.Shared
 {
     public partial class MainLayout
     {
+        readonly InstanceController InstanceController = new InstanceController();
         #region DisplayController
         /// <summary>
         /// the main initialization of the page
         /// </summary>
         protected override void OnInitialized()
         {
-            MessageDisplaySettings.OnChange += OnMyChangeHandler;
+            InstanceController.MessageDisplaySettings.OnChange += OnMyChangeHandler;
             base.OnInitialized();
         }
         /// <summary>
@@ -21,7 +23,7 @@ namespace MentorBilling.Shared
         /// </summary>
         public void Dispose()
         {
-            MessageDisplaySettings.OnChange -= OnMyChangeHandler;
+            InstanceController.MessageDisplaySettings.OnChange -= OnMyChangeHandler;
         }
         /// <summary>
         /// the  main handler for the state change

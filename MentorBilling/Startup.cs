@@ -32,18 +32,6 @@ namespace MentorBilling
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            #region Special Page Controllers
-            //the main service for the main page controller
-            services.AddSingleton<DisplaySettings>();
-            //the main service for the messageDisplayController
-            services.AddSingleton<MessageDisplaySettings>();
-            //the main service for the LoginDisplayController
-            services.AddSingleton<LoginDisplayController>();
-            //the main services for httpContextAccessors
-            //might not be used
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddHttpContextAccessor();
-            #endregion
 
             // Server Side Blazor doesn't register HttpClient by default
             if (!services.Any(x => x.ServiceType == typeof(HttpClient)))
@@ -80,6 +68,7 @@ namespace MentorBilling
 
             app.UseRouting();
 
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();

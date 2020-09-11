@@ -24,7 +24,7 @@ namespace MentorBilling.MiscellaneousPages
         Int64 RetrieveParameter()
         {
             Miscellaneous.Encryption encryption = new Miscellaneous.Encryption();
-            return Convert.ToInt64(encryption.Decrypt(Account));
+            return Convert.ToInt64(encryption.Decrypt(Account.Replace("\"","")));
         }
 
         /// <summary>

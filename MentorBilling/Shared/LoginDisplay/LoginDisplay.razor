@@ -1,11 +1,9 @@
 ﻿@inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime
-@inject MentorBilling.MainPage.DisplaySettings DisplaySettings
-@inject LoginDisplayController LoginDisplayController
 
 <div>
     <!--The Main Switch Controller-->
-    @switch (LoginDisplayController.UserState)
+    @switch (InstanceController.LoginDisplayController.UserState)
     {
         case Miscellaneous.UserState.UserStates.loggingIn:
             <!--In case the user is Logging In-->
@@ -17,7 +15,7 @@
             <!--In case the user aslready is logged in-->
             <!--We Display the Welcome Message for now-->
             <div>
-                <label style="color:white; margin:10px">Bine ati venit @Settings.UserSettings.LoggedInUser.DisplayName</label>
+                <label style="color:white; margin:10px">Bine ati venit @(InstanceController.UserSettings.LoggedInUser.DisplayName)</label>
             </div>
             break;
         case Miscellaneous.UserState.UserStates.loggedOut:

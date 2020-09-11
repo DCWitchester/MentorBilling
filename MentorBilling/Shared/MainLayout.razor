@@ -1,24 +1,22 @@
 ﻿@inherits LayoutComponentBase
-@using Messages
-@inject MessageDisplaySettings MessageDisplaySettings
 
-@if (MessageDisplaySettings.MessageWaiting)
+@if (InstanceController.MessageDisplaySettings.MessageWaiting)
 {
     <div id="dark_cover"></div>
     <div class="overlay">
-        @switch (MessageDisplaySettings.CurrentError)
+        @switch (InstanceController.MessageDisplaySettings.CurrentError)
         {
             case Messages.MessageDisplay.MessageTypes.DatabaseError:
                 <MentorBilling.Messages.Pages.DatabaseConnectionError />
                 break;
-            case MessageDisplay.MessageTypes.InvalidSubscription:
+            case Messages.MessageDisplay.MessageTypes.InvalidSubscription:
                 <MentorBilling.Messages.Pages.InvalidSubscription />
                 break;
         }
     </div>
 }
 
-@if (Settings.UserSettings.UserState == Miscellaneous.UserState.UserStates.loggingIn)
+@if (InstanceController.UserSettings.UserState == Miscellaneous.UserState.UserStates.loggingIn)
 {
     <div class="sidebar">
         <NavMenu />
@@ -27,11 +25,12 @@
 
 <div class="main">
     <div class="top-row px-4">
-        <MentorBilling.Shared.LoginDisplay.LoginDisplay/>
+        <MentorBilling.Shared.LoginDisplay.LoginDisplay InstanceController="@InstanceController"/>
         <a href="http://www.mentorsoft.ro/" style="color:snow" target="_blank">About</a>
     </div>
 
     <div class="content px-4">
-        @Body
+        <MentorBilling.MainPage.MainDisplay InstanceController="@InstanceController" />
+        <!--Body-->
     </div>
 </div>
