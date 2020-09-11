@@ -1,6 +1,7 @@
 ﻿using MentorBilling.Database.DatabaseController;
 using MentorBilling.Login.UserControllers;
 using MentorBilling.Miscellaneous;
+using MentorBilling.MiscellaneousPages.Controllers;
 using Microsoft.AspNetCore.Http;
 using Npgsql;
 using System;
@@ -212,6 +213,41 @@ namespace MentorBilling.Database.DatabaseLink
                     Miscellaneous.NormalConnectionClose(PgSqlConnection):
                     Miscellaneous.ErrorConnectionClose(PgSqlConnection);
         }
-        #endregion 
+        #endregion
+        #region Reset Functions
+        /// <summary>
+        /// this is the main function for updating the password
+        /// </summary>
+        /// <param name="user">the user for which we will update the password</param>
+        /// <param name="resetPasswordController">the password</param>
+        /// <returns>the state of the query</returns>
+        public static Boolean UpdatePasswordFunctions(User user, ResetPasswordController resetPasswordController)
+        {
+            #region LogAction
+            //the main Action for the log
+            String Action = String.Format("Sa actualizat parola utilizatorului cu emailul {0}",user.Email);
+            //the main command format for the log
+            String Command = String.Format("UPDATE users.utilizatori SET parola = {0} WHERE id = {1}", resetPasswordController.Password,user.ID);
+            //then we will create a new ipFunctions to get the WanIP
+            String IP = IPFunctions.GetWANIp();
+            #endregion
+            //the query string
+            String queryCommand = "UPDATE users.utilizatori SET parola = :p_password WHERE id = :p_user_id";
+            //the query parameters
+            NpgsqlParameter[] queryParamaters =
+            {
+                new NpgsqlParameter("p_password",resetPasswordController.Password),
+                new NpgsqlParameter("p_user_id",user.ID)
+            };
+            //we attempt to open the connection
+            if (!PgSqlConnection.OpenConnection()) return false;
+            //we execute the update command
+            PgSqlConnection.ExecuteNonQuery(queryCommand, queryParamaters);
+            //log the action
+            ActionLog.LogAction(Action, Command, IP, PgSqlConnection);
+            //before closing the connection
+            return Miscellaneous.NormalConnectionClose(PgSqlConnection);
+        }
+        #endregion
     }
 }

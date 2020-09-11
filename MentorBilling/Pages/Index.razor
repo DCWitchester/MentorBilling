@@ -1,16 +1,36 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<MentorBilling.MainPage.MainDisplay/>
-
-<button @onclick="ResendMail">Retrimite Email</button>
-
-@functions{
-    void ResendMail()
-    {
-        //MentorBilling.Miscellaneous.Emails.Email.SendValidationEmail(MentorBilling.Settings.UserSettings.LoggedInUser);
-    }
+@if (InstanceController.MessageDisplaySettings.MessageWaiting)
+{
+    <div id="dark_cover"></div>
+    <div class="overlay">
+        @switch (InstanceController.MessageDisplaySettings.CurrentError)
+        {
+            case Messages.MessageDisplay.MessageTypes.DatabaseError:
+                <MentorBilling.Messages.Pages.DatabaseConnectionError />
+                break;
+            case Messages.MessageDisplay.MessageTypes.InvalidSubscription:
+                <MentorBilling.Messages.Pages.InvalidSubscription />
+                break;
+        }
+    </div>
 }
+
+@if (InstanceController.UserSettings.UserState == Miscellaneous.UserState.UserStates.loggingIn)
+{
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+}
+
+<div class="main">
+    <div class="top-row px-4">
+        <MentorBilling.Shared.LoginDisplay.LoginDisplay InstanceController="@InstanceController" />
+        <a href="http://www.mentorsoft.ro/" style="color:snow" target="_blank">About</a>
+    </div>
+
+    <div class="content px-4">
+        <MentorBilling.MainPage.MainDisplay InstanceController="@InstanceController" />
+        <!--Body-->
+    </div>
+</div>

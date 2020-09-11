@@ -12,6 +12,8 @@ namespace MentorBilling.MiscellaneousPages
 
         User User { get; set; } = new User();
 
+        Boolean ErrorMessage { get; set; } = false;
+
         protected override async Task OnInitializedAsync()
         {
             await Task.Run(() => RetriveUser()).ContinueWith(t => ActivateUser());
@@ -41,8 +43,8 @@ namespace MentorBilling.MiscellaneousPages
         void ActivateUser()
         {
             if (User == null)
-                Messages.MessageDisplay.CallDatabaseError(MessageDisplaySettings);
-            else 
+                ErrorMessage = true;
+            else
                 Database.DatabaseLink.SubscriptionFunctions.ActivateTrialSubscription(User);
         }
     }

@@ -1,7 +1,14 @@
 ﻿@page "/validateAccount"
 @page "/validateAccount/{account}"
 
-@inject MentorBilling.Messages.MessageDisplaySettings MessageDisplaySettings
+@if (ErrorMessage)
+{
+    <div id="dark_cover">
+        <div class="overlay">
+            <MentorBilling.Messages.Pages.DatabaseConnectionError/>
+        </div>
+    </div>
+}
 
 <div>
     <p>

@@ -11,7 +11,11 @@ namespace MentorBilling.Login.Pages
 {
     public partial class Login
     {
+        /// <summary>
+        /// the InstanceController for the Page to Make controll
+        /// </summary>
         [Parameter] public InstanceController InstanceController { get; set; }
+        //the Page Controller for the Page
         readonly LoginController PageController = new LoginController();
 
         //the onAfterRenderAsync is raised after every form refresh

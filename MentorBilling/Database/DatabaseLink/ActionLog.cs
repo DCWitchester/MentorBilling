@@ -116,7 +116,7 @@ namespace MentorBilling.Database.DatabaseLink
         }
 
         /// <summary>
-        /// this fucntion will log a given action to a specific user
+        /// this function will log a given action to a specific user
         /// </summary>
         /// <param name="Action">the given action</param>
         /// <param name="User">the specific user</param>
