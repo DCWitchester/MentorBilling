@@ -124,6 +124,22 @@ namespace MentorBilling.Database.DatabaseLink
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
             return result;
         }
+
+        /// <summary>
+        /// this function will check if there is an account linked to the email
+        /// </summary>
+        ///<param name="PasswordLostController">the password lost controller</param>
+        /// <returns>wether a account with the controllers email exists or not</returns>
+        public static Boolean CheckEmail(PasswordLostController PasswordLostController)
+        {
+            String sqlCommand = "SELECT COUNT(*) FROM users.utilizatori WHERE email = :p_email";
+            NpgsqlParameter npgsqlParameter = new NpgsqlParameter(":p_email", PasswordLostController.Email);
+            if (!PgSqlConnection.OpenConnection()) return false;
+            Boolean result = (Int64)PgSqlConnection.ExecuteScalar(sqlCommand, npgsqlParameter) > 0;
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            return result;
+        }
+
         /// <summary>
         /// this function will check if a valid account is linked to the username-password or email-password 
         /// </summary>
@@ -143,6 +159,7 @@ namespace MentorBilling.Database.DatabaseLink
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
             return result;
         }
+
         /// <summary>
         /// this function will retrieve the account linked to the username-password or email-password
         /// </summary>
@@ -199,6 +216,32 @@ namespace MentorBilling.Database.DatabaseLink
                 };
             return null;
         }
+
+        /// <summary>
+        /// this function will retreive a user from the database based on the email value
+        /// </summary>
+        /// <param name="email">the email value</param>
+        /// <returns>the user retrieved from the database</returns>
+        public static User RetrieveUser(String email)
+        {
+            String queryCommand = "SELECT * FROM users.utilizatori WHERE email = :p_email";
+            NpgsqlParameter queryParameter = new NpgsqlParameter("p_email", email);
+            if (!PgSqlConnection.OpenConnection()) return null;
+            DataTable result = PgSqlConnection.ExecuteReaderToDataTable(queryCommand, queryParameter);
+            //we close the connection
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+            if (result != null && result.Rows.Count > 0)
+                return new User
+                {
+                    ID = (Int64)result.Rows[0]["ID"],
+                    Username = result.Rows[0]["NUME_UTILIZATOR"].ToString(),
+                    Email = result.Rows[0]["EMAIL"].ToString(),
+                    Name = result.Rows[0]["PRENUME"].ToString(),
+                    Surname = result.Rows[0]["NUME"].ToString()
+                };
+            return null;
+        }
+
         /// <summary>
         /// this is the main function for retrieving the sysadmin rigths for a given user
         /// </summary>

@@ -20,6 +20,8 @@ namespace MentorBilling.MainPage
             register = 2,
             //the main page will display the subscriptions
             subscriptions = 3,
+            //the main page will display the password reset
+            passwordLost = 4,
 
         }
         /// <summary>
@@ -43,6 +45,14 @@ namespace MentorBilling.MainPage
         public static void CallSubscription(DisplaySettings displaySettings)
         {
             displaySettings.ChangePage(Components.subscriptions);
+        }
+        /// <summary>
+        /// this function will redirect you to the lostPassword page
+        /// </summary>
+        /// <param name="displaySettings"></param>
+        public static void CallLostPassword(DisplaySettings displaySettings)
+        {
+            displaySettings.ChangePage(Components.passwordLost);
         }
         /// <summary>
         /// this function will redirect you back to the main page

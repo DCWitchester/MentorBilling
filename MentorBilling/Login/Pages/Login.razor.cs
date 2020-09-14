@@ -44,5 +44,13 @@ namespace MentorBilling.Login.Pages
             }
 
         }
+
+        /// <summary>
+        /// this function will call the page for the email reset
+        /// </summary>
+        void ResetPassword()
+        {
+            MainPage.ComponentDisplay.CallLostPassword(InstanceController.DisplaySettings);
+        }
     }
 }

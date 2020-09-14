@@ -92,5 +92,23 @@ namespace MentorBilling.Miscellaneous
             memoryStream.Close();
             return result;
         }
+
+        /// <summary>
+        /// this function will reencrypt the value till we get a good value
+        /// </summary>
+        /// <param name="value">the given value</param>
+        /// <returns>the encrypted value</returns>
+        public String GetValidEncryption(String value)
+        {
+            //the original encryption
+            String encryptedValue;
+            //we encrypt the value
+            do
+            {
+                encryptedValue = Encrypt(value);
+            } while (encryptedValue.Contains("\\") || encryptedValue.Contains("/"));
+            //until it no longer contains \ or /
+            return encryptedValue;
+        }
     }
 }
