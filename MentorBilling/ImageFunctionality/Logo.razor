@@ -1,0 +1,100 @@
+﻿<h3>Logo</h3>
+@using BlazorInputFile
+@using System.IO
+@using Npgsql;
+
+<div class="drag-drop-zone">
+    <InputFile OnChange="ViewFile" />
+    @status
+
+</div>
+
+<button @onclick="GetImage">GetImage</button>
+
+
+
+@if (Image != null)
+{
+    <img src="@Image" />
+}
+
+
+@code
+{
+    const string DefaultStatus = "Drop a text file here to view it, or click to choose a file";
+    string status = DefaultStatus;
+    string imageDataUri;
+
+    String Image;
+
+    async Task ViewFile(IFileListEntry[] files)
+    {
+        var file = files.FirstOrDefault();
+        if (file == null)
+        {
+            return;
+        }
+        else
+        {
+            status = "Loading...";
+
+
+            using (var reader = new StreamReader(file.Data))
+            {
+                //fileTextContents = await reader.ReadToEndAsync();
+
+                var format = "image/jpg";
+                var imageFile = await file.ToImageFileAsync(format, 640, 480);
+                var ms = new MemoryStream();
+                await imageFile.Data.CopyToAsync(ms);
+                var arr = ms.ToArray();
+
+                String connString = "Host = 5.2.228.239; Port = 26662; Database = test; User Id = postgres; Password = pgsql";
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    string sQL = "INSERT INTO test_table VALUES(:p_image)";
+                    using (var command = new NpgsqlCommand(sQL, conn))
+                    {
+                        NpgsqlParameter param = command.CreateParameter();
+                        param.ParameterName = ":p_image";
+                        param.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
+                        param.Value = arr;
+                        command.Parameters.Add(param);
+
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                // Make a data URL so we can display it
+                Image = $"data:{format};base64,{Convert.ToBase64String(ms.ToArray())}";
+
+
+            }
+
+            status = DefaultStatus;
+        }
+    }
+
+    void GetImage()
+    {
+        byte[] productImageByte = null;
+
+        String connString = "Host = 5.2.228.239; Port = 26662; Database = test; User Id = postgres; Password = pgsql";
+        using (var conn = new NpgsqlConnection(connString))
+        {
+            string sQL = "SELECT image from test_table WHERE id = 3";
+            using (var command = new NpgsqlCommand(sQL, conn))
+            {
+                conn.Open();
+                var rdr = command.ExecuteReader();
+                if (rdr.Read())
+                {
+                    productImageByte = (byte[])rdr[0];
+                }
+                rdr.Close();
+            }
+        }
+        Image = String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(productImageByte));
+    }
+}

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MentorBilling.ObjectStructures;
+using Microsoft.AspNetCore.Http.Connections;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -38,6 +40,22 @@ namespace MentorBilling.Invoice.Controllers
         [Required(ErrorMessage = "Adresa Sediului trebuie completata")]
         public String Headquarters { get; set; } = String.Empty;
 
-        
+        /// <summary>
+        /// the BankAccounts List will have at least 1 element
+        /// </summary>
+        public List<BankAccount> BankAccounts { get; set; } = new List<BankAccount>() { new BankAccount() };
+
+        /// <summary>
+        /// the LogoBase Byte Array
+        /// </summary>
+        public Byte[] LogoBase { get; set; } = { };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public String Logo
+        {
+            get => String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(LogoBase));
+        }
     }
 }

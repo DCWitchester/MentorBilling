@@ -44,6 +44,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "BlazorInputFile": {
+              "target": "Package",
+              "version": "[0.2.0, )"
+            },
             "EASendMail": {
               "target": "Package",
               "version": "[7.7.0.3, )"
