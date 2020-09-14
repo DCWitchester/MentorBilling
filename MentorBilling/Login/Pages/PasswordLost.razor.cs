@@ -17,7 +17,7 @@ namespace MentorBilling.Login.Pages
         /// <summary>
         /// the main page Controller
         /// </summary>
-        PasswordLostController PageController = new PasswordLostController();
+        readonly PasswordLostController PageController = new PasswordLostController();
 
         [Parameter]
         public InstanceController InstanceController { get; set; }

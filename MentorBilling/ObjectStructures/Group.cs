@@ -9,6 +9,7 @@ namespace MentorBilling.ObjectStructures
     public class Group
     {
         #region Properties 
+#pragma warning disable IDE1006
         /// <summary>
         /// the id property of the group structure
         /// </summary>
@@ -19,6 +20,7 @@ namespace MentorBilling.ObjectStructures
         private String name { get; set; } = String.Empty;
         //the administrator of the group
         private User administrator { get; set; } = new User();
+#pragma warning restore IDE1006
         #endregion
 
         #region Callers

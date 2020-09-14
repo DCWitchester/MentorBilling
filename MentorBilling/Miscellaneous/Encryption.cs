@@ -55,9 +55,11 @@ namespace MentorBilling.Miscellaneous
             //we attempt to decrypt the given text
             try
             {
-                return encoding.GetString(Transform(Convert.FromBase64String(encryptedText.Substring(32, encryptedText.Length - 44)),
+#pragma warning disable IDE0057 // Use range operator
+                return encoding.GetString(Transform(Convert.FromBase64String(encryptedText.Substring(startIndex: 32, encryptedText.Length - 44)),
                         cryptoService.CreateDecryptor(Convert.FromBase64String(encryptedText.Substring(0, 32)),
                         Convert.FromBase64String(encryptedText.Substring(encryptedText.Length - 12)))));
+#pragma warning restore IDE0057 // Use range operator
             }
             catch (Exception)
             {
