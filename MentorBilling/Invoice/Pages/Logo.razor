@@ -1,2 +1,18 @@
 ﻿@inject IJSRuntime JSRuntime
 
+@using BlazorInputFile
+
+<!--The page will be linked to the LogoBase-->
+@if (PageController.LogoBase == null)
+{
+    <!--If we have no LogoBase we will use the Drag-Drop-Zone-->
+    <div id="InputFile" class="drag-drop-zone">
+        <InputFile OnChange="SelectLogo" />
+        @Status
+    </div>
+}
+else
+{
+    <!--Else we will display the image src-->
+    <img src="@PageController.Logo" height="@(ImageDimensions.Height)" width="@(ImageDimensions.Width)"/>
+}

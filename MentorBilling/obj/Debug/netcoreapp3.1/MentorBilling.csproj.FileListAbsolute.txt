@@ -74,3 +74,5 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.dl
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.pdb
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.genruntimeconfig.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csprojAssemblyReference.cache
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Invoice\Pages\Logo.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Invoice\Pages\Logo.razor.g.cs

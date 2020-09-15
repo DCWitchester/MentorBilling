@@ -11,10 +11,11 @@ namespace MentorBilling.Invoice.Controllers
         /// the image Format for the Logo
         /// </summary>
         public String ImageFormat { get; set; } = "image/gif";
+
         /// <summary>
         /// the LogoBase Byte Array
         /// </summary>
-        public Byte[] LogoBase { get; set; } = { };
+        public Byte[] LogoBase { get; set; }
 
         /// <summary>
         /// the formated Logo to be used as imageSrc
@@ -23,5 +24,11 @@ namespace MentorBilling.Invoice.Controllers
         {
             get => $"data:{ImageFormat};base64,{Convert.ToBase64String(LogoBase)}";
         }
+
+        //TODO: Settings for the aspect ratio of the image
+        /// <summary>
+        /// the MaintainAspectRatio Property
+        /// </summary>
+        public Boolean MaintainAspectRatio { get; set; } = false;
     }
 }

@@ -4,11 +4,6 @@ using System.Threading.Tasks;
 
 namespace MentorBilling.Miscellaneous
 {
-    public class WindowDimensions
-    {
-        public Int32 Width { get; set; }
-        public Int32 Height { get; set; }
-    }
     public class BrowserServices
     {
         private readonly IJSRuntime _js;
@@ -17,9 +12,9 @@ namespace MentorBilling.Miscellaneous
         {
             _js = jS;
         }
-        public async Task<WindowDimensions> GetDimensions()
+        public async Task<Size> GetDimensions()
         {
-            return await _js.InvokeAsync<WindowDimensions>("getDimensions");
+            return await _js.InvokeAsync<Size>("getDimensions");
         }
 
     }

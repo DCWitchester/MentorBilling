@@ -9,7 +9,7 @@ function removeElementFocus() {
 
 function blurElement(id)
 {
-    const element = docu.getElementById(id);
+    const element = document.getElementById(id);
     element.focus();
 };
 
@@ -27,3 +27,11 @@ function getElementHeight(id) {
 function getElementWidth(id) {
     return document.getElementById(id).getBoundingClientRect().width;
 };
+
+function getElementSize(id) {
+    const element = document.getElementById(id).getBoundingClientRect();
+    return {
+        width: element.width,
+        height: element.height
+    };
+}

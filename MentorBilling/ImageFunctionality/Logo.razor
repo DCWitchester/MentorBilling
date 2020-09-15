@@ -19,7 +19,7 @@
 
 @if (Image != null)
 {
-    <img src="@Image" />
+    <img src="@Image" width="@w" height="@h"/>
 }
 
 
@@ -27,6 +27,8 @@
 {
     const string DefaultStatus = "Drop a text file here to view it, or click to choose a file";
     string status = DefaultStatus;
+    Int32 w = 0;
+    Int32 h = 0;
 
     String Image;
 
@@ -46,13 +48,13 @@
             {
                 //fileTextContents = await reader.ReadToEndAsync();
 
-                var h = await js.InvokeAsync<Int32>("getElementHeight", "testDiv");
-                var w = await js.InvokeAsync<Int32>("getElementWidth", "testDiv");
+                h = await js.InvokeAsync<Int32>("getElementHeight", "testDiv");
+                w = await js.InvokeAsync<Int32>("getElementWidth", "testDiv");
 
-                var format = "image/jpg";
-                var imageFile = await file.ToImageFileAsync(format, w, h);
+                var format = "image/gif";
+                //var imageFile = await file.ToImageFileAsync(format, w, h);
                 var ms = new MemoryStream();
-                await imageFile.Data.CopyToAsync(ms);
+                await file.Data.CopyToAsync(ms);
                 var arr = ms.ToArray();
 
 
@@ -110,6 +112,7 @@
     {
         var h = await js.InvokeAsync<Int32>("getElementHeight", "testDiv");
         var w = await js.InvokeAsync<Int32>("getElementWidth", "testDiv");
+        var s = await js.InvokeAsync<MentorBilling.Miscellaneous.Size>("getElementSize", "testDiv");
         var dimension = await Service.GetDimensions();
         String p = "";
     }
