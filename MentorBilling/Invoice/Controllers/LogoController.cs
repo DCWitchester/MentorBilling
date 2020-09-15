@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace MentorBilling.Invoice.Controllers
+{
+    public class LogoController
+    {
+        /// <summary>
+        /// the image Format for the Logo
+        /// </summary>
+        public String ImageFormat { get; set; } = "image/gif";
+        /// <summary>
+        /// the LogoBase Byte Array
+        /// </summary>
+        public Byte[] LogoBase { get; set; } = { };
+
+        /// <summary>
+        /// the formated Logo to be used as imageSrc
+        /// </summary>
+        public String Logo
+        {
+            get => $"data:{ImageFormat};base64,{Convert.ToBase64String(LogoBase)}";
+        }
+    }
+}

@@ -44,18 +44,5 @@ namespace MentorBilling.Invoice.Controllers
         /// the BankAccounts List will have at least 1 element
         /// </summary>
         public List<BankAccount> BankAccounts { get; set; } = new List<BankAccount>() { new BankAccount() };
-
-        /// <summary>
-        /// the LogoBase Byte Array
-        /// </summary>
-        public Byte[] LogoBase { get; set; } = { };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public String Logo
-        {
-            get => String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(LogoBase));
-        }
     }
 }
