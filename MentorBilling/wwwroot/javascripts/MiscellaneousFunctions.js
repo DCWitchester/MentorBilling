@@ -1,14 +1,29 @@
 ﻿function focusElement(id) {
     const element = document.getElementById(id);
     element.focus();
-}
+};
 
 function removeElementFocus() {
     window.focus();
-}
+};
 
 function blurElement(id)
 {
     const element = docu.getElementById(id);
-    element.focus()
-}
+    element.focus();
+};
+
+function getDimensions() {
+    return {
+        width: window.innerWidth,
+        height: window.innerHeight
+    };
+};
+
+function getElementHeight(id) {
+    return document.getElementById(id).getBoundingClientRect().height;
+};
+
+function getElementWidth(id) {
+    return document.getElementById(id).getBoundingClientRect().width;
+};

@@ -1,15 +1,19 @@
-﻿<h3>Logo</h3>
-@using BlazorInputFile
+﻿@using BlazorInputFile
 @using System.IO
 @using Npgsql;
 
-<div class="drag-drop-zone">
+@inject IJSRuntime js
+@inject Miscellaneous.BrowserServices Service
+
+<h3>Logo</h3>
+
+<div id="testDiv" class="drag-drop-zone" style="width:50%">
     <InputFile OnChange="ViewFile" />
     @status
 
 </div>
 
-<button @onclick="GetImage">GetImage</button>
+<button @onclick="GetDimension">GetImage</button>
 
 
 
@@ -23,7 +27,6 @@
 {
     const string DefaultStatus = "Drop a text file here to view it, or click to choose a file";
     string status = DefaultStatus;
-    string imageDataUri;
 
     String Image;
 
@@ -43,11 +46,16 @@
             {
                 //fileTextContents = await reader.ReadToEndAsync();
 
+                var h = await js.InvokeAsync<Int32>("getElementHeight", "testDiv");
+                var w = await js.InvokeAsync<Int32>("getElementWidth", "testDiv");
+
                 var format = "image/jpg";
-                var imageFile = await file.ToImageFileAsync(format, 640, 480);
+                var imageFile = await file.ToImageFileAsync(format, w, h);
                 var ms = new MemoryStream();
                 await imageFile.Data.CopyToAsync(ms);
                 var arr = ms.ToArray();
+
+
 
                 String connString = "Host = 5.2.228.239; Port = 26662; Database = test; User Id = postgres; Password = pgsql";
                 using (var conn = new NpgsqlConnection(connString))
@@ -96,5 +104,13 @@
             }
         }
         Image = String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(productImageByte));
+    }
+
+    async Task GetDimension()
+    {
+        var h = await js.InvokeAsync<Int32>("getElementHeight", "testDiv");
+        var w = await js.InvokeAsync<Int32>("getElementWidth", "testDiv");
+        var dimension = await Service.GetDimensions();
+        String p = "";
     }
 }
