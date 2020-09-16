@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
-using System.Reflection;
 
 namespace MentorBilling.Invoice.Pages
 {
@@ -24,11 +23,16 @@ namespace MentorBilling.Invoice.Pages
         /// </summary>
         const String DefaultStatus = "Faceti click sau trageti o imagine aici pentru a selecta o imagine";
 
+#pragma warning disable CS0414
         /// <summary>
         /// the display element for the Drag N Drop element
         /// </summary>
         String Status = DefaultStatus;
+#pragma warning restore
 
+        /// <summary>
+        /// the initial dimmension for the image
+        /// </summary>
         Size ImageDimensions { get; set; }
 
         /// <summary>
@@ -67,6 +71,7 @@ namespace MentorBilling.Invoice.Pages
                     //we get the image file from the file directly
                     ImageFile = file; 
                 }
+
                 //we initialize a new memory stream
                 MemoryStream ms = new MemoryStream();
                 //get all the data from the Image file into the memeory stream
@@ -75,8 +80,15 @@ namespace MentorBilling.Invoice.Pages
                 PageController.LogoBase = ms.ToArray();
                 //we also set the status back to the default value
                 Status = DefaultStatus;
-
             }
+        }
+
+        /// <summary>
+        /// this function will reset the LogoBase to deselect the image
+        /// </summary>
+        void ResetSelected()
+        {
+            PageController.LogoBase = null;
         }
     }
 }

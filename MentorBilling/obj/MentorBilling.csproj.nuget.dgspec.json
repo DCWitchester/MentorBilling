@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[0.2.0, )"
             },
+            "BuildWebCompiler": {
+              "target": "Package",
+              "version": "[1.12.394, )"
+            },
             "EASendMail": {
               "target": "Package",
               "version": "[7.7.0.3, )"

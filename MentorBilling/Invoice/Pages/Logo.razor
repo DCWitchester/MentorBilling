@@ -14,5 +14,5 @@
 else
 {
     <!--Else we will display the image src-->
-    <img src="@PageController.Logo" height="@(ImageDimensions.Height)" width="@(ImageDimensions.Width)"/>
+    <img src="@PageController.Logo" height="@(ImageDimensions.Height)" width="@(ImageDimensions.Width)" @onclick="ResetSelected"/>
 }

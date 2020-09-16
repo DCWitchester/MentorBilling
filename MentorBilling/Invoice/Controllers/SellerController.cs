@@ -44,5 +44,32 @@ namespace MentorBilling.Invoice.Controllers
         /// the BankAccounts List will have at least 1 element
         /// </summary>
         public List<BankAccount> BankAccounts { get; set; } = new List<BankAccount>() { new BankAccount() };
+
+        /// <summary>
+        /// the LogoController will be bound to the Logo Component on the seller
+        /// </summary>
+        public LogoController LogoController { get; set; } = new LogoController();
+
+        #region Additional Info
+        /// <summary>
+        /// the Website bound to the given text box
+        /// </summary>
+        public String Website { get; set; } = String.Empty;
+
+        /// <summary>
+        /// the Phone bound to the given text box
+        /// </summary>
+        public String Phone { get; set; } = String.Empty;
+
+        /// <summary>
+        /// the Email bound to the given text box
+        /// </summary>
+        public String Email { get; set; } = String.Empty;
+
+        /// <summary>
+        /// the Work Point bound to given text box
+        /// </summary>
+        public String WorkPoint { get; set; } = String.Empty;
+        #endregion
     }
 }

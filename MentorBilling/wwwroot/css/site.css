@@ -1,4 +1,4 @@
-@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -7,6 +7,71 @@ html, body {
 a, .btn-link {
     color: #0366d6;
 }
+
+/*#region Plus Button*/
+.plus-button {
+    border: 2px solid lightgrey;
+    background-color: #fff;
+    font-size: 16px;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 999px;
+    position: relative;
+}
+
+    .plus-button:after, .plus-button:before {
+        content: "";
+        display: block;
+        background-color: grey;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .plus-button:before {
+        height: 1em;
+        width: 0.2em;
+    }
+
+    .plus-button:after {
+        height: 0.2em;
+        width: 1em;
+    }
+
+    .plus-button:focus {
+        outline: none;
+        border-radius: 999px;
+        border: 2px solid black;
+    }
+
+        .plus-button:focus:after, .plus-button:focus:before {
+            background-color: black;
+        }
+
+.plus-button--small {
+    font-size: 12px;
+}
+
+.plus-button--large {
+    font-size: 22px;
+}
+/*#endregion*/
+
+/*#region Number Spinner Controller*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/*#endregion*/
 
 /* #region Simple display settings */
 .center-screen {
@@ -148,6 +213,7 @@ a, .btn-link {
     }
 /*#endregion*/
 
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
@@ -189,10 +255,10 @@ app {
             margin-left: 1.5rem;
         }
 
-.main .top-row a:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .main .top-row a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 .sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
@@ -277,12 +343,12 @@ app {
     z-index: 1000;
 }
 
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
-}
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
 
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {

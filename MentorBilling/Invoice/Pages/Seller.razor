@@ -1,5 +1,92 @@
-﻿<h3>Seller</h3>
+﻿@inject IJSRuntime JSRuntime 
 
-@code {
-
-}
+<div>
+    <EditForm Model="@PageController">
+        <DataAnnotationsValidator />
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Furnizor:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="PageController.Name" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.Name)" />
+            </div>
+        </div>
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Nr.ord.Reg.Com/an:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Numar Ordine Registru Comert" @bind-Value="PageController.CommercialRegistryNumber" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.CommercialRegistryNumber)" />
+            </div>
+        </div>
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Cod fiscal:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="PageController.FiscalCode" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.FiscalCode)" />
+            </div>
+        </div>
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Capital Social:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputNumber class="form-control" placeholder="Capital Social" @bind-Value="PageController.JointStock" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.JointStock)" />
+            </div>
+        </div>
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Sediul:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Sediul" @bind-Value="PageController.Headquarters" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.Headquarters)" />
+            </div>
+        </div>
+        @foreach (var element in PageController.BankAccounts)
+        {
+            <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+            <div class="form-group row mb-1">
+                <!--The Label for the Object-->
+                <label class="col-sm-3 col-form-label">Contul:</label>
+                <!--The div containin the inputText and the Validation Message-->
+                <div class="col-sm-9">
+                    <!--The Input Controller-->
+                    <InputText class="form-control" placeholder="Contul" @bind-Value="element.Account" />
+                </div>
+            </div>
+            <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+            <div class="form-group row mb-1">
+                <!--The Label for the Object-->
+                <label class="col-sm-3 col-form-label">Banca:</label>
+                <!--The div containin the inputText and the Validation Message-->
+                <div class="col-sm-9">
+                    <!--The Input Controller-->
+                    <InputText class="form-control" placeholder="Banca" @bind-Value="element.Bank" />
+                    <!--The Validation Message-->
+                </div>
+            </div>
+        }
+        <button class="plus-button"></button>
+    </EditForm>
+</div>

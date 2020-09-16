@@ -79,7 +79,6 @@
                 // Make a data URL so we can display it
                 Image = $"data:{format};base64,{Convert.ToBase64String(ms.ToArray())}";
 
-
             }
 
             status = DefaultStatus;
@@ -114,6 +113,5 @@
         var w = await js.InvokeAsync<Int32>("getElementWidth", "testDiv");
         var s = await js.InvokeAsync<MentorBilling.Miscellaneous.Size>("getElementSize", "testDiv");
         var dimension = await Service.GetDimensions();
-        String p = "";
     }
 }
