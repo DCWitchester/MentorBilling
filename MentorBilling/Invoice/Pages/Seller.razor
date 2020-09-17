@@ -1,7 +1,7 @@
 ﻿@inject IJSRuntime JSRuntime 
 
 <div>
-    <EditForm Model="@PageController">
+    <EditForm Model="@PageController" OnValidSubmit="@(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))">
         <DataAnnotationsValidator />
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
@@ -65,28 +65,9 @@
         </div>
         @foreach (var element in PageController.BankAccounts)
         {
-            <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
-            <div class="form-group row mb-1">
-                <!--The Label for the Object-->
-                <label class="col-sm-3 col-form-label">Contul:</label>
-                <!--The div containin the inputText and the Validation Message-->
-                <div class="col-sm-9">
-                    <!--The Input Controller-->
-                    <InputText class="form-control" placeholder="Contul" @bind-Value="element.Account" />
-                </div>
-            </div>
-            <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
-            <div class="form-group row mb-1">
-                <!--The Label for the Object-->
-                <label class="col-sm-3 col-form-label">Banca:</label>
-                <!--The div containin the inputText and the Validation Message-->
-                <div class="col-sm-9">
-                    <!--The Input Controller-->
-                    <InputText class="form-control" placeholder="Banca" @bind-Value="element.Bank" />
-                    <!--The Validation Message-->
-                </div>
-            </div>
+            <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(new AuxilliaryComponents.Controllers.BankAccountController(element,PageController.BankAccounts.IndexOf(element)))"
+                                                                  BankAccountDisplayController="BankAccountDisplayController"/>
         }
-        <button class="plus-button"></button>
+        <button type="submit"></button>
     </EditForm>
 </div>

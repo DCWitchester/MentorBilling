@@ -1,1 +1,33 @@
-﻿<h3>BankAccount</h3>
+﻿@inject IJSRuntime JSRuntime 
+
+<div>
+    <EditForm @ref="myForm" EditContext="@EditContext">
+        <!--The DataAnnotationsValidator binds the page to the object errors-->
+        <DataAnnotationsValidator />
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Contul:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Contul" @bind-Value="PageController.Account" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.Account)" />
+            </div>
+            <ValidationMessage For="@(()=>PageController.Account)" />
+        </div>
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Banca:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Banca" @bind-Value="PageController.Bank" />
+                <!--The Validation Message-->
+                <ValidationSummary />
+            </div>
+        </div>
+    </EditForm>
+</div>

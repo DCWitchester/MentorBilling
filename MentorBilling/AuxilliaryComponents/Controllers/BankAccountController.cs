@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MentorBilling.ObjectStructures;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,17 +10,37 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
     public class BankAccountController
     {
         /// <summary>
+        /// the main property for the Bank Account
+        /// </summary>
+        private BankAccount BankAccount {get;set;} 
+
+        public BankAccountController(BankAccount bankAccount, Int32 elementIndex)
+        {
+            BankAccount = bankAccount;
+            ElementIndex = elementIndex;
+        }
+
+        /// <summary>
         /// the element Index from the parent list
         /// </summary>
         public Int32 ElementIndex { get; set; } = new Int32();
         /// <summary>
         /// this account bound to the text box element
         /// </summary>
-        public String Account { get; set; } = String.Empty;
+        [Required(ErrorMessage ="Camp Obligatoriu")]
+        public String Account 
+        { 
+            get => BankAccount.Account;
+            set => BankAccount.Account = value; 
+        }
         /// <summary>
         /// the bank  bound to the text box element
         /// </summary>
-        public String Bank { get; set; } = String.Empty;
+        public String Bank 
+        { 
+            get => BankAccount.Bank; 
+            set => BankAccount.Bank = value; 
+        }
 
         /// <summary>
         /// this function will validate only if the field has been completed
@@ -38,5 +59,9 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// </summary>
         [Range(typeof(bool), "true", "true", ErrorMessage = "Cel putin o banca trebuie completat")]
         public Boolean IsBankNeeded { get => String.IsNullOrWhiteSpace(Bank) || ElementIndex != 0; }
+
+        [Range(typeof(bool), "false", "false", ErrorMessage = "Banca trebuie completata daca ati introdus un IBAN Valid")]
+        public Boolean IsAccountFilledIn { get => Miscellaneous.ElementCheck.VerifyIBAN(Account); }
+
     }
 }

@@ -35,3 +35,8 @@ function getElementSize(id) {
         height: element.height
     };
 }
+
+function SubmitForm(id) {
+    const element = document.getElementById(id);
+    element.submit()
+}

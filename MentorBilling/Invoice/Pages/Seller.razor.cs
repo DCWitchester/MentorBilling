@@ -1,4 +1,5 @@
-﻿using MentorBilling.Invoice.Controllers;
+﻿using MentorBilling.AuxilliaryComponents.DisplayControllers;
+using MentorBilling.Invoice.Controllers;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,12 @@ namespace MentorBilling.Invoice.Pages
     {
         [Parameter]
         public SellerController PageController { get; set; } = new SellerController();
+
+        BankAccountDisplayController BankAccountDisplayController = new BankAccountDisplayController();
+
+        void ValidateLogin(Boolean ControllerState)
+        {
+            BankAccountDisplayController.RefreshPage();
+        }
     }
 }

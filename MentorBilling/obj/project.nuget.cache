@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "14DKH7ygIV5xALAXL8AkXiqn680a/Y6kUg4sRtP3JhrZP59db76GBt9DDmlOQIA4ZHCgwD903jQvCaqOTMU3ig==",
+  "success": true,
+  "projectFilePath": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DCW\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\buildwebcompiler\\1.12.394\\buildwebcompiler.1.12.394.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\easendmail\\7.7.0.3\\easendmail.7.7.0.3.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.0-preview3.19555.2\\microsoft.aspnetcore.authorization.3.1.0-preview3.19555.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.0-preview3.19555.2\\microsoft.aspnetcore.components.3.1.0-preview3.19555.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\3.1.0-preview3.19555.2\\microsoft.aspnetcore.components.analyzers.3.1.0-preview3.19555.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\3.1.0-preview3.19555.2\\microsoft.aspnetcore.components.forms.3.1.0-preview3.19555.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.aspnetcore.components.web\\3.1.0-preview3.19555.2\\microsoft.aspnetcore.components.web.3.1.0-preview3.19555.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.aspnetcore.metadata\\3.1.0-preview3.19555.2\\microsoft.aspnetcore.metadata.3.1.0-preview3.19555.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.0-preview3.19553.2\\microsoft.extensions.dependencyinjection.3.1.0-preview3.19553.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.0-preview3.19553.2\\microsoft.extensions.dependencyinjection.abstractions.3.1.0-preview3.19553.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.0-preview3.19553.2\\microsoft.extensions.logging.abstractions.3.1.0-preview3.19553.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.options\\3.1.0-preview3.19553.2\\microsoft.extensions.options.3.1.0-preview3.19553.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0-preview3.19553.2\\microsoft.extensions.primitives.3.1.0-preview3.19553.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.jsinterop\\3.1.0-preview3.19553.2\\microsoft.jsinterop.3.1.0-preview3.19553.2.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.0.0\\microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.0.0\\microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\npgsql\\4.1.4\\npgsql.4.1.4.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
