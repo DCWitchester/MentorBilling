@@ -1,5 +1,6 @@
 ﻿using MentorBilling.AuxilliaryComponents.DisplayControllers;
 using MentorBilling.Invoice.Controllers;
+using MentorBilling.Invoice.DisplayControllers;
 using MentorBilling.Miscellaneous.ANAF;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
@@ -22,6 +23,8 @@ namespace MentorBilling.Invoice.Pages
         /// the bank account display controller
         /// </summary>
         BankAccountDisplayController BankAccountDisplayController = new BankAccountDisplayController();
+
+        SellerDisplayController SellerDisplayController = new SellerDisplayController();
 
         void ValidateLogin(Boolean ControllerState)
         {
@@ -52,6 +55,16 @@ namespace MentorBilling.Invoice.Pages
         protected override void OnInitialized()
         {
             EditContext = new EditContext(PageController);
+            SellerDisplayController.OnChange += OnMyChangeHandler;
+        }
+
+        /// <summary>
+        /// the  main handler for the state change
+        /// </summary>
+        private async void OnMyChangeHandler()
+        {
+            AddBankAccount();
+            await InvokeAsync(() => StateHasChanged());
         }
 
     }

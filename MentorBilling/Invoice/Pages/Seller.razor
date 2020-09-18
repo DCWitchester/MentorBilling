@@ -70,11 +70,8 @@
             @foreach (var element in PageController.BankAccountControllers)
             {
                 <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(element.SetElementIndex(PageController.BankAccountControllers.IndexOf(element)))"
-                                                                      BankAccountDisplayController="BankAccountDisplayController" />
+                                                                      BankAccountDisplayController="@BankAccountDisplayController" SellerDisplayController="@SellerDisplayController"/>
             }
-            <div style="justify-content: flex-end; display: flex;">
-                <button class="plus-button--small" type="button" @onclick="AddBankAccount"></button>
-            </div>
         </div>
         <button type="submit"></button>
     </EditForm>

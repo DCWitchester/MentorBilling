@@ -22,12 +22,15 @@
             <!--The Label for the Object-->
             <label class="col-sm-3 col-form-label">Banca:</label>
             <!--The div containin the inputText and the Validation Message-->
-            <div class="col-sm-9">
+            <div class="col-sm-8">
                 <!--The Input Controller-->
                 <InputText class="form-control" placeholder="Banca" @bind-Value="@PageController.Bank" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.IsBankNeeded)" />
                 <ValidationMessage For="@(()=>PageController.IsAccountFilledIn)" />
+            </div>
+            <div style="justify-content: flex-end; display: flex; margin-top:5px;">
+                <button class="plus-button--small" type="button" @onclick="(() => SellerDisplayController.RefreshPage())"/>
             </div>
         </div>
     </EditForm>

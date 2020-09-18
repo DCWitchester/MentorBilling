@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MentorBilling.Invoice.Controllers;
+using MentorBilling.Invoice.DisplayControllers;
 
 namespace MentorBilling.AuxilliaryComponents.Pages
 {
@@ -24,6 +26,12 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         /// </summary>
         [Parameter]
         public BankAccountDisplayController BankAccountDisplayController { get; set; }
+
+        /// <summary>
+        /// the Main Seller Display controller that will link the page to the parent
+        /// </summary>
+        [Parameter]
+        public SellerDisplayController SellerDisplayController { get; set; }
 
         /// <summary>
         /// the edit form reference used for page refresh
