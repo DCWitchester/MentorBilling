@@ -13,7 +13,8 @@
                 <!--The Input Controller-->
                 <InputText class="form-control" placeholder="Contul" @bind-Value="@PageController.Account" />
                 <!--The Validation Message-->
-                <ValidationMessage For="@(()=>PageController.Account)" />
+                <ValidationMessage For="@(()=>PageController.IsAccountNeeded)" />
+                <ValidationMessage For="@(()=>PageController.IsAccountValid)" />
             </div>
         </div>
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
@@ -25,6 +26,8 @@
                 <!--The Input Controller-->
                 <InputText class="form-control" placeholder="Banca" @bind-Value="@PageController.Bank" />
                 <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.IsBankNeeded)" />
+                <ValidationMessage For="@(()=>PageController.IsAccountFilledIn)" />
             </div>
         </div>
     </EditForm>

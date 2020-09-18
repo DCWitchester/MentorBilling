@@ -56,9 +56,17 @@
               "target": "Package",
               "version": "[7.7.0.3, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.4, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.11.5, )"
             }
           },
           "imports": [

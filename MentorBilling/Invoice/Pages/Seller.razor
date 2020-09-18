@@ -1,7 +1,7 @@
 ﻿@inject IJSRuntime JSRuntime 
 
 <div>
-    <EditForm Model="@PageController" OnValidSubmit="@(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))">
+    <EditForm EditContext="EditContext" OnValidSubmit="@(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))">
         <DataAnnotationsValidator />
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
@@ -32,11 +32,14 @@
             <!--The Label for the Object-->
             <label class="col-sm-3 col-form-label">Cod fiscal:</label>
             <!--The div containin the inputText and the Validation Message-->
-            <div class="col-sm-9">
+            <div class="col-sm-6">
                 <!--The Input Controller-->
                 <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.FiscalCode)" />
+            </div>
+            <div class="col-sm-3">
+                <button class="btn-primary-auxilliary" style="margin-top:5px; margin-bottom:0px;" type="button" @onclick="@GetAnafCompany">Preluare Online</button>
             </div>
         </div>
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
@@ -63,11 +66,16 @@
                 <ValidationMessage For="@(()=>PageController.Headquarters)" />
             </div>
         </div>
-        @foreach (var element in PageController.BankAccounts)
-        {
-            <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(new AuxilliaryComponents.Controllers.BankAccountController(element,PageController.BankAccounts.IndexOf(element)))"
-                                                                  BankAccountDisplayController="BankAccountDisplayController"/>
-        }
-        <button type="submit" @onclick="@(()=>ValidateChildren())"></button>
+        <div>
+            @foreach (var element in PageController.BankAccountControllers)
+            {
+                <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(element.SetElementIndex(PageController.BankAccountControllers.IndexOf(element)))"
+                                                                      BankAccountDisplayController="BankAccountDisplayController" />
+            }
+            <div style="justify-content: flex-end; display: flex;">
+                <button class="plus-button--small" type="button" @onclick="AddBankAccount"></button>
+            </div>
+        </div>
+        <button type="submit"></button>
     </EditForm>
 </div>

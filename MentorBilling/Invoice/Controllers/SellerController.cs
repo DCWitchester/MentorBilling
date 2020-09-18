@@ -1,5 +1,8 @@
-﻿using MentorBilling.ObjectStructures;
+﻿using MentorBilling.AuxilliaryComponents.Controllers;
+using MentorBilling.Miscellaneous.ANAF;
+using MentorBilling.ObjectStructures;
 using Microsoft.AspNetCore.Http.Connections;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -43,7 +46,7 @@ namespace MentorBilling.Invoice.Controllers
         /// <summary>
         /// the BankAccounts List will have at least 1 element
         /// </summary>
-        public List<BankAccount> BankAccounts { get; set; } = new List<BankAccount>() { new BankAccount() };
+        public List<BankAccountController> BankAccountControllers { get; set; } = new List<BankAccountController>() { new BankAccountController(new BankAccount()) };
 
         /// <summary>
         /// the LogoController will be bound to the Logo Component on the seller
@@ -71,5 +74,12 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         public String WorkPoint { get; set; } = String.Empty;
         #endregion
+
+        public void DevourCompany(Company company)
+        {
+            this.Name = company.Name;
+            this.FiscalCode = (company.CompanyStatus.VAT_Applicable ? "RO" : "") + company.Cui;
+            this.Headquarters = company.Adress;
+        }
     }
 }

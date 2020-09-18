@@ -13,14 +13,28 @@ namespace MentorBilling.AuxilliaryComponents.Pages
 {
     public partial class BankAccount
     {
+        /// <summary>
+        /// the main Page Controller
+        /// </summary>
         [Parameter]
         public BankAccountController PageController { get; set; }
 
+        /// <summary>
+        /// the Main Display Controller for the given page <= used for a page refresh
+        /// </summary>
         [Parameter]
         public BankAccountDisplayController BankAccountDisplayController { get; set; }
 
+        /// <summary>
+        /// the edit form reference used for page refresh
+        /// </summary>
         private EditForm MyForm { get; set; }
-        
+
+        /// <summary>
+        /// the main editContext on the Page
+        /// </summary>
+        private EditContext EditContext { get; set; }
+
         /// <summary>
         /// the main initialization of the page
         /// </summary>
@@ -45,10 +59,8 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         /// </summary>
         private async void OnMyChangeHandler()
         {
+            //we force the submision 
             await MyForm.SubmitAsync();
-            await InvokeAsync(() => StateHasChanged());
         }
-
-        private EditContext EditContext { get; set; }    
     }
 }

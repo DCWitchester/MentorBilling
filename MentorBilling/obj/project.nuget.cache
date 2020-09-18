@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "14DKH7ygIV5xALAXL8AkXiqn680a/Y6kUg4sRtP3JhrZP59db76GBt9DDmlOQIA4ZHCgwD903jQvCaqOTMU3ig==",
+  "dgSpecHash": "Wo1pAOdMxZAsv/qHSG6drRErp6kl/LYcuLbAbdsfYHqbw+M4cUkRjCbLTT9HpcF/oeaTqH+Cm02WxdZXeFw8Kw==",
   "success": true,
   "projectFilePath": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
   "expectedPackageFiles": [
@@ -25,7 +25,9 @@
     "C:\\Users\\DCW\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.0.0\\microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\npgsql\\4.1.4\\npgsql.4.1.4.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\restsharp\\106.11.5\\restsharp.106.11.5.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []
