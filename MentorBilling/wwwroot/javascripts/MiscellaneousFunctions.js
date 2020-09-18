@@ -40,3 +40,8 @@ function SubmitForm(id) {
     const element = document.getElementById(id);
     element.submit()
 }
+
+function ClickButton(id) {
+    const element = document.getElementById(id);
+    element.click();
+}

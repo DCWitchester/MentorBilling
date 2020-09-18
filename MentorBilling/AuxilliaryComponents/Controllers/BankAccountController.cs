@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,6 +25,7 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// the element Index from the parent list
         /// </summary>
         public Int32 ElementIndex { get; set; } = new Int32();
+        /*
         /// <summary>
         /// this account bound to the text box element
         /// </summary>
@@ -41,7 +43,10 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
             get => BankAccount.Bank; 
             set => BankAccount.Bank = value; 
         }
-
+        */
+        [Required(ErrorMessage = "Camp Obligatoriu")]
+        public String Account { get; set; } = String.Empty;
+        public String Bank { get; set; } = String.Empty;
         /// <summary>
         /// this function will validate only if the field has been completed
         /// </summary>
@@ -62,6 +67,6 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
 
         [Range(typeof(bool), "false", "false", ErrorMessage = "Banca trebuie completata daca ati introdus un IBAN Valid")]
         public Boolean IsAccountFilledIn { get => Miscellaneous.ElementCheck.VerifyIBAN(Account); }
-
+        
     }
 }

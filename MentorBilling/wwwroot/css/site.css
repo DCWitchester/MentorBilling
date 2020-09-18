@@ -213,6 +213,16 @@ input[type="number"] {
     }
 /*#endregion*/
 
+/*#region Invisible Button*/
+.btn-primary-hidden {
+    color: #fff;
+    background-color: #1b6ec2;
+    width: 0px;
+    height: 0px;
+    outline: none;
+}
+/*#endregion Invisible Button*/
+
 
 .btn-primary {
     color: #fff;

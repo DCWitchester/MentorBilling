@@ -10,7 +10,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="PageController.Name" />
+                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.Name)" />
             </div>
@@ -22,7 +22,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Numar Ordine Registru Comert" @bind-Value="PageController.CommercialRegistryNumber" />
+                <InputText class="form-control" placeholder="Numar Ordine Registru Comert" @bind-Value="@PageController.CommercialRegistryNumber" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.CommercialRegistryNumber)" />
             </div>
@@ -34,7 +34,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="PageController.FiscalCode" />
+                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.FiscalCode)" />
             </div>
@@ -46,7 +46,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputNumber class="form-control" placeholder="Capital Social" @bind-Value="PageController.JointStock" />
+                <InputNumber class="form-control" placeholder="Capital Social" @bind-Value="@PageController.JointStock" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.JointStock)" />
             </div>
@@ -58,7 +58,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Sediul" @bind-Value="PageController.Headquarters" />
+                <InputText class="form-control" placeholder="Sediul" @bind-Value="@PageController.Headquarters" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.Headquarters)" />
             </div>
@@ -68,6 +68,6 @@
             <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(new AuxilliaryComponents.Controllers.BankAccountController(element,PageController.BankAccounts.IndexOf(element)))"
                                                                   BankAccountDisplayController="BankAccountDisplayController"/>
         }
-        <button type="submit"></button>
+        <button type="submit" @onclick="@(()=>ValidateChildren())"></button>
     </EditForm>
 </div>

@@ -19,8 +19,8 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         [Parameter]
         public BankAccountDisplayController BankAccountDisplayController { get; set; }
 
-        private EditForm myForm { get; set; }
-        //public EditForm myForm { get; set; }
+        private EditForm MyForm { get; set; }
+        
         /// <summary>
         /// the main initialization of the page
         /// </summary>
@@ -31,6 +31,7 @@ namespace MentorBilling.AuxilliaryComponents.Pages
             BankAccountDisplayController.OnChange += OnMyChangeHandler;
             base.OnInitialized();
         }
+
         /// <summary>
         /// the dispose of the page
         /// </summary>
@@ -38,24 +39,16 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         {
             BankAccountDisplayController.OnChange -= OnMyChangeHandler;
         }
+
         /// <summary>
         /// the  main handler for the state change
         /// </summary>
         private async void OnMyChangeHandler()
         {
-            SubmitHandler();
+            await MyForm.SubmitAsync();
             await InvokeAsync(() => StateHasChanged());
         }
 
-        private EditContext EditContext { get; set; }
-
-        private async void SubmitHandler()
-        {
-            await myForm.SubmitAsync();
-            //await JSRuntime.InvokeVoidAsync("SubmitForm", "BankForm");
-            String s = "";
-        }
-
-        
+        private EditContext EditContext { get; set; }    
     }
 }
