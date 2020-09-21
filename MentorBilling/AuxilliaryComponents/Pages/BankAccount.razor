@@ -11,7 +11,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Contul" @bind-Value="@PageController.Account"/>
+                <InputText class="form-control" placeholder="Contul" @bind-Value="@PageController.Account" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.IsAccountNeeded)" />
                 <ValidationMessage For="@(()=>PageController.IsAccountValid)" />
@@ -26,13 +26,13 @@
                 <!--The div containin the inputText and the Validation Message-->
                 <div class="col-sm-8">
                     <!--The Input Controller-->
-                    <InputText class="form-control" placeholder="Banca" @bind-Value="@PageController.Bank" />
+                    <InputText class="form-control" placeholder="Banca" @bind-Value="@PageController.Bank" disabled="@PageController.DisableController" />
                     <!--The Validation Message-->
                     <ValidationMessage For="@(()=>PageController.IsBankNeeded)" />
                     <ValidationMessage For="@(()=>PageController.IsAccountFilledIn)" />
                 </div>
                 <div style="justify-content: flex-end; display: flex; margin-top:5px;">
-                    <button class="plus-button--small" type="button" @onclick="(() => SellerDisplayController.RefreshPage())" />
+                    <button class="plus-button--small" type="button" @onclick="(() => SellerDisplayController.RefreshPage())" disabled="@PageController.DisableController" />
                 </div>
             }
             else
@@ -40,7 +40,7 @@
                 <!--The div containin the inputText and the Validation Message-->
                 <div class="col-sm-9">
                     <!--The Input Controller-->
-                    <InputText class="form-control" placeholder="Banca" @bind-Value="@PageController.Bank" />
+                    <InputText class="form-control" placeholder="Banca" @bind-Value="@PageController.Bank" disabled="@PageController.DisableController" />
                     <!--The Validation Message-->
                     <ValidationMessage For="@(()=>PageController.IsBankNeeded)" />
                     <ValidationMessage For="@(()=>PageController.IsAccountFilledIn)" />

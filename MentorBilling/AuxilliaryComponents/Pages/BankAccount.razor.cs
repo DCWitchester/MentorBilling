@@ -73,11 +73,5 @@ namespace MentorBilling.AuxilliaryComponents.Pages
             //we force the submision 
             await MyForm.SubmitAsync();
         }
-
-        private void GetBankOfAccount(ChangeEventArgs e)
-        {
-            String s = "";
-            Database.DatabaseLink.GlossaryFunctions.GetBankOfAccount(PageController);
-        }
     }
 }

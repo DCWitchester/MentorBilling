@@ -39,7 +39,7 @@
                 <ValidationMessage For="@(()=>PageController.FiscalCode)" />
             </div>
             <div class="col-sm-3">
-                <button class="btn-primary-auxilliary" style="margin-top:5px; margin-bottom:0px;" type="button" @onclick="@GetAnafCompany">Preluare Online</button>
+                <button class="btn-primary-auxilliary" style="margin-top:5px; margin-bottom:0px;" type="button" @onclick="@GetAnafCompany" disabled="@PageController.DisableController">Preluare Online</button>
             </div>
         </div>
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->

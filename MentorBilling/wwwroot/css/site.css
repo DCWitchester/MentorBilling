@@ -243,6 +243,12 @@ input[type="number"] {
         background-color: orange;
     }
 
+    .btn-primary-auxilliary:disabled {
+        color: #000;
+        background-color: #bfbfbf;
+        /*border-color:black;*/
+    }
+
 .btn-primary-validate {
     color: #fff;
     background-color: #1b6ec2;

@@ -41,6 +41,11 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         public Int32 ElementIndex { get; set; } = new Int32();
         
         /// <summary>
+        /// this controller will permit the disablement of the page editForm
+        /// </summary>
+        public Boolean DisableController { get; set; } = false;
+
+        /// <summary>
         /// this account bound to the text box element
         /// </summary>
         public String Account 
