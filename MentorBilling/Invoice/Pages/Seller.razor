@@ -10,7 +10,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" />
+                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.Name)" />
             </div>
@@ -22,7 +22,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Numar Ordine Registru Comert" @bind-Value="@PageController.CommercialRegistryNumber" />
+                <InputText class="form-control" placeholder="Numar Ordine Registru Comert" @bind-Value="@PageController.CommercialRegistryNumber" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.CommercialRegistryNumber)" />
             </div>
@@ -34,7 +34,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-6">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" />
+                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.FiscalCode)" />
             </div>
@@ -49,7 +49,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputNumber class="form-control" placeholder="Capital Social" @bind-Value="@PageController.JointStock" />
+                <InputNumber class="form-control" placeholder="Capital Social" @bind-Value="@PageController.JointStock" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.JointStock)" />
             </div>
@@ -61,7 +61,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Sediul" @bind-Value="@PageController.Headquarters" />
+                <InputText class="form-control" placeholder="Sediul" @bind-Value="@PageController.Headquarters" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.Headquarters)" />
             </div>
@@ -69,12 +69,50 @@
         <div>
             @foreach (var element in PageController.BankAccountControllers)
             {
+                <!--the BankAccount with the needed parameters-->
                 <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(element.SetElementIndex(PageController.BankAccountControllers.IndexOf(element)))"
-                                                                      BankAccountDisplayController="@BankAccountDisplayController" 
+                                                                      BankAccountDisplayController="@BankAccountDisplayController"
                                                                       SellerDisplayController="@SellerDisplayController"
-                                                                      LastItem="@(element==PageController.BankAccountControllers.Last())"/>
+                                                                      LastItem="@(element==PageController.BankAccountControllers.Last())" />
             }
         </div>
+        <!--#region Secondary Elements-->
+        <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Website:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-4">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Website" @bind-Value="@PageController.Website" disabled="@PageController.DisableController" />
+            </div>
+            <!--The Label for the Object-->
+            <label class="col-sm-1 col-form-label">Telefon:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-4">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Telefon" @bind-Value="@PageController.Phone" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Mail:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Mail" @bind-Value="@PageController.Email" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Punct Lucru:</label>
+            <!--The div containin the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Punct de lucru" @bind-Value="@PageController.WorkPoint" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <!--#endregion-->
         <button type="submit"></button>
     </EditForm>
 </div>

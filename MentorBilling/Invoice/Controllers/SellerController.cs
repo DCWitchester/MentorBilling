@@ -75,10 +75,22 @@ namespace MentorBilling.Invoice.Controllers
         public String WorkPoint { get; set; } = String.Empty;
         #endregion
 
+        /// <summary>
+        /// this controller will permit the disablement of the page editForm
+        /// </summary>
+        public Boolean DisableController { get; set; } = false;
+
+        /// <summary>
+        /// this funtion will devour a company returned from ANAF
+        /// </summary>
+        /// <param name="company">the company returned from the webservice</param>
         public void DevourCompany(Company company)
         {
+            //the only info that interests us is the company name
             this.Name = company.Name;
+            //the FiscalCode with or without RO
             this.FiscalCode = (company.CompanyStatus.VAT_Applicable ? "RO" : "") + company.Cui;
+            //and the headquarters
             this.Headquarters = company.Adress;
         }
     }

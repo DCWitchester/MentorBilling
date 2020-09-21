@@ -39,12 +39,18 @@ namespace MentorBilling.Invoice.Pages
             BankAccountDisplayController.RefreshPage();
         }
 
+        /// <summary>
+        /// this function will add a new bank account to the list
+        /// </summary>
         void AddBankAccount()
         {
             PageController.BankAccountControllers.Add(new AuxilliaryComponents.Controllers.BankAccountController(new ObjectStructures.BankAccount()));
             EditContext = new EditContext(PageController);
         }
 
+        /// <summary>
+        /// this function will get the company info from ANAF
+        /// </summary>
         void GetAnafCompany()
         {
             if(Miscellaneous.ElementCheck.VerifyCIF(PageController.FiscalCode))
