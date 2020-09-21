@@ -33,6 +33,9 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         [Parameter]
         public SellerDisplayController SellerDisplayController { get; set; }
 
+        [Parameter]
+        public Boolean LastItem { get; set; } = false;
+
         /// <summary>
         /// the edit form reference used for page refresh
         /// </summary>
@@ -69,6 +72,12 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         {
             //we force the submision 
             await MyForm.SubmitAsync();
+        }
+
+        private void GetBankOfAccount(ChangeEventArgs e)
+        {
+            String s = "";
+            Database.DatabaseLink.GlossaryFunctions.GetBankOfAccount(PageController);
         }
     }
 }

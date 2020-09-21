@@ -46,7 +46,7 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         public String Account 
         { 
             get => BankAccount.Account;
-            set => BankAccount.Account = value; 
+            set => BankAccount.Account = UpdateAccountAndBank(value);
         }
         /// <summary>
         /// the bank  bound to the text box element
@@ -100,6 +100,9 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
                 ElementIndex != 0; 
         }
 
+        /// <summary>
+        /// this function will check that if a valid IBAN was entered you should also enter the bank
+        /// </summary>
         [Range(typeof(bool), "false", "false", ErrorMessage = "Banca trebuie completata daca ati introdus un IBAN Valid")]
         public Boolean IsAccountFilledIn 
         { 
@@ -107,5 +110,19 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
                 Miscellaneous.ElementCheck.VerifyIBAN(Account); 
         }
         
+        /// <summary>
+        /// this function will update the the bank for the given account
+        /// </summary>
+        /// <param name="Value">the value returned from the input text</param>
+        /// <returns>the value of the input text</returns>
+        private String UpdateAccountAndBank(String Value)
+        {
+            this.BankAccount.Account = Value;
+            if (Miscellaneous.ElementCheck.VerifyIBAN(Value))
+            {
+                Database.DatabaseLink.GlossaryFunctions.GetBankOfAccount(this);
+            }
+            return Value;
+        }
     }
 }

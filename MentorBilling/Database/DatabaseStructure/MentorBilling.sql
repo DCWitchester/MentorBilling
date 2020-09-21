@@ -681,6 +681,62 @@ INSERT INTO glossary.forme_juridice (cod, denumire) VALUES ('URL', 'Intreprinder
 
 --#endregion Forme Juridice
 
+--#region Institutii Bancare
+
+CREATE TABLE glossary.institutii_bancare (
+    id bigserial NOT NULL PRIMARY KEY,
+    denumire VARCHAR DEFAULT '' NOT NULL,
+    cod_swift VARCHAR(8) DEFAULT '' NOT NULL,
+    cod_iban VARCHAR(4) DEFAULT '' NOT NULL
+);
+
+COMMENT ON TABLE glossary.institutii_bancare IS 'Tabela aceasta va contine toate institutiile bancare folosite pe teritoriul Romaniei';
+COMMENT ON COLUMN glossary.institutii_bancare.cod_swift IS 'Codul swift sau cod BIC reprezinta codul unic de identificare al unei banci la nivel international';
+COMMENT ON COLUMN glossary.institutii_bancare.cod_iban IS 'In general primele 4 caractere ale codului BIC folosite pentru identificarea codului IBAN';
+
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA NATIONALA A ROMANIEI','NBORROBU','NBOR');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('ABN AMRO BANK ROMANIA','ABNAROBU','ABNA');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('ALPHA BANK ROMANIA SA','BUCUROBU','BUCU');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('ANGLO ROMANIAN BANK LTD','ARBLROBU','ARBL');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('ATE BANK ROMANIA SA','MINDROBU','MIND');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANC POST SA','BPOSROBU','BPOS');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA COMERCIALA CARPATICA SA','CARPRO22','CARP');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA COMERCIALA ROMANA SA','RNCBROBU','RNCB');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA CR FIRENZE ROMANIA SA','DAROROBU','DARO');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA DI ROMA SPA ITALIA - SUCURSALA BUCURESTI','BROMROBU','BROM');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA ITALO ROMENA SPA','BITRROBU','BITR');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA ROMANA PENTRU DEZVOLTARE','BRDEROBU','BRDE');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA ROMANEASCA SA','BRMAROBU','BRMA');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANCA TRANSILVANIA SA','BTRLRO22','BTRL');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BANK LEUMI ROMANIA SA','DAFBRO22','DAFB');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('BLOM BANK EGYPT SAE EGYPT - SUCURSALA ROMANIA','MIRBROBU','MIRB');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('CASA DE ECONOMII SI CONSEMNATIUNI CEC SA','CECEROBU','CECE');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('CITIBANK ROMANIA SA','CITIROBU','CITI');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('CREDIT COOP CASA CENTRALA','CRCOROBU','CRCO');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('CREDIT EUROPE BANK (ROMANIA) SA','FNNBROBU','FNNB');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('EGNATIA BANK (ROMANIA) SA','EGNAROBX','EGNA');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('EMPORIKI BANK-ROMANIA SA','BSEAROBU','BSEA');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('EXIMBANK ROMANIA','EXIMROBU','EXIM');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('GARANTIBANK INTERNATIONAL NV - SUCURSALA ROMANIA','UGBIROBU','UGBI');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('HVB BANCA PENTRU LOCUINTE','HVBLROBU','HVBL');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('ING BANK NV','INGBROBU','INGB');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('LIBRA BANK SA','BRELROBU','BREL');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('MKB ROMEXTERRA BANK SA','CRDZROBU','CRDZ');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('OTP BANK ROMANIA SA','BNRBROBU','BNRB');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('PIRAEUS BANK ROMANIA SA','PIRBROBU','PIRB');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('PORSCHE BANK ROMANIA SA','PORLROBU','PORL');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('PROCREDIT BANK','MIROROBU','MIRO');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('RAIFFEISEN BANCA PT LOCUINTE SA','RZBLROBU','RZBL');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('RAIFFEISEN BANK SA','RZBRROBU','RZBR');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('ROMANIAN INTERNATIONAL BANK SA','ROINROBU','ROIN');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('SANPAOLO IMI BANK ROMANIA SA','WBANRO22','WBAN');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('TRANSFOND SA','TRFDROBU','TRFD');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('TREZORERIA STATULUI','TREZROBU','TREZ');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('UNICREDIT TIRIAC BANK SA','BACXROBU','BACX');
+INSERT INTO glossary.institutii_bancare(denumire,cod_swift,cod_iban) VALUES('VOLKSBANK ROMANIA SA','VBBUROBU','VBBU');
+
+--#endregion Institutii Bancare
+
 --#endregion Glossary Schema
 
 --#region Settings Schema

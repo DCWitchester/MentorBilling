@@ -70,7 +70,9 @@
             @foreach (var element in PageController.BankAccountControllers)
             {
                 <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(element.SetElementIndex(PageController.BankAccountControllers.IndexOf(element)))"
-                                                                      BankAccountDisplayController="@BankAccountDisplayController" SellerDisplayController="@SellerDisplayController"/>
+                                                                      BankAccountDisplayController="@BankAccountDisplayController" 
+                                                                      SellerDisplayController="@SellerDisplayController"
+                                                                      LastItem="@(element==PageController.BankAccountControllers.Last())"/>
             }
         </div>
         <button type="submit"></button>

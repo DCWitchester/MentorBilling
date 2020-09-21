@@ -24,10 +24,18 @@ namespace MentorBilling.Invoice.Pages
         /// </summary>
         BankAccountDisplayController BankAccountDisplayController = new BankAccountDisplayController();
 
+        /// <summary>
+        /// the main Display Controller for the seller element
+        /// </summary>
         SellerDisplayController SellerDisplayController = new SellerDisplayController();
 
+        /// <summary>
+        /// the main validation of the page controller
+        /// </summary>
+        /// <param name="ControllerState">the state of the controller</param>
         void ValidateLogin(Boolean ControllerState)
         {
+            //we force the valid of the bankAccountControllers
             BankAccountDisplayController.RefreshPage();
         }
 
@@ -39,9 +47,10 @@ namespace MentorBilling.Invoice.Pages
 
         void GetAnafCompany()
         {
-            PageController.DevourCompany(
-                AnafGet.GetANAFCompany(PageController.FiscalCode)
-                );
+            if(Miscellaneous.ElementCheck.VerifyCIF(PageController.FiscalCode))
+                PageController.DevourCompany(
+                    AnafGet.GetANAFCompany(PageController.FiscalCode)
+                    );
         }
 
         /// <summary>
