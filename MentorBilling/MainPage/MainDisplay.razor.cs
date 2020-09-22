@@ -10,7 +10,8 @@ namespace MentorBilling.MainPage
 {
     public partial class MainDisplay
     {
-        [Parameter] public InstanceController InstanceController { get; set; } = new InstanceController();
+        [Parameter] 
+        public InstanceController InstanceController { get; set; } = new InstanceController();
         #region DisplayController
         /// <summary>
         /// the main initialization of the page

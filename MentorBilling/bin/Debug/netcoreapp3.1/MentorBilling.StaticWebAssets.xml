@@ -1,3 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
   <ContentRoot BasePath="_content/BlazorInputFile" Path="C:\Users\DCW\.nuget\packages\blazorinputfile\0.2.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Radzen.Blazor" Path="C:\Users\DCW\.nuget\packages\radzen.blazor\2.14.3\build\..\staticwebassets\" />
 </StaticWebAssets>

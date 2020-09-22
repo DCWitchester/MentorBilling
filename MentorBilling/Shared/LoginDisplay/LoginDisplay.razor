@@ -14,9 +14,12 @@
         case Miscellaneous.UserState.UserStates.loggedIn:
             <!--In case the user aslready is logged in-->
             <!--We Display the Welcome Message for now-->
+            <!--
             <div>
                 <label style="color:white; margin:10px">Bine ati venit @(InstanceController.UserSettings.LoggedInUser.DisplayName)</label>
             </div>
+            -->
+            <MentorBilling.Login.Pages.UserMenu InstanceController="InstanceController"></MentorBilling.Login.Pages.UserMenu>
             break;
         case Miscellaneous.UserState.UserStates.loggedOut:
             <!--In case the user isn't logged in-->

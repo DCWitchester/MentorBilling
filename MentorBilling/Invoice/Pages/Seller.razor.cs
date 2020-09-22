@@ -59,6 +59,9 @@ namespace MentorBilling.Invoice.Pages
                     );
         }
 
+         
+
+        #region EditContext        
         /// <summary>
         /// the main editContext on the Page
         /// </summary>
@@ -81,6 +84,6 @@ namespace MentorBilling.Invoice.Pages
             AddBankAccount();
             await InvokeAsync(() => StateHasChanged());
         }
-
+        #endregion EditContext
     }
 }

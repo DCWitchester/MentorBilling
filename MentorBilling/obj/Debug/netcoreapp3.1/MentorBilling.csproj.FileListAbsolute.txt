@@ -58,6 +58,8 @@ F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\RestSharp.dll
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csproj.CoreCompileInputs.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.MvcApplicationPartsAssemblyInfo.cache
+F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Radzen.Blazor.dll
+F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\MentorBilling.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\AuxilliaryComponents\Pages\BankAccount.razor.g.cs
@@ -80,3 +82,9 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\Mai
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Login\Pages\UserMenu.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Login\Pages\UserMenu.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Components\Dropdown.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Components\DropdownListItem.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\Components\Dropdown.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\Components\DropdownListItem.razor.g.cs

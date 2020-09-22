@@ -336,6 +336,13 @@ input[type="number"] {
 }
 /*#endregion Invisible Button*/
 
+/*#region User Menu*/
+.circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+/*#endregion User Menu*/
+
 
 .btn-primary {
     color: #fff;

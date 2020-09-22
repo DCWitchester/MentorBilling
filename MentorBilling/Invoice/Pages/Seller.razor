@@ -113,6 +113,14 @@
             </div>
         </div>
         <!--#endregion-->
-        <button type="submit"></button>
+        @if (@PageController.DisableController)
+        {
+            <button type="button" class="btn-primary-validate">Modifica Furnizor</button>
+        }
+        else
+        {
+            <button type="submit" class="btn-primary-validate">Blocheaza Furnizor</button>
+        }
+        <button type="button" class="btn-primary-mentor">Gestioneaza Parteneri</button>
     </EditForm>
 </div>
