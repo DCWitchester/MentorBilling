@@ -2,9 +2,13 @@
 
 <div class="dropdown">
     <button data-toggle="dropdown" class="btn-primary-login" @onclick="DisplayMenu"> Meniu <i class="fa fa-home"></i></button>
-    <div class="dropdown-menu @(IsMenuVisible?"show":"")">
-        <div class="dropdown-item" style="font:bold; text-align:center">Sunteti logat ca <br/> @(InstanceController.UserSettings.LoggedInUser.DisplayName)</div>
+    <div class="dropdown-menu @(IsMenuVisible? "show" : "")">
+        <div class="dropdown-item" style="text-align:center">
+            Sunteti logat ca <br/> 
+            <b> @(InstanceController.UserSettings.LoggedInUser.DisplayName) </b>
+        </div>
         <div class="dropdown-divider"/>
+        
         <div class="dropdown-item">Logout</div>
     </div>
 </div>

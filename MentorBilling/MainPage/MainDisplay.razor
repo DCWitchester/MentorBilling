@@ -24,7 +24,8 @@
     default:
         {
             <div style="width:30%; border:1px black solid; padding:5px">
-                <MentorBilling.Invoice.Pages.Seller/>
+                <MentorBilling.Invoice.Pages.Seller PageController="@(InstanceController.InvoiceController.SellerController)"
+                                                    />
             </div>
             break;
         }

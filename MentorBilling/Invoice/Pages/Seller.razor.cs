@@ -1,4 +1,5 @@
 ﻿using MentorBilling.AuxilliaryComponents.DisplayControllers;
+using MentorBilling.ControllerService;
 using MentorBilling.Invoice.Controllers;
 using MentorBilling.Invoice.DisplayControllers;
 using MentorBilling.Miscellaneous.ANAF;
@@ -20,14 +21,20 @@ namespace MentorBilling.Invoice.Pages
         public SellerController PageController { get; set; } = new SellerController();
 
         /// <summary>
+        /// the Instance Controller to grant access to all global elements
+        /// </summary>
+        [Parameter]
+        public InstanceController InstanceController { get; set; } = new InstanceController();
+
+        /// <summary>
         /// the bank account display controller
         /// </summary>
-        BankAccountDisplayController BankAccountDisplayController = new BankAccountDisplayController();
+        readonly BankAccountDisplayController BankAccountDisplayController = new BankAccountDisplayController();
 
         /// <summary>
         /// the main Display Controller for the seller element
         /// </summary>
-        SellerDisplayController SellerDisplayController = new SellerDisplayController();
+        readonly SellerDisplayController SellerDisplayController = new SellerDisplayController();
 
         /// <summary>
         /// the main validation of the page controller

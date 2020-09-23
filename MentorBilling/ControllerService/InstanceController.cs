@@ -1,4 +1,5 @@
-﻿using MentorBilling.MainPage;
+﻿using MentorBilling.Invoice.Controllers;
+using MentorBilling.MainPage;
 using MentorBilling.Messages;
 using MentorBilling.Settings;
 using MentorBilling.Shared.LoginDisplay;
@@ -27,5 +28,9 @@ namespace MentorBilling.ControllerService
         /// the main value for the UserSettingsController
         /// </summary>
         public UserSettings UserSettings { get; set; } = new UserSettings();
+        /// <summary>
+        /// the main value for the InvoiceController(Will Controll the Invoice)
+        /// </summary>
+        public InvoiceController InvoiceController { get; set; } = new InvoiceController();
     }
 }
