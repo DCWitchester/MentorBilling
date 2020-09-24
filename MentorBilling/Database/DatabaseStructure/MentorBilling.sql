@@ -44,7 +44,7 @@ INSERT INTO users.utilizatori(id,nume_utilizator,parola,sysadmin) VALUES(0,'M3nt
 CREATE TABLE users.grupuri (
   id bigserial PRIMARY KEY NOT NULL,
   denumire varchar NOT NULL DEFAULT (''),
-  administrator_grup bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  administrator_grup bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -62,7 +62,7 @@ COMMENT ON COLUMN users.grupuri.administrator_grup IS 'Administratorul grupului 
 CREATE TABLE users.grupuri_utilizatori (
   id bigserial PRIMARY KEY NOT NULL,
   grup_id bigint NOT NULL DEFAULT 0 REFERENCES users.grupuri(id),
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -96,7 +96,7 @@ COMMENT ON COLUMN users.drepturi.drept IS 'Coloana asta va contine denumirea dre
 
 CREATE TABLE users.drepturi_utilizatori (
   id bigserial PRIMARY KEY NOT NULL,
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id), 
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE, 
   drept_id bigint NOT NULL DEFAULT 0 REFERENCES users.drepturi(id),
   valoare_drept varchar NOT NULL DEFAULT (''),
   activ boolean NOT NULL DEFAULT true
@@ -176,7 +176,7 @@ INSERT INTO users.abonamente(denumire,activ) VALUES('Utilizator de grup',false);
 
 CREATE TABLE users.abonamente_utilizatori (
   id bigserial PRIMARY KEY NOT NULL,
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   abonament_id bigint NOT NULL DEFAULT 0 REFERENCES users.abonamente(id),
   valoare_lunara double precision NOT NULL DEFAULT 0,
   ultima_plata timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
@@ -216,7 +216,7 @@ CREATE TABLE seller.furnizori (
   telefon varchar NOT NULL DEFAULT (''),
   email varchar NOT NULL DEFAULT (''),
   sigla bytea NOT NULL DEFAULT (''),
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -257,7 +257,7 @@ CREATE TABLE seller.delegati (
   eliberator_buletin varchar NOT NULL DEFAULT (''),
   mijloc_transport varchar NOT NULL DEFAULT (''),
   numar_mijloc_transpot varchar NOT NULL DEFAULT (''),
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -271,7 +271,7 @@ COMMENT ON TABLE seller.delegati IS 'Tabela curenta contine toti delegatii unui 
 
 CREATE TABLE seller.utilizatori_last_used (
   id bigserial PRIMARY KEY NOT NULL,
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   furnizori_last_used bigint NOT NULL DEFAULT 0 REFERENCES seller.furnizori(id),
   conturi_bancare_last_used bigint NOT NULL DEFAULT 0 REFERENCES seller.conturi_bancare_furnizori(id),
   delegati_last_used bigint NOT NULL DEFAULT 0 REFERENCES seller.delegati(id),
@@ -752,7 +752,7 @@ CREATE TABLE settings.plaje_documente (
   valoare_curenta integer NOT NULL DEFAULT 0,
   serie varchar NOT NULL DEFAULT (''),
   tip_document integer NOT NULL DEFAULT 0,
-  creator_plaja bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  creator_plaja bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -769,7 +769,7 @@ COMMENT ON COLUMN settings.plaje_documente.valoare_curenta IS 'Coloana aceasta v
 CREATE TABLE settings.utilizatori_plaje (
   id bigserial PRIMARY KEY NOT NULL,
   plaje_document_id bigint NOT NULL DEFAULT 0 REFERENCES settings.plaje_documente(id),
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -802,7 +802,7 @@ COMMENT ON COLUMN settings.setari.tip_setare IS 'Coloana aceasta va contine tipu
 
 CREATE TABLE settings.setari_utilizatori (
   id bigserial PRIMARY KEY NOT NULL,
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori,
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   setare_id bigint NOT NULL DEFAULT 0 REFERENCES settings.setari(id),
   valoare_setare varchar NOT NULL DEFAULT (''),
   activ boolean NOT NULL DEFAULT true
@@ -823,7 +823,7 @@ COMMENT ON COLUMN settings.setari_utilizatori.valoare_setare IS 'Coloana aceasta
 CREATE TABLE settings.cote_tva_utilizatori (
   id bigserial PRIMARY KEY NOT NULL,
   indice_casa_marcat varchar NOT NULL DEFAULT 0,
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   cota_tva_id bigint NOT NULL DEFAULT 0 REFERENCES glossary.cote_tva(id),
   activ boolean NOT NULL DEFAULT true
 );
@@ -842,7 +842,7 @@ COMMENT ON COLUMN settings.cote_tva_utilizatori.indice_casa_marcat IS 'Coloana n
 
 CREATE TABLE settings.meniu_utilizator(
     id bigserial PRIMARY KEY NOT NULL,
-    utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+    utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
     inregistrare_meniu int NOT NULL DEFAULT 0,
     activ boolean NOT NULL DEFAULT true
 );
@@ -871,7 +871,7 @@ CREATE TABLE buyer.cumparatori (
   sediul varchar NOT NULL DEFAULT (''),
   tara bigint NOT NULL DEFAULT 0 REFERENCES glossary.tari(id),
   judetul bigint NOT NULL DEFAULT 0 REFERENCES glossary.judete(id),
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -917,8 +917,8 @@ CREATE TABLE invoice.factura (
   numar_documet integer NOT NULL DEFAULT 0,
   data_document timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
   numar_aviz integer NOT NULL DEFAULT 0,
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
-  creator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
+  creator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   tva_incasare boolean NOT NULL DEFAULT false,
   total_valoare double precision NOT NULL DEFAULT 0,
   total_tva double precision NOT NULL DEFAULT 0,
@@ -944,7 +944,7 @@ CREATE TABLE invoice.produse (
   unitate_masura varchar NOT NULL DEFAULT (''),
   pret_unitar double precision NOT NULL DEFAULT 0,
   cota_tva_id bigint NOT NULL DEFAULT 0 REFERENCES glossary.cote_tva(id),
-  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+  utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -1003,7 +1003,7 @@ CREATE SCHEMA log AUTHORIZATION postgres;
 
 CREATE TABLE log.log_utilizatori (
     id bigserial PRIMARY KEY NOT NULL,
-    utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+    utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
     ip_logare varchar NOT NULL DEFAULT (''),
     ora_logare timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
     logged boolean NOT NULL DEFAULT false,
@@ -1024,7 +1024,7 @@ CREATE TABLE log.log_actiuni (
     ora_actiune timestamp without time zone NOT NULL DEFAULT ('now'::text)::timestamp without time zone,
     actiune varchar NOT NULL DEFAULT (''),
     comanda varchar NOT NULL DEFAULT (''),
-    utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id)
+    utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE
 );
 
 ALTER TABLE log.log_actiuni OWNER TO postgres;

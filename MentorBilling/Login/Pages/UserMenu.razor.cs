@@ -1,4 +1,6 @@
 ﻿using MentorBilling.ControllerService;
+using MentorBilling.Database.DatabaseLink.UserSettings;
+using MentorBilling.Miscellaneous.Menu;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,16 @@ namespace MentorBilling.Login.Pages
         void DisplayMenu()
         {
             IsMenuVisible = !IsMenuVisible;
+        }
+
+        protected override async Task OnInitializedAsync()
+        {
+            await Task.Run(()=>MenuFunctions.UpdateLocalUserMenu(InstanceController.UserSettings.LoggedInUser, InstanceController.UserMenu));
+        }
+
+        void ExecuteMenuEvent(MenuItem menuItem)
+        {
+
         }
     }
 }

@@ -68,7 +68,7 @@ namespace MentorBilling.Miscellaneous.Menu
                 //the id is set to the enum for the utmost control
                 MenuItemID = (Int32)MenuItems.subscriptions,
                 MenuDisplay = "Gestionare Abonamente",
-                IsActive = true
+                IsActive = false
             };
         }
 

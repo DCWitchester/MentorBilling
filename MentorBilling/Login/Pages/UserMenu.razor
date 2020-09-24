@@ -1,14 +1,29 @@
 ﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="dropdown">
+<div class="dropdown" style="margin-right: 15px">
     <button data-toggle="dropdown" class="btn-primary-login" @onclick="DisplayMenu"> Meniu <i class="fa fa-home"></i></button>
-    <div class="dropdown-menu @(IsMenuVisible? "show" : "")">
+    <div class="dropdown-menu @(IsMenuVisible? "show" : "")" style="margin-right:15px">
         <div class="dropdown-item" style="text-align:center">
-            Sunteti logat ca <br/> 
+            Sunteti logat ca <br />
             <b> @(InstanceController.UserSettings.LoggedInUser.DisplayName) </b>
         </div>
-        <div class="dropdown-divider"/>
-        
-        <div class="dropdown-item">Logout</div>
+        <div class="dropdown-divider" />
+        @foreach (var element in InstanceController.UserMenu.UserMenu)
+        {
+            if (element.IsActive)
+            {
+                <div class="dropdown-item" style="text-align:center;" @onclick="(() => ExecuteMenuEvent(element))">
+                    @element.MenuDisplay
+                </div>
+            }
+            else
+            {
+                <div class="dropdown-item" style="text-align:center; color:darkgrey; pointer-events: none;" >
+                    @element.MenuDisplay
+                </div>
+            }
+        }
+        <div class="dropdown-divider" />
+        <div class="dropdown-item" style="text-align:center;">Logout</div>
     </div>
 </div>
