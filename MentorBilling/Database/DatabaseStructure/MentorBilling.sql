@@ -838,6 +838,22 @@ COMMENT ON COLUMN settings.cote_tva_utilizatori.indice_casa_marcat IS 'Coloana n
 
 --#endregion Cote TVA Utilizatori
 
+--#region Meniu Utilizator
+
+CREATE TABLE settings.meniu_utilizator(
+    id bigserial PRIMARY KEY NOT NULL,
+    utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id),
+    inregistrare_meniu int NOT NULL DEFAULT 0,
+    activ boolean NOT NULL DEFAULT true
+);
+
+ALTER TABLE settings.meniu_utilizator OWNER TO postgres;
+
+COMMENT ON TABLE settings.meniu_utilizator IS 'Tabela aceasta va contine inregistrarea specifica a utilizatorului';
+COMMENT ON COLUMN settings.meniu_utilizator.inregistrare_meniu IS 'Vom mentine legatura intre enumul din program si cel din baza';
+
+--#endregion Meniu Utilizator
+
 --#endregion Settings Schema
 
 --#region Buyer Schema
