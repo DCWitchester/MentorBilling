@@ -1,29 +1,40 @@
 ﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!--The dropdown menu for the user-->
 <div class="dropdown" style="margin-right: 15px">
+    <!-- The button linked to the display element of the dropdown -->
     <button data-toggle="dropdown" class="btn-primary-login" @onclick="DisplayMenu"> Meniu <i class="fa fa-home"></i></button>
+    <!-- The dropdown menu element containing the elements -->
     <div class="dropdown-menu @(IsMenuVisible? "show" : "")" style="margin-right:15px">
+        <!-- The initial display for the user name -->
         <div class="dropdown-item" style="text-align:center">
             Sunteti logat ca <br />
             <b> @(InstanceController.UserSettings.LoggedInUser.DisplayName) </b>
         </div>
+        <!-- A divider between the inital element and the auto generated menu -->
         <div class="dropdown-divider" />
+        <!-- We use the User Menu from the instance controller to generate the menu -->
         @foreach (var element in InstanceController.UserMenu.UserMenu)
         {
+            <!-- The display and functionality need to be extremly different between the active and inactive elements -->
             if (element.IsActive)
             {
+                <!-- The active elements also have a linked event on the click -->
                 <div class="dropdown-item" style="text-align:center;" @onclick="(() => ExecuteMenuEvent(element))">
                     @element.MenuDisplay
                 </div>
             }
             else
             {
-                <div class="dropdown-item" style="text-align:center; color:darkgrey; pointer-events: none;" >
+                <!-- Meanwhile the inactive element will need to have pointer events removed -->
+                <div class="dropdown-item" style="text-align:center; color:darkgrey; pointer-events: none;">
                     @element.MenuDisplay
                 </div>
             }
         }
+        <!-- Another element divider -->
         <div class="dropdown-divider" />
+        <!-- The final Logout Element -->
         <div class="dropdown-item" style="text-align:center;">Logout</div>
     </div>
 </div>
