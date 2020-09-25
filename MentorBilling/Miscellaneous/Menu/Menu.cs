@@ -60,12 +60,14 @@ namespace MentorBilling.Miscellaneous.Menu
         /// <summary>
         /// this function will link the current menu settings to a specific user
         /// </summary>
-        /// <param name="user"></param>
+        /// <param name="user">the given user</param>
         public void InitializeUserMenuSettingsForUser(User user)
         {
             //the menu settings for the generation
             Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(user, UserMenu);
         }
+
+        public void UpdateMenuSettings()
 
         #region Item Initialization
         /// <summary>

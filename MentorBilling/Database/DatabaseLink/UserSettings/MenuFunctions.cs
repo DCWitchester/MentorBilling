@@ -152,7 +152,7 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
         {
             #region ActionLog
             //the main log display
-            String logAction = $"S-a actualizat starea setarri {menuItem.MenuDisplay} pentru utilizatorul {user.DisplayName}";
+            String logAction = $"S-a actualizat starea setari {menuItem.MenuDisplay} pentru utilizatorul {user.DisplayName}";
             String logCommand = $"UPDATE settings.meniu_utilizator SET activ = {menuItem.IsActive} " +
                                     $"WHERE utilizator_id = {user.ID} AND inregistrare_meniu = {menuItem.MenuItemID}";
             //the local element IP
@@ -177,6 +177,59 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             //lets have happy functions without forgetting to close the 
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
         }
-        
+
+        /// <summary>
+        /// this function will update a given specific menu item into the database 
+        /// </summary>
+        /// <param name="user">the given user</param>
+        /// <param name="menuItem">the specific menu item</param>
+        public static void UpdateMenuSettingForUser(User user, List<MenuItem> menuItems)
+        {
+            #region ActionLog
+            //the main log display
+            String logAction = $"S-a actualizat starea setarilor pentru utilizatorul {user.DisplayName}";
+            String logCommand = String.Empty;
+            
+            //the local element IP
+            String IP = MentorBilling.Miscellaneous.IPFunctions.GetWANIp();
+            #endregion
+            String queryCommand = String.Empty;
+            List<NpgsqlParameter> queryParameters = new List<NpgsqlParameter>();
+            foreach (MenuItem menuItem in menuItems)
+            {
+                #region ActionLog
+                logCommand += $"UPDATE settings.meniu_utilizator SET activ = {menuItem.IsActive} " +
+                                    $"WHERE utilizator_id = {user.ID} AND inregistrare_meniu = {menuItem.MenuItemID};";
+                #endregion
+                //the update command for the query
+                queryCommand += String.Format("UPDATE settings.meniu_utilizator SET activ = :p_activ_{0} ",
+                                                menuItem.MenuItemID) +
+                                        String.Format("WHERE utilizator_id = :p_user_id_{0} AND inregistrare_meniu = :p_record_id_{0};"+Environment.NewLine,
+                                                        menuItem.MenuItemID);
+                //we instantiate the query parameter
+                NpgsqlParameter[] commandParameters =
+                {
+                    new NpgsqlParameter(
+                        String.Format("p_user_id_{0}",menuItem.MenuItemID)
+                        ,user.ID),
+                    new NpgsqlParameter(
+                        String.Format("p_record_id_{0}",menuItem.MenuItemID)
+                        ,menuItem.MenuItemID),
+                    new NpgsqlParameter(
+                        String.Format("p_activ_{0}",menuItem.MenuItemID)
+                        ,menuItem.IsActive)
+                };
+                queryParameters.AddRange(commandParameters);
+            }
+            //if we are unable to connect to the server we abandon execution
+            if (!PgSqlConnection.OpenConnection()) return;
+            //else we call the execution of the procedure
+            PgSqlConnection.ExecuteScalar(queryCommand, queryParameters);
+            //we also log the current action
+            ActionLog.LogAction(logAction, IP, user, logCommand, PgSqlConnection);
+            //lets have happy functions without forgetting to close the 
+            Miscellaneous.NormalConnectionClose(PgSqlConnection);
+        }
+
     }
 }
