@@ -15,6 +15,11 @@ namespace MentorBilling.Login
 {
     public class Functions
     {
+        /// <summary>
+        /// this function will login the given user to the instance controller
+        /// </summary>
+        /// <param name="user">the given user</param>
+        /// <param name="instanceController">the current instance controller</param>
         public static void Login(User user,InstanceController instanceController)
         {
             //this function will log in the user to the controller
@@ -66,6 +71,20 @@ namespace MentorBilling.Login
             SetPagesToMain(instanceController);
             //at this point the login is done
         }
+
+        public static void Logout(InstanceController instanceController)
+        {
+            //we first reinstantiate the user to delete existing settings
+            instanceController.UserSettings = new Settings.UserSettings();
+            //then return the display to the initial state
+            //we remove the controllers
+            instanceController.InvoiceController = new Invoice.Controllers.InvoiceController();
+            //we will return to the main page if the user is in the settings page for example
+            instanceController.DisplaySettings.ChangePage(MainPage.ComponentDisplay.Components.none);
+            //we will also set login display to the default state
+            instanceController.LoginDisplayController.ChangeMessageType(instanceController.UserSettings.UserState);
+        }
+
         /// <summary>
         /// this function will set all controllers to their main functionality
         /// </summary>

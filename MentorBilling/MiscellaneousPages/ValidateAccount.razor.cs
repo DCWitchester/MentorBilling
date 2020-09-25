@@ -1,4 +1,5 @@
 ﻿using MentorBilling.Login.UserControllers;
+using MentorBilling.Miscellaneous.Menu;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace MentorBilling.MiscellaneousPages
 
         protected override async Task OnInitializedAsync()
         {
-            await Task.Run(() => RetriveUser()).ContinueWith(t => ActivateUser());
+            await Task.Run(() => RetriveUser()).ContinueWith(t => ActivateUser()).ContinueWith(t=>ActivateMenu());
         }
 
         /// <summary>
@@ -46,6 +47,17 @@ namespace MentorBilling.MiscellaneousPages
                 ErrorMessage = true;
             else
                 Database.DatabaseLink.SubscriptionFunctions.ActivateTrialSubscription(User);
+        }
+
+        /// <summary>
+        /// this function will also enable the menu options for the currently activated account
+        /// </summary>
+        void ActivateMenu()
+        {
+            //we initialize a new menu item
+            Menu menu = new Menu();
+            //and we call the update of the menu settings
+            menu.UpdateMenuSettings(User);
         }
     }
 }

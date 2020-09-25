@@ -17,8 +17,11 @@ namespace MentorBilling.Messages
             //database Error to dispaly
             DatabaseError = 1,
             //the invalid subscription message
-            InvalidSubscription = 2
+            InvalidSubscription = 2,
+            //the logout warning message
+            Logout = 3
         }
+
         /// <summary>
         /// this function will display the database error message
         /// </summary>
@@ -27,6 +30,7 @@ namespace MentorBilling.Messages
         {
             messageDisplaySettings.ChangeMessageType(MessageTypes.DatabaseError);
         }
+
         /// <summary>
         /// this function will remove all error messages
         /// </summary>
@@ -35,13 +39,23 @@ namespace MentorBilling.Messages
         {
             messageDisplaySettings.ChangeMessageType(MessageTypes.None);
         }
+
         /// <summary>
-        /// this function will remove the error message
+        /// this function will call the subscription error
         /// </summary>
         /// <param name="messageDisplaySettings"></param>
         public static void CallSubscriptionError(MessageDisplaySettings messageDisplaySettings)
         {
             messageDisplaySettings.ChangeMessageType(MessageTypes.InvalidSubscription);
+        }
+
+        /// <summary>
+        /// this function will call the logoutWarning message
+        /// </summary>
+        /// <param name="messageDisplaySettings"></param>
+        public static void CallLogoutWarning(MessageDisplaySettings messageDisplaySettings)
+        {
+            messageDisplaySettings.ChangeMessageType(MessageTypes.Logout);
         }
     }
 }

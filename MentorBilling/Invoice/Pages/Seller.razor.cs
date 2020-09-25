@@ -18,13 +18,13 @@ namespace MentorBilling.Invoice.Pages
         /// the page controller received as a parameter
         /// </summary>
         [Parameter]
-        public SellerController PageController { get; set; } = new SellerController();
+        public SellerController PageController { get; set; }
 
         /// <summary>
         /// the Instance Controller to grant access to all global elements
         /// </summary>
         [Parameter]
-        public InstanceController InstanceController { get; set; } = new InstanceController();
+        public InstanceController InstanceController { get; set; }
 
         /// <summary>
         /// the bank account display controller

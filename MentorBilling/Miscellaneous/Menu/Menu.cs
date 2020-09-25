@@ -57,6 +57,7 @@ namespace MentorBilling.Miscellaneous.Menu
             }
         }
 
+        #region Menu Updating
         /// <summary>
         /// this function will link the current menu settings to a specific user
         /// </summary>
@@ -67,10 +68,24 @@ namespace MentorBilling.Miscellaneous.Menu
             Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(user, UserMenu);
         }
 
+        /// <summary>
+        /// this function will update the given users menu settings with the current menu
+        /// </summary>
+        /// <param name="user">the given user</param>
         public void UpdateMenuSettings(User user)
         {
-            Database.DatabaseLink.UserSettings.MenuFunctions.UpdateMenuSettingForUser(user,UserMenu)
+            Database.DatabaseLink.UserSettings.MenuFunctions.UpdateMenuSettingForUser(user, UserMenu);
         }
+
+        /// <summary>
+        /// this function will disable all element items from the menu
+        /// </summary>
+        public void DeactivateMenu()
+        {
+            //foreach is an awesome linq extension
+            UserMenu.ForEach(element => element.IsActive = false);
+        }
+        #endregion
 
         #region Item Initialization
         /// <summary>

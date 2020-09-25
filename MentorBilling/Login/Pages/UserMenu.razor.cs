@@ -1,5 +1,6 @@
 ﻿using MentorBilling.ControllerService;
 using MentorBilling.Database.DatabaseLink.UserSettings;
+using MentorBilling.Messages;
 using MentorBilling.Miscellaneous.Menu;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -28,7 +29,12 @@ namespace MentorBilling.Login.Pages
 
         void ExecuteMenuEvent(MenuItem menuItem)
         {
+            
+        }
 
+        void LogOut()
+        {
+            MessageDisplay.CallLogoutWarning(InstanceController.MessageDisplaySettings);
         }
     }
 }

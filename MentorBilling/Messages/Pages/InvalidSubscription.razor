@@ -1,7 +1,4 @@
-﻿@inject MessageDisplaySettings MessageDisplaySettings
-@inject MentorBilling.MainPage.DisplaySettings DisplaySettings 
-
-<div>
+﻿<div>
     <h2>
         Atentie contul nu are un abonament valid configurat.
         <br />
@@ -12,14 +9,17 @@
 </div>
 
 @code {
+    [Parameter]
+    public MentorBilling.ControllerService.InstanceController InstanceController { get; set; }
+
     /// <summary>
     /// the single function on the page so a cs would be overkill
     /// </summary>
     public void LeaveError()
     {
         //we move to the subscription
-        MentorBilling.MainPage.ComponentDisplay.CallSubscription(DisplaySettings);
+        MentorBilling.MainPage.ComponentDisplay.CallSubscription(InstanceController.DisplaySettings);
         //and hide the error messages
-        MessageDisplay.CallMain(MessageDisplaySettings);
+        MessageDisplay.CallMain(InstanceController.MessageDisplaySettings);
     }
 }

@@ -62,6 +62,12 @@ namespace MentorBilling.Login.Pages
                 //not that the pesky things are done we must login
                 //though before we do that we will leave the register page
                 ComponentDisplay.CallMain(InstanceController.DisplaySettings);
+                #region Menu Generation
+                //we deactivate the initial menu settings
+                InstanceController.UserMenu.DeactivateMenu();
+                //then insert the initial settings
+                Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(newUser, InstanceController.UserMenu.UserMenu);
+                #endregion
                 //now we also Login the user
                 Functions.Login(newUser, InstanceController);
             }

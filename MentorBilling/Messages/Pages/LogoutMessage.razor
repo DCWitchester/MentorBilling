@@ -1,0 +1,33 @@
+﻿<div>
+    <h2>
+        Atentie urmeaza sa va delogati de pe contul curent.
+        <br />
+        Sigur doriti sa continuati aceasta operatiune?
+        <br />
+        <button class="btn-primary-mentor" @onclick="ContinueLogout">Da</button>
+        <button class="btn-primary-mentor" @onclick="LeaveError">Nu</button>
+    </h2>
+</div>
+
+@code {
+    [Parameter]
+    public MentorBilling.ControllerService.InstanceController InstanceController { get; set; }
+
+    /// <summary>
+    /// this function will call the logout event on the page
+    /// </summary>
+    public void ContinueLogout()
+    {
+        LeaveError();
+        Login.Functions.Logout(InstanceController);
+    }
+
+    /// <summary>
+    /// the abandon on the messge
+    /// </summary>
+    public void LeaveError()
+    {
+        //hide the error messages
+        MessageDisplay.CallMain(InstanceController.MessageDisplaySettings);
+    }
+}

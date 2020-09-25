@@ -10,7 +10,10 @@
                 <MentorBilling.Messages.Pages.DatabaseConnectionError />
                 break;
             case Messages.MessageDisplay.MessageTypes.InvalidSubscription:
-                <MentorBilling.Messages.Pages.InvalidSubscription />
+                <MentorBilling.Messages.Pages.InvalidSubscription InstanceController="InstanceController" />
+                            break;
+            case Messages.MessageDisplay.MessageTypes.Logout:
+                <MentorBilling.Messages.Pages.LogoutMessage InstanceController="InstanceController" />
                 break;
         }
     </div>

@@ -14,12 +14,12 @@ namespace MentorBilling.Invoice.Pages
         /// the instance controller for the program
         /// </summary>
         [Parameter]
-        public InstanceController InstanceController { get; set; } = new InstanceController();
+        public InstanceController InstanceController { get; set; }
 
         /// <summary>
         /// the pageController for the invoice
         /// </summary>
         [Parameter]
-        public InvoiceController PageController { get; set; } = new InvoiceController();
+        public InvoiceController PageController { get; set; }
     }
 }
