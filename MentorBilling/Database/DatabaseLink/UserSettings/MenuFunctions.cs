@@ -188,12 +188,15 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             #region ActionLog
             //the main log display
             String logAction = $"S-a actualizat starea setarilor pentru utilizatorul {user.DisplayName}";
+            //the log command will be updated for each item
             String logCommand = String.Empty;
-            
             //the local element IP
             String IP = MentorBilling.Miscellaneous.IPFunctions.GetWANIp();
             #endregion
+
+            //the query command
             String queryCommand = String.Empty;
+            //the parameter list
             List<NpgsqlParameter> queryParameters = new List<NpgsqlParameter>();
             foreach (MenuItem menuItem in menuItems)
             {

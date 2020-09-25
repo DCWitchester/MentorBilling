@@ -67,7 +67,10 @@ namespace MentorBilling.Miscellaneous.Menu
             Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(user, UserMenu);
         }
 
-        public void UpdateMenuSettings()
+        public void UpdateMenuSettings(User user)
+        {
+            Database.DatabaseLink.UserSettings.MenuFunctions.UpdateMenuSettingForUser(user,UserMenu)
+        }
 
         #region Item Initialization
         /// <summary>
