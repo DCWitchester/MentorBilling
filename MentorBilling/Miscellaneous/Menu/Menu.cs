@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MentorBilling.Login.UserControllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -56,6 +57,16 @@ namespace MentorBilling.Miscellaneous.Menu
             }
         }
 
+        /// <summary>
+        /// this function will link the current menu settings to a specific user
+        /// </summary>
+        /// <param name="user"></param>
+        public void InitializeUserMenuSettingsForUser(User user)
+        {
+            //the menu settings for the generation
+            Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(user, UserMenu);
+        }
+
         #region Item Initialization
         /// <summary>
         /// this function will return a subscription based menu item
@@ -68,7 +79,7 @@ namespace MentorBilling.Miscellaneous.Menu
                 //the id is set to the enum for the utmost control
                 MenuItemID = (Int32)MenuItems.subscriptions,
                 MenuDisplay = "Gestionare Abonamente",
-                IsActive = false
+                IsActive = true
             };
         }
 
