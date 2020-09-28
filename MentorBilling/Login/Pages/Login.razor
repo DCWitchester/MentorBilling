@@ -13,7 +13,7 @@
             <label class="col-form-label">Nume Utilizator sau Email</label>
             <!--The Main Input Box for the UserName and the specific Validation Error-->
             <div>
-                <InputText id="tbUsername" class="form-control" placeholder="Nume Utilizator sau Email" @bind-Value="PageController.Username" />
+                <InputText type="text" id="tbUsername" class="form-control" placeholder="Nume Utilizator sau Email" @bind-Value="PageController.Username" />
                 <!--The Validation Message bound to the specific error-->
                 <ValidationMessage For="@(()=>PageController.Username)" />
             </div>

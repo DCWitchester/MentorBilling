@@ -50,7 +50,7 @@ namespace MentorBilling.Login.Pages
         /// </summary>
         void LogOut()
         {
-            //the main functionality is on the 
+            //the main functionality is on the logout page
             MessageDisplay.CallLogoutWarning(InstanceController.MessageDisplaySettings);
         }
     }
