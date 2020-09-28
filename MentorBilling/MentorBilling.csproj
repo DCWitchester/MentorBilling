@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <Version>0.3.21</Version>
+    <Description>Online Billing App</Description>
+    <Copyright>Mentor SRL</Copyright>
+    <PackageIcon>favicon.ico</PackageIcon>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +23,10 @@
 
   <ItemGroup>
     <None Include="wwwroot\EmailStructures\validationEmail.txt" />
+    <None Include="wwwroot\favicon.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="wwwroot\javascripts\MiscellaneousFunctions.js" />
   </ItemGroup>
 
