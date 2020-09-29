@@ -31,8 +31,8 @@
                     <ValidationMessage For="@(()=>PageController.IsBankNeeded)" />
                     <ValidationMessage For="@(()=>PageController.IsAccountFilledIn)" />
                 </div>
-                <div style="justify-content: flex-end; display: flex; margin-top:5px;">
-                    <button class="plus-button--small" type="button" @onclick="(() => SellerDisplayController.RefreshPage())" disabled="@PageController.DisableController" />
+                <div style="justify-content: flex-end; display: flex;">
+                    <button class="plus-button--small" style="vertical-align: middle;" type="button" @onclick="(() => SellerDisplayController.RefreshPage())" disabled="@PageController.DisableController" />
                 </div>
             }
             else
