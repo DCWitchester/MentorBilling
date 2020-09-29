@@ -55,17 +55,6 @@ namespace MentorBilling.Invoice.Pages
             EditContext = new EditContext(PageController);
         }
 
-        /// <summary>
-        /// this function will get the company info from ANAF
-        /// </summary>
-        void GetAnafCompany()
-        {
-            if(Miscellaneous.ElementCheck.VerifyCIF(PageController.FiscalCode))
-                PageController.DevourCompany(
-                    AnafGet.GetANAFCompany(PageController.FiscalCode)
-                    );
-        }
-
          
 
         #region EditContext        

@@ -13,6 +13,13 @@ namespace MentorBilling.Invoice.Controllers
 {
     public class SellerController
     {
+
+        /// <summary>
+        /// the private fiscal code property
+        /// </summary>
+#pragma warning disable IDE1006 // Naming Styles
+        private String fiscalCode { get; set; } = String.Empty;
+#pragma warning restore IDE1006 // Naming Styles
         /// <summary>
         /// the name bound to the given Seller name TextBox
         /// </summary>
@@ -29,7 +36,11 @@ namespace MentorBilling.Invoice.Controllers
         /// the commercial registry number bound to a given text box
         /// </summary>
         [Required(ErrorMessage = "Codul Fiscal(CUI/CIF) este obligatoriu")]
-        public String FiscalCode { get; set; } = String.Empty;
+        public String FiscalCode 
+        { 
+            get =>  fiscalCode; 
+            set => RetrieveAnafInfo(value); 
+        }
 
         /// <summary>
         /// the joint stock bound to a given text box
@@ -84,14 +95,27 @@ namespace MentorBilling.Invoice.Controllers
         /// this funtion will devour a company returned from ANAF
         /// </summary>
         /// <param name="company">the company returned from the webservice</param>
-        public void DevourCompany(Company company)
+        void DevourCompany(Company company)
         {
             //the only info that interests us is the company name
             this.Name = company.Name;
             //the FiscalCode with or without RO
-            this.FiscalCode = (company.CompanyStatus.VAT_Applicable ? "RO" : "") + company.Cui;
+            this.fiscalCode = (company.CompanyStatus.VAT_Applicable ? "RO" : "") + company.Cui;
             //and the headquarters
             this.Headquarters = company.Adress;
+        }
+
+        /// <summary>
+        /// this function will be called by the valid on the Anaf
+        /// </summary>
+        /// <param name="fiscalCode">the fiscal code entered on the user side</param>
+        public void RetrieveAnafInfo(String fiscalCode)
+        {
+            if (Miscellaneous.ElementCheck.VerifyCIF(fiscalCode))
+                DevourCompany(
+                    AnafGet.GetANAFCompany(fiscalCode)
+                    );
+            else this.fiscalCode = fiscalCode;
         }
     }
 }

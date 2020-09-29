@@ -78,6 +78,9 @@ F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Microsoft.Extens
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csproj.CoreCompileInputs.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.MvcApplicationPartsAssemblyInfo.cache
+F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Common.Logging.dll
+F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Common.Logging.Core.dll
+F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\MangoPay.SDK.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\MentorBilling.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\AuxilliaryComponents\Pages\BankAccount.razor.g.cs
