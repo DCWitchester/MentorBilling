@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MentorBilling.SettingsComponents.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace MentorBilling.SettingsComponents
     public class Setting
     {
         #region Properties
+#pragma warning disable IDE1006
         /// <summary>
         /// the base id property for the class
         /// </summary>
@@ -29,6 +31,7 @@ namespace MentorBilling.SettingsComponents
         /// the base value as an object to not determine the type
         /// </summary>
         private Object settingValue { get; set; } = new Object();
+#pragma warning restore IDE1006
         #endregion
 
         #region Callers
@@ -120,6 +123,14 @@ namespace MentorBilling.SettingsComponents
                 _ => null
             };
         }
+        #endregion
+
+        #region ControllerCasts
+        /// <summary>
+        /// this function will return a DateTimeController for the current setting
+        /// </summary>
+        /// <returns>the DateTimeController for the current property</returns>
+        public DateTimeController GetDateTimeController() => new DateTimeController(GetDateTimeValue, settingDisplay);
         #endregion
     }
 }
