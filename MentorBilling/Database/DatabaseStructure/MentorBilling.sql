@@ -787,15 +787,18 @@ COMMENT ON TABLE settings.utilizatori_plaje IS 'Tabela aceasta este tabela de le
 CREATE TABLE settings.setari (
   id bigserial PRIMARY KEY NOT NULL,
   setare varchar NOT NULL DEFAULT (''),
-  tip_setare integer NOT NULL DEFAULT 0,
+  tip_date_setare integer NOT NULL DEFAULT 0,
+  tip_input_setare integer NOT NULL DEFAULT 0,
+  valoare_initiala varchar NOT NULL DEFAULT (''),
   activ boolean NOT NULL DEFAULT true
 );
 
 ALTER TABLE settings.setari OWNER TO postgres;
 
 COMMENT ON TABLE settings.setari IS 'Tabela aceasta va contine toate setarile programului la nivel de setare';
-COMMENT ON COLUMN settings.setari.tip_setare IS 'Coloana aceasta va contine tipul de setare legata de un enum din program';
-
+COMMENT ON COLUMN settings.setari.tip_date_setare IS 'Coloana aceasta va contine tipul de date al setarii legata de un enum din program';
+COMMENT ON COLUMN settings.setari.tip_input_setare IS 'Coloana aceasta va contine tipul obiectului de input pentru aceasta setare legat de un enum din program';
+COMMENT ON COLUMN settings.setari.valoare_initiala IS 'Valoarea initiala a setari se va salva ca string: base value for all types';
 --#endregion Setari
 
 --#region Setari Utilizatori
