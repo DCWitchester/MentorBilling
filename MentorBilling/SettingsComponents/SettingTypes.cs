@@ -21,8 +21,9 @@ namespace MentorBilling.Settings
 
         public enum SettingInputTypes
         {
-            type_number = 0,
-            type_text = 1,
+            type_void = 0,
+            type_number = 1,
+            type_text,
             type_checkbox,
             type_date,
             type_time,

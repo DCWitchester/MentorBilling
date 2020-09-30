@@ -796,6 +796,7 @@ CREATE TABLE settings.setari (
 ALTER TABLE settings.setari OWNER TO postgres;
 
 COMMENT ON TABLE settings.setari IS 'Tabela aceasta va contine toate setarile programului la nivel de setare';
+COMMENT ON COLUMN settings.setari.setare IS 'Setare va fi textul afisat utilizatorului final';
 COMMENT ON COLUMN settings.setari.tip_date_setare IS 'Coloana aceasta va contine tipul de date al setarii legata de un enum din program';
 COMMENT ON COLUMN settings.setari.tip_input_setare IS 'Coloana aceasta va contine tipul obiectului de input pentru aceasta setare legat de un enum din program';
 COMMENT ON COLUMN settings.setari.valoare_initiala IS 'Valoarea initiala a setari se va salva ca string: base value for all types';
