@@ -2,9 +2,11 @@
     <!--The Label for the Object-->
     <label class="col-sm-3 col-form-label">@PageController.DisplayText</label>
     <!--The div Containing the specific DateTime Controller-->
-    <div class="col-sm-9">
+    <div class="col-sm-5">
         <!--the date picker bound to the date property-->
         <input type="date" @bind-value="@PageController.Date" />
+    </div >
+    <div class="col-sm-5">
         <!--the time picker bound to the time property-->
         <input type="time" @bind-value="@PageController.Time" />
     </div>

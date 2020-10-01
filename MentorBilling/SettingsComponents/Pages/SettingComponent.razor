@@ -1,1 +1,168 @@
-﻿
+﻿<div class="form-group row mb-1">
+    <!--The Label for the Object-->
+    <label class="col-sm-3 col-form-label"> @(PageController.SettingDisplay) </label>
+    <!--The div containing the input controller based on the input type-->
+    <div class="col-sm-9">
+        <!--We use a switch to generate-->
+        @switch (PageController.InputTypes)
+        {
+            case Settings.SettingTypes.SettingInputTypes.type_checkbox:
+                <!--In case of a checkbox-->
+                @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                {
+                    <!--We bind the value to a boolean value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.BooleanValue)" />
+                }
+                else
+                {
+                    <!--We bind the value to a boolean value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <!--And if we have a valid tooltip we also display it-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.BooleanValue)"
+                           data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                }
+                break;
+            case Settings.SettingTypes.SettingInputTypes.type_date:
+                <!--In case of a Date Picker-->
+                @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                {
+                    <!--We bind the value to a DateTime value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.DateTimeValue)" />
+                }
+                else
+                {
+                    <!--We bind the value to a DateTime value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <!--And if we have a valid tooltip we also display it-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.DateTimeValue)"
+                           data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                }
+                break;
+            case Settings.SettingTypes.SettingInputTypes.type_number:
+                <!--In case of a numeric input: We have multiple posibilities-->
+                @if (PageController.DataTypes == Settings.SettingTypes.SettingDataTypes.type_int)
+                {
+                    <!--An Integer Type Contorller-->
+                    @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                    {
+                        <!--We bind the value to a Integer value-->
+                        <!--The placeholder and type are received from the controller-->
+                        <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                               @bind-value="@(PageController.IntegerValue)" />
+                    }
+                    else
+                    {
+                        <!--We bind the value to a Integer value-->
+                        <!--The placeholder and type are received from the controller-->
+                        <!--And if we have a valid tooltip we also display it-->
+                        <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                               @bind-value="@(PageController.IntegerValue)"
+                               data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                    }
+                }
+                else if (PageController.DataTypes == Settings.SettingTypes.SettingDataTypes.type_double)
+                {
+                    <!--An Double Type Contorller-->
+                    @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                    {
+                        <!--We bind the value to a Double value-->
+                        <!--The placeholder and type are received from the controller-->
+                        <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                               @bind-value="@(PageController.DoubleValue)" />
+                    }
+                    else
+                    {
+                        <!--We bind the value to a Double value-->
+                        <!--The placeholder and type are received from the controller-->
+                        <!--And if we have a valid tooltip we also display it-->
+                        <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                               @bind-value="@(PageController.DoubleValue)"
+                               data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                    }
+                }
+                break;
+            case Settings.SettingTypes.SettingInputTypes.type_text:
+                <!--In case of a Text Picker-->
+                @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                {
+                    <!--We bind the value to a Text value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.StringValue)" />
+                }
+                else
+                {
+                    <!--We bind the value to a Text value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <!--And if we have a valid tooltip we also display it-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.StringValue)"
+                           data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                }
+                break;
+            case Settings.SettingTypes.SettingInputTypes.type_time:
+                <!--In case of a Time Picker-->
+                @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                {
+                    <!--We bind the value to a DateTime value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.DateTimeValue)" />
+                }
+                else
+                {
+                    <!--We bind the value to a DateTime value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <!--And if we have a valid tooltip we also display it-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.DateTimeValue)"
+                           data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                }
+                break;
+            case Settings.SettingTypes.SettingInputTypes.type_void:
+                <!--In case of a Void Type(Error Type)-->
+                @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                {
+                    <!--We bind the value to a Text value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.StringValue)" />
+                }
+                else
+                {
+                    <!--We bind the value to a Text value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <!--And if we have a valid tooltip we also display it-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.StringValue)"
+                           data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                }
+                break;
+            default:
+                <!--default value(Error Type)-->
+                @if (String.IsNullOrWhiteSpace(PageController.Tooltip))
+                {
+                    <!--We bind the value to a Text value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.StringValue)" />
+                }
+                else
+                {
+                    <!--We bind the value to a Text value-->
+                    <!--The placeholder and type are received from the controller-->
+                    <!--And if we have a valid tooltip we also display it-->
+                    <input class="form-control" type="@(PageController.GetInputType())" placeholder="@(PageController.Placeholder)"
+                           @bind-value="@(PageController.StringValue)"
+                           data-toggle="tooltip" title="@(PageController.Tooltip)" />
+                }
+                break;
+        }
+    </div>
+</div>
