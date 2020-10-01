@@ -24,10 +24,6 @@ namespace MentorBilling.SettingsComponents
         /// </summary>
         private SettingDataTypes dataType { get; set; } = SettingDataTypes.type_void;
         /// <summary>
-        /// the base input type for the object
-        /// </summary>
-        private SettingInputTypes inputType { get; set; } = SettingInputTypes.type_void;
-        /// <summary>
         /// the base value as an object to not determine the type
         /// </summary>
         private Object settingValue { get; set; } = new Object();
@@ -60,15 +56,6 @@ namespace MentorBilling.SettingsComponents
         {
             get => dataType;
             set => dataType = value; 
-        }
-
-        /// <summary>
-        /// the main caller for the InputType property
-        /// </summary>
-        public SettingInputTypes InputTypes
-        {
-            get => inputType;
-            set => inputType = value;
         }
 
         /// <summary>

@@ -790,6 +790,8 @@ CREATE TABLE settings.setari (
   tip_date_setare integer NOT NULL DEFAULT 0,
   tip_input_setare integer NOT NULL DEFAULT 0,
   valoare_initiala varchar NOT NULL DEFAULT (''),
+  placeholder varchar NOT NULL DEFAULT (''),
+  tooltip varchar NOT NULL DEFAULT (''),
   activ boolean NOT NULL DEFAULT true
 );
 
@@ -800,6 +802,8 @@ COMMENT ON COLUMN settings.setari.setare IS 'Setare va fi textul afisat utilizat
 COMMENT ON COLUMN settings.setari.tip_date_setare IS 'Coloana aceasta va contine tipul de date al setarii legata de un enum din program';
 COMMENT ON COLUMN settings.setari.tip_input_setare IS 'Coloana aceasta va contine tipul obiectului de input pentru aceasta setare legat de un enum din program';
 COMMENT ON COLUMN settings.setari.valoare_initiala IS 'Valoarea initiala a setari se va salva ca string: base value for all types';
+COMMENT ON COLUMN settings.setari.placeholder IS 'Folosit pentru afisarea in pagina de setari pentru anumite tipuri de date';
+COMMENT ON COLUMN settings.setari.tooltip IS 'Folosit pentru afisarea in pagina de setari a tooltipuri aditionale';
 --#endregion Setari
 
 --#region Setari Utilizatori
