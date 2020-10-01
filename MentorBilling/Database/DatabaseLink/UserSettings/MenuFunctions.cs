@@ -84,7 +84,8 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             if (!PgSqlConnection.OpenConnection()) return;
             //else we call the execution of the procedure
             PgSqlConnection.ExecuteScalar(queryCommand, queryParameters);
-            ActionLog.LogAction(logAction, IP, user, PgSqlConnection);
+            //and log the action
+            ActionLog.LogAction(logAction, IP, user, logCommand, PgSqlConnection);
             //and as always never forget to close the connection
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
         }
