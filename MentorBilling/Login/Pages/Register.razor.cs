@@ -10,6 +10,7 @@ using MentorBilling.Miscellaneous;
 using MentorBilling.MainPage;
 using Microsoft.AspNetCore.Components;
 using MentorBilling.ControllerService;
+using MentorBilling.Database.DatabaseController;
 
 namespace MentorBilling.Login.Pages
 {
@@ -66,6 +67,7 @@ namespace MentorBilling.Login.Pages
                 //we deactivate the initial menu settings
                 InstanceController.UserMenu.DeactivateMenu();
                 //then insert the initial settings
+                Database.DatabaseLink.UserSettings.UserSettings.GenerateInitialUserSettings(newUser);
                 Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(newUser, InstanceController.UserMenu.UserMenu);
                 #endregion
                 //now we also Login the user
