@@ -10,9 +10,22 @@ namespace MentorBilling.SettingsComponents.Pages
 {
     public partial class SettingsPage
     {
+        /// <summary>
+        /// the Instance Controller for the page instance
+        /// </summary>
         [Parameter]
         public InstanceController InstanceController { get; set; }
 
+        /// <summary>
+        /// the General Component Controllers for the page
+        /// </summary>
         List<GeneralComponentController> GeneralComponentControllers { get; set; } = new List<GeneralComponentController>();
+
+        protected override Task OnInitializedAsync()
+        {
+            GeneralComponentControllers = Database.DatabaseLink.UserSettings.UserSettings.RetrieveDisplayElementSettingsForUser(InstanceController.UserSettings.LoggedInUser);
+            return base.OnInitializedAsync();
+        }
+
     }
 }
