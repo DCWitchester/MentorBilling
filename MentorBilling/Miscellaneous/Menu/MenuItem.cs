@@ -16,9 +16,13 @@ namespace MentorBilling.Miscellaneous.Menu
         /// </summary>
         public String MenuDisplay { get; set; }
         /// <summary>
-        /// the menu action called with object list and returning an object
+        /// the menu function called with object list and returning an object
         /// </summary>
-        public Func<List<object>,object> MenuAction { get; set; }
+        public Func<List<object>,object> MenuFunction { get; set; }
+        /// <summary>
+        /// the menu action called with the object list and returning an object
+        /// </summary>
+        public Action MenuAction { get; set; }
         /// <summary>
         /// the menu Enabled Property display
         /// </summary>

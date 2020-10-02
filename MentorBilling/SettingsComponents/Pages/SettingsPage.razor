@@ -1,1 +1,15 @@
-﻿
+﻿@if (GeneralComponentControllers == null)
+{
+    <h3>Loading...</h3>
+}
+else
+{
+    @foreach(var settingDisplay in GeneralComponentControllers)
+    {
+        <SettingComponent PageController="settingDisplay"/>
+    }
+    <div style="position: relative; bottom: 20px; right: 20px;">
+        <button class="btn btn-primary-mentor">Salveaza Setari</button>
+        <button class="btn btn-primary-mentor">Renunta</button>
+    </div>
+}

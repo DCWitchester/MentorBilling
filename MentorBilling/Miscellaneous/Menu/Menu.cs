@@ -1,4 +1,5 @@
 ﻿using MentorBilling.Login.UserControllers;
+using MentorBilling.MainPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,6 +86,44 @@ namespace MentorBilling.Miscellaneous.Menu
             //foreach is an awesome linq extension
             UserMenu.ForEach(element => element.IsActive = false);
         }
+
+        /// <summary>
+        /// this function will bind the actions on the menu
+        /// </summary>
+        /// <param name="displaySettings">the display settings of the parent</param>
+        public void SetMenuActions(DisplaySettings displaySettings)
+        {
+            //we initialize the settings action
+            SetSettingsAction(displaySettings);
+            //we initialize the subscription settings
+            SetSubscriptionAction(displaySettings);
+        }
+        #endregion
+
+        #region MenuActions
+        /// <summary>
+        /// this function will set the settingsAction for the menu
+        /// </summary>
+        /// <param name="displaySettings">the display settings</param>
+        void SetSettingsAction(DisplaySettings displaySettings)
+        {
+            //the menu settings
+            MenuItem settings = UserMenu.Where(x => x.MenuItemID == (Int32)MenuItems.settings).First();
+            //the action for the item
+            settings.MenuAction += (()=>ComponentDisplay.CallSettings(displaySettings));
+        }
+
+        /// <summary>
+        /// this function will set the settingsAction for the menu
+        /// </summary>
+        /// <param name="displaySettings">the display settings</param>
+        void SetSubscriptionAction(DisplaySettings displaySettings)
+        {
+            //the menu subscription
+            MenuItem subscription = UserMenu.Where(x => x.MenuItemID == (Int32)MenuItems.subscriptions).First();
+            //the action for the item
+            subscription.MenuAction += (() => ComponentDisplay.CallSettings(displaySettings));
+        }
         #endregion
 
         #region Item Initialization
@@ -156,6 +195,7 @@ namespace MentorBilling.Miscellaneous.Menu
         {
             return new MenuItem();
         }
+
         #endregion
     }
 }

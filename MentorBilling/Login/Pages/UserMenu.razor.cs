@@ -13,7 +13,7 @@ namespace MentorBilling.Login.Pages
     public partial class UserMenu
     {
         [Parameter]
-        public InstanceController InstanceController { get; set; } = new InstanceController();
+        public InstanceController InstanceController { get; set; }
 
         /// <summary>
         /// the visibility of the menu
@@ -37,12 +37,18 @@ namespace MentorBilling.Login.Pages
             //the update is done here and not at login for two main reasons
             //REASON 1 : It matters not that it is here for this component is called at the exact moment of the login
             //REASON 2 : The control is far better here than on the form
-            await Task.Run(()=>MenuFunctions.UpdateLocalUserMenu(InstanceController.UserSettings.LoggedInUser, InstanceController.UserMenu));
+            await Task.Run(()=>MenuFunctions.UpdateLocalUserMenu(InstanceController.UserSettings.LoggedInUser, InstanceController.UserMenu))
+                .ContinueWith(t=>InstanceController.UserMenu.SetMenuActions(InstanceController.DisplaySettings));
         }
 
+        /// <summary>
+        /// the execution of the menu action
+        /// </summary>
+        /// <param name="menuItem">the given menu item</param>
         void ExecuteMenuEvent(MenuItem menuItem)
         {
-         //TODO: think about how to finish theevents on the button settings    
+            //TODO: think about how to finish theevents on the button settings    
+            menuItem.MenuAction();
         }
 
         /// <summary>

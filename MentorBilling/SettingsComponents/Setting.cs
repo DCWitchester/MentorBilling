@@ -76,19 +76,19 @@ namespace MentorBilling.SettingsComponents
         /// <summary>
         /// the specific caller for getting the value as a integer
         /// </summary>
-        public Int32 GetIntegerValue => (Int32)settingValue;
+        public Int32 GetIntegerValue => Int32.Parse(settingValue.ToString());
         /// <summary>
         /// the specific caller for getting the value as a double 
         /// </summary>
-        public Double GetDoubleValue => (Double)settingValue;
+        public Double GetDoubleValue => Double.Parse(settingValue.ToString());
         /// <summary>
         /// the specific caller for getting the value as a boolean
         /// </summary>
-        public Boolean GetBooleanValue => (Boolean)settingValue;
+        public Boolean GetBooleanValue => Boolean.Parse(settingValue.ToString());
         /// <summary>
         /// the specific caller for getting the value as a datetime
         /// </summary>
-        public DateTime GetDateTimeValue => (DateTime)settingValue;
+        public DateTime GetDateTimeValue => DateTime.Parse(settingValue.ToString());
 
         /// <summary>
         /// this function will use the specific callers to return the dynamic type value based on the DataTypeValue

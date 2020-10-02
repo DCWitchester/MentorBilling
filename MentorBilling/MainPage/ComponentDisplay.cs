@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Builder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace MentorBilling.MainPage
             subscriptions = 3,
             //the main page will display the password reset
             passwordLost = 4,
+            //the main page will display the settings page
+            settings =  5,
 
         }
         /// <summary>
@@ -41,7 +44,6 @@ namespace MentorBilling.MainPage
         /// <summary>
         /// this function will redirect you to the subscription page
         /// </summary>
-        /// <param name="displaySettings"></param>
         public static void CallSubscription(DisplaySettings displaySettings)
         {
             displaySettings.ChangePage(Components.subscriptions);
@@ -49,10 +51,16 @@ namespace MentorBilling.MainPage
         /// <summary>
         /// this function will redirect you to the lostPassword page
         /// </summary>
-        /// <param name="displaySettings"></param>
         public static void CallLostPassword(DisplaySettings displaySettings)
         {
             displaySettings.ChangePage(Components.passwordLost);
+        }
+        /// <summary>
+        /// this function will redirect you to the settings page
+        /// </summary>
+        public static void CallSettings(DisplaySettings displaySettings)
+        {
+            displaySettings.ChangePage(Components.settings);
         }
         /// <summary>
         /// this function will redirect you back to the main page

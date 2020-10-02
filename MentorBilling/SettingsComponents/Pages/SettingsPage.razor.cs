@@ -19,8 +19,12 @@ namespace MentorBilling.SettingsComponents.Pages
         /// <summary>
         /// the General Component Controllers for the page
         /// </summary>
-        List<GeneralComponentController> GeneralComponentControllers { get; set; } = new List<GeneralComponentController>();
+        List<GeneralComponentController> GeneralComponentControllers { get; set; }
 
+        /// <summary>
+        /// the initial override of the page initialization
+        /// </summary>
+        /// <returns>the base Task</returns>
         protected override Task OnInitializedAsync()
         {
             GeneralComponentControllers = Database.DatabaseLink.UserSettings.UserSettings.RetrieveDisplayElementSettingsForUser(InstanceController.UserSettings.LoggedInUser);

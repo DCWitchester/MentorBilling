@@ -35,8 +35,8 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             String IP = MentorBilling.Miscellaneous.IPFunctions.GetWANIp();
             #endregion
             //we write the sqlQuery
-            String QueryCommand = "INSERT INTO setari_utilizatori(utilizator_id, setare_id, valoare_setare) " +
-                                    "SELECT :p_user_id, id, valoare_initiala FROM setari";
+            String QueryCommand = "INSERT INTO settings.setari_utilizatori(utilizator_id, setare_id, valoare_setare) " +
+                                    "SELECT :p_user_id, id, valoare_initiala FROM settings.setari";
             //we instantiate the query parameter
             NpgsqlParameter QueryParameter = new NpgsqlParameter("p_user_id", user.ID);
             //if we are unable to connect to the server we abandon execution
@@ -67,7 +67,7 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             String IP = MentorBilling.Miscellaneous.IPFunctions.GetWANIp();
             #endregion
             //the update command for a single setting
-            String QueryCommand = "UPDATE setari_utilizatori " +
+            String QueryCommand = "UPDATE settings.setari_utilizatori " +
                                     "SET valoare_setare = :p_value " +
                                     "WHERE utilizator_id = :p_user_id AND setare_id = :p_setting_id";
             //the query parameters for a single setting
@@ -117,7 +117,7 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
                 #endregion
 
                 //the update command for a single setting
-                QueryCommand += "UPDATE setari_utilizatori " +
+                QueryCommand += "UPDATE settings.setari_utilizatori " +
                                     String.Format("SET valoare_setare = :p_value_{0} ",setting.ID) +
                                     String.Format("WHERE utilizator_id = :p_user_id_{0} AND setare_id = :p_setting_id_{0}",setting.ID);
                 //we add the query Parameters to the command
@@ -147,8 +147,9 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
         {
             //the query command for the retrieval of the settings
             String QueryCommand = "SELECT s.id, s.setare, s.tip_date_setare, su.valoare_setare " +
-                                    "FROM setari_utilizatori AS su " +
-                                    "LEFT JOIN setari AS s " +
+                                    "FROM settings.setari_utilizatori AS su " +
+                                    "LEFT JOIN settings.setari AS s " +
+                                    "ON s.id = su.setare_id " +
                                     "WHERE su.utilizator_id = :p_user_id";
             //the query standalone parameter
             NpgsqlParameter QueryParameter = new NpgsqlParameter(":p_user_id", user.ID);
@@ -164,7 +165,7 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
                 ID = row.Field<Int64>("ID"),
                 DataTypes = (Settings.SettingTypes.SettingDataTypes)row.Field<Int32>("TIP_DATE_SETARE"),
                 SettingDisplay = row.Field<String>("SETARE"),
-                Value = row.Field<String>("VALOARE_SETARE")
+                Value = row.Field<Object>("VALOARE_SETARE")
             }).ToList();
         }
 
@@ -178,8 +179,9 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             //the query command for the retrieval of the settings
             String QueryCommand = "SELECT s.id, s.setare, s.tip_date_setare, su.valoare_setare, s.tip_input_setare, " +
                                     "s.placeholder, s.tooltip " +
-                                    "FROM setari_utilizatori AS su " +
-                                    "LEFT JOIN setari AS s " +
+                                    "FROM settings.setari_utilizatori AS su " +
+                                    "LEFT JOIN settings.setari AS s " +
+                                    "ON s.id = su.setare_id " +
                                     "WHERE su.utilizator_id = :p_user_id";
             //the query standalone parameter
             NpgsqlParameter QueryParameter = new NpgsqlParameter(":p_user_id", user.ID);
@@ -195,7 +197,7 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
                 ID = row.Field<Int64>("ID"),
                 DataTypes = (Settings.SettingTypes.SettingDataTypes)row.Field<Int32>("TIP_DATE_SETARE"),
                 SettingDisplay = row.Field<String>("SETARE"),
-                Value = row.Field<String>("VALOARE_SETARE"),
+                Value = row.Field<Object>("VALOARE_SETARE"),
                 InputTypes = (Settings.SettingTypes.SettingInputTypes)row.Field<Int32>("TIP_INPUT_SETARE"),
                 Placeholder = row.Field<String>("PLACEHOLDER"),
                 Tooltip = row.Field<String>("TOOLTIP")
