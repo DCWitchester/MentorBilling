@@ -54,5 +54,27 @@ namespace MentorBilling.ObjectStructures
             set => bank = value;
         }
         #endregion
+
+        #region Miscellaneous
+        /// <summary>
+        /// the value porperty for the entire object
+        /// </summary>
+        public BankAccount Value
+        {
+            get => this;
+            set => ConsumeBankAccount(value);
+        }
+
+        /// <summary>
+        /// this function will consume a given bank account and give it to this object
+        /// </summary>
+        /// <param name="Value">the given value</param>
+        public void ConsumeBankAccount(BankAccount Value)
+        {
+            this.account = Value.account;
+            this.id = Value.ID;
+            this.bank = Value.bank;
+        }
+        #endregion
     }
 }

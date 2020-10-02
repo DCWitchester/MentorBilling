@@ -8,6 +8,7 @@ namespace MentorBilling.ObjectStructures.Invoice
     public class Seller
     {
         #region Properties
+#pragma warning disable IDE1006
         /// <summary>
         /// the Seller ID property
         /// </summary>
@@ -48,6 +49,7 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// the work point property
         /// </summary>
         private String workPoint { get; set; } = String.Empty;
+#pragma warning restore IDE1006
         #endregion
 
         #region Callers

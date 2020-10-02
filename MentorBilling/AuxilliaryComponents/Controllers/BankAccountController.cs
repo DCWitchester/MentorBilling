@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace MentorBilling.AuxilliaryComponents.Controllers
 {
-    public class BankAccountController
+    public class BankAccountController : BankAccount
     {
-        /// <summary>
-        /// the main property for the Bank Account
-        /// </summary>
-        private BankAccount BankAccount {get;set;} 
 
         /// <summary>
         /// the initializer for the bank account with both the index and the bank Account
@@ -22,7 +18,7 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// <param name="elementIndex">the element index</param>
         public BankAccountController(BankAccount bankAccount, Int32 elementIndex)
         {
-            BankAccount = bankAccount;
+            base.Value = bankAccount;
             ElementIndex = elementIndex;
         }
 
@@ -32,8 +28,13 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// <param name="bankAccount">the bankAccoun</param>
         public BankAccountController(BankAccount bankAccount)
         {
-            BankAccount = bankAccount;
+            base.Value = bankAccount;
         }
+
+        /// <summary>
+        /// this function will initialize the controller without any parameter
+        /// </summary>
+        public BankAccountController() { }
 
         /// <summary>
         /// the element Index from the parent list
@@ -48,18 +49,18 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// <summary>
         /// this account bound to the text box element
         /// </summary>
-        public String Account 
+        public new String Account 
         { 
-            get => BankAccount.Account;
-            set => BankAccount.Account = UpdateAccountAndBank(value);
+            get => base.Account;
+            set => base.Account = UpdateAccountAndBank(value);
         }
         /// <summary>
         /// the bank  bound to the text box element
         /// </summary>
-        public String Bank 
+        public new String Bank 
         { 
-            get => BankAccount.Bank; 
-            set => BankAccount.Bank = value; 
+            get => base.Bank; 
+            set => base.Bank = value; 
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// <returns>the value of the input text</returns>
         private String UpdateAccountAndBank(String Value)
         {
-            this.BankAccount.Account = Value;
+            base.Account = Value;
             if (Miscellaneous.ElementCheck.VerifyIBAN(Value))
             {
                 Database.DatabaseLink.GlossaryFunctions.GetBankOfAccount(this);
