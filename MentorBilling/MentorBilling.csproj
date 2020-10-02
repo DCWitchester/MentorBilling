@@ -32,7 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\DatabaseLink\Seller\" />
     <Folder Include="wwwroot\Image\" />
   </ItemGroup>
 

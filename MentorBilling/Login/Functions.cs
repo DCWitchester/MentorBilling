@@ -67,6 +67,8 @@ namespace MentorBilling.Login
             }
             //now all we have to do is be happy for the user is logged in
             Database.DatabaseLink.UserLog.LoginUser(user);
+            //we also need to retrieve the software setting specific to the current user
+            instanceController.RetrieveUserSettings();
             //oh and set the pages
             SetPagesToMain(instanceController);
             //at this point the login is done

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MentorBilling.Data;
 using System.Net.Http;
 using MentorBilling.Miscellaneous;
 using BlazorStrap;
@@ -29,7 +28,6 @@ namespace MentorBilling
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddScoped<BrowserServices>();
             services.AddBootstrapCss();
 

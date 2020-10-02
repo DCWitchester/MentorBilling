@@ -54,8 +54,6 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Messages\Pages\LogoutMessage.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\MiscellaneousPages\ResetPassword.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\MiscellaneousPages\ValidateAccount.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\SettingsComponents\Pages\DateTimePicker.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\SettingsComponents\Pages\SettingComponent.razor.g.cs
@@ -86,8 +84,6 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Messages\P
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Messages\Pages\LogoutMessage.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\MiscellaneousPages\ResetPassword.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\MiscellaneousPages\ValidateAccount.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\SettingsComponents\Pages\DateTimePicker.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\SettingsComponents\Pages\SettingComponent.razor.g.cs

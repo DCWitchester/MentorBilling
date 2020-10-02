@@ -208,8 +208,8 @@ CREATE SCHEMA seller AUTHORIZATION postgres;
 CREATE TABLE seller.furnizori (
   id bigserial PRIMARY KEY NOT NULL,
   denumire varchar NOT NULL DEFAULT (''),
-  nr_registru_comert varchar NOT NULL DEFAULT (''),
-  cod_fiscal varchar NOT NULL DEFAULT (''),
+  nr_registru_comert varchar NOT NULL DEFAULT ('') UNIQUE,
+  cod_fiscal varchar NOT NULL DEFAULT ('') UNIQUE,
   capital_social double precision NOT NULL DEFAULT 0,
   sediul varchar NOT NULL DEFAULT (''),
   punct_lucru varchar NOT NULL DEFAULT (''),
@@ -234,7 +234,7 @@ COMMENT ON COLUMN seller.furnizori.sigla IS 'Coloana aceasta va contine sigla so
 CREATE TABLE seller.conturi_bancare_furnizori (
   id bigserial PRIMARY KEY NOT NULL,
   furnizor_id bigint NOT NULL DEFAULT 0 REFERENCES seller.furnizori(id),
-  cont varchar NOT NULL DEFAULT (''),
+  cont varchar NOT NULL DEFAULT ('') UNIQUE,
   banca varchar NOT NULL DEFAULT (''),
   activ boolean NOT NULL DEFAULT true
 );
