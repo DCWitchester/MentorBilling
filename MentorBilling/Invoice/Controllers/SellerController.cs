@@ -117,6 +117,7 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         public Boolean DisableController { get; set; } = false;
 
+        #region Auxilliary Functions
         /// <summary>
         /// this funtion will devour a company returned from ANAF
         /// </summary>
@@ -143,5 +144,15 @@ namespace MentorBilling.Invoice.Controllers
                     );
             else base.FiscalCode = fiscalCode;
         }
+
+        /// <summary>
+        /// this function wil return the base component of the controller
+        /// </summary>
+        /// <returns>the Seller component base</returns>
+        public Seller RetrieveSellerOfController()
+        {
+            return base.Value;
+        }
+        #endregion
     }
 }

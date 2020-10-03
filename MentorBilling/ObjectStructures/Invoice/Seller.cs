@@ -133,6 +133,10 @@ namespace MentorBilling.ObjectStructures.Invoice
             get => workPoint; 
             set => workPoint = value; 
         }
+        /// <summary>
+        /// the value caller will return the entire object
+        /// </summary>
+        public Seller Value => this;
         #endregion
     }
 }
