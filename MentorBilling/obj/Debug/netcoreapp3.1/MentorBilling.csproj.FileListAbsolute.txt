@@ -57,6 +57,7 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\SettingsComponents\Pages\DateTimePicker.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\SettingsComponents\Pages\SettingComponent.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\SettingsComponents\Pages\SettingsPage.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Components\Dropdown.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Components\DropdownListItem.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LoginDisplay\LoginDisplay.razor.g.cs
@@ -87,6 +88,7 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Miscellane
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\SettingsComponents\Pages\DateTimePicker.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\SettingsComponents\Pages\SettingComponent.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\SettingsComponents\Pages\SettingsPage.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\Components\Dropdown.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\Components\DropdownListItem.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\LoginDisplay\LoginDisplay.razor.g.cs
@@ -107,6 +109,3 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\staticwebassets\
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.pdb
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.genruntimeconfig.cache
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csprojAssemblyReference.cache
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\SettingsComponents\Pages\SettingsPage.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\SettingsComponents\Pages\SettingsPage.razor.g.cs

@@ -1,7 +1,7 @@
 ﻿@inject IJSRuntime JSRuntime 
 
 <div>
-    <EditForm EditContext="EditContext" OnValidSubmit="@(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))">
+    <EditForm @ref="SellerForm" EditContext="EditContext" OnValidSubmit="@(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))" @onfocusout="SubmitForm">
         <DataAnnotationsValidator />
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
@@ -10,7 +10,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" disabled="@PageController.DisableController" />
+                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" disabled="@PageController.DisableController"/>
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.Name)" />
             </div>
@@ -39,10 +39,10 @@
                 <ValidationMessage For="@(()=>PageController.FiscalCode)" />
             </div>
             <!--
-                <div class="col-sm-3">
-                    <button class="btn-primary-auxilliary" style="margin-top:5px; margin-bottom:0px;" type="button" @onclick="@GetAnafCompany" disabled="@PageController.DisableController">Preluare Online</button>
-                </div>
-                -->
+            <div class="col-sm-3">
+                <button class="btn-primary-auxilliary" style="margin-top:5px; margin-bottom:0px;" type="button" @onclick="@GetAnafCompany" disabled="@PageController.DisableController">Preluare Online</button>
+            </div>
+            -->
         </div>
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
@@ -72,7 +72,7 @@
             @foreach (var element in PageController.BankAccountControllers)
             {
                 <!--the BankAccount with the needed parameters-->
-                <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(element.SetElementIndex(PageController.BankAccountControllers.IndexOf(element)))"
+                <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(element)"
                                                                       BankAccountDisplayController="@BankAccountDisplayController"
                                                                       SellerDisplayController="@SellerDisplayController"
                                                                       LastItem="@(element==PageController.BankAccountControllers.Last())" />
@@ -115,14 +115,15 @@
             </div>
         </div>
         <!--#endregion-->
-        @if (@PageController.DisableController)
-        {
-            <button type="button" class="btn-primary-validate">Modifica Furnizor</button>
-        }
-        else
-        {
-            <button type="submit" class="btn-primary-validate">Blocheaza Furnizor</button>
-        }
-        <button type="button" class="btn-primary-mentor">Gestioneaza Parteneri</button>
+        <!--
+    @if (@PageController.DisableController)
+    {
+        <button type="button" class="btn-primary-validate">Modifica Furnizor</button>
+    }
+    else
+    {
+        <button type="submit" class="btn-primary-validate">Blocheaza Furnizor</button>
+    }
+    <button type="button" class="btn-primary-mentor">Gestioneaza Parteneri</button>-->
     </EditForm>
 </div>
