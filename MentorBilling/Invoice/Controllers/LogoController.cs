@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MentorBilling.ObjectStructures.Auxilliary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MentorBilling.Invoice.Controllers
 {
-    public class LogoController
+    public class LogoController : Logo
     {
         /// <summary>
         /// the image Format for the Logo
@@ -15,7 +16,7 @@ namespace MentorBilling.Invoice.Controllers
         /// <summary>
         /// the LogoBase Byte Array
         /// </summary>
-        public Byte[] LogoBase { get; set; }
+        public new Byte[] LogoBase { get; set; }
 
         /// <summary>
         /// the formated Logo to be used as imageSrc

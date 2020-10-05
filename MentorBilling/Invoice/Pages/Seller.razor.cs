@@ -48,6 +48,8 @@ namespace MentorBilling.Invoice.Pages
         {
             //we force the valid of the bankAccountControllers
             BankAccountDisplayController.RefreshPage();
+            if (ControllerState) return;
+            //TODO: Validation Logic For the Seller Control
         }
 
         /// <summary>
