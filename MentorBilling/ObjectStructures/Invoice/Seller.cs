@@ -1,4 +1,5 @@
 ﻿using System;
+using MentorBilling.ObjectStructures.Auxilliary;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -49,6 +50,10 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// the work point property
         /// </summary>
         private String workPoint { get; set; } = String.Empty;
+        /// <summary>
+        /// the base logo property
+        /// </summary>
+        private Logo logo { get; set; } = new Logo();
 #pragma warning restore IDE1006
         #endregion
 
@@ -137,6 +142,14 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// the value caller will return the entire object
         /// </summary>
         public Seller Value => this;
+        /// <summary>
+        /// the main caller for the logo property
+        /// </summary>
+        public Logo Logo
+        {
+            get => logo;
+            set => logo = value;
+        }
         #endregion
     }
 }

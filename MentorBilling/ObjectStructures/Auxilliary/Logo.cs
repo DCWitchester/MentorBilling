@@ -22,5 +22,19 @@ namespace MentorBilling.ObjectStructures.Auxilliary
             get => logo; 
             set => logo = value; 
         }
+
+        /// <summary>
+        /// the base initializer for the object without any property
+        /// </summary>
+        public Logo(){ }
+
+        /// <summary>
+        /// the base initializer for the object with the byteArray value
+        /// </summary>
+        /// <param name="value">the image byteArray</param>
+        public Logo(Byte[] value) 
+        {
+            logo = value;
+        }
     }
 }

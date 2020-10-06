@@ -33,6 +33,7 @@ F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Npgsql.dll
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Radzen.Blazor.dll
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\RestSharp.dll
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csprojAssemblyReference.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.AssemblyInfoInputs.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.AssemblyInfo.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.csproj.CoreCompileInputs.cache
