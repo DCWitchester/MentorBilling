@@ -52,9 +52,22 @@ namespace MentorBilling.ControllerService
         #endregion
 
         #region Controller Functions
+        /// <summary>
+        /// this function will retrieve the settings for the current user
+        /// </summary>
         public void RetrieveUserSettings()
         {
-            this.Settings = Database.DatabaseLink.UserSettings.UserSettings.RetrieveSettingsListForUser(this.UserSettings.LoggedInUser);
+            this.Settings = Database.DatabaseLink.UserSettings.UserSettings.RetrieveSettingsListForUser(this.GetControlUser());
+        }
+
+        /// <summary>
+        /// this function will retrieve the in control user (based on the existance of a group)
+        /// </summary>
+        /// <returns>the in-control user</returns>
+        public Login.UserControllers.User GetControlUser()
+        {
+            if (UserSettings.UserGroup == null) return UserSettings.LoggedInUser;
+            else return UserSettings.UserGroup.Administrator;
         }
         #endregion
     }
