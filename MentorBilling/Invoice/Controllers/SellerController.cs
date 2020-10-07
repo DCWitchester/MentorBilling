@@ -1,6 +1,7 @@
 ﻿using MentorBilling.AuxilliaryComponents.Controllers;
 using MentorBilling.Miscellaneous.ANAF;
 using MentorBilling.ObjectStructures;
+using MentorBilling.ObjectStructures.Auxilliary;
 using MentorBilling.ObjectStructures.Invoice;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -14,6 +15,7 @@ namespace MentorBilling.Invoice.Controllers
 {
     public class SellerController : Seller
     {
+        #region Primary Properties
         /// <summary>
         /// the name bound to the given Seller name TextBox
         /// </summary>
@@ -63,6 +65,7 @@ namespace MentorBilling.Invoice.Controllers
             get => base.Headquarters; 
             set => base.Headquarters = value; 
         }
+        #endregion
 
         /// <summary>
         /// the BankAccounts List will have at least 1 element
@@ -110,6 +113,12 @@ namespace MentorBilling.Invoice.Controllers
             get => base.WorkPoint; 
             set => base.WorkPoint = value; 
         }
+
+        public new Logo Logo
+        {
+            get => base.Logo;
+            set => base.Logo = value;
+        }
         #endregion
 
         /// <summary>
@@ -153,6 +162,44 @@ namespace MentorBilling.Invoice.Controllers
         {
             return base.Value;
         }
+
+        #region LogoController => Logo
+        /// <summary>
+        /// this function will set the base logo from the controller
+        /// </summary>
+        public void SetBaseLogoFromController()
+        {
+            if(LogoController.BaseLogo.LogoBase.Count() > 0)
+            base.Logo = LogoController.BaseLogo;
+        }
+        /// <summary>
+        /// this function will only set the logo bytes from the logo Controller
+        /// </summary>
+        public void SetBaseLogoValueFromController()
+        {
+            if(LogoController.LogoBase.Count() > 0)
+                base.LogoBytes = LogoController.LogoBase;
+        }
+        #endregion
+
+        #region Logo => LogoController
+        /// <summary>
+        /// this function will set the controller logo from the base
+        /// </summary>
+        public void SetControllerFromLogo()
+        {
+            if( base.Logo.LogoBase != null && base.Logo.LogoBase.Count() > 0)
+                LogoController.BaseLogo = base.Logo;
+        }
+        /// <summary>
+        /// this function will set the value of the controllor from the base logo
+        /// </summary>
+        public void SetControllerValueFromLogo()
+        {
+            if(base.LogoBytes.Count() > 0)
+                LogoController.LogoBase = base.LogoBytes;
+        }
+        #endregion 
         #endregion
     }
 }

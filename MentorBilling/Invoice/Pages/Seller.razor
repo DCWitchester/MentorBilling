@@ -3,6 +3,9 @@
 <div>
     <EditForm @ref="SellerForm" EditContext="EditContext" OnValidSubmit="@(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))" @onfocusout="SubmitForm">
         <DataAnnotationsValidator />
+        <div style="display:flex; align-content:center; align-items:center; text-align:center;">
+            <Logo PageController="PageController.LogoController" />
+        </div>
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->

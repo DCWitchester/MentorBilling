@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MentorBilling.Invoice.Controllers
@@ -16,7 +17,11 @@ namespace MentorBilling.Invoice.Controllers
         /// <summary>
         /// the LogoBase Byte Array
         /// </summary>
-        public new Byte[] LogoBase { get; set; }
+        public new Byte[] LogoBase 
+        { 
+            get => base.LogoBase;
+            set => base.LogoBase = value; 
+        }
 
         /// <summary>
         /// the formated Logo to be used as imageSrc
@@ -31,5 +36,27 @@ namespace MentorBilling.Invoice.Controllers
         /// the MaintainAspectRatio Property
         /// </summary>
         public Boolean MaintainAspectRatio { get; set; } = false;
+
+        /// <summary>
+        /// this function will retrieve the BaseLogo 
+        /// </summary>
+        public Logo BaseLogo
+        {
+            get => base.Value;
+            set => base.Value = value;
+        }
+
+        public LogoController() { }
+
+        public LogoController(Logo logo)
+        {
+            base.Value = logo;
+        }
+
+        public LogoController SetImageBytes(Byte[] imageBytes)
+        {
+            base.LogoBase = imageBytes;
+            return this;
+        }
     }
 }

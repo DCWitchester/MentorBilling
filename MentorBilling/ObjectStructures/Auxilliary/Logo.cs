@@ -36,5 +36,14 @@ namespace MentorBilling.ObjectStructures.Auxilliary
         {
             logo = value;
         }
+
+        /// <summary>
+        /// the Base Value linked to this
+        /// </summary>
+        public Logo Value
+        {
+            get => this;
+            set => this.logo = value.LogoBase;
+        }
     }
 }

@@ -48,7 +48,10 @@ namespace MentorBilling.Invoice.Pages
         {
             //we force the valid of the bankAccountControllers
             BankAccountDisplayController.RefreshPage();
-            if (ControllerState) return;
+            if (ControllerState)
+            {
+                PageController.SetBaseLogoFromController();
+            }
             //TODO: Validation Logic For the Seller Control
         }
 
@@ -74,6 +77,7 @@ namespace MentorBilling.Invoice.Pages
         /// </summary>
         protected override void OnInitialized()
         {
+            PageController.SetControllerFromLogo();
             EditContext = new EditContext(PageController);
             SellerDisplayController.OnChange += OnMyChangeHandler;
         }

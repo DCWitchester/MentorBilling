@@ -7,7 +7,7 @@ namespace MentorBilling.Miscellaneous
 {
     public class Size
     {
-        public Int32 Width { get; set; }
-        public Int32 Height { get; set; }
+        public Double Width { get; set; }
+        public Double Height { get; set; }
     }
 }

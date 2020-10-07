@@ -150,6 +150,14 @@ namespace MentorBilling.ObjectStructures.Invoice
             get => logo;
             set => logo = value;
         }
+        /// <summary>
+        /// the main caller for the logo that calls the byteArray
+        /// </summary>
+        public Byte[] LogoBytes
+        {
+            get => logo.LogoBase;
+            set => logo.LogoBase = value;
+        }
         #endregion
     }
 }

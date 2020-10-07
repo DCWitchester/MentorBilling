@@ -1,4 +1,4 @@
-﻿@inject IJSRuntime JSRuntime
+﻿@inject IJSRuntime jsRuntime
 
 @using BlazorInputFile
 
@@ -6,13 +6,17 @@
 @if (PageController.LogoBase == null)
 {
     <!--If we have no LogoBase we will use the Drag-Drop-Zone-->
-    <div id="InputFile" class="drag-drop-zone">
-        <InputFile OnChange="SelectLogo" />
+    <div class="drag-drop-zone" style="width:100%">
+        <InputFile OnChange="SelectLogo" id="inputFile" />
         @Status
     </div>
 }
 else
 {
-    <!--Else we will display the image src-->
-    <img src="@PageController.Logo" height="@(ImageDimensions.Height)" width="@(ImageDimensions.Width)" @onclick="ResetSelected"/>
+    <div style="padding: 2rem; display: flex; align-items: center; justify-content: center;font-size: 1rem;">
+        <!--Else we will display the image src-->
+        <img src="@PageController.Logo" height="@(ImageDimensions.Height)" width="@(ImageDimensions.Width)" @onclick="ResetSelected" />
+    </div>
+    
 }
+

@@ -21,10 +21,12 @@ function getDimensions() {
 };
 
 function getElementHeight(id) {
+    const element = document.getElementById(id).getBoundingClientRect();
     return document.getElementById(id).getBoundingClientRect().height;
 };
 
 function getElementWidth(id) {
+    const element = document.getElementById(id).getBoundingClientRect();
     return document.getElementById(id).getBoundingClientRect().width;
 };
 

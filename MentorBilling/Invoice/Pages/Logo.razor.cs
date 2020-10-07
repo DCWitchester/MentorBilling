@@ -53,9 +53,11 @@ namespace MentorBilling.Invoice.Pages
             {
                 //we set the loading status
                 Status = "Se incarca...";
+               
+                ImageDimensions = await jsRuntime.InvokeAsync<Size>("getElementSize", "inputFile");
                 //then using the fileReader
                 //we need the component dimmension for the div to format the image to the correct sizes
-                ImageDimensions = await JSRuntime.InvokeAsync<Size>("getElementSize", "InputFile");
+                
 
                 //we retrieve the image info
                 //if we have the settings to mantain aspect ratio we need to reformat the image
@@ -64,7 +66,7 @@ namespace MentorBilling.Invoice.Pages
                 if (PageController.MaintainAspectRatio)
                 {
                     //we get the image file from the reformated image
-                    ImageFile = await file.ToImageFileAsync(PageController.ImageFormat, ImageDimensions.Width, ImageDimensions.Height);
+                    ImageFile = await file.ToImageFileAsync(PageController.ImageFormat, (Int32)Math.Round(ImageDimensions.Width), (Int32)Math.Round(ImageDimensions.Height));
                 }
                 else 
                 { 
@@ -75,7 +77,7 @@ namespace MentorBilling.Invoice.Pages
                 //we initialize a new memory stream
                 MemoryStream ms = new MemoryStream();
                 //get all the data from the Image file into the memeory stream
-                ImageFile.Data.CopyTo(ms);
+                await ImageFile.Data.CopyToAsync(ms);
                 //then dump the stream into a bite array and set it to the PageControllers LogoBaseProperty
                 PageController.LogoBase = ms.ToArray();
                 //we also set the status back to the default value
