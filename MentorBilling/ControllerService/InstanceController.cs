@@ -48,7 +48,7 @@ namespace MentorBilling.ControllerService
         /// <summary>
         /// the main settings for the current users for the program: Will be retrieved on login
         /// </summary>
-        public List<Setting> Settings { get; set; }
+        public InstanceSettings InstanceSettings { get; set; } = new InstanceSettings();
         #endregion
 
         #region Controller Functions
@@ -57,7 +57,7 @@ namespace MentorBilling.ControllerService
         /// </summary>
         public void RetrieveUserSettings()
         {
-            this.Settings = Database.DatabaseLink.UserSettings.UserSettings.RetrieveSettingsListForUser(this.GetControlUser());
+            this.InstanceSettings.ConsumeSettings(Database.DatabaseLink.UserSettings.UserSettings.RetrieveSettingsListForUser(this.GetControlUser()));
         }
 
         /// <summary>

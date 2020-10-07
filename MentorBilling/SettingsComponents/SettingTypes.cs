@@ -27,13 +27,14 @@ namespace MentorBilling.Settings
         /// </summary>
         public enum SettingInputTypes
         {
-            type_void = 0,      //void      -- error (Value)
-            type_number = 1,    //number    -- linked to the Int32 or Double DataType
-            type_text,          //text      -- Base structure
-            type_checkbox,      //checkbox  -- the basic
-            type_date,          //date      -- linked to DateTime type object ( affects both the date and the time property on input set )
-            type_time,          //time      -- linked to DateTime type object ( affects both the date and the time property on input set )
-            type_datetime       //datetime  -- linked to DateTime type object ( the current <input type = "datetime"> )
+            type_void = 0,      //void          -- error (Value)
+            type_number = 1,    //number        -- linked to the Int32 or Double DataType
+            type_text,          //text          -- Base structure
+            type_checkbox,      //checkbox      -- the basic
+            type_date,          //date          -- linked to DateTime type object ( affects both the date and the time property on input set )
+            type_time,          //time          -- linked to DateTime type object ( affects both the date and the time property on input set )
+            type_datetime,      //datetime      -- linked to DateTime type object ( the current <input type = "datetime"> )
+            type_select         //select        -- linked to the Input Select
         }
     }
 }
