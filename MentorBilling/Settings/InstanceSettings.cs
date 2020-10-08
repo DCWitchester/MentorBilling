@@ -35,8 +35,11 @@ namespace MentorBilling.Settings
         /// <param name="settings">the complete settings list</param>
         public void ConsumeSettings(List<Setting> settings)
         {
+            //we will iterate the settings list
             foreach(Setting setting in settings)
             {
+                //we call a switch over the settings
+                //and set the settings values
                 switch (setting.ID)
                 {
                     case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.SellerControl:
@@ -51,6 +54,7 @@ namespace MentorBilling.Settings
                 }
             }
         }
+
         #endregion
 
     }
