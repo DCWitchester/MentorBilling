@@ -7,8 +7,12 @@ using MentorBilling.SettingsComponents;
 
 namespace MentorBilling.Settings
 {
+    /// <summary>
+    /// this class will contain the global settings used by the program instance
+    /// </summary>
     public class InstanceSettings
     {
+        #region Settings
         /// <summary>
         /// the SellerControl for the instance
         /// </summary>
@@ -21,7 +25,9 @@ namespace MentorBilling.Settings
         /// the countryName for the instance
         /// </summary>
         public SpecialSettingsEnums.CountryName CountryName { get; set; } = SpecialSettingsEnums.CountryName.RO;
+        #endregion
 
+        #region Functionality
         //TODO: Link the Settings to the Database
         /// <summary>
         /// this function will consume the settings list and set the settings needed values
@@ -45,6 +51,7 @@ namespace MentorBilling.Settings
                 }
             }
         }
+        #endregion
 
     }
 }

@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace MentorBilling.ControllerService
 {
+    /// <summary>
+    /// this class is the main backbone of the program beiing passed down from the initial page through all components
+    /// </summary>
     public class InstanceController
     {
         #region Global Controllers
