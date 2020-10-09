@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MentorBilling.ObjectStructures.Auxilliary
 {
-    public class Countries
+    public class Country
     {
         #region Properties
 #pragma warning disable IDE1006

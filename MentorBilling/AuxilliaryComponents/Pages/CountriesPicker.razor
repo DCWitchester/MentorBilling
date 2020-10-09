@@ -1,0 +1,22 @@
+﻿@inject IJSRuntime JSRuntime
+
+<!--The Edit Form bound to the page context-->
+<EditForm @ref="MyForm" EditContext="@EditContext">
+    <!--The Data Annotations Validator used to call the validation-->
+    <DataAnnotationsValidator/>
+    <!--The Div Containing the label and the input select-->
+    <div class="form-group row mb-1">
+        <!--The label display-->
+        <label class="col-sm-3 col-form-label">Tara:</label>
+        <div class="col-sm-9">
+            <!--The Input select directly bound to the page controller-->
+            <InputSelect @bind-Value="@(PageController.SelectedCountry)">
+                <!--The iterationation of the countries list-->
+                @foreach (var country in PageController.countries)
+                {
+                    <option value="@country">@country.GetDisplayNameForSettings(InstanceController.InstanceSettings)</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+</EditForm> 

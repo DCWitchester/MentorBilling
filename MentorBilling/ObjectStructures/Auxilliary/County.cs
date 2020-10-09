@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MentorBilling.ObjectStructures.Auxilliary
 {
-    public class Counties
+    public class County
     {
         #region Properties
 #pragma warning disable IDE1006
@@ -49,6 +49,10 @@ namespace MentorBilling.ObjectStructures.Auxilliary
             get => countyName;
             set => countyName = value;
         }
+        /// <summary>
+        /// the main caller for the display name
+        /// </summary>
+        public String DisplayName => countyCode + " : " + countyName;
         #endregion
     }
 }
