@@ -11,7 +11,7 @@
         <div class="col-sm-9">
             <!--The Input select directly bound to the page controller-->
             <InputSelect @bind-Value="@(PageController.SelectedCountry)">
-                <!--The iterationation of the countries list-->
+                <!--The iteration of the countries list-->
                 @foreach (var country in PageController.countries)
                 {
                     <option value="@country">@country.GetDisplayNameForSettings(InstanceController.InstanceSettings)</option>

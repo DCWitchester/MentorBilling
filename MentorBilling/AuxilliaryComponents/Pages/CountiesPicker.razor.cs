@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MentorBilling.AuxilliaryComponents.Pages
 {
-    public partial class CountriesPicker
+    public partial class CountiesPicker
     {
         #region Form Parameters
         /// <summary>
@@ -18,22 +18,22 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         [Parameter]
         public InstanceController InstanceController { get; set; }
         /// <summary>
-        /// the page controller linked to the razor
+        /// the page controller linked to the razor component
         /// </summary>
         [Parameter]
-        public CountriesController PageController { get; set; }
+        public CountiesController PageController { get; set; }
         #endregion
 
         #region Form Binding
         /// <summary>
-        /// the edit form reference used for page refresh
+        /// the editform reference to the razor controller
         /// </summary>
-        private EditForm MyForm { get; set; }
+        public EditForm MyForm { get; set; }
 
         /// <summary>
-        /// the main editContext on the Page
+        /// the edit context bound to the page
         /// </summary>
-        private EditContext EditContext { get; set; }
+        public EditContext EditContext { get; set; }
 
         /// <summary>
         /// the main initialization of the page
@@ -44,6 +44,5 @@ namespace MentorBilling.AuxilliaryComponents.Pages
             base.OnInitialized();
         }
         #endregion
-
     }
 }
