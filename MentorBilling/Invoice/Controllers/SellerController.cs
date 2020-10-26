@@ -142,15 +142,29 @@ namespace MentorBilling.Invoice.Controllers
         }
 
         /// <summary>
+        /// this function will retrieve the registry number based on the fiscal code
+        /// </summary>
+        void GetRegistryNumber()
+        {
+            //the regisrty number
+            this.CommercialRegistryNumber = Database.DatabaseLink.Auxilliary.JuridicalEntity.GetRegistryNumberForFiscalCode(
+                                                Miscellaneous.SpecialConversions.GetIntegerOfFiscalCode(this.FiscalCode)
+                                                );
+        }
+
+        /// <summary>
         /// this function will be called by the valid on the Anaf
         /// </summary>
         /// <param name="fiscalCode">the fiscal code entered on the user side</param>
         public void RetrieveAnafInfo(String fiscalCode)
         {
             if (Miscellaneous.ElementCheck.VerifyCIF(fiscalCode))
-                DevourCompany(
-                    AnafGet.GetANAFCompany(fiscalCode)
-                    );
+            {
+                //we get some info from anaf
+                DevourCompany(AnafGet.GetANAFCompany(fiscalCode));
+                //and some from our own database
+                GetRegistryNumber();
+            }
             else base.FiscalCode = fiscalCode;
         }
 
