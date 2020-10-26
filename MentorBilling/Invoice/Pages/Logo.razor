@@ -3,7 +3,7 @@
 @using BlazorInputFile
 
 <!--The page will be linked to the LogoBase-->
-@if (PageController.LogoBase == null)
+@if (PageController.LogoBase == null || PageController.LogoBase.Length < 1)
 {
     <!--If we have no LogoBase we will use the Drag-Drop-Zone-->
     <div class="drag-drop-zone" style="width:100%">

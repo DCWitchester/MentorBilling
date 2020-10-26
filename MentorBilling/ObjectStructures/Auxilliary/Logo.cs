@@ -11,7 +11,7 @@ namespace MentorBilling.ObjectStructures.Auxilliary
         /// the base logo property
         /// </summary>
 #pragma warning disable IDE1006 // Naming Styles
-        private Byte[] logo { get; set; }
+        private Byte[] logo { get; set; } = new Byte[0];
 #pragma warning restore IDE1006 // Naming Styles
 
         /// <summary>
