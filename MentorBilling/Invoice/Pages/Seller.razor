@@ -3,9 +3,12 @@
 <div>
     <EditForm @ref="SellerForm" EditContext="EditContext" OnValidSubmit="@(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))" @onfocusout="SubmitForm">
         <DataAnnotationsValidator />
+        <!--#region Logo Controller-->
         <div style="display:flex; align-content:center; align-items:center; text-align:center;">
             <Logo PageController="PageController.LogoController" />
         </div>
+        <!--#endregion Logo-->
+        <!--#region Seller Name-->
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
@@ -13,11 +16,13 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" disabled="@PageController.DisableController"/>
+                <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.Name)" />
             </div>
         </div>
+        <!--#endregion Seller Name-->
+        <!--#region Registry Number-->
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
@@ -30,6 +35,8 @@
                 <ValidationMessage For="@(()=>PageController.CommercialRegistryNumber)" />
             </div>
         </div>
+        <!--#endregion Registry Number-->
+        <!--#region Fiscal Code-->
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
@@ -41,12 +48,9 @@
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.FiscalCode)" />
             </div>
-            <!--
-            <div class="col-sm-3">
-                <button class="btn-primary-auxilliary" style="margin-top:5px; margin-bottom:0px;" type="button" @onclick="@GetAnafCompany" disabled="@PageController.DisableController">Preluare Online</button>
-            </div>
-            -->
         </div>
+        <!--#endregion Fiscal Code-->
+        <!--#region Joint Stock-->
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
@@ -59,6 +63,8 @@
                 <ValidationMessage For="@(()=>PageController.JointStock)" />
             </div>
         </div>
+        <!--#endregion Joint Stock-->
+        <!--#region Headquarters Adress-->
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
@@ -71,6 +77,8 @@
                 <ValidationMessage For="@(()=>PageController.Headquarters)" />
             </div>
         </div>
+        <!--#endregion Headquarters Adress-->
+        <!--#region Bank Accounts-->
         <div>
             @foreach (var element in PageController.BankAccountControllers)
             {
@@ -81,7 +89,9 @@
                                                                       LastItem="@(element==PageController.BankAccountControllers.Last())" />
             }
         </div>
+        <!--#endregion Bank Accounts-->
         <!--#region Secondary Elements-->
+        <!--#region Website + Phone Number-->
         <!--The central div containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
@@ -99,6 +109,8 @@
                 <InputText class="form-control" placeholder="Telefon" @bind-Value="@PageController.Phone" disabled="@PageController.DisableController" />
             </div>
         </div>
+        <!--#endregion-->
+        <!--#region Email-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
             <label class="col-sm-3 col-form-label">Mail:</label>
@@ -108,6 +120,8 @@
                 <InputText class="form-control" placeholder="Mail" @bind-Value="@PageController.Email" disabled="@PageController.DisableController" />
             </div>
         </div>
+        <!--#endregion Email-->
+        <!--#region Work Point-->
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
             <label class="col-sm-3 col-form-label">Punct Lucru:</label>
@@ -117,16 +131,7 @@
                 <InputText class="form-control" placeholder="Punct de lucru" @bind-Value="@PageController.WorkPoint" disabled="@PageController.DisableController" />
             </div>
         </div>
+        <!--#endregion Work Point-->
         <!--#endregion-->
-        <!--
-    @if (@PageController.DisableController)
-    {
-        <button type="button" class="btn-primary-validate">Modifica Furnizor</button>
-    }
-    else
-    {
-        <button type="submit" class="btn-primary-validate">Blocheaza Furnizor</button>
-    }
-    <button type="button" class="btn-primary-mentor">Gestioneaza Parteneri</button>-->
     </EditForm>
 </div>

@@ -1,4 +1,15 @@
-﻿<div style="width:30%; border:1px black solid; padding:5px">
-    <MentorBilling.Invoice.Pages.Seller InstanceController="@InstanceController" 
-                                        PageController="@(InstanceController.InvoiceController.SellerController)" />
+﻿<div style="border:dotted 1px blue; display:flex">
+    <!--The Seller Div-->
+    <div style="width:30%; border:1px black solid; padding:5px">
+        <MentorBilling.Invoice.Pages.Seller InstanceController="@InstanceController"
+                                            PageController="@(InstanceController.InvoiceController.SellerController)" />
+    </div>
+    <!--#region Spacing Div-->
+    <!--TO DO Divs-->
+    <div style="width:5%"/>
+    <div style="width:30%"/>
+    <div style="width:5%"/>
+    <!--#endregion-->
+    <!--The Buyer Div-->
+    <div style="width:30%; height:inherit; border:1px black solid; float:right;"></div>
 </div>
