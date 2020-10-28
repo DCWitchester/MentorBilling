@@ -2620,7 +2620,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.3.21",
+    "version": "0.24.231",
     "restore": {
       "projectUniqueName": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
       "projectName": "MentorBilling",
