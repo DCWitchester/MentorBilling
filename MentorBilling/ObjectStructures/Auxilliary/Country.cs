@@ -152,6 +152,11 @@ namespace MentorBilling.ObjectStructures.Auxilliary
         {
             return GetCountryCodeForSettings(settings) + ":" + GetCountryNameForSetting(settings);
         }
+
+        /// <summary>
+        /// this function will check if this country is Romania or not
+        /// </summary>
+        public Boolean IsCountryRomania => countryCodeISO2.ToUpper().Trim().Equals("RO");
         #endregion
     }
 }

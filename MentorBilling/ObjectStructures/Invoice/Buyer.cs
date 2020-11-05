@@ -115,6 +115,11 @@ namespace MentorBilling.ObjectStructures.Invoice
             get => county;
             set => county = value;
         }
+
+        /// <summary>
+        /// the value caller wil return the entire base object
+        /// </summary>
+        public Buyer Value => this;
         #endregion
     }
 }
