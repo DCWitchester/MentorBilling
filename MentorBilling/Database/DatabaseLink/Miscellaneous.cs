@@ -10,7 +10,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// the main function for closing a connection on success
         /// </summary>
         /// <returns>true</returns>
-        public static Boolean NormalConnectionClose(PosgreSqlConnection DatabaseConnection)
+        public static Boolean NormalConnectionClose(PostgreSqlConnection DatabaseConnection)
         {
             DatabaseConnection.CloseConnection();
             return true;
@@ -19,7 +19,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// the main function dor closing a connection on error
         /// </summary>
         /// <returns>false</returns>
-        public static Boolean ErrorConnectionClose(PosgreSqlConnection DatabaseConnection)
+        public static Boolean ErrorConnectionClose(PostgreSqlConnection DatabaseConnection)
         {
             DatabaseConnection.CloseConnection();
             return false;

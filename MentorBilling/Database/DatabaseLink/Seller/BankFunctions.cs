@@ -13,7 +13,7 @@ namespace MentorBilling.Database.DatabaseLink.Seller
         /// <summary>
         /// the database connection for the current class
         /// </summary>
-        static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
+        static readonly PostgreSqlConnection PgSqlConnection = new PostgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
 
         #region Select Functions
         /// <summary>
@@ -129,7 +129,7 @@ namespace MentorBilling.Database.DatabaseLink.Seller
         /// <param name="seller">the given seller</param>
         /// <param name="bankAccount">the bank account controller</param>
         /// <param name="posgreSqlConnection">the active connection</param>
-        public static void AddNewBankAccountForSeller(ObjectStructures.Invoice.Seller seller, BankAccount bankAccount, PosgreSqlConnection posgreSqlConnection)
+        public static void AddNewBankAccountForSeller(ObjectStructures.Invoice.Seller seller, BankAccount bankAccount, PostgreSqlConnection posgreSqlConnection)
         {
             #region ActionLog
             //we generate the log Action

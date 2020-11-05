@@ -86,7 +86,7 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// the Commercial Registy Number Property Caller
         /// </summary>
         public String CommercialRegistryNumber 
-        { 
+        {
             get => commercialRegistryNumber ;
             set => commercialRegistryNumber = value; 
         }

@@ -92,7 +92,7 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         { 
             get => 
                 String.IsNullOrWhiteSpace(Account) 
-                || ElementIndex != 0; 
+                && ElementIndex == 0; 
         }
 
         /// <summary>
@@ -102,8 +102,8 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         public Boolean IsBankNeeded 
         { 
             get => 
-                String.IsNullOrWhiteSpace(Bank) || 
-                ElementIndex != 0; 
+                String.IsNullOrWhiteSpace(Bank) && 
+                ElementIndex == 0; 
         }
 
         /// <summary>
@@ -113,7 +113,8 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         public Boolean IsAccountFilledIn 
         { 
             get => 
-                Miscellaneous.ElementCheck.VerifyIBAN(Account); 
+                Miscellaneous.ElementCheck.VerifyIBAN(Account) &&
+                String.IsNullOrWhiteSpace(this.Bank); 
         }
         
         /// <summary>

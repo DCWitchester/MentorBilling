@@ -8,7 +8,7 @@ using System.Data.Common;
 
 namespace MentorBilling.Database.DatabaseController
 {
-    public class PosgreSqlConnection : IDisposable
+    public class PostgreSqlConnection : IDisposable
     {
         /// <summary>
         /// the main NpgsqlConnection
@@ -18,7 +18,7 @@ namespace MentorBilling.Database.DatabaseController
         /// <summary>
         /// The main constructor will set the connectionString to the default value
         /// </summary>
-        public PosgreSqlConnection()
+        public PostgreSqlConnection()
         {
             connection.ConnectionString = DatabaseConnectionSettings.DefaultConnectionString;
         }
@@ -27,7 +27,7 @@ namespace MentorBilling.Database.DatabaseController
         /// Alternate constructor with a given connectionString
         /// </summary>
         /// <param name="connectionString"></param>
-        public PosgreSqlConnection(String connectionString)
+        public PostgreSqlConnection(String connectionString)
         {
             connection.ConnectionString = connectionString;
         }
@@ -36,7 +36,7 @@ namespace MentorBilling.Database.DatabaseController
         /// Alternate constructor with a GlobalConnectionSettings instance
         /// </summary>
         /// <param name="connectionSettings"></param>
-        public PosgreSqlConnection(DatabaseConnectionSettings connectionSettings)
+        public PostgreSqlConnection(DatabaseConnectionSettings connectionSettings)
         {
             //we rebuilt the connection string to make sure that the connection string is valid
             connectionSettings.RebuiltConnectionString();

@@ -16,7 +16,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <summary>
         /// the database connection for the current class
         /// </summary>
-        static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
+        static readonly PostgreSqlConnection PgSqlConnection = new PostgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
 
         /// <summary>
         /// this function will retrive the bank name from the glossary tables based upon the given bank account

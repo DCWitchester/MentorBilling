@@ -10,7 +10,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <summary>
         /// the main Database connection for this class
         /// </summary>
-        static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
+        static readonly PostgreSqlConnection PgSqlConnection = new PostgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
 
         /// <summary>
         /// this function will log a given action
@@ -29,7 +29,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// </summary>
         /// <param name="Action">the given action</param>
         /// <param name="connection">the open connection received from the caller</param>
-        public static void LogAction(String Action, PosgreSqlConnection connection)
+        public static void LogAction(String Action, PostgreSqlConnection connection)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune) VALUES(:p_action)";
             NpgsqlParameter QueryParameter = new NpgsqlParameter("p_action", Action);
@@ -60,7 +60,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <param name="Action">the given action</param>
         /// <param name="IP">the ip adress</param>
         /// <param name="connection">the open connection received from the caller</param>
-        public static void LogAction(String Action, String IP, PosgreSqlConnection connection)
+        public static void LogAction(String Action, String IP, PostgreSqlConnection connection)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune) VALUES(:p_action,:p_ip)";
             NpgsqlParameter[] QueryParameters =
@@ -98,7 +98,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <param name="IP">the ip adress</param>
         /// <param name="Command">the database command</param>
         /// <param name="connection">the open connection received from the caller</param>
-        public static void LogAction(String Action, String IP, String Command, PosgreSqlConnection connection)
+        public static void LogAction(String Action, String IP, String Command, PostgreSqlConnection connection)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune,comanda) VALUES(:p_action,:p_ip,:p_command)";
             NpgsqlParameter[] QueryParameters =
@@ -134,7 +134,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <param name="Action">the given action</param>
         /// <param name="User">the specific user</param>
         /// <param name="connection">the open connection received from the caller</param>
-        public static void LogAction(String Action, User User, PosgreSqlConnection connection)
+        public static void LogAction(String Action, User User, PostgreSqlConnection connection)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune,utilizator_id) VALUES(:p_action,:p_user_id)";
             NpgsqlParameter[] QueryParameters =
@@ -172,7 +172,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <param name="User">the specific user</param>
         /// <param name="Command">the database command</param>
         /// <param name="connection">the open connection received from the caller</param>
-        public static void LogAction(String Action, User User, String Command, PosgreSqlConnection connection)
+        public static void LogAction(String Action, User User, String Command, PostgreSqlConnection connection)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune,utilizator_id,comanda) VALUES(:p_action,:p_user_id,:p_command)";
             NpgsqlParameter[] QueryParameters =
@@ -211,7 +211,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <param name="IP">the specific ip adress</param>
         /// <param name="User">the specific user</param>
         /// <param name="connection">the open connection received from the caller</param>
-        public static void LogAction(String Action, String IP, User User, PosgreSqlConnection connection)
+        public static void LogAction(String Action, String IP, User User, PostgreSqlConnection connection)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune,utilizator_id) VALUES(:p_action,:p_ip,:p_user_id)";
             NpgsqlParameter[] QueryParameters =
@@ -253,7 +253,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <param name="User">the specific user</param>
         /// <param name="Command">the database command</param>
         /// <param name="connection">the open connection received from the caller</param>
-        public static void LogAction(String Action, String IP, User User, String Command, PosgreSqlConnection connection)
+        public static void LogAction(String Action, String IP, User User, String Command, PostgreSqlConnection connection)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune,utilizator_id,comanda) VALUES(:p_action,:p_ip,:p_user_id,:p_command)";
             NpgsqlParameter[] QueryParameters =

@@ -13,7 +13,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <summary>
         /// the main Database connection for this class
         /// </summary>
-        static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
+        static readonly PostgreSqlConnection PgSqlConnection = new PostgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
 
         /// <summary>
         /// this function will login a given user in the log

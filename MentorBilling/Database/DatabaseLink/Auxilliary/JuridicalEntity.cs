@@ -12,7 +12,7 @@ namespace MentorBilling.Database.DatabaseLink.Auxilliary
         /// <summary>
         /// the database connection for the current class
         /// </summary>
-        static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.JuridicalEntityConnectionSettings);
+        static readonly PostgreSqlConnection PgSqlConnection = new PostgreSqlConnection(Settings.Settings.JuridicalEntityConnectionSettings);
 
         /// <summary>
         /// this function will retrieve the registy number based on the given fiscal code

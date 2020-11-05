@@ -15,7 +15,7 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
         /// <summary>
         /// the main Database connection for this class
         /// </summary>
-        static readonly PosgreSqlConnection PgSqlConnection = new PosgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
+        static readonly PostgreSqlConnection PgSqlConnection = new PostgreSqlConnection(Settings.Settings.DatabaseConnectionSettings);
 
         /// <summary>
         /// this function will update the local menu with the settings from the database server for the specific user
