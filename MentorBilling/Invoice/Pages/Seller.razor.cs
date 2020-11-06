@@ -3,14 +3,10 @@ using MentorBilling.ControllerService;
 using MentorBilling.Extensions;
 using MentorBilling.Invoice.Controllers;
 using MentorBilling.Invoice.DisplayControllers;
-using MentorBilling.Miscellaneous.ANAF;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Invoice.Pages
 {
@@ -38,6 +34,9 @@ namespace MentorBilling.Invoice.Pages
         /// </summary>
         readonly SellerDisplayController SellerDisplayController = new SellerDisplayController();
 
+        /// <summary>
+        /// the main form reference bound to the editContext
+        /// </summary>
         private EditForm SellerForm { get; set; } = new EditForm();
 
         /// <summary>
@@ -80,6 +79,7 @@ namespace MentorBilling.Invoice.Pages
             PageController.SetControllerFromLogo();
             EditContext = new EditContext(PageController);
             SellerDisplayController.OnChange += OnMyChangeHandler;
+            base.OnInitialized();
         }
 
         /// <summary>

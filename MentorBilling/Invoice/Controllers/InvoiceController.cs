@@ -13,5 +13,10 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         public SellerController SellerController { get; set; } = new SellerController();
 
+        /// <summary>
+        /// the Buyer Controller for the Object
+        /// </summary>
+        public BuyerController BuyerController { get; set; } = new BuyerController();
+
     }
 }

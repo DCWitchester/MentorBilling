@@ -1,0 +1,59 @@
+﻿@inject IJSRuntime JSRuntime 
+
+<div>
+    <EditForm @ref="BuyerForm" EditContext="EditContext" OnValidSubmit="(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))" @onfocusout="SubmitForm">
+        <DataAnnotationsValidator />
+        <!--#region Seller Name-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Cumparator</label>
+            <!--The div containing the inputText and the Validation Message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Denumire Cumparator" @bind-Value="@PageController.Name" disabled="@PageController.DisableController" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(()=>PageController.Name)" />
+            </div>
+        </div>
+        <!--#endregion Seller Name-->
+        <!--#region Commercial Registry Number-->
+        <!--The Central Div Containing an object group for an item: Labelm InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!-- The label for the Object -->
+            <label class="col-sm-3 col-form-label">Nr.ord.Reg.Com/an:</label>
+            <!--The div containing an the inputText and the ValidationMessage-->
+            <div class="col-sm-9">
+                <!--The Input Text Controller-->
+                <InputText class="form-control" placeholder="Numar Ordine Registru Comert" @bind-Value="@PageController.CommercialRegistryNumber" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <!--#endregion Commertcial Registry Number-->
+        <!--#region Fiscal Code-->
+        <!--The Central Div Containing an object group for an item: Labelm InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!-- The label for the Object -->
+            <label class="col-sm-3 col-form-label">Cod fiscal:</label>
+            <!--The div containing an the inputText and the ValidationMessage-->
+            <div class="col-sm-9">
+                <!--The Input Text Controller-->
+                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" />
+                <ValidationMessage For="@(()=>PageController.IsFiscalCodeValid)"/>
+            </div>
+        </div>
+        <!--#endregion Fiscal Code-->
+        <!--#region Headquarters Adress-->
+        <!--The Central Div Containing an object group for an item: Labelm InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!-- The label for the Object -->
+            <label class="col-sm-3 col-form-label">Sediul:</label>
+            <!--The div containing an the inputText and the ValidationMessage-->
+            <div class="col-sm-9">
+                <!--The Input Text Controller-->
+                <InputText class="form-control" placeholder="Adresa sediu" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <!--#endregion Headquarters Adress-->
+        
+    </EditForm>
+</div>

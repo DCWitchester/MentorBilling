@@ -13,7 +13,7 @@
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
             <label class="col-sm-3 col-form-label">Furnizor:</label>
-            <!--The div containin the inputText and the Validation Message-->
+            <!--The div containing the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
                 <InputText class="form-control" placeholder="Denumire Furnizor" @bind-Value="@PageController.Name" disabled="@PageController.DisableController" />
@@ -27,7 +27,7 @@
         <div class="form-group row mb-1">
             <!--The Label for the Object-->
             <label class="col-sm-3 col-form-label">Nr.ord.Reg.Com/an:</label>
-            <!--The div containin the inputText and the Validation Message-->
+            <!--The div containing the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
                 <InputText class="form-control" placeholder="Numar Ordine Registru Comert" @bind-Value="@PageController.CommercialRegistryNumber" disabled="@PageController.DisableController" />
@@ -72,7 +72,7 @@
             <!--The div containin the inputText and the Validation Message-->
             <div class="col-sm-9">
                 <!--The Input Controller-->
-                <InputText class="form-control" placeholder="Sediul" @bind-Value="@PageController.Headquarters" disabled="@PageController.DisableController" />
+                <InputText class="form-control" placeholder="Adresa sediu" @bind-Value="@PageController.Headquarters" disabled="@PageController.DisableController" />
                 <!--The Validation Message-->
                 <ValidationMessage For="@(()=>PageController.Headquarters)" />
             </div>
