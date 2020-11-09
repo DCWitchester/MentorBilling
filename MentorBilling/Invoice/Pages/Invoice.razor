@@ -11,5 +11,8 @@
     <div style="width:5%"/>
     <!--#endregion-->
     <!--The Buyer Div-->
-    <div style="width:30%; height:inherit; border:1px black solid; float:right;"></div>
+    <div style="width:30%; height:inherit; border:1px black solid; padding:5px; float:right;">
+        <MentorBilling.Invoice.Pages.Buyer InstanceController="@InstanceController" 
+                                           PageController="@(InstanceController.InvoiceController.BuyerController)"/>
+    </div>
 </div>

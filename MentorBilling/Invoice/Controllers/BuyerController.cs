@@ -1,4 +1,5 @@
 ﻿using MentorBilling.AuxilliaryComponents.Controllers;
+using MentorBilling.AuxilliaryComponents.DisplayControllers;
 using MentorBilling.ObjectStructures.Invoice;
 using System;
 using System.Collections.Generic;
@@ -100,7 +101,7 @@ namespace MentorBilling.Invoice.Controllers
         /// <summary>
         /// this function will check if the country needs 
         /// </summary>
-        [Range(typeof(bool),"true","true", ErrorMessage = "Atentie daca CIF-ul sau CNP-ul nu este completat trebuie completata tara si dupa caz judetul")]
+        [Range(typeof(bool),"false","false", ErrorMessage = "Atentie daca CIF-ul sau CNP-ul nu este completat trebuie completata tara si dupa caz judetul")]
         public Boolean IsCountryNeeded
         {
             get => String.IsNullOrWhiteSpace(FiscalCode) && base.Country.Equals(0);
@@ -109,7 +110,7 @@ namespace MentorBilling.Invoice.Controllers
         /// <summary>
         /// this function will check if the county is needed
         /// </summary>
-        [Range(typeof(bool),"true","true",ErrorMessage = "Atentie daca CIF-ul sau CNP-ul nu iar tara completata este Romania judetul trebuie completat")]
+        [Range(typeof(bool),"false","false",ErrorMessage = "Atentie daca CIF-ul sau CNP-ul nu iar tara completata este Romania judetul trebuie completat")]
         public Boolean IsCountyNeeded
         {
             get => String.IsNullOrWhiteSpace(FiscalCode) && CountriesController.SelectedCountry.IsCountryRomania && base.County.Equals(0);
@@ -185,6 +186,13 @@ namespace MentorBilling.Invoice.Controllers
         /// this controller will permit the disablement of the page editForm
         /// </summary>
         public Boolean DisableController { get; set; } = false;
+        #endregion
+
+        #region DisplayControllers
+        /// <summary>
+        /// the display controller to be linked to the child objects
+        /// </summary>
+        public CountryCountyDisplayController CountryCountyDisplayController { get; set; } = new CountryCountyDisplayController();
         #endregion
     }
 }

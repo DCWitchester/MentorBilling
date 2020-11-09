@@ -53,7 +53,8 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         {
             EditContext = new EditContext(PageController);
             //we add the Change Handler
-            BankAccountDisplayController.OnChange += OnMyChangeHandler;
+            if(!(BankAccountDisplayController==null))
+                BankAccountDisplayController.OnChange += OnMyChangeHandler;
             base.OnInitialized();
         }
 
@@ -62,7 +63,8 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         /// </summary>
         public void Dispose()
         {
-            BankAccountDisplayController.OnChange -= OnMyChangeHandler;
+            if (!(BankAccountDisplayController==null))
+                BankAccountDisplayController.OnChange -= OnMyChangeHandler;
         }
 
         /// <summary>

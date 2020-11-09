@@ -1,11 +1,10 @@
 ﻿using MentorBilling.AuxilliaryComponents.Controllers;
+using MentorBilling.AuxilliaryComponents.DisplayControllers;
 using MentorBilling.ControllerService;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.AuxilliaryComponents.Pages
 {
@@ -22,18 +21,23 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         /// </summary>
         [Parameter]
         public CountiesController PageController { get; set; }
+        /// <summary>
+        /// the display controller that links the county and country pickers
+        /// </summary>
+        [Parameter]
+        public CountryCountyDisplayController DisplayController { get; set; }
         #endregion
 
         #region Form Binding
         /// <summary>
         /// the editform reference to the razor controller
         /// </summary>
-        public EditForm MyForm { get; set; }
+        private EditForm MyForm { get; set; }
 
         /// <summary>
         /// the edit context bound to the page
         /// </summary>
-        public EditContext EditContext { get; set; }
+        private EditContext EditContext { get; set; }
 
         /// <summary>
         /// the main initialization of the page
@@ -41,7 +45,37 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         protected override void OnInitialized()
         {
             EditContext = new EditContext(PageController);
+            DisplayController.OnChange += OnMyChangeHandler;
             base.OnInitialized();
+        }
+        /// <summary>
+        /// the dispose of the page
+        /// </summary>
+        public void Dispose()
+        {
+            InstanceController.DisplaySettings.OnChange -= OnMyChangeHandler;
+        }
+        #endregion
+
+        #region Functionality
+        /// <summary>
+        /// this function will select the county on the element click
+        /// </summary>
+        /// <param name="selectedCounty">receive country option</param>
+        private void SelectedElement(String selectedCounty)
+        {
+            if (selectedCounty.Trim().Length >= 2)
+                PageController.SelectedCounty = PageController.counties.Where(county => county.CountyCode == selectedCounty.Substring(0, 2)).FirstOrDefault();
+            else
+                PageController.SelectedCounty = PageController.counties.Where(county => county.ID == 0).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// the main handler for the state changed remote event
+        /// </summary>
+        private async void OnMyChangeHandler()
+        {
+            await InvokeAsync(() => StateHasChanged());
         }
         #endregion
     }

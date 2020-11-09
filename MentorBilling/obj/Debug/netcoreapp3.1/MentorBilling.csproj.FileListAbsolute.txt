@@ -41,7 +41,10 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.Mv
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.RazorComponent.input.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\AuxilliaryComponents\Pages\BankAccount.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\AuxilliaryComponents\Pages\CountiesPicker.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\AuxilliaryComponents\Pages\CountriesPicker.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\ImageFunctionality\Logo.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Invoice\Pages\Buyer.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Invoice\Pages\Invoice.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Invoice\Pages\Logo.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Invoice\Pages\Seller.razor.g.cs
@@ -72,7 +75,10 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.Ta
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.RazorCoreGenerate.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\AuxilliaryComponents\Pages\BankAccount.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\AuxilliaryComponents\Pages\CountiesPicker.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\AuxilliaryComponents\Pages\CountriesPicker.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\ImageFunctionality\Logo.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Invoice\Pages\Buyer.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Invoice\Pages\Invoice.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Invoice\Pages\Logo.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Invoice\Pages\Seller.razor.g.cs
@@ -110,9 +116,3 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\staticwebassets\
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.dll
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.pdb
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.genruntimeconfig.cache
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\AuxilliaryComponents\Pages\CountiesPicker.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\AuxilliaryComponents\Pages\CountriesPicker.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\AuxilliaryComponents\Pages\CountiesPicker.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\AuxilliaryComponents\Pages\CountriesPicker.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Invoice\Pages\Buyer.razor.g.cs
-F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Invoice\Pages\Buyer.razor.g.cs

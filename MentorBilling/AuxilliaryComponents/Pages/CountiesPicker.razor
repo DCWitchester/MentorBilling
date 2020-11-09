@@ -8,13 +8,16 @@
     <div class="form-group row mb-1">
         <!--the label display-->
         <label class="col-sm-3 col-form-label">Judetul:</label>
-        <div class="col-sm-9">
+        <div class="col-sm-9" style="height:inherit; text-align:center; display:flex;">
             <!--The input select directly bound to the page controller-->
-            <InputSelect @bind-Value="@(PageController.SelectedCounty)">
-                <!--the iteration of the countries list-->
+            <InputSelect ValueExpression="@(()=>PageController.SelectedCounty.DisplayName)"
+                         Value="@(PageController.SelectedCounty.DisplayName)" 
+                         ValueChanged="@((String value) => SelectedElement(value))"
+                         style="height:inherit; width:inherit; margin-bottom:5px; text-align:center;" disabled = "@(!DisplayController.IsCountyNeeded)">
+                <!--the iteration of the counties list-->
                 @foreach (var county in PageController.counties)
                 {
-                    <option value="@county">@county.DisplayName</option>
+                    <option value="@(county.DisplayName)">@county.DisplayName</option>
                 }
             </InputSelect>
         </div>

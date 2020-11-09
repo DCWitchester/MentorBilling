@@ -52,7 +52,7 @@ namespace MentorBilling.ObjectStructures.Auxilliary
         /// <summary>
         /// the main caller for the display name
         /// </summary>
-        public String DisplayName => countyCode + " : " + countyName;
+        public String DisplayName => id == 0 ? "" : countyCode + " : " + countyName;
         #endregion
     }
 }

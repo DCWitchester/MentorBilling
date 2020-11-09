@@ -38,12 +38,12 @@
             <div class="col-sm-9">
                 <!--The Input Text Controller-->
                 <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" />
-                <ValidationMessage For="@(()=>PageController.IsFiscalCodeValid)"/>
+                <ValidationMessage For="@(()=>PageController.IsFiscalCodeValid)" />
             </div>
         </div>
         <!--#endregion Fiscal Code-->
         <!--#region Headquarters Adress-->
-        <!--The Central Div Containing an object group for an item: Labelm InputText, ValidationMessage-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!-- The label for the Object -->
             <label class="col-sm-3 col-form-label">Sediul:</label>
@@ -54,6 +54,29 @@
             </div>
         </div>
         <!--#endregion Headquarters Adress-->
-        
+        <!--#region Country-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div>
+            <!--The Country Picker for the element-->
+            <MentorBilling.AuxilliaryComponents.Pages.CountriesPicker PageController="@(PageController.CountriesController)"
+                                                                      InstanceController="@(InstanceController)"
+                                                                      DisplayController="(PageController.CountryCountyDisplayController)"/>
+            <ValidationMessage For="@(()=>PageController.IsCountryNeeded)" />
+        </div>
+        <!--#endregion Country-->
+        <!--#region County-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div>
+            <!--The County Picker for the element-->
+            <MentorBilling.AuxilliaryComponents.Pages.CountiesPicker PageController="@(PageController.CountiesController)"
+                                                                     InstanceController="@(InstanceController)"
+                                                                     DisplayController="@(PageController.CountryCountyDisplayController)"/>
+            <ValidationMessage For="@(()=>PageController.IsCountyNeeded)" />
+        </div>
+        <!--#endregion County-->
+        <!--#region BankAccount-->
+        <div>
+            <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(PageController.BankAccountController)"/>
+        </div>
     </EditForm>
 </div>

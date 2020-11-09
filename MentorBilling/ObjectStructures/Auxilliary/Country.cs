@@ -107,7 +107,7 @@ namespace MentorBilling.ObjectStructures.Auxilliary
         /// </summary>
         public String DefaultDisplayName
         {
-            get => DefaultCode + ":" + DefaultDisplayName;
+            get => id == 0 ? "" :  DefaultCode + ":" + DefaultDisplayName;
         }
         #endregion Callers
 
@@ -150,7 +150,7 @@ namespace MentorBilling.ObjectStructures.Auxilliary
         /// <returns>the country </returns>
         public String GetDisplayNameForSettings(InstanceSettings settings)
         {
-            return GetCountryCodeForSettings(settings) + ":" + GetCountryNameForSetting(settings);
+            return id == 0 ? "" : GetCountryCodeForSettings(settings) + ":" + GetCountryNameForSetting(settings);
         }
 
         /// <summary>

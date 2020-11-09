@@ -52,6 +52,7 @@ namespace MentorBilling.Invoice.Pages
         /// </summary>
         private async void SubmitForm()
         {
+            PageController.SetBaseValuesFromController();
             await BuyerForm.SubmitAsync();
         }
         #endregion
