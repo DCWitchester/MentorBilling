@@ -480,7 +480,7 @@ namespace MentorBilling.Miscellaneous
             Mail.Body = mailBody;
             Mail.IsBodyHtml = IsMailHtml;
             Mail.Subject = mailSubject;
-            if (requestAnswer) Mail.Headers.Add("Disposition-Notification-To", "");
+            if (requestAnswer) Mail.Headers.Add("Disposition-Notification-To", mailSender);
             foreach (String atachement in mailAtachements)
             {
                 Mail.Attachments.Add(new Attachment(atachement));
