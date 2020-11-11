@@ -34,6 +34,14 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// </summary>
         private String headquarters { get; set; } = String.Empty;
         /// <summary>
+        /// the email property
+        /// </summary>
+        private String deliveryAdress { get; set; } = String.Empty;
+        /// <summary>
+        /// the email property
+        /// </summary>
+        private String email { get; set; } = String.Empty;
+        /// <summary>
         /// the country ID property
         /// </summary>
         private Int64 country { get; set; } = new Int64();
@@ -96,6 +104,23 @@ namespace MentorBilling.ObjectStructures.Invoice
         {
             get => headquarters;
             set => headquarters = value;
+        }
+        /// <summary>
+        /// the main caller for the headquarters property
+        /// </summary>
+        public String DeliveryAdress
+        {
+            get => deliveryAdress;
+            set => deliveryAdress = value;
+        }
+
+        /// <summary>
+        /// the main caller for the email property
+        /// </summary>
+        public String Email
+        {
+            get => email;
+            set => email = value;
         }
 
         /// <summary>

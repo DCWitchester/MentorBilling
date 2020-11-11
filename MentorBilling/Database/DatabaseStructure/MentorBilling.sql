@@ -884,6 +884,8 @@ CREATE TABLE buyer.cumparatori (
   nr_registru_comert varchar NOT NULL DEFAULT (''),
   cod_fiscal varchar NOT NULL DEFAULT ('') UNIQUE,
   sediul varchar NOT NULL DEFAULT (''),
+  adresa_livrare varchar NOT NULL DEFAULT(''),
+  email varchar NOT NULL DEFAULT(''),
   tara bigint NOT NULL DEFAULT 0 REFERENCES glossary.tari(id),
   judetul bigint NOT NULL DEFAULT 0 REFERENCES glossary.judete(id),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
