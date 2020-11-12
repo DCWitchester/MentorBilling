@@ -118,3 +118,5 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.pd
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.genruntimeconfig.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Components\Tooltip.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\Components\Tooltip.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Messages\Pages\InactivCompany.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Messages\Pages\InactivCompany.razor.g.cs

@@ -138,7 +138,7 @@ namespace MentorBilling.Invoice.Controllers
             //the FiscalCode with or without RO
             base.FiscalCode = (company.CompanyStatus.VAT_Applicable ? "RO" : "") + company.Cui;
             //and the headquarters
-            this.Headquarters = company.Adress;
+            this.Headquarters = company.Address;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace MentorBilling.Invoice.Controllers
         }
 
         /// <summary>
-        /// this function will be called by the valid on the Anaf
+        /// this function will be called by the valid on the Fiscal Code TextBox
         /// </summary>
         /// <param name="fiscalCode">the fiscal code entered on the user side</param>
         public void RetrieveAnafInfo(String fiscalCode)

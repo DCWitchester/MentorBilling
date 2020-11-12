@@ -31,7 +31,7 @@ namespace MentorBilling.Invoice.Pages
         private EditForm BuyerForm { get; set; } = new EditForm();
         #endregion
 
-        String TooltipValue = "L1" + Environment.NewLine + "L2";
+
 
         #region Edit Context
         /// <summary>
@@ -58,6 +58,14 @@ namespace MentorBilling.Invoice.Pages
             await BuyerForm.SubmitAsync();
         }
         #endregion
+
+        private void CheckCompanyInactivity()
+        {
+            if (!PageController.IsCompanyActive)
+            {
+                Messages.MessageDisplay.CallInactivePartner(InstanceController.MessageDisplaySettings);
+            }
+        }
 
         #region Form Validation
         void ValidateLogin(Boolean ControllerState)

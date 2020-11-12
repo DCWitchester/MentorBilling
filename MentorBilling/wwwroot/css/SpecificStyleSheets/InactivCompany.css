@@ -1,0 +1,24 @@
+﻿/*#region error button*/
+.btn-primary-mentor-error {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-style: double;
+    border-color: snow;
+    border-radius: 15px 50px;
+    padding: 5px 35px;
+    margin: 10px;
+    outline: none;
+}
+
+    .btn-primary-mentor-error:hover {
+        color: #fff;
+        outline: none;
+    }
+
+    .btn-primary-mentor-error:focus {
+        outline: none;
+        border-radius: 15px 50px;
+        border-color: snow;
+        background-color: orange;
+    }
+/*#endregion*/

@@ -177,7 +177,7 @@ namespace MentorBilling.Miscellaneous.ANAF
                         Inactiv = foundObjects[0].Value<bool>("statusInactivi"),
                         VAT_Split = foundObjects[0].Value<bool>("statusSplitTVA")
                     },
-                    Adress = !String.IsNullOrEmpty(foundObjects[0].Value<String>("adresa")) ? foundObjects[0].Value<String>("adresa") : " ",
+                    Address = !String.IsNullOrEmpty(foundObjects[0].Value<String>("adresa")) ? foundObjects[0].Value<String>("adresa") : " ",
                     County = !String.IsNullOrEmpty(foundObjects[0].Value<String>("adresa")) ? foundObjects[0].Value<String>("adresa").Substring(0, foundObjects[0].Value<String>("adresa").IndexOf(',')).Split(' ')[1] : " ",
                     Country = "Romania",
                     LastUpdate = LastAlterationDate(foundObjects)
@@ -197,6 +197,22 @@ namespace MentorBilling.Miscellaneous.ANAF
                 return JsonConvert.DeserializeObject<Company>(GetByCui(CUI));
             } catch { 
                 return new Company();
+            }
+        }
+        /// <summary>
+        /// this function will retrieve a Company Status object from anaf based on the given CIF
+        /// </summary>
+        /// <param name="CUI">the given CIF</param>
+        /// <returns>A company status</returns>
+        public static CompanyStatus GetANAFCompanyStatus(String CUI)
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<Company>(GetByCui(CUI)).CompanyStatus;
+            }
+            catch
+            {
+                return new CompanyStatus();
             }
         }
 

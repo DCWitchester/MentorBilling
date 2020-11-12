@@ -35,4 +35,10 @@
     <Folder Include="wwwroot\Image\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\css\SpecificStyleSheets\InactivCompany.css">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

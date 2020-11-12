@@ -1,5 +1,7 @@
 ﻿using MentorBilling.AuxilliaryComponents.Controllers;
 using MentorBilling.AuxilliaryComponents.DisplayControllers;
+using MentorBilling.ControllerService;
+using MentorBilling.Miscellaneous.ANAF;
 using MentorBilling.ObjectStructures.Invoice;
 using System;
 using System.Collections.Generic;
@@ -37,7 +39,7 @@ namespace MentorBilling.Invoice.Controllers
         public new String FiscalCode
         {
             get => base.FiscalCode;
-            set => base.FiscalCode = value;
+            set => RetrieveAnafInfo(value);
         }
 
         /// <summary>
@@ -85,7 +87,6 @@ namespace MentorBilling.Invoice.Controllers
             set => base.Email = value;
         }
         #endregion
-
 
         #region Auxilliary Components (with Controllers)
         /// <summary>
@@ -162,6 +163,21 @@ namespace MentorBilling.Invoice.Controllers
             SetControllerValueFromCountry();
             SetControllerValueFromCounty();
         }
+        /// <summary>
+        /// this function will be called by the valid on the Fiscal Code TextBox
+        /// </summary>
+        /// <param name="fiscalCode">the fiscal code entered oin the user side</param>
+        public void RetrieveAnafInfo(String fiscalCode)
+        {
+            if (Miscellaneous.ElementCheck.VerifyCIF(fiscalCode))
+            {
+                //we get sone info from anaf
+                DevourCompany(AnafGet.GetANAFCompany(fiscalCode));
+                //and some from our own database
+                GetRegistryNumber();
+            }
+            else base.FiscalCode = fiscalCode;
+        }
 
         #region Auxilliary Functionality
         /// <summary>
@@ -205,6 +221,23 @@ namespace MentorBilling.Invoice.Controllers
                                                 Miscellaneous.SpecialConversions.GetIntegerOfFiscalCode(this.FiscalCode)
                                                 );
         }
+
+        /// <summary>
+        /// this function will consume a given company and set the needed settings
+        /// </summary>
+        /// <param name="company">the given company</param>
+        void DevourCompany(Company company)
+        {
+            //the only infor that interest us is the company name
+            this.Name = company.Name;
+            //the fical code with or without RO
+            base.FiscalCode = (company.CompanyStatus.VAT_Applicable ? "RO" : "") + company.Cui;
+            //and the address
+            this.Headquarters = company.Address;
+            //and wether the company is active or not
+            this.IsCompanyActive = !company.CompanyStatus.Inactiv;
+        }
+
         #endregion Auxilliary Functionality
 
         #endregion
@@ -214,6 +247,13 @@ namespace MentorBilling.Invoice.Controllers
         /// this controller will permit the disablement of the page editForm
         /// </summary>
         public Boolean DisableController { get; set; } = false;
+        #endregion
+
+        #region Auxilliary Properties
+        /// <summary>
+        /// this controller will permit the display messagefor active company
+        /// </summary>
+        public Boolean IsCompanyActive { get; set; } = true;
         #endregion
 
         #region DisplayControllers

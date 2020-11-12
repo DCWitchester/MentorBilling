@@ -37,7 +37,7 @@
             <!--The div containing an the inputText and the ValidationMessage-->
             <div class="col-sm-9">
                 <!--The Input Text Controller-->
-                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" />
+                <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" @onfocusout="CheckCompanyInactivity" />
                 <ValidationMessage For="@(()=>PageController.IsFiscalCodeValid)" />
             </div>
         </div>
