@@ -31,6 +31,8 @@ namespace MentorBilling.Invoice.Pages
         private EditForm BuyerForm { get; set; } = new EditForm();
         #endregion
 
+        String TooltipValue = "L1" + Environment.NewLine + "L2";
+
         #region Edit Context
         /// <summary>
         /// the main editContext bound to the formDisplay
