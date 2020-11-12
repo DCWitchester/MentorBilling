@@ -1,0 +1,39 @@
+﻿<div>
+    <h1 style="color:red">
+        ATENTIE !
+    </h1>
+    <h2>
+        Societatea catre care emiteti factura apare ca inactiva in bazele de date ale ANAF-ului.
+        <br />
+        Doriti sa continuati?
+        <br />
+        <!--The Error Message -->
+        <button class="btn-primary-mentor" @onclick="LeaveError">Da</button>
+        <button class="btn-primary-mentor" @onclick="AcceptError">Nu</button>
+    </h2>
+</div>
+
+@code {
+    [Parameter]
+    public MentorBilling.ControllerService.InstanceController InstanceController { get; set; }
+
+    /// <summary>
+    /// the single function on the page so a cs would be overkill
+    /// </summary>
+    public void LeaveError()
+    {
+        //and hide the error messages
+        MessageDisplay.CallMain(InstanceController.MessageDisplaySettings);
+    }
+
+    /// <summary>
+    /// the single function on the page so a cs would be overkill
+    /// </summary>
+    public void AcceptError()
+    {
+        //we reset the buyer controller
+        InstanceController.InvoiceController.BuyerController = new Invoice.Controllers.BuyerController();
+        //and call the main page
+        MessageDisplay.CallMain(InstanceController.MessageDisplaySettings);
+    }
+}

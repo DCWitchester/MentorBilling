@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
-    <Version>0.24.231</Version>
+    <Version>0.3.26.256</Version>
     <Description>Online Billing App</Description>
     <Copyright>Mentor SRL</Copyright>
     <PackageIcon>favicon.ico</PackageIcon>

@@ -195,6 +195,16 @@ namespace MentorBilling.Invoice.Controllers
         {
             if (County > 0) CountiesController.SelectedCounty = CountiesController.counties.Where(county => county.ID == County).FirstOrDefault();
         }
+
+        /// <summary>
+        /// this function will retrieve the commercial RegistryNumber of a Firm
+        /// </summary>
+        void GetRegistryNumber()
+        {
+            this.CommercialRegistryNumber = Database.DatabaseLink.Auxilliary.JuridicalEntity.GetRegistryNumberForFiscalCode(
+                                                Miscellaneous.SpecialConversions.GetIntegerOfFiscalCode(this.FiscalCode)
+                                                );
+        }
         #endregion Auxilliary Functionality
 
         #endregion

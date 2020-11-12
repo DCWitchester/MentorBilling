@@ -19,7 +19,9 @@ namespace MentorBilling.Messages
             //the invalid subscription message
             InvalidSubscription = 2,
             //the logout warning message
-            Logout = 3
+            Logout = 3,
+            //the inactive partner error
+            InactivePartner
         }
 
         /// <summary>
@@ -56,6 +58,11 @@ namespace MentorBilling.Messages
         public static void CallLogoutWarning(MessageDisplaySettings messageDisplaySettings)
         {
             messageDisplaySettings.ChangeMessageType(MessageTypes.Logout);
+        }
+
+        public static void CallInactivePartner(MessageDisplaySettings messageDisplaySettings)
+        {
+            messageDisplaySettings.ChangeMessageType(MessageTypes.InactivePartner);
         }
     }
 }
