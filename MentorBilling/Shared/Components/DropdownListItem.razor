@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
 @typeparam TItem
+
+<!--The main item for a dropdown razor element-->
 <a class="dropdown-item" Item="@Item" @onclick="e=> Dropdown.HandleSelect(Item, ChildContent)">@ChildContent(Item)</a>
 
 @code {

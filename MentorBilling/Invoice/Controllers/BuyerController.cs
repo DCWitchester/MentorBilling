@@ -66,6 +66,24 @@ namespace MentorBilling.Invoice.Controllers
             get => base.County;
             set => base.County = value;
         }
+
+        /// <summary>
+        /// the Secondary Address bound to the given TextBox
+        /// </summary>
+        public new String DeliveryAddress
+        {
+            get => base.DeliveryAddress;
+            set => base.DeliveryAddress = value;
+        }
+
+        /// <summary>
+        /// the Email Address bound to the given TextBox
+        /// </summary>
+        public new String Email
+        {
+            get => base.Email;
+            set => base.Email = value;
+        }
         #endregion
 
 

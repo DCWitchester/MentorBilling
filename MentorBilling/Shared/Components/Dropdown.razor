@@ -2,10 +2,12 @@
 @typeparam TItem
 
 <div class="dropdown">
+    <!--The even raising button that calls the dropdown-->
     <button class="btn btn-primary dropdown-toggle mr-4" data-toggle="dropdown" type="button" @onclick="e => this.show=!this.show "
             aria-haspopup="true" aria-expanded="false">
         @Tip
     </button>
+    <!--The actual dropdown cascading value that shows the dropdown list-->
     <CascadingValue name="Dropdown" Value="@this">
         <div class="dropdown-menu @(show? "show":"")">
             @ChildContent

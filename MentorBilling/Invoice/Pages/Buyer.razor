@@ -42,7 +42,7 @@
             </div>
         </div>
         <!--#endregion Fiscal Code-->
-        <!--#region Headquarters Adress-->
+        <!--#region Headquarters Address-->
         <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
         <div class="form-group row mb-1">
             <!-- The label for the Object -->
@@ -50,17 +50,29 @@
             <!--The div containing an the inputText and the ValidationMessage-->
             <div class="col-sm-9">
                 <!--The Input Text Controller-->
-                <InputText class="form-control" placeholder="Adresa sediu" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" />
+                <InputText class="form-control" placeholder="Adresa sediu" @bind-Value="@PageController.Headquarters" disabled="@PageController.DisableController" />
             </div>
         </div>
-        <!--#endregion Headquarters Adress-->
+        <!--#endregion Headquarters Address-->
+        <!--#region Email-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!-- The label for the Object -->
+            <label class="col-sm-3 col-form-label">Email:</label>
+            <!--The div containing an the inputText and the ValidationMessage-->
+            <div class="col-sm-9">
+                <!--The Input Text Controller-->
+                <InputText class="form-control" placeholder="Adresa de mail" @bind-Value="@PageController.DeliveryAddress" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <!--#endregion Email-->
         <!--#region Country-->
         <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
         <div>
             <!--The Country Picker for the element-->
             <MentorBilling.AuxilliaryComponents.Pages.CountriesPicker PageController="@(PageController.CountriesController)"
                                                                       InstanceController="@(InstanceController)"
-                                                                      DisplayController="(PageController.CountryCountyDisplayController)"/>
+                                                                      DisplayController="(PageController.CountryCountyDisplayController)" />
             <ValidationMessage For="@(()=>PageController.IsCountryNeeded)" />
         </div>
         <!--#endregion Country-->
@@ -70,13 +82,26 @@
             <!--The County Picker for the element-->
             <MentorBilling.AuxilliaryComponents.Pages.CountiesPicker PageController="@(PageController.CountiesController)"
                                                                      InstanceController="@(InstanceController)"
-                                                                     DisplayController="@(PageController.CountryCountyDisplayController)"/>
+                                                                     DisplayController="@(PageController.CountryCountyDisplayController)" />
             <ValidationMessage For="@(()=>PageController.IsCountyNeeded)" />
         </div>
         <!--#endregion County-->
         <!--#region BankAccount-->
         <div>
-            <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(PageController.BankAccountController)"/>
+            <MentorBilling.AuxilliaryComponents.Pages.BankAccount PageController="@(PageController.BankAccountController)" />
         </div>
+        <!--#endregion BankAccount-->
+        <!--#region Delivery Address-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!-- The label for the Object -->
+            <label class="col-sm-3 col-form-label">Punct Lucru:</label>
+            <!--The div containing an the inputText and the ValidationMessage-->
+            <div class="col-sm-9">
+                <!--The Input Text Controller-->
+                <InputText class="form-control" placeholder="Adresa punctului de lucru\livrare" @bind-Value="@PageController.DeliveryAddress" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <!--#endregion Delivery Address-->
     </EditForm>
 </div>

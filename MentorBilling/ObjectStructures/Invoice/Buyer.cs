@@ -36,7 +36,7 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// <summary>
         /// the email property
         /// </summary>
-        private String deliveryAdress { get; set; } = String.Empty;
+        private String deliveryAddress { get; set; } = String.Empty;
         /// <summary>
         /// the email property
         /// </summary>
@@ -108,10 +108,10 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// <summary>
         /// the main caller for the headquarters property
         /// </summary>
-        public String DeliveryAdress
+        public String DeliveryAddress
         {
-            get => deliveryAdress;
-            set => deliveryAdress = value;
+            get => deliveryAddress;
+            set => deliveryAddress = value;
         }
 
         /// <summary>
