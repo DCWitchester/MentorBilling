@@ -235,7 +235,7 @@ namespace MentorBilling.Invoice.Controllers
             //and the address
             this.Headquarters = company.Address;
             //and wether the company is active or not
-            this.IsCompanyActive = company.CompanyStatus.Inactiv;
+            this.IsCompanyActive = !company.CompanyStatus.Inactiv;
         }
 
         #endregion Auxilliary Functionality

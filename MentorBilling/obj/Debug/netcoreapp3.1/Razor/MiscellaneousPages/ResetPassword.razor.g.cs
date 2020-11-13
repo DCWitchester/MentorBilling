@@ -101,20 +101,14 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(0, "    ");
-            __builder.OpenElement(1, "div");
-            __builder.AddAttribute(2, "id", "dark_cover");
-            __builder.AddMarkupContent(3, "\r\n        ");
-            __builder.OpenElement(4, "div");
-            __builder.AddAttribute(5, "class", "overlay");
-            __builder.AddMarkupContent(6, "\r\n            ");
-            __builder.OpenComponent<MentorBilling.Messages.Pages.DatabaseConnectionError>(7);
+            __builder.OpenElement(0, "div");
+            __builder.AddAttribute(1, "id", "dark_cover");
+            __builder.OpenElement(2, "div");
+            __builder.AddAttribute(3, "class", "overlay");
+            __builder.OpenComponent<MentorBilling.Messages.Pages.DatabaseConnectionError>(4);
             __builder.CloseComponent();
-            __builder.AddMarkupContent(8, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(9, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(10, "\r\n");
 #nullable restore
 #line 14 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
 }
@@ -122,7 +116,6 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(11, "\r\n");
 #nullable restore
 #line 16 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
  if (PasswordReset)
@@ -131,8 +124,7 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(12, "    ");
-            __builder.AddMarkupContent(13, "<div class=\"main\">\r\n        <div class=\"content px-4\">\r\n            <div class=\"center-screen\">\r\n                <h3>Parola dumneavoastra a fost resetata.</h3>\r\n            </div>\r\n        </div>\r\n    </div>\r\n");
+            __builder.AddMarkupContent(5, "<div class=\"main\"><div class=\"content px-4\"><div class=\"center-screen\"><h3>Parola dumneavoastra a fost resetata.</h3></div></div></div>");
 #nullable restore
 #line 25 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
 }
@@ -142,21 +134,16 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(14, "    ");
-            __builder.OpenElement(15, "div");
-            __builder.AddAttribute(16, "class", "main");
-            __builder.AddMarkupContent(17, "\r\n        ");
-            __builder.OpenElement(18, "div");
-            __builder.AddAttribute(19, "class", "content px-4");
-            __builder.AddMarkupContent(20, "\r\n            ");
-            __builder.OpenElement(21, "div");
-            __builder.AddAttribute(22, "class", "center-screen");
-            __builder.AddMarkupContent(23, "\r\n                ");
-            __builder.AddMarkupContent(24, "<h1>Resetare Parola</h1>\r\n                ");
-            __builder.OpenElement(25, "div");
-            __builder.AddMarkupContent(26, "\r\n                    \r\n                    ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(27);
-            __builder.AddAttribute(28, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.OpenElement(6, "div");
+            __builder.AddAttribute(7, "class", "main");
+            __builder.OpenElement(8, "div");
+            __builder.AddAttribute(9, "class", "content px-4");
+            __builder.OpenElement(10, "div");
+            __builder.AddAttribute(11, "class", "center-screen");
+            __builder.AddMarkupContent(12, "<h1>Resetare Parola</h1>\r\n                ");
+            __builder.OpenElement(13, "div");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(14);
+            __builder.AddAttribute(15, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 34 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                       PageController
@@ -165,7 +152,7 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(29, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(16, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 34 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                                                        e => ValidateForm(true)
@@ -174,7 +161,7 @@ else
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(30, "OnInvalidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(17, "OnInvalidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 34 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                                                                                                     e => ValidateForm(false)
@@ -183,22 +170,19 @@ else
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(31, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
-                __builder2.AddMarkupContent(32, "\r\n                        \r\n                        ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(33);
+            __builder.AddAttribute(18, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(19);
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(34, "\r\n                        \r\n                        \r\n                        ");
-                __builder2.OpenElement(35, "div");
-                __builder2.AddAttribute(36, "class", "form-group");
-                __builder2.AddMarkupContent(37, "\r\n                            \r\n                            ");
-                __builder2.AddMarkupContent(38, "<label class=\"col-form-label\">Parola noua</label>\r\n                            \r\n                            ");
-                __builder2.OpenElement(39, "div");
-                __builder2.AddMarkupContent(40, "\r\n                                ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(41);
-                __builder2.AddAttribute(42, "id", "tbPassword");
-                __builder2.AddAttribute(43, "class", "form-control");
-                __builder2.AddAttribute(44, "placeholder", "Parola noua");
-                __builder2.AddAttribute(45, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddMarkupContent(20, "\r\n                        \r\n                        \r\n                        ");
+                __builder2.OpenElement(21, "div");
+                __builder2.AddAttribute(22, "class", "form-group");
+                __builder2.AddMarkupContent(23, "<label class=\"col-form-label\">Parola noua</label>\r\n                            \r\n                            ");
+                __builder2.OpenElement(24, "div");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(25);
+                __builder2.AddAttribute(26, "id", "tbPassword");
+                __builder2.AddAttribute(27, "class", "form-control");
+                __builder2.AddAttribute(28, "placeholder", "Parola noua");
+                __builder2.AddAttribute(29, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 44 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                                                                                                        PageController.Password
@@ -207,11 +191,11 @@ else
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(46, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Password = __value, PageController.Password))));
-                __builder2.AddAttribute(47, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Password));
+                __builder2.AddAttribute(30, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Password = __value, PageController.Password))));
+                __builder2.AddAttribute(31, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Password));
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(48, "\r\n                                \r\n                                ");
-                __Blazor.MentorBilling.MiscellaneousPages.ResetPassword.TypeInference.CreateValidationMessage_0(__builder2, 49, 50, 
+                __builder2.AddMarkupContent(32, "\r\n                                \r\n                                ");
+                __Blazor.MentorBilling.MiscellaneousPages.ResetPassword.TypeInference.CreateValidationMessage_0(__builder2, 33, 34, 
 #nullable restore
 #line 46 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                                           () => PageController.Password
@@ -220,22 +204,18 @@ else
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(51, "\r\n                            ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(52, "\r\n                        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(53, "\r\n                        \r\n                        ");
-                __builder2.OpenElement(54, "div");
-                __builder2.AddAttribute(55, "class", "form-group");
-                __builder2.AddMarkupContent(56, "\r\n                            \r\n                            ");
-                __builder2.AddMarkupContent(57, "<label class=\"col-form-label\">Reintroduceti parola</label>\r\n                            \r\n                            ");
-                __builder2.OpenElement(58, "div");
-                __builder2.AddMarkupContent(59, "\r\n                                ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(60);
-                __builder2.AddAttribute(61, "class", "form-control");
-                __builder2.AddAttribute(62, "type", "password");
-                __builder2.AddAttribute(63, "placeholder", "Reintroduceti parola");
-                __builder2.AddAttribute(64, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddMarkupContent(35, "\r\n                        \r\n                        ");
+                __builder2.OpenElement(36, "div");
+                __builder2.AddAttribute(37, "class", "form-group");
+                __builder2.AddMarkupContent(38, "<label class=\"col-form-label\">Reintroduceti parola</label>\r\n                            \r\n                            ");
+                __builder2.OpenElement(39, "div");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(40);
+                __builder2.AddAttribute(41, "class", "form-control");
+                __builder2.AddAttribute(42, "type", "password");
+                __builder2.AddAttribute(43, "placeholder", "Reintroduceti parola");
+                __builder2.AddAttribute(44, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 55 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                                                                                                                 PageController.PasswordMatch
@@ -244,11 +224,11 @@ else
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(65, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.PasswordMatch = __value, PageController.PasswordMatch))));
-                __builder2.AddAttribute(66, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.PasswordMatch));
+                __builder2.AddAttribute(45, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.PasswordMatch = __value, PageController.PasswordMatch))));
+                __builder2.AddAttribute(46, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.PasswordMatch));
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(67, "\r\n                                \r\n                                ");
-                __Blazor.MentorBilling.MiscellaneousPages.ResetPassword.TypeInference.CreateValidationMessage_1(__builder2, 68, 69, 
+                __builder2.AddMarkupContent(47, "\r\n                                \r\n                                ");
+                __Blazor.MentorBilling.MiscellaneousPages.ResetPassword.TypeInference.CreateValidationMessage_1(__builder2, 48, 49, 
 #nullable restore
 #line 57 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                                           () => PageController.PasswordMatch
@@ -257,12 +237,10 @@ else
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(70, "\r\n                            ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(71, "\r\n                        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(72, "\r\n                        \r\n                        ");
-                __Blazor.MentorBilling.MiscellaneousPages.ResetPassword.TypeInference.CreateValidationMessage_2(__builder2, 73, 74, 
+                __builder2.AddMarkupContent(50, "\r\n                        \r\n                        ");
+                __Blazor.MentorBilling.MiscellaneousPages.ResetPassword.TypeInference.CreateValidationMessage_2(__builder2, 51, 52, 
 #nullable restore
 #line 61 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
                                                   () => PageController.DoPasswordsMatch
@@ -271,20 +249,15 @@ else
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(75, "\r\n                        \r\n                        ");
-                __builder2.AddMarkupContent(76, "<div class=\"form-group text-center mb-0\">\r\n                            <button type=\"submit\" class=\"btn btn-primary-validate\" id=\"BtnReset\">Resetare Parola</button>\r\n                        </div>\r\n                    ");
+                __builder2.AddMarkupContent(53, "\r\n                        \r\n                        ");
+                __builder2.AddMarkupContent(54, "<div class=\"form-group text-center mb-0\"><button type=\"submit\" class=\"btn btn-primary-validate\" id=\"BtnReset\">Resetare Parola</button></div>");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(77, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(78, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(79, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(80, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(81, "\r\n");
 #nullable restore
 #line 71 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ResetPassword.razor"
 }

@@ -91,7 +91,7 @@ using Radzen.Blazor;
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
-            __builder.AddMarkupContent(0, "<div>\r\n    <h2>\r\n        Atentie s-a pierdut legaura la server. \r\n        <br>\r\n        Va rugam sa incercati din nou mai tarziu.\r\n    </h2>\r\n</div>");
+            __builder.AddMarkupContent(0, "<div><h2>\r\n        Atentie s-a pierdut legaura la server. \r\n        <br>\r\n        Va rugam sa incercati din nou mai tarziu.\r\n    </h2></div>");
         }
         #pragma warning restore 1998
     }

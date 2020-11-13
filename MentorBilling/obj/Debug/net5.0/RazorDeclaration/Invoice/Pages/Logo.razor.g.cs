@@ -89,13 +89,6 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "F:\MentorBilling\MBilling\MentorBilling\Invoice\Pages\Logo.razor"
-using BlazorInputFile;
-
-#line default
-#line hidden
-#nullable disable
     public partial class Logo : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

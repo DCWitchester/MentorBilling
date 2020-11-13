@@ -93,9 +93,8 @@ using Radzen.Blazor;
         {
             __builder.AddMarkupContent(0, "<h1>Login</h1>\r\n");
             __builder.OpenElement(1, "div");
-            __builder.AddMarkupContent(2, "\r\n    \r\n    ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(3);
-            __builder.AddAttribute(4, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(2);
+            __builder.AddAttribute(3, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 6 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                       PageController
@@ -104,7 +103,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(5, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(4, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 6 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                                        e => ValidateLogin(true)
@@ -113,7 +112,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(6, "OnInvalidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(5, "OnInvalidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 6 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                                                                                      e => ValidateLogin(false)
@@ -122,23 +121,20 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(7, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
-                __builder2.AddMarkupContent(8, "\r\n        \r\n        ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(9);
+            __builder.AddAttribute(6, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(7);
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(10, "\r\n        \r\n        \r\n        ");
-                __builder2.OpenElement(11, "div");
-                __builder2.AddAttribute(12, "class", "form-group");
-                __builder2.AddMarkupContent(13, "\r\n            \r\n            ");
-                __builder2.AddMarkupContent(14, "<label class=\"col-form-label\">Nume Utilizator sau Email</label>\r\n            \r\n            ");
-                __builder2.OpenElement(15, "div");
-                __builder2.AddMarkupContent(16, "\r\n                ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(17);
-                __builder2.AddAttribute(18, "type", "text");
-                __builder2.AddAttribute(19, "id", "tbUsername");
-                __builder2.AddAttribute(20, "class", "form-control");
-                __builder2.AddAttribute(21, "placeholder", "Nume Utilizator sau Email");
-                __builder2.AddAttribute(22, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddMarkupContent(8, "\r\n        \r\n        \r\n        ");
+                __builder2.OpenElement(9, "div");
+                __builder2.AddAttribute(10, "class", "form-group");
+                __builder2.AddMarkupContent(11, "<label class=\"col-form-label\">Nume Utilizator sau Email</label>\r\n            \r\n            ");
+                __builder2.OpenElement(12, "div");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(13);
+                __builder2.AddAttribute(14, "type", "text");
+                __builder2.AddAttribute(15, "id", "tbUsername");
+                __builder2.AddAttribute(16, "class", "form-control");
+                __builder2.AddAttribute(17, "placeholder", "Nume Utilizator sau Email");
+                __builder2.AddAttribute(18, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 16 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                                                                                                                  PageController.Username
@@ -147,11 +143,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(23, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Username = __value, PageController.Username))));
-                __builder2.AddAttribute(24, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Username));
+                __builder2.AddAttribute(19, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Username = __value, PageController.Username))));
+                __builder2.AddAttribute(20, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Username));
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(25, "\r\n                \r\n                ");
-                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_0(__builder2, 26, 27, 
+                __builder2.AddMarkupContent(21, "\r\n                \r\n                ");
+                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_0(__builder2, 22, 23, 
 #nullable restore
 #line 18 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                           ()=>PageController.Username
@@ -160,22 +156,18 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(28, "\r\n            ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(29, "\r\n        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(30, "\r\n        \r\n        ");
-                __builder2.OpenElement(31, "div");
-                __builder2.AddAttribute(32, "class", "form-group");
-                __builder2.AddMarkupContent(33, "\r\n            \r\n            ");
-                __builder2.AddMarkupContent(34, "<label class=\"col-form-label\">Parola</label>\r\n            \r\n            ");
-                __builder2.OpenElement(35, "div");
-                __builder2.AddMarkupContent(36, "\r\n                ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(37);
-                __builder2.AddAttribute(38, "class", "form-control");
-                __builder2.AddAttribute(39, "type", "password");
-                __builder2.AddAttribute(40, "placeholder", "Parola");
-                __builder2.AddAttribute(41, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddMarkupContent(24, "\r\n        \r\n        ");
+                __builder2.OpenElement(25, "div");
+                __builder2.AddAttribute(26, "class", "form-group");
+                __builder2.AddMarkupContent(27, "<label class=\"col-form-label\">Parola</label>\r\n            \r\n            ");
+                __builder2.OpenElement(28, "div");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(29);
+                __builder2.AddAttribute(30, "class", "form-control");
+                __builder2.AddAttribute(31, "type", "password");
+                __builder2.AddAttribute(32, "placeholder", "Parola");
+                __builder2.AddAttribute(33, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 27 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                                                                                   PageController.Password
@@ -184,11 +176,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(42, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Password = __value, PageController.Password))));
-                __builder2.AddAttribute(43, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Password));
+                __builder2.AddAttribute(34, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Password = __value, PageController.Password))));
+                __builder2.AddAttribute(35, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Password));
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(44, "\r\n                \r\n                ");
-                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_1(__builder2, 45, 46, 
+                __builder2.AddMarkupContent(36, "\r\n                \r\n                ");
+                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_1(__builder2, 37, 38, 
 #nullable restore
 #line 29 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                           ()=>PageController.Password
@@ -197,12 +189,10 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(47, "\r\n            ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(48, "\r\n        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(49, "\r\n        \r\n        ");
-                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_2(__builder2, 50, 51, 
+                __builder2.AddMarkupContent(39, "\r\n        \r\n        ");
+                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_2(__builder2, 40, 41, 
 #nullable restore
 #line 33 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                   ()=>PageController.IsPasswordValid
@@ -211,8 +201,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(52, "\r\n        ");
-                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_3(__builder2, 53, 54, 
+                __builder2.AddMarkupContent(42, "\r\n        ");
+                __Blazor.MentorBilling.Login.Pages.Login.TypeInference.CreateValidationMessage_3(__builder2, 43, 44, 
 #nullable restore
 #line 34 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                                   ()=>PageController.DoesUsernameExist
@@ -221,11 +211,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(55, "\r\n        \r\n        ");
-                __builder2.AddMarkupContent(56, "<div class=\"form-group text-center mb-0\">\r\n            <button type=\"submit\" class=\"btn btn-primary-validate\" id=\"BtnLogin\">Login</button>\r\n        </div>\r\n        ");
-                __builder2.OpenElement(57, "a");
-                __builder2.AddAttribute(58, "href", "#");
-                __builder2.AddAttribute(59, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+                __builder2.AddMarkupContent(45, "\r\n        \r\n        ");
+                __builder2.AddMarkupContent(46, "<div class=\"form-group text-center mb-0\"><button type=\"submit\" class=\"btn btn-primary-validate\" id=\"BtnLogin\">Login</button></div>\r\n        ");
+                __builder2.OpenElement(47, "a");
+                __builder2.AddAttribute(48, "href", "#");
+                __builder2.AddAttribute(49, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 39 "F:\MentorBilling\MBilling\MentorBilling\Login\Pages\Login.razor"
                               ResetPassword
@@ -234,13 +224,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddContent(60, "Mi-am uitat parola");
+                __builder2.AddContent(50, "Mi-am uitat parola");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(61, "\r\n    ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(62, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

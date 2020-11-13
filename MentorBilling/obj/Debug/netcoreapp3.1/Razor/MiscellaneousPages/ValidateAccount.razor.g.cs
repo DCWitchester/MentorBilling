@@ -101,20 +101,14 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(0, "    ");
-            __builder.OpenElement(1, "div");
-            __builder.AddAttribute(2, "id", "dark_cover");
-            __builder.AddMarkupContent(3, "\r\n        ");
-            __builder.OpenElement(4, "div");
-            __builder.AddAttribute(5, "class", "overlay");
-            __builder.AddMarkupContent(6, "\r\n            ");
-            __builder.OpenComponent<MentorBilling.Messages.Pages.DatabaseConnectionError>(7);
+            __builder.OpenElement(0, "div");
+            __builder.AddAttribute(1, "id", "dark_cover");
+            __builder.OpenElement(2, "div");
+            __builder.AddAttribute(3, "class", "overlay");
+            __builder.OpenComponent<MentorBilling.Messages.Pages.DatabaseConnectionError>(4);
             __builder.CloseComponent();
-            __builder.AddMarkupContent(8, "\r\n        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(9, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(10, "\r\n");
 #nullable restore
 #line 11 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ValidateAccount.razor"
 }
@@ -122,12 +116,10 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(11, "\r\n");
-            __builder.OpenElement(12, "div");
-            __builder.AddMarkupContent(13, "\r\n    ");
-            __builder.OpenElement(14, "p");
-            __builder.AddMarkupContent(15, "\r\n        Buna ziua ");
-            __builder.AddContent(16, 
+            __builder.OpenElement(5, "div");
+            __builder.OpenElement(6, "p");
+            __builder.AddMarkupContent(7, "\r\n        Buna ziua ");
+            __builder.AddContent(8, 
 #nullable restore
 #line 15 "F:\MentorBilling\MBilling\MentorBilling\MiscellaneousPages\ValidateAccount.razor"
                     User.DisplayName
@@ -136,10 +128,10 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             );
-            __builder.AddMarkupContent(17, ",\r\n    ");
+            __builder.AddMarkupContent(9, ",\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(18, "\r\n    ");
-            __builder.AddMarkupContent(19, "<p>\r\n        Va multumim ca v-ati activat contul Mentor si va dorim o zi buna in continuare.\r\n    </p>\r\n");
+            __builder.AddMarkupContent(10, "\r\n    ");
+            __builder.AddMarkupContent(11, "<p>\r\n        Va multumim ca v-ati activat contul Mentor si va dorim o zi buna in continuare.\r\n    </p>");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

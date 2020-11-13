@@ -93,9 +93,8 @@ using Radzen.Blazor;
         {
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "class", "tooltip-wrapper");
-            __builder.AddMarkupContent(2, "\r\n    ");
-            __builder.OpenElement(3, "span");
-            __builder.AddContent(4, 
+            __builder.OpenElement(2, "span");
+            __builder.AddContent(3, 
 #nullable restore
 #line 2 "F:\MentorBilling\MBilling\MentorBilling\Shared\Components\Tooltip.razor"
            Text
@@ -105,8 +104,8 @@ using Radzen.Blazor;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(5, "\r\n    ");
-            __builder.AddContent(6, 
+            __builder.AddMarkupContent(4, "\r\n    ");
+            __builder.AddContent(5, 
 #nullable restore
 #line 3 "F:\MentorBilling\MBilling\MentorBilling\Shared\Components\Tooltip.razor"
      ChildContent
@@ -115,7 +114,6 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             );
-            __builder.AddMarkupContent(7, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

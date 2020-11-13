@@ -93,12 +93,11 @@ using Microsoft.AspNetCore.Components.Web;
         {
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "class", "dropdown");
-            __builder.AddMarkupContent(2, "\r\n    \r\n    ");
-            __builder.OpenElement(3, "button");
-            __builder.AddAttribute(4, "class", "btn btn-primary dropdown-toggle mr-4");
-            __builder.AddAttribute(5, "data-toggle", "dropdown");
-            __builder.AddAttribute(6, "type", "button");
-            __builder.AddAttribute(7, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.OpenElement(2, "button");
+            __builder.AddAttribute(3, "class", "btn btn-primary dropdown-toggle mr-4");
+            __builder.AddAttribute(4, "data-toggle", "dropdown");
+            __builder.AddAttribute(5, "type", "button");
+            __builder.AddAttribute(6, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 6 "F:\MentorBilling\MBilling\MentorBilling\Shared\Components\Dropdown.razor"
                                                                                                         e => this.show=!this.show 
@@ -107,10 +106,9 @@ using Microsoft.AspNetCore.Components.Web;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(8, "aria-haspopup", "true");
-            __builder.AddAttribute(9, "aria-expanded", "false");
-            __builder.AddMarkupContent(10, "\r\n        ");
-            __builder.AddContent(11, 
+            __builder.AddAttribute(7, "aria-haspopup", "true");
+            __builder.AddAttribute(8, "aria-expanded", "false");
+            __builder.AddContent(9, 
 #nullable restore
 #line 8 "F:\MentorBilling\MBilling\MentorBilling\Shared\Components\Dropdown.razor"
          Tip
@@ -119,10 +117,9 @@ using Microsoft.AspNetCore.Components.Web;
 #line hidden
 #nullable disable
             );
-            __builder.AddMarkupContent(12, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(13, "\r\n    \r\n    ");
-            __Blazor.MentorBilling.Shared.Components.Dropdown.TypeInference.CreateCascadingValue_0(__builder, 14, 15, "Dropdown", 16, 
+            __builder.AddMarkupContent(10, "\r\n    \r\n    ");
+            __Blazor.MentorBilling.Shared.Components.Dropdown.TypeInference.CreateCascadingValue_0(__builder, 11, 12, "Dropdown", 13, 
 #nullable restore
 #line 11 "F:\MentorBilling\MBilling\MentorBilling\Shared\Components\Dropdown.razor"
                                             this
@@ -130,10 +127,9 @@ using Microsoft.AspNetCore.Components.Web;
 #line default
 #line hidden
 #nullable disable
-            , 17, (__builder2) => {
-                __builder2.AddMarkupContent(18, "\r\n        ");
-                __builder2.OpenElement(19, "div");
-                __builder2.AddAttribute(20, "class", "dropdown-menu" + " " + (
+            , 14, (__builder2) => {
+                __builder2.OpenElement(15, "div");
+                __builder2.AddAttribute(16, "class", "dropdown-menu" + " " + (
 #nullable restore
 #line 12 "F:\MentorBilling\MBilling\MentorBilling\Shared\Components\Dropdown.razor"
                                     show? "show":""
@@ -142,8 +138,7 @@ using Microsoft.AspNetCore.Components.Web;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddMarkupContent(21, "\r\n            ");
-                __builder2.AddContent(22, 
+                __builder2.AddContent(17, 
 #nullable restore
 #line 13 "F:\MentorBilling\MBilling\MentorBilling\Shared\Components\Dropdown.razor"
              ChildContent
@@ -152,12 +147,9 @@ using Microsoft.AspNetCore.Components.Web;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(23, "\r\n        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(24, "\r\n    ");
             }
             );
-            __builder.AddMarkupContent(25, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

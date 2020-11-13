@@ -92,9 +92,8 @@ using Radzen.Blazor;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenElement(0, "div");
-            __builder.AddMarkupContent(1, "\r\n    ");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(2);
-            __builder.AddAttribute(3, "EditContext", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Forms.EditContext>(
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(1);
+            __builder.AddAttribute(2, "EditContext", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Forms.EditContext>(
 #nullable restore
 #line 4 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                           EditContext
@@ -103,22 +102,19 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(4, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
-                __builder2.AddMarkupContent(5, "\r\n        \r\n        ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(6);
+            __builder.AddAttribute(3, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(4);
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(7, "\r\n        \r\n        ");
-                __builder2.OpenElement(8, "div");
-                __builder2.AddAttribute(9, "class", "form-group row mb-1");
-                __builder2.AddMarkupContent(10, "\r\n            \r\n            ");
-                __builder2.AddMarkupContent(11, "<label class=\"col-sm-3 col-form-label\">Contul:</label>\r\n            \r\n            ");
-                __builder2.OpenElement(12, "div");
-                __builder2.AddAttribute(13, "class", "col-sm-9");
-                __builder2.AddMarkupContent(14, "\r\n                \r\n                ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(15);
-                __builder2.AddAttribute(16, "class", "form-control");
-                __builder2.AddAttribute(17, "placeholder", "Contul");
-                __builder2.AddAttribute(18, "disabled", 
+                __builder2.AddMarkupContent(5, "\r\n        \r\n        ");
+                __builder2.OpenElement(6, "div");
+                __builder2.AddAttribute(7, "class", "form-group row mb-1");
+                __builder2.AddMarkupContent(8, "<label class=\"col-sm-3 col-form-label\">Contul:</label>\r\n            \r\n            ");
+                __builder2.OpenElement(9, "div");
+                __builder2.AddAttribute(10, "class", "col-sm-9");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(11);
+                __builder2.AddAttribute(12, "class", "form-control");
+                __builder2.AddAttribute(13, "placeholder", "Contul");
+                __builder2.AddAttribute(14, "disabled", 
 #nullable restore
 #line 14 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                                                       PageController.DisableController
@@ -127,7 +123,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddAttribute(19, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(15, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 14 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                    PageController.Account
@@ -136,11 +132,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(20, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Account = __value, PageController.Account))));
-                __builder2.AddAttribute(21, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Account));
+                __builder2.AddAttribute(16, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Account = __value, PageController.Account))));
+                __builder2.AddAttribute(17, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Account));
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(22, "\r\n                \r\n                ");
-                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_0(__builder2, 23, 24, 
+                __builder2.AddMarkupContent(18, "\r\n                \r\n                ");
+                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_0(__builder2, 19, 20, 
 #nullable restore
 #line 16 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                           ()=>PageController.IsAccountNeeded
@@ -149,8 +145,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(25, "\r\n                ");
-                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_1(__builder2, 26, 27, 
+                __builder2.AddMarkupContent(21, "\r\n                ");
+                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_1(__builder2, 22, 23, 
 #nullable restore
 #line 17 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                           ()=>PageController.IsAccountValid
@@ -159,15 +155,12 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(28, "\r\n            ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(29, "\r\n        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(30, "\r\n        \r\n        ");
-                __builder2.OpenElement(31, "div");
-                __builder2.AddAttribute(32, "class", "form-group row mb-1");
-                __builder2.AddMarkupContent(33, "\r\n            \r\n            ");
-                __builder2.AddMarkupContent(34, "<label class=\"col-sm-3 col-form-label\">Banca:</label>\r\n");
+                __builder2.AddMarkupContent(24, "\r\n        \r\n        ");
+                __builder2.OpenElement(25, "div");
+                __builder2.AddAttribute(26, "class", "form-group row mb-1");
+                __builder2.AddMarkupContent(27, "<label class=\"col-sm-3 col-form-label\">Banca:</label>");
 #nullable restore
 #line 24 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
              if (LastItem)
@@ -176,14 +169,12 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                __builder2.AddMarkupContent(35, "                \r\n                ");
-                __builder2.OpenElement(36, "div");
-                __builder2.AddAttribute(37, "class", "col-sm-8");
-                __builder2.AddMarkupContent(38, "\r\n                    \r\n                    ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(39);
-                __builder2.AddAttribute(40, "class", "form-control");
-                __builder2.AddAttribute(41, "placeholder", "Banca");
-                __builder2.AddAttribute(42, "disabled", 
+                __builder2.OpenElement(28, "div");
+                __builder2.AddAttribute(29, "class", "col-sm-8");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(30);
+                __builder2.AddAttribute(31, "class", "form-control");
+                __builder2.AddAttribute(32, "placeholder", "Banca");
+                __builder2.AddAttribute(33, "disabled", 
 #nullable restore
 #line 29 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                                                       PageController.DisableController
@@ -192,7 +183,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddAttribute(43, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(34, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 29 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                       PageController.Bank
@@ -201,11 +192,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(44, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Bank = __value, PageController.Bank))));
-                __builder2.AddAttribute(45, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Bank));
+                __builder2.AddAttribute(35, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Bank = __value, PageController.Bank))));
+                __builder2.AddAttribute(36, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Bank));
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(46, "\r\n                    \r\n                    ");
-                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_2(__builder2, 47, 48, 
+                __builder2.AddMarkupContent(37, "\r\n                    \r\n                    ");
+                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_2(__builder2, 38, 39, 
 #nullable restore
 #line 31 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                               ()=>PageController.IsBankNeeded
@@ -214,8 +205,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(49, "\r\n                    ");
-                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_3(__builder2, 50, 51, 
+                __builder2.AddMarkupContent(40, "\r\n                    ");
+                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_3(__builder2, 41, 42, 
 #nullable restore
 #line 32 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                               ()=>PageController.IsAccountFilledIn
@@ -224,17 +215,15 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(52, "\r\n                ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(53, "\r\n                ");
-                __builder2.OpenElement(54, "div");
-                __builder2.AddAttribute(55, "style", "justify-content: flex-end; display: flex;");
-                __builder2.AddMarkupContent(56, "\r\n                    ");
-                __builder2.OpenElement(57, "button");
-                __builder2.AddAttribute(58, "class", "plus-button--small");
-                __builder2.AddAttribute(59, "style", "vertical-align: middle;");
-                __builder2.AddAttribute(60, "type", "button");
-                __builder2.AddAttribute(61, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+                __builder2.AddMarkupContent(43, "\r\n                ");
+                __builder2.OpenElement(44, "div");
+                __builder2.AddAttribute(45, "style", "justify-content: flex-end; display: flex;");
+                __builder2.OpenElement(46, "button");
+                __builder2.AddAttribute(47, "class", "plus-button--small");
+                __builder2.AddAttribute(48, "style", "vertical-align: middle;");
+                __builder2.AddAttribute(49, "type", "button");
+                __builder2.AddAttribute(50, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 35 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                                                (() => SellerDisplayController.RefreshPage())
@@ -243,7 +232,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(62, "disabled", 
+                __builder2.AddAttribute(51, "disabled", 
 #nullable restore
 #line 35 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                                                                                                          PageController.DisableController
@@ -253,9 +242,7 @@ using Radzen.Blazor;
 #nullable disable
                 );
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(63, "\r\n                ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(64, "\r\n");
 #nullable restore
 #line 37 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
             }
@@ -265,14 +252,12 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                __builder2.AddMarkupContent(65, "                \r\n                ");
-                __builder2.OpenElement(66, "div");
-                __builder2.AddAttribute(67, "class", "col-sm-9");
-                __builder2.AddMarkupContent(68, "\r\n                    \r\n                    ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(69);
-                __builder2.AddAttribute(70, "class", "form-control");
-                __builder2.AddAttribute(71, "placeholder", "Banca");
-                __builder2.AddAttribute(72, "disabled", 
+                __builder2.OpenElement(52, "div");
+                __builder2.AddAttribute(53, "class", "col-sm-9");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(54);
+                __builder2.AddAttribute(55, "class", "form-control");
+                __builder2.AddAttribute(56, "placeholder", "Banca");
+                __builder2.AddAttribute(57, "disabled", 
 #nullable restore
 #line 43 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                                                       PageController.DisableController
@@ -281,7 +266,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddAttribute(73, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(58, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 43 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                                                                       PageController.Bank
@@ -290,11 +275,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(74, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Bank = __value, PageController.Bank))));
-                __builder2.AddAttribute(75, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Bank));
+                __builder2.AddAttribute(59, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => PageController.Bank = __value, PageController.Bank))));
+                __builder2.AddAttribute(60, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => PageController.Bank));
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(76, "\r\n                    \r\n                    ");
-                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_4(__builder2, 77, 78, 
+                __builder2.AddMarkupContent(61, "\r\n                    \r\n                    ");
+                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_4(__builder2, 62, 63, 
 #nullable restore
 #line 45 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                               ()=>PageController.IsBankNeeded
@@ -303,8 +288,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(79, "\r\n                    ");
-                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_5(__builder2, 80, 81, 
+                __builder2.AddMarkupContent(64, "\r\n                    ");
+                __Blazor.MentorBilling.AuxilliaryComponents.Pages.BankAccount.TypeInference.CreateValidationMessage_5(__builder2, 65, 66, 
 #nullable restore
 #line 46 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                                               ()=>PageController.IsAccountFilledIn
@@ -313,9 +298,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(82, "\r\n                ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(83, "\r\n");
 #nullable restore
 #line 48 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
             }
@@ -323,12 +306,10 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                __builder2.AddContent(84, "        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(85, "\r\n    ");
             }
             ));
-            __builder.AddComponentReferenceCapture(86, (__value) => {
+            __builder.AddComponentReferenceCapture(67, (__value) => {
 #nullable restore
 #line 4 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\BankAccount.razor"
                     MyForm = (Microsoft.AspNetCore.Components.Forms.EditForm)__value;
@@ -339,7 +320,6 @@ using Radzen.Blazor;
             }
             );
             __builder.CloseComponent();
-            __builder.AddMarkupContent(87, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

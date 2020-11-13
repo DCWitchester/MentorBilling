@@ -93,10 +93,9 @@ using Radzen.Blazor;
         {
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "class", "form-group row mb-1");
-            __builder.AddMarkupContent(2, "\r\n    \r\n    ");
-            __builder.OpenElement(3, "label");
-            __builder.AddAttribute(4, "class", "col-sm-3 col-form-label");
-            __builder.AddContent(5, 
+            __builder.OpenElement(2, "label");
+            __builder.AddAttribute(3, "class", "col-sm-3 col-form-label");
+            __builder.AddContent(4, 
 #nullable restore
 #line 3 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\DateTimePicker.razor"
                                             PageController.DisplayText
@@ -106,13 +105,12 @@ using Radzen.Blazor;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(6, "\r\n    \r\n    ");
-            __builder.OpenElement(7, "div");
-            __builder.AddAttribute(8, "class", "col-sm-5");
-            __builder.AddMarkupContent(9, "\r\n        \r\n        ");
-            __builder.OpenElement(10, "input");
-            __builder.AddAttribute(11, "type", "date");
-            __builder.AddAttribute(12, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(5, "\r\n    \r\n    ");
+            __builder.OpenElement(6, "div");
+            __builder.AddAttribute(7, "class", "col-sm-5");
+            __builder.OpenElement(8, "input");
+            __builder.AddAttribute(9, "type", "date");
+            __builder.AddAttribute(10, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 7 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\DateTimePicker.razor"
                                          PageController.Date
@@ -121,18 +119,16 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             , format: "yyyy-MM-dd", culture: global::System.Globalization.CultureInfo.InvariantCulture));
-            __builder.AddAttribute(13, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.Date = __value, PageController.Date, format: "yyyy-MM-dd", culture: global::System.Globalization.CultureInfo.InvariantCulture));
+            __builder.AddAttribute(11, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.Date = __value, PageController.Date, format: "yyyy-MM-dd", culture: global::System.Globalization.CultureInfo.InvariantCulture));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(14, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(15, "\r\n    ");
-            __builder.OpenElement(16, "div");
-            __builder.AddAttribute(17, "class", "col-sm-5");
-            __builder.AddMarkupContent(18, "\r\n        \r\n        ");
-            __builder.OpenElement(19, "input");
-            __builder.AddAttribute(20, "type", "time");
-            __builder.AddAttribute(21, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddMarkupContent(12, "\r\n    ");
+            __builder.OpenElement(13, "div");
+            __builder.AddAttribute(14, "class", "col-sm-5");
+            __builder.OpenElement(15, "input");
+            __builder.AddAttribute(16, "type", "time");
+            __builder.AddAttribute(17, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 11 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\DateTimePicker.razor"
                                          PageController.Time
@@ -141,12 +137,10 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             , format: "HH:mm:ss", culture: global::System.Globalization.CultureInfo.InvariantCulture));
-            __builder.AddAttribute(22, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.Time = __value, PageController.Time, format: "HH:mm:ss", culture: global::System.Globalization.CultureInfo.InvariantCulture));
+            __builder.AddAttribute(18, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.Time = __value, PageController.Time, format: "HH:mm:ss", culture: global::System.Globalization.CultureInfo.InvariantCulture));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(23, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(24, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

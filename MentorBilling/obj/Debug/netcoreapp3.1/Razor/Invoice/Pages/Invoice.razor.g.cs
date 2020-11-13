@@ -93,12 +93,10 @@ using Radzen.Blazor;
         {
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "style", "border:dotted 1px blue; display:flex");
-            __builder.AddMarkupContent(2, "\r\n    \r\n    ");
-            __builder.OpenElement(3, "div");
-            __builder.AddAttribute(4, "style", "width:30%; border:1px black solid; padding:5px");
-            __builder.AddMarkupContent(5, "\r\n        ");
-            __builder.OpenComponent<MentorBilling.Invoice.Pages.Seller>(6);
-            __builder.AddAttribute(7, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
+            __builder.OpenElement(2, "div");
+            __builder.AddAttribute(3, "style", "width:30%; border:1px black solid; padding:5px");
+            __builder.OpenComponent<MentorBilling.Invoice.Pages.Seller>(4);
+            __builder.AddAttribute(5, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
 #nullable restore
 #line 4 "F:\MentorBilling\MBilling\MentorBilling\Invoice\Pages\Invoice.razor"
                                                                  InstanceController
@@ -107,7 +105,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(8, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.Invoice.Controllers.SellerController>(
+            __builder.AddAttribute(6, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.Invoice.Controllers.SellerController>(
 #nullable restore
 #line 5 "F:\MentorBilling\MBilling\MentorBilling\Invoice\Pages\Invoice.razor"
                                                               InstanceController.InvoiceController.SellerController
@@ -117,14 +115,12 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(9, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(10, "\r\n    \r\n    \r\n    <div style=\"width:5%\"></div>\r\n    <div style=\"width:30%\"></div>\r\n    <div style=\"width:5%\"></div>\r\n    \r\n    \r\n    ");
-            __builder.OpenElement(11, "div");
-            __builder.AddAttribute(12, "style", "width:30%; height:inherit; border:1px black solid; padding:5px; float:right;");
-            __builder.AddMarkupContent(13, "\r\n        ");
-            __builder.OpenComponent<MentorBilling.Invoice.Pages.Buyer>(14);
-            __builder.AddAttribute(15, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
+            __builder.AddMarkupContent(7, "\r\n    \r\n    \r\n    <div style=\"width:5%\"></div>\r\n    <div style=\"width:30%\"></div>\r\n    <div style=\"width:5%\"></div>\r\n    \r\n    \r\n    ");
+            __builder.OpenElement(8, "div");
+            __builder.AddAttribute(9, "style", "width:30%; height:inherit; border:1px black solid; padding:5px; float:right;");
+            __builder.OpenComponent<MentorBilling.Invoice.Pages.Buyer>(10);
+            __builder.AddAttribute(11, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
 #nullable restore
 #line 15 "F:\MentorBilling\MBilling\MentorBilling\Invoice\Pages\Invoice.razor"
                                                                 InstanceController
@@ -133,7 +129,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(16, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.Invoice.Controllers.BuyerController>(
+            __builder.AddAttribute(12, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.Invoice.Controllers.BuyerController>(
 #nullable restore
 #line 16 "F:\MentorBilling\MBilling\MentorBilling\Invoice\Pages\Invoice.razor"
                                                              InstanceController.InvoiceController.BuyerController
@@ -143,9 +139,7 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(17, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(18, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

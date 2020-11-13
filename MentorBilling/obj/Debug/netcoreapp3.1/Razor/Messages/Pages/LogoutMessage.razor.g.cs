@@ -92,12 +92,11 @@ using Radzen.Blazor;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenElement(0, "div");
-            __builder.AddMarkupContent(1, "\r\n    ");
-            __builder.OpenElement(2, "h2");
-            __builder.AddMarkupContent(3, "\r\n        Atentie urmeaza sa va delogati de pe contul curent.\r\n        <br>\r\n        Sigur doriti sa continuati aceasta operatiune?\r\n        <br>\r\n        ");
-            __builder.OpenElement(4, "button");
-            __builder.AddAttribute(5, "class", "btn-primary-mentor");
-            __builder.AddAttribute(6, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.OpenElement(1, "h2");
+            __builder.AddMarkupContent(2, "\r\n        Atentie urmeaza sa va delogati de pe contul curent.\r\n        <br>\r\n        Sigur doriti sa continuati aceasta operatiune?\r\n        <br>\r\n        ");
+            __builder.OpenElement(3, "button");
+            __builder.AddAttribute(4, "class", "btn-primary-mentor");
+            __builder.AddAttribute(5, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 7 "F:\MentorBilling\MBilling\MentorBilling\Messages\Pages\LogoutMessage.razor"
                                                      ContinueLogout
@@ -106,12 +105,12 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddContent(7, "Da");
+            __builder.AddContent(6, "Da");
             __builder.CloseElement();
-            __builder.AddMarkupContent(8, "\r\n        ");
-            __builder.OpenElement(9, "button");
-            __builder.AddAttribute(10, "class", "btn-primary-mentor");
-            __builder.AddAttribute(11, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(7, "\r\n        ");
+            __builder.OpenElement(8, "button");
+            __builder.AddAttribute(9, "class", "btn-primary-mentor");
+            __builder.AddAttribute(10, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 8 "F:\MentorBilling\MBilling\MentorBilling\Messages\Pages\LogoutMessage.razor"
                                                      LeaveError
@@ -120,11 +119,9 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddContent(12, "Nu");
+            __builder.AddContent(11, "Nu");
             __builder.CloseElement();
-            __builder.AddMarkupContent(13, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(14, "\r\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

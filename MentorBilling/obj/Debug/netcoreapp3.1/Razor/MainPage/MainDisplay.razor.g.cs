@@ -101,12 +101,10 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(0, "            ");
-            __builder.OpenElement(1, "div");
-            __builder.AddAttribute(2, "class", "center-screen");
-            __builder.AddMarkupContent(3, "\r\n                ");
-            __builder.OpenComponent<MentorBilling.Login.Pages.Login>(4);
-            __builder.AddAttribute(5, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
+            __builder.OpenElement(0, "div");
+            __builder.AddAttribute(1, "class", "center-screen");
+            __builder.OpenComponent<MentorBilling.Login.Pages.Login>(2);
+            __builder.AddAttribute(3, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
 #nullable restore
 #line 6 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
                                                                       InstanceController
@@ -116,9 +114,7 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(6, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(7, "\r\n");
 #nullable restore
 #line 8 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
             break;
@@ -129,12 +125,10 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(8, "            ");
-            __builder.OpenElement(9, "div");
-            __builder.AddAttribute(10, "class", "center-screen");
-            __builder.AddMarkupContent(11, "\r\n                ");
-            __builder.OpenComponent<MentorBilling.Login.Pages.Register>(12);
-            __builder.AddAttribute(13, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
+            __builder.OpenElement(4, "div");
+            __builder.AddAttribute(5, "class", "center-screen");
+            __builder.OpenComponent<MentorBilling.Login.Pages.Register>(6);
+            __builder.AddAttribute(7, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
 #nullable restore
 #line 13 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
                                                                          InstanceController
@@ -144,9 +138,7 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(14, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(15, "\r\n");
 #nullable restore
 #line 15 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
             break;
@@ -157,12 +149,10 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(16, "            ");
-            __builder.OpenElement(17, "div");
-            __builder.AddAttribute(18, "class", "center-screen");
-            __builder.AddMarkupContent(19, "\r\n                ");
-            __builder.OpenComponent<MentorBilling.Login.Pages.PasswordLost>(20);
-            __builder.AddAttribute(21, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
+            __builder.OpenElement(8, "div");
+            __builder.AddAttribute(9, "class", "center-screen");
+            __builder.OpenComponent<MentorBilling.Login.Pages.PasswordLost>(10);
+            __builder.AddAttribute(11, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
 #nullable restore
 #line 20 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
                                                                              InstanceController
@@ -172,9 +162,7 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(22, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(23, "\r\n");
 #nullable restore
 #line 22 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
             break;
@@ -185,11 +173,9 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(24, "            ");
-            __builder.OpenElement(25, "div");
-            __builder.AddMarkupContent(26, "\r\n                ");
-            __builder.OpenComponent<MentorBilling.SettingsComponents.Pages.SettingsPage>(27);
-            __builder.AddAttribute(28, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
+            __builder.OpenElement(12, "div");
+            __builder.OpenComponent<MentorBilling.SettingsComponents.Pages.SettingsPage>(13);
+            __builder.AddAttribute(14, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
 #nullable restore
 #line 27 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
                                                                                           InstanceController
@@ -199,9 +185,7 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(29, "\r\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(30, "\r\n");
 #nullable restore
 #line 29 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
             break;
@@ -212,9 +196,8 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(31, "            ");
-            __builder.OpenComponent<MentorBilling.Invoice.Pages.Invoice>(32);
-            __builder.AddAttribute(33, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
+            __builder.OpenComponent<MentorBilling.Invoice.Pages.Invoice>(15);
+            __builder.AddAttribute(16, "InstanceController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.ControllerService.InstanceController>(
 #nullable restore
 #line 33 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
                                                                       InstanceController
@@ -223,7 +206,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(34, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.Invoice.Controllers.InvoiceController>(
+            __builder.AddAttribute(17, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.Invoice.Controllers.InvoiceController>(
 #nullable restore
 #line 34 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
                                                                    InstanceController.InvoiceController
@@ -233,7 +216,6 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(35, "\r\n");
 #nullable restore
 #line 35 "F:\MentorBilling\MBilling\MentorBilling\MainPage\MainDisplay.razor"
             break;

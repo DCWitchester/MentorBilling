@@ -99,9 +99,8 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(0, "    ");
-            __builder.OpenComponent<MentorBilling.SettingsComponents.Pages.DateTimePicker>(1);
-            __builder.AddAttribute(2, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.SettingsComponents.Controllers.DateTimeController>(
+            __builder.OpenComponent<MentorBilling.SettingsComponents.Pages.DateTimePicker>(0);
+            __builder.AddAttribute(1, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.SettingsComponents.Controllers.DateTimeController>(
 #nullable restore
 #line 3 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                       PageController.GetDateTimeController()
@@ -111,7 +110,6 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(3, "\r\n");
 #nullable restore
 #line 4 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
 }
@@ -121,14 +119,11 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(4, "    ");
-            __builder.OpenElement(5, "div");
-            __builder.AddAttribute(6, "class", "form-group row mb-1");
-            __builder.AddMarkupContent(7, "\r\n        \r\n        ");
-            __builder.OpenElement(8, "label");
-            __builder.AddAttribute(9, "class", "col-sm-3 col-form-label");
-            __builder.AddContent(10, " ");
-            __builder.AddContent(11, 
+            __builder.OpenElement(2, "div");
+            __builder.AddAttribute(3, "class", "form-group row mb-1");
+            __builder.OpenElement(4, "label");
+            __builder.AddAttribute(5, "class", "col-sm-3 col-form-label");
+            __builder.AddContent(6, 
 #nullable restore
 #line 9 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                   PageController.SettingDisplay
@@ -137,12 +132,10 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddContent(12, " ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(13, "\r\n        \r\n        ");
-            __builder.OpenElement(14, "div");
-            __builder.AddAttribute(15, "class", "col-sm-9");
-            __builder.AddMarkupContent(16, "\r\n            \r\n");
+            __builder.AddMarkupContent(7, "\r\n        \r\n        ");
+            __builder.OpenElement(8, "div");
+            __builder.AddAttribute(9, "class", "col-sm-9");
 #nullable restore
 #line 13 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
              switch (PageController.InputTypes)
@@ -152,7 +145,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(17, "                    \r\n");
 #nullable restore
 #line 17 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                      if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -161,10 +153,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(18, "                        \r\n                        \r\n                        ");
-            __builder.OpenElement(19, "input");
-            __builder.AddAttribute(20, "class", "form-control");
-            __builder.AddAttribute(21, "type", 
+            __builder.OpenElement(10, "input");
+            __builder.AddAttribute(11, "class", "form-control");
+            __builder.AddAttribute(12, "type", 
 #nullable restore
 #line 21 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -173,7 +164,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(22, "placeholder", 
+            __builder.AddAttribute(13, "placeholder", 
 #nullable restore
 #line 21 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -182,7 +173,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(23, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(14, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 22 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.BooleanValue
@@ -191,10 +182,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(24, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.BooleanValue = __value, PageController.BooleanValue));
+            __builder.AddAttribute(15, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.BooleanValue = __value, PageController.BooleanValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(25, "\r\n");
 #nullable restore
 #line 23 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -204,10 +194,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(26, "                        \r\n                        \r\n                        \r\n                        ");
-            __builder.OpenElement(27, "input");
-            __builder.AddAttribute(28, "class", "form-control");
-            __builder.AddAttribute(29, "type", 
+            __builder.OpenElement(16, "input");
+            __builder.AddAttribute(17, "class", "form-control");
+            __builder.AddAttribute(18, "type", 
 #nullable restore
 #line 29 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -216,7 +205,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(30, "placeholder", 
+            __builder.AddAttribute(19, "placeholder", 
 #nullable restore
 #line 29 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -225,8 +214,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(31, "data-toggle", "tooltip");
-            __builder.AddAttribute(32, "title", 
+            __builder.AddAttribute(20, "data-toggle", "tooltip");
+            __builder.AddAttribute(21, "title", 
 #nullable restore
 #line 31 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                               PageController.Tooltip
@@ -235,7 +224,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(33, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(22, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 30 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.BooleanValue
@@ -244,10 +233,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(34, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.BooleanValue = __value, PageController.BooleanValue));
+            __builder.AddAttribute(23, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.BooleanValue = __value, PageController.BooleanValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(35, "\r\n");
 #nullable restore
 #line 32 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -264,7 +252,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(36, "                    \r\n");
 #nullable restore
 #line 36 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                      if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -273,10 +260,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(37, "                        \r\n                        \r\n                        ");
-            __builder.OpenElement(38, "input");
-            __builder.AddAttribute(39, "class", "form-control");
-            __builder.AddAttribute(40, "type", 
+            __builder.OpenElement(24, "input");
+            __builder.AddAttribute(25, "class", "form-control");
+            __builder.AddAttribute(26, "type", 
 #nullable restore
 #line 40 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -285,7 +271,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(41, "placeholder", 
+            __builder.AddAttribute(27, "placeholder", 
 #nullable restore
 #line 40 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -294,7 +280,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(42, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(28, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 41 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.DateTimeValue
@@ -303,10 +289,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(43, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
+            __builder.AddAttribute(29, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(44, "\r\n");
 #nullable restore
 #line 42 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -316,10 +301,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(45, "                        \r\n                        \r\n                        \r\n                        ");
-            __builder.OpenElement(46, "input");
-            __builder.AddAttribute(47, "class", "form-control");
-            __builder.AddAttribute(48, "type", 
+            __builder.OpenElement(30, "input");
+            __builder.AddAttribute(31, "class", "form-control");
+            __builder.AddAttribute(32, "type", 
 #nullable restore
 #line 48 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -328,7 +312,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(49, "placeholder", 
+            __builder.AddAttribute(33, "placeholder", 
 #nullable restore
 #line 48 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -337,8 +321,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(50, "data-toggle", "tooltip");
-            __builder.AddAttribute(51, "title", 
+            __builder.AddAttribute(34, "data-toggle", "tooltip");
+            __builder.AddAttribute(35, "title", 
 #nullable restore
 #line 50 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                               PageController.Tooltip
@@ -347,7 +331,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(52, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(36, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 49 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.DateTimeValue
@@ -356,10 +340,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(53, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
+            __builder.AddAttribute(37, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(54, "\r\n");
 #nullable restore
 #line 51 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -376,7 +359,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(55, "                    \r\n");
 #nullable restore
 #line 55 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                      if (PageController.DataTypes == Settings.SettingTypes.SettingDataTypes.type_int)
@@ -385,7 +367,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(56, "                        \r\n");
 #nullable restore
 #line 58 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                          if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -394,10 +375,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(57, "                            \r\n                            \r\n                            ");
-            __builder.OpenElement(58, "input");
-            __builder.AddAttribute(59, "class", "form-control");
-            __builder.AddAttribute(60, "type", 
+            __builder.OpenElement(38, "input");
+            __builder.AddAttribute(39, "class", "form-control");
+            __builder.AddAttribute(40, "type", 
 #nullable restore
 #line 62 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                 PageController.GetInputType()
@@ -406,7 +386,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(61, "placeholder", 
+            __builder.AddAttribute(41, "placeholder", 
 #nullable restore
 #line 62 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                                PageController.Placeholder
@@ -415,7 +395,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(62, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(42, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 63 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                   PageController.IntegerValue
@@ -424,10 +404,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(63, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.IntegerValue = __value, PageController.IntegerValue));
+            __builder.AddAttribute(43, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.IntegerValue = __value, PageController.IntegerValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(64, "\r\n");
 #nullable restore
 #line 64 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                         }
@@ -437,10 +416,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(65, "                            \r\n                            \r\n                            \r\n                            ");
-            __builder.OpenElement(66, "input");
-            __builder.AddAttribute(67, "class", "form-control");
-            __builder.AddAttribute(68, "type", 
+            __builder.OpenElement(44, "input");
+            __builder.AddAttribute(45, "class", "form-control");
+            __builder.AddAttribute(46, "type", 
 #nullable restore
 #line 70 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                 PageController.GetInputType()
@@ -449,7 +427,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(69, "placeholder", 
+            __builder.AddAttribute(47, "placeholder", 
 #nullable restore
 #line 70 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                                PageController.Placeholder
@@ -458,8 +436,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(70, "data-toggle", "tooltip");
-            __builder.AddAttribute(71, "title", 
+            __builder.AddAttribute(48, "data-toggle", "tooltip");
+            __builder.AddAttribute(49, "title", 
 #nullable restore
 #line 72 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                   PageController.Tooltip
@@ -468,7 +446,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(72, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(50, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 71 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                   PageController.IntegerValue
@@ -477,10 +455,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(73, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.IntegerValue = __value, PageController.IntegerValue));
+            __builder.AddAttribute(51, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.IntegerValue = __value, PageController.IntegerValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(74, "\r\n");
 #nullable restore
 #line 73 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                         }
@@ -498,7 +475,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(75, "                        \r\n");
 #nullable restore
 #line 78 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                          if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -507,10 +483,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(76, "                            \r\n                            \r\n                            ");
-            __builder.OpenElement(77, "input");
-            __builder.AddAttribute(78, "class", "form-control");
-            __builder.AddAttribute(79, "type", 
+            __builder.OpenElement(52, "input");
+            __builder.AddAttribute(53, "class", "form-control");
+            __builder.AddAttribute(54, "type", 
 #nullable restore
 #line 82 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                 PageController.GetInputType()
@@ -519,7 +494,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(80, "placeholder", 
+            __builder.AddAttribute(55, "placeholder", 
 #nullable restore
 #line 82 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                                PageController.Placeholder
@@ -528,7 +503,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(81, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(56, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 83 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                   PageController.DoubleValue
@@ -537,10 +512,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(82, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DoubleValue = __value, PageController.DoubleValue));
+            __builder.AddAttribute(57, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DoubleValue = __value, PageController.DoubleValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(83, "\r\n");
 #nullable restore
 #line 84 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                         }
@@ -550,10 +524,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(84, "                            \r\n                            \r\n                            \r\n                            ");
-            __builder.OpenElement(85, "input");
-            __builder.AddAttribute(86, "class", "form-control");
-            __builder.AddAttribute(87, "type", 
+            __builder.OpenElement(58, "input");
+            __builder.AddAttribute(59, "class", "form-control");
+            __builder.AddAttribute(60, "type", 
 #nullable restore
 #line 90 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                 PageController.GetInputType()
@@ -562,7 +535,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(88, "placeholder", 
+            __builder.AddAttribute(61, "placeholder", 
 #nullable restore
 #line 90 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                                PageController.Placeholder
@@ -571,8 +544,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(89, "data-toggle", "tooltip");
-            __builder.AddAttribute(90, "title", 
+            __builder.AddAttribute(62, "data-toggle", "tooltip");
+            __builder.AddAttribute(63, "title", 
 #nullable restore
 #line 92 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                   PageController.Tooltip
@@ -581,7 +554,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(91, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(64, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 91 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                   PageController.DoubleValue
@@ -590,10 +563,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(92, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DoubleValue = __value, PageController.DoubleValue));
+            __builder.AddAttribute(65, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DoubleValue = __value, PageController.DoubleValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(93, "\r\n");
 #nullable restore
 #line 93 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                         }
@@ -618,7 +590,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(94, "                    \r\n");
 #nullable restore
 #line 98 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                      if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -627,10 +598,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(95, "                        \r\n                        \r\n                        ");
-            __builder.OpenElement(96, "input");
-            __builder.AddAttribute(97, "class", "form-control");
-            __builder.AddAttribute(98, "type", 
+            __builder.OpenElement(66, "input");
+            __builder.AddAttribute(67, "class", "form-control");
+            __builder.AddAttribute(68, "type", 
 #nullable restore
 #line 102 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -639,7 +609,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(99, "placeholder", 
+            __builder.AddAttribute(69, "placeholder", 
 #nullable restore
 #line 102 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -648,7 +618,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(100, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(70, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 103 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.StringValue
@@ -657,10 +627,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(101, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
+            __builder.AddAttribute(71, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(102, "\r\n");
 #nullable restore
 #line 104 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -670,10 +639,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(103, "                        \r\n                        \r\n                        \r\n                        ");
-            __builder.OpenElement(104, "input");
-            __builder.AddAttribute(105, "class", "form-control");
-            __builder.AddAttribute(106, "type", 
+            __builder.OpenElement(72, "input");
+            __builder.AddAttribute(73, "class", "form-control");
+            __builder.AddAttribute(74, "type", 
 #nullable restore
 #line 110 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -682,7 +650,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(107, "placeholder", 
+            __builder.AddAttribute(75, "placeholder", 
 #nullable restore
 #line 110 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -691,8 +659,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(108, "data-toggle", "tooltip");
-            __builder.AddAttribute(109, "title", 
+            __builder.AddAttribute(76, "data-toggle", "tooltip");
+            __builder.AddAttribute(77, "title", 
 #nullable restore
 #line 112 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                               PageController.Tooltip
@@ -701,7 +669,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(110, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(78, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 111 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.StringValue
@@ -710,10 +678,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(111, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
+            __builder.AddAttribute(79, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(112, "\r\n");
 #nullable restore
 #line 113 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -730,7 +697,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(113, "                    \r\n");
 #nullable restore
 #line 117 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                      if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -739,10 +705,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(114, "                        \r\n                        \r\n                        ");
-            __builder.OpenElement(115, "input");
-            __builder.AddAttribute(116, "class", "form-control");
-            __builder.AddAttribute(117, "type", 
+            __builder.OpenElement(80, "input");
+            __builder.AddAttribute(81, "class", "form-control");
+            __builder.AddAttribute(82, "type", 
 #nullable restore
 #line 121 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -751,7 +716,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(118, "placeholder", 
+            __builder.AddAttribute(83, "placeholder", 
 #nullable restore
 #line 121 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -760,7 +725,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(119, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(84, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 122 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.DateTimeValue
@@ -769,10 +734,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(120, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
+            __builder.AddAttribute(85, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(121, "\r\n");
 #nullable restore
 #line 123 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -782,10 +746,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(122, "                        \r\n                        \r\n                        \r\n                        ");
-            __builder.OpenElement(123, "input");
-            __builder.AddAttribute(124, "class", "form-control");
-            __builder.AddAttribute(125, "type", 
+            __builder.OpenElement(86, "input");
+            __builder.AddAttribute(87, "class", "form-control");
+            __builder.AddAttribute(88, "type", 
 #nullable restore
 #line 129 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -794,7 +757,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(126, "placeholder", 
+            __builder.AddAttribute(89, "placeholder", 
 #nullable restore
 #line 129 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -803,8 +766,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(127, "data-toggle", "tooltip");
-            __builder.AddAttribute(128, "title", 
+            __builder.AddAttribute(90, "data-toggle", "tooltip");
+            __builder.AddAttribute(91, "title", 
 #nullable restore
 #line 131 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                               PageController.Tooltip
@@ -813,7 +776,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(129, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(92, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 130 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.DateTimeValue
@@ -822,10 +785,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(130, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
+            __builder.AddAttribute(93, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.DateTimeValue = __value, PageController.DateTimeValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(131, "\r\n");
 #nullable restore
 #line 132 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -842,7 +804,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(132, "                    \r\n");
 #nullable restore
 #line 136 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                      if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -851,10 +812,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(133, "                        \r\n                        \r\n                        ");
-            __builder.OpenElement(134, "input");
-            __builder.AddAttribute(135, "class", "form-control");
-            __builder.AddAttribute(136, "type", 
+            __builder.OpenElement(94, "input");
+            __builder.AddAttribute(95, "class", "form-control");
+            __builder.AddAttribute(96, "type", 
 #nullable restore
 #line 140 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -863,7 +823,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(137, "placeholder", 
+            __builder.AddAttribute(97, "placeholder", 
 #nullable restore
 #line 140 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -872,7 +832,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(138, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(98, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 141 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.StringValue
@@ -881,10 +841,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(139, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
+            __builder.AddAttribute(99, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(140, "\r\n");
 #nullable restore
 #line 142 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -894,10 +853,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(141, "                        \r\n                        \r\n                        \r\n                        ");
-            __builder.OpenElement(142, "input");
-            __builder.AddAttribute(143, "class", "form-control");
-            __builder.AddAttribute(144, "type", 
+            __builder.OpenElement(100, "input");
+            __builder.AddAttribute(101, "class", "form-control");
+            __builder.AddAttribute(102, "type", 
 #nullable restore
 #line 148 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -906,7 +864,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(145, "placeholder", 
+            __builder.AddAttribute(103, "placeholder", 
 #nullable restore
 #line 148 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -915,8 +873,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(146, "data-toggle", "tooltip");
-            __builder.AddAttribute(147, "title", 
+            __builder.AddAttribute(104, "data-toggle", "tooltip");
+            __builder.AddAttribute(105, "title", 
 #nullable restore
 #line 150 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                               PageController.Tooltip
@@ -925,7 +883,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(148, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(106, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 149 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.StringValue
@@ -934,10 +892,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(149, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
+            __builder.AddAttribute(107, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(150, "\r\n");
 #nullable restore
 #line 151 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -954,7 +911,6 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(151, "                    \r\n");
 #nullable restore
 #line 155 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                      if (String.IsNullOrWhiteSpace(PageController.Tooltip))
@@ -963,10 +919,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(152, "                        \r\n                        \r\n                        ");
-            __builder.OpenElement(153, "input");
-            __builder.AddAttribute(154, "class", "form-control");
-            __builder.AddAttribute(155, "type", 
+            __builder.OpenElement(108, "input");
+            __builder.AddAttribute(109, "class", "form-control");
+            __builder.AddAttribute(110, "type", 
 #nullable restore
 #line 159 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -975,7 +930,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(156, "placeholder", 
+            __builder.AddAttribute(111, "placeholder", 
 #nullable restore
 #line 159 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -984,7 +939,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(157, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(112, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 160 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.StringValue
@@ -993,10 +948,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(158, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
+            __builder.AddAttribute(113, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(159, "\r\n");
 #nullable restore
 #line 161 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -1006,10 +960,9 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(160, "                        \r\n                        \r\n                        \r\n                        ");
-            __builder.OpenElement(161, "input");
-            __builder.AddAttribute(162, "class", "form-control");
-            __builder.AddAttribute(163, "type", 
+            __builder.OpenElement(114, "input");
+            __builder.AddAttribute(115, "class", "form-control");
+            __builder.AddAttribute(116, "type", 
 #nullable restore
 #line 167 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                             PageController.GetInputType()
@@ -1018,7 +971,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(164, "placeholder", 
+            __builder.AddAttribute(117, "placeholder", 
 #nullable restore
 #line 167 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                                                                            PageController.Placeholder
@@ -1027,8 +980,8 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(165, "data-toggle", "tooltip");
-            __builder.AddAttribute(166, "title", 
+            __builder.AddAttribute(118, "data-toggle", "tooltip");
+            __builder.AddAttribute(119, "title", 
 #nullable restore
 #line 169 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                                               PageController.Tooltip
@@ -1037,7 +990,7 @@ else
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(167, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
+            __builder.AddAttribute(120, "value", Microsoft.AspNetCore.Components.BindConverter.FormatValue(
 #nullable restore
 #line 168 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                                               PageController.StringValue
@@ -1046,10 +999,9 @@ else
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(168, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
+            __builder.AddAttribute(121, "onchange", Microsoft.AspNetCore.Components.EventCallback.Factory.CreateBinder(this, __value => PageController.StringValue = __value, PageController.StringValue));
             __builder.SetUpdatesAttributeName("value");
             __builder.CloseElement();
-            __builder.AddMarkupContent(169, "\r\n");
 #nullable restore
 #line 170 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
                     }
@@ -1066,11 +1018,8 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(170, "        ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(171, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(172, "\r\n");
 #nullable restore
 #line 175 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingComponent.razor"
 }

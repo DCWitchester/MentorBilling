@@ -99,8 +99,7 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(0, "    ");
-            __builder.AddMarkupContent(1, "<h3>Loading...</h3>\r\n");
+            __builder.AddMarkupContent(0, "<h3>Loading...</h3>");
 #nullable restore
 #line 4 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingsPage.razor"
 }
@@ -119,9 +118,8 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(2, "        ");
-            __builder.OpenComponent<MentorBilling.SettingsComponents.Pages.SettingComponent>(3);
-            __builder.AddAttribute(4, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.SettingsComponents.Controllers.GeneralComponentController>(
+            __builder.OpenComponent<MentorBilling.SettingsComponents.Pages.SettingComponent>(1);
+            __builder.AddAttribute(2, "PageController", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MentorBilling.SettingsComponents.Controllers.GeneralComponentController>(
 #nullable restore
 #line 9 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingsPage.razor"
                                           settingDisplay
@@ -131,7 +129,6 @@ else
 #nullable disable
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(5, "\r\n");
 #nullable restore
 #line 10 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingsPage.razor"
     }
@@ -139,8 +136,7 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(6, "    ");
-            __builder.AddMarkupContent(7, "<div style=\"position: relative; bottom: 20px; right: 20px;\">\r\n        <button class=\"btn btn-primary-mentor\">Salveaza Setari</button>\r\n        <button class=\"btn btn-primary-mentor\">Renunta</button>\r\n    </div>\r\n");
+            __builder.AddMarkupContent(3, "<div style=\"position: relative; bottom: 20px; right: 20px;\"><button class=\"btn btn-primary-mentor\">Salveaza Setari</button>\r\n        <button class=\"btn btn-primary-mentor\">Renunta</button></div>");
 #nullable restore
 #line 15 "F:\MentorBilling\MBilling\MentorBilling\SettingsComponents\Pages\SettingsPage.razor"
 }

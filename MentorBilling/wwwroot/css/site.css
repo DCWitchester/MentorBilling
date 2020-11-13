@@ -427,6 +427,56 @@ input[type="number"] {
 }
 /*#endregion User Menu*/
 
+/*#region Mentor Dropdown Menu*/
+.dropdown-item-mentor {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: white;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: rgb(35,104,158);
+    border: 0
+}
+
+    .dropdown-item-mentor:focus,
+    .dropdown-item-mentor:hover {
+        color: white;
+        text-decoration: none;
+        background-color: rgb(237,123,8)
+    }
+
+    .dropdown-item-mentor.active,
+    .dropdown-item-mentor:active {
+        color: white;
+        text-decoration: none;
+        background-color: rgb(35,104,158)
+    }
+
+    .dropdown-item-mentor.disabled,
+    .dropdown-item-mentor:disabled {
+        color: #6c757d;
+        pointer-events: none;
+        background-color: transparent
+    }
+
+.dropdown-item-mentor-text {
+    display: block;
+    padding: .25rem 1.5rem;
+    color: white
+}
+
+.dropdown-divider-mentor {
+    height: 0;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-top: 1px solid white;
+    background-color: rgb(35,104,158)
+}
+/*#endregion*/
+
 
 .btn-primary {
     color: #fff;

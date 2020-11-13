@@ -1,6 +1,5 @@
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\appsettings.Development.json
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\appsettings.json
-F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\MentorBilling.StaticWebAssets.xml
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\MentorBilling.exe
 F:\MentorBilling\MBilling\MentorBilling\bin\Debug\netcoreapp3.1\MentorBilling.deps.json
@@ -120,3 +119,8 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Shared\Components\Tooltip.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\RazorDeclaration\Messages\Pages\InactivCompany.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\Razor\Messages\Pages\InactivCompany.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\MentorBilling.RazorComponent.output.cache
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\scopedcss\Shared\Components\Tooltip.razor.rz.scp.css
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\scopedcss\Messages\Pages\InactivCompany.razor.rz.scp.css
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\scopedcss\bundle\MentorBilling.styles.css
+F:\MentorBilling\MBilling\MentorBilling\obj\Debug\netcoreapp3.1\scopedcss\projectbundle\MentorBilling.bundle.scp.css

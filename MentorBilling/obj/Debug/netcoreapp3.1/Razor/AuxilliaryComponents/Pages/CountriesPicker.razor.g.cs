@@ -102,19 +102,16 @@ using Radzen.Blazor;
 #nullable disable
             ));
             __builder.AddAttribute(2, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
-                __builder2.AddMarkupContent(3, "\r\n    \r\n    ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(4);
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(3);
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(5, "\r\n    \r\n    ");
-                __builder2.OpenElement(6, "div");
-                __builder2.AddAttribute(7, "class", "form-group row mb-1");
-                __builder2.AddMarkupContent(8, "\r\n        \r\n        ");
-                __builder2.AddMarkupContent(9, "<label class=\"col-sm-3 col-form-label\">Tara:</label>\r\n        ");
-                __builder2.OpenElement(10, "div");
-                __builder2.AddAttribute(11, "class", "col-sm-9");
-                __builder2.AddAttribute(12, "style", "height:inherit; text-align:center; display:flex;");
-                __builder2.AddMarkupContent(13, "\r\n            \r\n\r\n            ");
-                __Blazor.MentorBilling.AuxilliaryComponents.Pages.CountriesPicker.TypeInference.CreateInputSelect_0(__builder2, 14, 15, 
+                __builder2.AddMarkupContent(4, "\r\n    \r\n    ");
+                __builder2.OpenElement(5, "div");
+                __builder2.AddAttribute(6, "class", "form-group row mb-1");
+                __builder2.AddMarkupContent(7, "<label class=\"col-sm-3 col-form-label\">Tara:</label>\r\n        ");
+                __builder2.OpenElement(8, "div");
+                __builder2.AddAttribute(9, "class", "col-sm-9");
+                __builder2.AddAttribute(10, "style", "height:inherit; text-align:center; display:flex;");
+                __Blazor.MentorBilling.AuxilliaryComponents.Pages.CountriesPicker.TypeInference.CreateInputSelect_0(__builder2, 11, 12, 
 #nullable restore
 #line 14 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                                             ()=>PageController.SelectedCountry.DefaultCode
@@ -122,7 +119,7 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                , 16, 
+                , 13, 
 #nullable restore
 #line 15 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                                   PageController.SelectedCountry.DefaultCode
@@ -130,7 +127,7 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                , 17, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+                , 14, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 16 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                                          (String value) => SelectElement(value)
@@ -138,8 +135,7 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                ), 18, "height:inherit; width:inherit; margin-bottom:5px; text-align:center;", 19, (__builder3) => {
-                    __builder3.AddMarkupContent(20, "\r\n                \r\n");
+                ), 15, "height:inherit; width:inherit; margin-bottom:5px; text-align:center;", 16, (__builder3) => {
 #nullable restore
 #line 19 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                  foreach (var country in PageController.countries)
@@ -148,9 +144,8 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                    __builder3.AddContent(21, "                    ");
-                    __builder3.OpenElement(22, "option");
-                    __builder3.AddAttribute(23, "value", 
+                    __builder3.OpenElement(17, "option");
+                    __builder3.AddAttribute(18, "value", 
 #nullable restore
 #line 21 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                                      country.DefaultCode
@@ -159,7 +154,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                     );
-                    __builder3.AddAttribute(24, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+                    __builder3.AddAttribute(19, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 21 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                                                                        ()=>SelectElement(country)
@@ -168,7 +163,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddContent(25, 
+                    __builder3.AddContent(20, 
 #nullable restore
 #line 21 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                                                                                                      country.GetDisplayNameForSettings(InstanceController.InstanceSettings)
@@ -178,7 +173,6 @@ using Radzen.Blazor;
 #nullable disable
                     );
                     __builder3.CloseElement();
-                    __builder3.AddMarkupContent(26, "\r\n");
 #nullable restore
 #line 22 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                 }
@@ -186,17 +180,13 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                    __builder3.AddContent(27, "            ");
                 }
                 );
-                __builder2.AddMarkupContent(28, "\r\n\r\n        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(29, "\r\n    ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(30, "\r\n");
             }
             ));
-            __builder.AddComponentReferenceCapture(31, (__value) => {
+            __builder.AddComponentReferenceCapture(21, (__value) => {
 #nullable restore
 #line 4 "F:\MentorBilling\MBilling\MentorBilling\AuxilliaryComponents\Pages\CountriesPicker.razor"
                 MyForm = (Microsoft.AspNetCore.Components.Forms.EditForm)__value;

@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime JSRuntime 
 
-<div>
+<div style="position:relative; z-index:-1">
     <EditForm @ref="BuyerForm" EditContext="EditContext" OnValidSubmit="(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))" @onfocusout="SubmitForm">
         <DataAnnotationsValidator />
         <!--#region Seller Name-->
@@ -35,7 +35,7 @@
             <!-- The label for the Object -->
             <label class="col-sm-3 col-form-label">Cod fiscal:</label>
             <!--The div containing an the inputText and the ValidationMessage-->
-            <div class="col-sm-9">
+            <div class="col-sm-9" style="z-index : 1">
                 <!--The Input Text Controller-->
                 <InputText class="form-control" placeholder="Cod de identificare fiscala" @bind-Value="@PageController.FiscalCode" disabled="@PageController.DisableController" @onfocusout="CheckCompanyInactivity" />
                 <ValidationMessage For="@(()=>PageController.IsFiscalCodeValid)" />

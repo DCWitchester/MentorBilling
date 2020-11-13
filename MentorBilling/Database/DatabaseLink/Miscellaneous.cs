@@ -24,6 +24,11 @@ namespace MentorBilling.Database.DatabaseLink
             DatabaseConnection.CloseConnection();
             return false;
         }
+
+        /// <summary>
+        /// the main value of now in a timestamp
+        /// </summary>
+        public static String TimestampNow => "('now'::text)::timestamp without time zone";
         #endregion
     }
 }
