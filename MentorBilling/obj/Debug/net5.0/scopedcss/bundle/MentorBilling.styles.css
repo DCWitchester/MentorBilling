@@ -1,0 +1,62 @@
+/* _content/MentorBilling/Messages/Pages/InactivCompany.razor.rz.scp.css */
+/*#region error button*/
+.btn-primary-mentor-local-error[b-k0c1ug3rrx] {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-style: double;
+    border-color: snow;
+    border-radius: 15px 50px;
+    padding: 5px 35px;
+    margin: 10px;
+    outline: none;
+}
+
+    .btn-primary-mentor-local-error:hover[b-k0c1ug3rrx] {
+        color: #fff;
+        outline: none;
+    }
+
+    .btn-primary-mentor-local-error:focus[b-k0c1ug3rrx] {
+        outline: none;
+        border-radius: 15px 50px;
+        border-color: snow;
+        background-color: orange;
+    }
+/*#endregion*/
+/* _content/MentorBilling/Shared/Components/Tooltip.razor.rz.scp.css */
+.tooltip-wrapper[b-j1k9typcum]{
+    position : relative;
+    display : inline-block;
+    border-bottom : 1px dotted black;
+    cursor : help;
+}
+
+span[b-j1k9typcum] {
+    visibility : hidden;
+    position : absolute;
+    width : 160px;
+    bottom : 100%;
+    left : 50%;
+    margin-left : -80px;
+    background-color : #363636;
+    color : #fff;
+    text-align : center;
+    padding : 5px 0;
+    border-radius : 6px;
+    z-index : 1;
+}
+
+span[b-j1k9typcum]::after{
+    content : "";
+    position : absolute;
+    top : 100%;
+    left : 50%;
+    margin-left : -5px;
+    border-width : 5px;
+    border-style : solid;
+    border-color : #555 transparent transparent transparent;
+}
+
+.tooltip-wrapper:hover span[b-j1k9typcum] {
+    visibility : visible;
+}

@@ -1,5 +1,5 @@
 ﻿/*#region error button*/
-.btn-primary-mentor-error {
+.btn-primary-mentor-local-error {
     color: #fff;
     background-color: #1b6ec2;
     border-style: double;
@@ -10,12 +10,12 @@
     outline: none;
 }
 
-    .btn-primary-mentor-error:hover {
+    .btn-primary-mentor-local-error:hover {
         color: #fff;
         outline: none;
     }
 
-    .btn-primary-mentor-error:focus {
+    .btn-primary-mentor-local-error:focus {
         outline: none;
         border-radius: 15px 50px;
         border-color: snow;
