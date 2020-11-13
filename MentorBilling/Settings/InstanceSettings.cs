@@ -42,7 +42,7 @@ namespace MentorBilling.Settings
                 //and set the settings values
                 switch (setting.ID)
                 {
-                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.SellerControl:
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.UseSellerControl:
                         this.SellerControl = setting.GetBooleanValue;
                         break;
                     case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.CountryISO:

@@ -812,11 +812,13 @@ INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_i
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala) 
     VALUES(2,'Tipul de nume pentru tara?',1,7,'0');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
-    VALUES(3,'Se doreste gestionare partenerilor(Cumparatori)?',4,3,'false')
+    VALUES(3,'Se doreste gestionare partenerilor(Cumparatori)?',4,3,'false');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
-    VALUES(4,'Se vor genera automat numerele de document pe baza plajelor?',4,3,'false')
+    VALUES(4,'Se vor genera automat numerele de document pe baza plajelor?',4,3,'false');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
-    VALUES(5,'Se vor genera automat seriile de document pe baza plajelor?',4,3,'false')
+    VALUES(5,'Se vor genera automat seriile de document pe baza plajelor?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(6,'Se vor genera automat numerele de aviz pentru de document pe baza plajelor?',4,3,'false');
 --#endregion Setari
 
 --#region Setari Utilizatori
