@@ -805,12 +805,18 @@ COMMENT ON COLUMN settings.setari.valoare_initiala IS 'Valoarea initiala a setar
 COMMENT ON COLUMN settings.setari.placeholder IS 'Folosit pentru afisarea in pagina de setari pentru anumite tipuri de date';
 COMMENT ON COLUMN settings.setari.tooltip IS 'Folosit pentru afisarea in pagina de setari a tooltipuri aditionale';
 
-INSERT INTO settings.setari(setare,tip_date_setare,tip_input_setare,valoare_initiala) 
-    VALUES('Se doreste gestionarea societatilor(Furnizori)?',4,3,'false');
-INSERT INTO settings.setari(setare,tip_date_setare,tip_input_setare,valoare_initiala) 
-    VALUES('Tipul de iso pentru tara?',1,7,'false');
-INSERT INTO settings.setari(setare,tip_date_setare,tip_input_setare,valoare_initiala) 
-    VALUES('Tipul de nume pentru tara?',1,7,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala) 
+    VALUES(0,'Se doreste gestionarea societatilor(Furnizori)?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala) 
+    VALUES(1,'Tipul de iso pentru tara?',1,7,'0');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala) 
+    VALUES(2,'Tipul de nume pentru tara?',1,7,'0');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(3,'Se doreste gestionare partenerilor(Cumparatori)?',4,3,'false')
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(4,'Se vor genera automat numerele de document pe baza plajelor?',4,3,'false')
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(5,'Se vor genera automat seriile de document pe baza plajelor?',4,3,'false')
 --#endregion Setari
 
 --#region Setari Utilizatori
