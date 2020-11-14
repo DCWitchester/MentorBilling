@@ -183,7 +183,7 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         public void SetBaseLogoFromController()
         {
-            if(LogoController.BaseLogo.LogoBase.Count() > 0)
+            if(LogoController.BaseLogo.LogoBase.Length > 0)
             base.Logo = LogoController.BaseLogo;
         }
         /// <summary>
@@ -191,7 +191,7 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         public void SetBaseLogoValueFromController()
         {
-            if(LogoController.LogoBase.Count() > 0)
+            if(LogoController.LogoBase.Length > 0)
                 base.LogoBytes = LogoController.LogoBase;
         }
         #endregion
@@ -202,7 +202,7 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         public void SetControllerFromLogo()
         {
-            if( base.Logo.LogoBase != null && base.Logo.LogoBase.Count() > 0)
+            if( base.Logo.LogoBase != null && base.Logo.LogoBase.Length > 0)
                 LogoController.BaseLogo = base.Logo;
         }
         /// <summary>
@@ -210,7 +210,7 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         public void SetControllerValueFromLogo()
         {
-            if(base.LogoBytes.Count() > 0)
+            if(base.LogoBytes.Length > 0)
                 LogoController.LogoBase = base.LogoBytes;
         }
         #endregion 
