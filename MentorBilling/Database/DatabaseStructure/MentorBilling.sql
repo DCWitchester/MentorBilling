@@ -808,9 +808,9 @@ COMMENT ON COLUMN settings.setari.tooltip IS 'Folosit pentru afisarea in pagina 
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala) 
     VALUES(0,'Se doreste gestionarea societatilor(Furnizori)?',4,3,'false');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala) 
-    VALUES(1,'Tipul de iso pentru tara?',1,7,'0');
+    VALUES(1,'Tipul de iso pentru tara:',1,7,'0');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala) 
-    VALUES(2,'Tipul de nume pentru tara?',1,7,'0');
+    VALUES(2,'Tipul de nume pentru tara:',1,7,'0');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
     VALUES(3,'Se doreste gestionare partenerilor(Cumparatori)?',4,3,'false');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
@@ -819,6 +819,16 @@ INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_i
     VALUES(5,'Se vor genera automat seriile de document pe baza plajelor?',4,3,'false');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
     VALUES(6,'Se vor genera automat numerele de aviz pentru de document pe baza plajelor?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(7,'Se permite emiterea de facturi in afara lunii curente?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(8,'Se permite emiterea de facturi in luni anterior lunii curente?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(9,'Se permite emiterea de facturi in luni ulterioare lunii curente?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(10,'Numarul de luni anterioare in care se pot emite facturi:',1,1,'0');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(11,'Numarul de luni ulterioare in care se pot emite facturi:',1,1,'0');
 --#endregion Setari
 
 --#region Setari Utilizatori

@@ -61,6 +61,46 @@ namespace MentorBilling.Settings
             get => base.autogenerateNoticeNumber;
             set => base.autogenerateNoticeNumber = value;
         }
+        /// <summary>
+        /// the setting for permitting the creation of invoices outside of the current month for the instance
+        /// </summary>
+        public Boolean PermitInvoicesOutsideCurrentMonth
+        {
+            get => base.permitInvoicesOutsideCurrentMonth;
+            set => base.permitInvoicesOutsideCurrentMonth = value;
+        }
+        /// <summary>
+        /// the setting for permitting the creation of invoices in the months prior to the current month for the instance
+        /// </summary>
+        public Boolean PermitInvoiceInMonthsPrior 
+        {
+            get => base.permitInvoiceInMonthsPrior;
+            set => base.permitInvoiceInMonthsPrior = value;
+        }
+        /// <summary>
+        /// the setting for permitting the creation of invoices in the months following to the current month for the instance
+        /// </summary>
+        public Boolean PermitInvoiceInMonthsFollowing
+        {
+            get => base.permitInvoiceInMonthsFollowing; 
+            set => base.permitInvoiceInMonthsFollowing = value;
+        }
+        /// <summary>
+        /// the maximum number of prior months in which it is permited to create invoices
+        /// </summary>
+        public Int32 NumberOfMonthsPrior
+        {
+            get => base.numberOfMonthsPrior;
+            set => base.numberOfMonthsPrior = value;
+        }
+        /// <summary>
+        /// the maximum number of following months in which it is permited to create invoices
+        /// </summary>
+        public Int32 NumberOfMonthsFollowing
+        {
+            get => base.numberOfMonthsFollowing;
+            set => base.numberOfMonthsFollowing = value;
+        }
         #endregion
 
         #region Functionality
@@ -95,6 +135,21 @@ namespace MentorBilling.Settings
                         break;
                     case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.AutogenerateNoticeNumber:
                         this.AutogenerateNoticeNumber = setting.GetBooleanValue;
+                        break;
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.PermitInvoicesOutsideCurrentMonth:
+                        this.PermitInvoicesOutsideCurrentMonth = setting.GetBooleanValue;
+                        break;
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.PermitInvoiceInMonthsPrior:
+                        this.PermitInvoiceInMonthsPrior = setting.GetBooleanValue;
+                        break;
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.PermitInvoiceInMonthsFollowing:
+                        this.PermitInvoiceInMonthsFollowing = setting.GetBooleanValue;
+                        break;
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.NumberOfMonthsPrior:
+                        this.NumberOfMonthsPrior = setting.GetIntegerValue;
+                        break;
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.NumberOfMonthsFollowing:
+                        this.numberOfMonthsFollowing = setting.GetIntegerValue;
                         break;
                 }
             }
