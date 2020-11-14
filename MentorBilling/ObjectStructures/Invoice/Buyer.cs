@@ -8,7 +8,7 @@ namespace MentorBilling.ObjectStructures.Invoice
     public class Buyer
     {
         #region Properties
-#pragma warning disable IDE1006
+#pragma warning disable IDE1006 //Naming Styles
         /// <summary>
         /// the id property
         /// </summary>
@@ -49,7 +49,7 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// the county ID property
         /// </summary>
         private Int64 county { get; set; } = new Int64();
-#pragma warning disable IDE1006
+#pragma warning restore IDE1006 //Naming Styles
         #endregion
 
         #region Callers
