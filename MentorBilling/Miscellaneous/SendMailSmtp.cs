@@ -186,16 +186,16 @@ namespace MentorBilling.Miscellaneous
             mailAttachements.AddRange(atachementPath);
         }
         #endregion
-        #region Callers
+        #region Constructors
         #region No parameters
         /// <summary>
-        /// the main caller for the class
+        /// the main constructor for the class
         /// </summary>
         public SendMailSmtp() { }
         #endregion
         #region Sender
         /// <summary>
-        /// the caller for the class with a specific email
+        /// the constructor for the class with a specific email
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -205,7 +205,7 @@ namespace MentorBilling.Miscellaneous
             SetMailPassword = password;
         }
         /// <summary>
-        /// the caller for the class with a specific email and alternative address
+        /// the constructor for the class with a specific email and alternative address
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -219,7 +219,7 @@ namespace MentorBilling.Miscellaneous
             useMailAddresses = useAddresses;
         }
         /// <summary>
-        /// the caller for the class with a specific email and alternative address
+        /// the constructor for the class with a specific email and alternative address
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -237,7 +237,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver
         /// <summary>
-        /// the caller for the class with a specific email and recepient
+        /// the constructor for the class with a specific email and recepient
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -249,7 +249,7 @@ namespace MentorBilling.Miscellaneous
             SetMailReceiver = recepient;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient
+        /// the constructor for the class with a specific email and recepient
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -265,7 +265,7 @@ namespace MentorBilling.Miscellaneous
             SetMailReceiver = recepient;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient
+        /// the constructor for the class with a specific email and recepient
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -285,7 +285,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject
+        /// the constructor for the class with a specific email and recepient with the specific subject
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -299,7 +299,7 @@ namespace MentorBilling.Miscellaneous
             SetMailSubject = mailSubject;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject
+        /// the constructor for the class with a specific email and recepient with the specific subject
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -317,7 +317,7 @@ namespace MentorBilling.Miscellaneous
             SetMailSubject = mailSubject;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject
+        /// the constructor for the class with a specific email and recepient with the specific subject
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -339,7 +339,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body
+        /// the constructor for the class with a specific email and recepient with the specific subject and body
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -355,7 +355,7 @@ namespace MentorBilling.Miscellaneous
             SetMailBody = mailBody;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body
+        /// the constructor for the class with a specific email and recepient with the specific subject and body
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -375,7 +375,7 @@ namespace MentorBilling.Miscellaneous
             SetMailBody = mailBody;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body
+        /// the constructor for the class with a specific email and recepient with the specific subject and body
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -399,7 +399,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body
+        /// the constructor for the class with a specific email and recepient with the specific subject and body
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -417,7 +417,7 @@ namespace MentorBilling.Miscellaneous
             FormatMailBody = isBodyHtml;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body
+        /// the constructor for the class with a specific email and recepient with the specific subject and body
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -439,7 +439,7 @@ namespace MentorBilling.Miscellaneous
             FormatMailBody = isBodyHtml;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body
+        /// the constructor for the class with a specific email and recepient with the specific subject and body
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -465,7 +465,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml - requestAnswer
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -485,7 +485,7 @@ namespace MentorBilling.Miscellaneous
             RequestResponse = requestAnswer;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -509,7 +509,7 @@ namespace MentorBilling.Miscellaneous
             RequestResponse = requestAnswer;
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -537,7 +537,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - Single Attachement
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -555,7 +555,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachement);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -577,7 +577,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachement);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -603,7 +603,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml - Single Attachement
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -623,7 +623,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachement);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -647,7 +647,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachement);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -675,7 +675,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml - requestAnswer - Single Attachement
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -697,7 +697,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachement);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -723,7 +723,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachement);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -753,7 +753,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - Attachement Array
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body amd multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -771,7 +771,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body amd multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -793,7 +793,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body amd multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -819,7 +819,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml - Attachement Array
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body amd multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -839,7 +839,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body amd multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -863,7 +863,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body amd multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body amd multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -891,7 +891,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml - requestAnswer - Attachement Array
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -913,7 +913,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -939,7 +939,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -969,7 +969,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - Attachement List
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -987,7 +987,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachementList);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -1009,7 +1009,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachementList);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -1035,7 +1035,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml - Attachement List
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -1055,7 +1055,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachementList);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -1079,7 +1079,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachementList);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and multiple attachements
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and multiple attachements
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -1107,7 +1107,7 @@ namespace MentorBilling.Miscellaneous
         #endregion
         #region Sender - Receiver - MailSubject - MailBody - isBodyHtml - requestAnswer - Attachement List
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -1129,7 +1129,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>
@@ -1155,7 +1155,7 @@ namespace MentorBilling.Miscellaneous
             AddAtachement(attachements);
         }
         /// <summary>
-        /// the caller for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
+        /// the constructor for the class with a specific email and recepient with the specific subject and body and specific attachement and request an answer on read
         /// </summary>
         /// <param name="username">the emails username</param>
         /// <param name="password">the emails password</param>

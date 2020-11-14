@@ -34,6 +34,28 @@ namespace MentorBilling.Settings
         /// the autogenerateNoticeNumber property
         /// </summary>
         protected Boolean autogenerateNoticeNumber { get; set; } = false;
+        /// <summary>
+        /// the permitInvoicesOutsideCurrentMonth property
+        /// </summary>
+        protected Boolean permitInvoicesOutsideCurrentMonth { get; set; } = false;
+        /// <summary>
+        /// the permitInvoiceInMonthsPrior property
+        /// </summary>
+        protected Boolean permitInvoiceInMonthsPrior { get; set; } = false;
+        /// <summary>
+        /// the permitInvoiceInFollowingMonths
+        /// </summary>
+        protected Boolean permitInvoiceInMonthsFollowing { get; set; } = false;
+        /// <summary>
+        /// <br>the numberOfMonthPrior property</br>
+        /// <br>is linked to the permitInvoiceInMonthsPrior property and represents the maximum number of months for which the setting is viable </br>
+        /// </summary>
+        protected Int32 numberOfMonthsPrior { get; set; } = 0;
+        /// <summary>
+        /// <br>the numberOfMonthsFollowing property</br>
+        /// <br>is linked to the permitInvoiceInMonthsFollowing property and represents the maximum number of months for which the setting is viable</br>
+        /// </summary>
+        protected Int32 numberOfMonthsFollowing { get; set; } = 0;
 #pragma warning restore IDE1006 // Naming Styles
         #endregion
     }
