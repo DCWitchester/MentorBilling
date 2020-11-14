@@ -22,6 +22,10 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// </summary>
         protected Int32 documentNumber { get; set; } = new Int32();
         /// <summary>
+        /// the document date property
+        /// </summary>
+        protected DateTime documentDate { get; set; } = new DateTime();
+        /// <summary>
         /// the delivery notice number property
         /// </summary>
         protected Int32 deliveryNoticeNumber { get; set; } = new Int32();
@@ -75,6 +79,11 @@ namespace MentorBilling.ObjectStructures.Invoice
             get => documentNumber;
             set => documentNumber = value;
         }
+        public DateTime DocumentDate
+        {
+            get => DocumentDate;
+            set => DocumentDate = value;
+        }
         /// <summary>
         /// the main caller for the delivery notice number property
         /// </summary>
@@ -123,6 +132,13 @@ namespace MentorBilling.ObjectStructures.Invoice
         {
             get => buyerID; 
             set => buyerID = value;
+        }
+        /// <summary>
+        /// the main caller for the full value of the InvoiceHeader
+        /// </summary>
+        public InvoiceHeader Value
+        {
+            get => this;
         }
         #endregion
         #endregion
