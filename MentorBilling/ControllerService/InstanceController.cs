@@ -72,6 +72,24 @@ namespace MentorBilling.ControllerService
             if (UserSettings.UserGroup == null) return UserSettings.LoggedInUser;
             else return UserSettings.UserGroup.Administrator;
         }
+
+        /// <summary>
+        /// this function will initialize the constructors that require parameters
+        /// </summary>
+        void InitializeControllers()
+        {
+            InvoiceController = new InvoiceController(InstanceSettings);
+        }
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// this is the main override for the constructor to initialize the needed controller with settings from the current object
+        /// </summary>
+        public InstanceController()
+        {
+            InitializeControllers();
+        }
         #endregion
     }
 }

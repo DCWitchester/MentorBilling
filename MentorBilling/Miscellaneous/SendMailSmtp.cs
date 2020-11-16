@@ -1224,7 +1224,7 @@ namespace MentorBilling.Miscellaneous
         /// </summary>
         /// <param name="mail"></param>
         /// <returns>wether the mail is valid or not</returns>
-        String CheckMail(String mail)
+        static String CheckMail(String mail)
         {
             try
             {
@@ -1243,7 +1243,7 @@ namespace MentorBilling.Miscellaneous
         /// </summary>
         /// <param name="mailSender">the mail sender string <= will only be displayed if linked to the email account because of GDRP</param>
         /// <returns>a valid MailAddress</returns>
-        MailAddress GenerateMailAddress(String mailSender)
+        static MailAddress GenerateMailAddress(String mailSender)
         {
             return new MailAddress(mailSender);
         }
@@ -1253,7 +1253,7 @@ namespace MentorBilling.Miscellaneous
         /// <param name="mailSender">the mail sender string <= will only be displayed if linked to the email account because of GDRP</param>
         /// <param name="displayName">the display name for the email sender</param>
         /// <returns>a valid MailAddress</returns>
-        MailAddress GenerateMailAddress(String mailSender, String displayName)
+        static MailAddress GenerateMailAddress(String mailSender, String displayName)
         {
             return new MailAddress(mailSender, displayName);
         }

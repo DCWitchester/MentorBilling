@@ -1,14 +1,18 @@
 ﻿using MentorBilling.ObjectStructures.Invoice;
+using static MentorBilling.Extensions.FunctionalityExtensions;
 using System.ComponentModel.DataAnnotations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MentorBilling.Miscellaneous;
+using MentorBilling.Settings;
 
 namespace MentorBilling.Invoice.Controllers
 {
     public class InvoiceHeaderController : InvoiceHeader
     {
+        #region Settings Link
+        InstanceSettings instanceSettings;
+        #endregion
+
         #region Primary Properties
         /// <summary>
         /// the document series bound to the given TextBox
@@ -53,6 +57,64 @@ namespace MentorBilling.Invoice.Controllers
         {
             get => base.VATatCollection;
             set => base.vatAtCollection = value;
+        }
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// the main constructor for the class
+        /// </summary>
+        public InvoiceHeaderController() { }
+        /// <summary>
+        /// the main contructor that will receive the instance settings from the parent
+        /// </summary>
+        /// <param name="settings">the instance settings will alter core functionality</param>
+        public InvoiceHeaderController(InstanceSettings settings)
+        {
+            this.instanceSettings = settings;
+        }
+        #endregion
+
+        #region Aditional Checks
+        /// <summary>
+        /// the check for the Validity of the Date for the interface
+        /// </summary>
+        [Range(typeof(bool),"true","true",ErrorMessage = "Data documentului nu este valida sau nu se poate facura in acea data.")]
+        public Boolean IsDocumentDateValid
+        {
+            get => CheckDateValidity();
+
+        }
+        #endregion
+
+        #region Functionality
+        /// <summary>
+        /// this is the base validation for the document date
+        /// </summary>
+        /// <returns>if the date is valid for the document or not</returns>
+        Boolean CheckDateValidity()
+        {
+            if (base.DocumentDate.Month == DateTime.Now.Month) return true;
+            else if (instanceSettings.PermitInvoicesOutsideCurrentMonth)
+            {
+                if(base.DocumentDate < DateTimeConversions.GetFirstDayOfMonth(DateTime.Now))
+                {
+                    if (!instanceSettings.PermitInvoiceInMonthsPrior) return false;
+                    else if (base.documentDate
+                                    .IsBetween(DateTimeConversions.GetFirstDayOfMonth(DateTime.Now.AddMonths(-1 * instanceSettings.NumberOfMonthsPrior)),
+                                        DateTimeConversions.GetLastDayOfMonth(DateTime.Now))) return true;
+                    else return false;
+                }
+                else
+                {
+                    if (!instanceSettings.PermitInvoiceInMonthsFollowing) return false;
+                    else if (base.documentDate.IsBetween(DateTimeConversions.GetFirstDayOfMonth(DateTime.Now),
+                                DateTimeConversions.GetLastDayOfMonth(DateTime.Now.AddMonths(instanceSettings.NumberOfMonthsFollowing)))) return true;
+                    else return false;
+
+                }
+            }
+            else return false;
         }
         #endregion
     }

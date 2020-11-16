@@ -101,6 +101,14 @@ namespace MentorBilling.Settings
             get => base.numberOfMonthsFollowing;
             set => base.numberOfMonthsFollowing = value;
         }
+        /// <summary>
+        /// this will return the complete base settings value
+        /// **Deprecated**
+        /// </summary>
+        public ProgramSettings BaseValue
+        {
+            get => base.Value;
+        }
         #endregion
 
         #region Functionality

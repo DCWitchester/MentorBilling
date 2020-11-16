@@ -58,5 +58,15 @@ namespace MentorBilling.Settings
         protected Int32 numberOfMonthsFollowing { get; set; } = 0;
 #pragma warning restore IDE1006 // Naming Styles
         #endregion
+
+        #region Callers
+        /// <summary>
+        /// this function will return the value of the object
+        /// </summary>
+        protected ProgramSettings Value
+        {
+            get => this;
+        }
+        #endregion
     }
 }
