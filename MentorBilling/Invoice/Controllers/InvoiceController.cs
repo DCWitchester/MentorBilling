@@ -68,6 +68,7 @@ namespace MentorBilling.Invoice.Controllers
         public InvoiceController(InstanceSettings settings)
         {
             instanceSettings = settings;
+            InitializeControllers();
         }
         #endregion
     }

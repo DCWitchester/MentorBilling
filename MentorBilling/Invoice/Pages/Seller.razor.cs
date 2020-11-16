@@ -59,7 +59,7 @@ namespace MentorBilling.Invoice.Pages
         /// </summary>
         void AddBankAccount()
         {
-            PageController.BankAccountControllers.Add(new AuxilliaryComponents.Controllers.BankAccountController(new ObjectStructures.BankAccount(), PageController.BankAccountControllers.Count()));
+            PageController.BankAccountControllers.Add(new AuxilliaryComponents.Controllers.BankAccountController(new ObjectStructures.BankAccount(), PageController.BankAccountControllers.Count));
             EditContext = new EditContext(PageController);
         }
 
