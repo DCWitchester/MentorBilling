@@ -69,9 +69,8 @@ namespace MentorBilling.Invoice.Controllers
         #endregion
 
         #region Constructors
-        /// <summary>
-        /// the main constructor for the class
-        /// </summary>
+
+
         public InvoiceHeaderController() { }
         /// <summary>
         /// the main contructor that will receive the instance settings from the parent
