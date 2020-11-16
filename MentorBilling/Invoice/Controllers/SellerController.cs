@@ -1,20 +1,24 @@
 ﻿using MentorBilling.AuxilliaryComponents.Controllers;
+using MentorBilling.ControllerService;
 using MentorBilling.Miscellaneous.ANAF;
 using MentorBilling.ObjectStructures;
 using MentorBilling.ObjectStructures.Auxilliary;
 using MentorBilling.ObjectStructures.Invoice;
-using Microsoft.AspNetCore.Http.Connections;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Invoice.Controllers
 {
     public class SellerController : Seller
     {
+        #region Settings Link
+        /// <summary>
+        /// the link to the invoiceHeader controller
+        /// </summary>
+        readonly ControllerLink invoiceHeaderLink;
+        #endregion
+
         #region Primary Properties
         /// <summary>
         /// the name bound to the given Seller name TextBox
@@ -139,6 +143,9 @@ namespace MentorBilling.Invoice.Controllers
             base.FiscalCode = (company.CompanyStatus.VAT_Applicable ? "RO" : "") + company.Cui;
             //and the headquarters
             this.Headquarters = company.Address;
+
+            //we also link the VatAtCollection value to the header item
+            invoiceHeaderLink.Value = company.CompanyStatus.VAT_Buyout;
         }
 
         /// <summary>
@@ -213,7 +220,22 @@ namespace MentorBilling.Invoice.Controllers
             if(base.LogoBytes.Length > 0)
                 LogoController.LogoBase = base.LogoBytes;
         }
-        #endregion 
+        #endregion
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// the main constructor for the class
+        /// </summary>
+        public SellerController() { }
+        /// <summary>
+        /// the main constructor that receives the Link from the parent
+        /// </summary>
+        /// <param name="controllerLink">the link to the header controller</param>
+        public SellerController(ControllerLink controllerLink)
+        {
+            this.invoiceHeaderLink = controllerLink;
+        }
         #endregion
     }
 }

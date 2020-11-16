@@ -1,4 +1,5 @@
-﻿using MentorBilling.Invoice.DisplayControllers;
+﻿using MentorBilling.ControllerService;
+using MentorBilling.Invoice.DisplayControllers;
 using MentorBilling.Settings;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,24 @@ namespace MentorBilling.Invoice.Controllers
     public class InvoiceController
     {
         #region Settings Link
-        public InstanceSettings instanceSettings;
+        /// <summary>
+        /// the instanceSettings received from the parent
+        /// </summary>
+        readonly InstanceSettings instanceSettings;
+        #endregion
+
+        #region Controller Links
+        /// <summary>
+        /// the link between the seller and the invoice
+        /// </summary>
+        ControllerLink SellerToHeaderLink { get; set; } = new ControllerLink();
         #endregion
 
         #region Controllers
         /// <summary>
         /// the Seller Controller for the Invoice
         /// </summary>
-        public SellerController SellerController { get; set; } = new SellerController();
+        public SellerController SellerController { get; set; }
 
         /// <summary>
         /// the Buyer Controller for the Invoice
@@ -36,7 +47,8 @@ namespace MentorBilling.Invoice.Controllers
         /// </summary>
         void InitializeControllers()
         {
-            InvoiceHeaderController = new InvoiceHeaderController(instanceSettings);
+            InvoiceHeaderController = new InvoiceHeaderController(instanceSettings,SellerToHeaderLink);
+            SellerController = new SellerController(SellerToHeaderLink);
         }
         #endregion
 

@@ -4,13 +4,21 @@ using System.ComponentModel.DataAnnotations;
 using System;
 using MentorBilling.Miscellaneous;
 using MentorBilling.Settings;
+using MentorBilling.ControllerService;
 
 namespace MentorBilling.Invoice.Controllers
 {
     public class InvoiceHeaderController : InvoiceHeader
     {
         #region Settings Link
-        InstanceSettings instanceSettings;
+        /// <summary>
+        /// the instance settings received from the parent
+        /// </summary>
+        readonly InstanceSettings instanceSettings;
+        /// <summary>
+        /// the link to the seller controller
+        /// </summary>
+        readonly ControllerLink sellerLink;
         #endregion
 
         #region Primary Properties
@@ -73,6 +81,16 @@ namespace MentorBilling.Invoice.Controllers
         {
             this.instanceSettings = settings;
         }
+        /// <summary>
+        /// the main contructor that will receive the instance settings and controller link from the parent
+        /// </summary>
+        /// <param name="settings">the instance settings will alter core functionality</param>
+        public InvoiceHeaderController(InstanceSettings settings,ControllerLink controllerLink)
+        {
+            this.instanceSettings = settings;
+            this.sellerLink = controllerLink;
+            this.sellerLink.OnChange += SetVATatCollectionFromLinkController;
+        }
         #endregion
 
         #region Aditional Checks
@@ -115,6 +133,14 @@ namespace MentorBilling.Invoice.Controllers
                 }
             }
             else return false;
+        }
+
+        /// <summary>
+        /// this function will set the VATatCollection property from the collection controller
+        /// </summary>
+        public void SetVATatCollectionFromLinkController()
+        {
+            this.VATatCollection = sellerLink.GetBooleanValue;
         }
         #endregion
     }
