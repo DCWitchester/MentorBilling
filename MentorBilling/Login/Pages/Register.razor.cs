@@ -2,15 +2,11 @@
 using MentorBilling.Login.UserControllers;
 using System;
 using Microsoft.JSInterop;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MentorBilling.Messages;
-using MentorBilling.Miscellaneous;
 using MentorBilling.MainPage;
 using Microsoft.AspNetCore.Components;
 using MentorBilling.ControllerService;
-using MentorBilling.Database.DatabaseController;
 
 namespace MentorBilling.Login.Pages
 {

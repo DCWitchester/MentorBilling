@@ -4,9 +4,6 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using MentorBilling.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Invoice.Pages
 {

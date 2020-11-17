@@ -26,13 +26,30 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         /// </summary>
         [Parameter]
         public CountryCountyDisplayController DisplayController { get; set; }
+
+        #endregion
+        #region Form Binding
+        private EditForm myForm;
         #endregion
 
         #region Form Binding
         /// <summary>
         /// the editform reference to the razor controller
         /// </summary>
-        private EditForm MyForm { get; set; }
+        private EditForm GetMyForm()
+        {
+            return myForm;
+        }
+        #endregion
+
+        #region Form Binding
+        /// <summary>
+        /// the editform reference to the razor controller
+        /// </summary>
+        private void SetMyForm(EditForm value)
+        {
+            myForm = value;
+        }
 
         /// <summary>
         /// the edit context bound to the page

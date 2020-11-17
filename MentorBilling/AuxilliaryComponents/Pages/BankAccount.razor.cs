@@ -3,12 +3,7 @@ using MentorBilling.AuxilliaryComponents.DisplayControllers;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using MentorBilling.Extensions;
-using Microsoft.JSInterop;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MentorBilling.Invoice.Controllers;
 using MentorBilling.Invoice.DisplayControllers;
 
 namespace MentorBilling.AuxilliaryComponents.Pages

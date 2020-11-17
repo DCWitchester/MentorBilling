@@ -1,12 +1,6 @@
-﻿using EASendMail;
-using MentorBilling.ControllerService;
-using MentorBilling.Login.UserControllers;
-using MentorBilling.Miscellaneous;
+﻿using MentorBilling.ControllerService;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace MentorBilling.Shared.LoginDisplay
 {
