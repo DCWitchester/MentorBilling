@@ -1,7 +1,7 @@
 ﻿@inject IJSRuntime JSRuntime 
 
 <div style="position:relative; z-index:-1">
-    <EditForm @ref="BuyerForm" EditContext="EditContext" OnValidSubmit="(()=>ValidateLogin(true))" OnInvalidSubmit="(()=>ValidateLogin(false))" @onfocusout="SubmitForm">
+    <EditForm @ref="BuyerForm" EditContext="EditContext" OnValidSubmit="(()=>ValidateForm(true))" OnInvalidSubmit="(()=>ValidateForm(false))" @onfocusout="SubmitForm">
         <DataAnnotationsValidator />
         <!--#region Seller Name-->
         <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->

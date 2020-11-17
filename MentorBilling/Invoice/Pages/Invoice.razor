@@ -7,7 +7,10 @@
     <!--#region Spacing Div-->
     <!--TO DO Divs-->
     <div style="width:5%"/>
-    <div style="width:30%"/>
+    <div style="width:30%; padding:5px">
+        <MentorBilling.Invoice.Pages.InvoiceHeader InstanceController="@InstanceController"
+                                                   PageController="@(InstanceController.InvoiceController.InvoiceHeaderController)"/>
+    </div>
     <div style="width:5%"/>
     <!--#endregion-->
     <!--The Buyer Div-->

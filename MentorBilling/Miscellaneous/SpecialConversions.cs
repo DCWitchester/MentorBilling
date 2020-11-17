@@ -13,5 +13,15 @@ namespace MentorBilling.Miscellaneous
         {
             return Convert.ToInt32(FiscalCode.Replace('R', ' ').Replace('O', ' '));
         }
+
+        /// <summary>
+        /// this function will convert the given string fiscal code to an integer
+        /// </summary>
+        /// <param name="value">the given string value</param>
+        /// <returns>a valid integer</returns>
+        public static Int32 GetIntegerOfString(String value)
+        {
+            return Int32.TryParse(value, out Int32 result) ? result : 0;
+        }
     }
 }

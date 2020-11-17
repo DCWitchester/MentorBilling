@@ -65,9 +65,9 @@ namespace MentorBilling.Invoice.Pages
         }
 
         #region Form Validation
-        void ValidateLogin(Boolean ControllerState)
+        void ValidateForm(Boolean ControllerState)
         {
-            //TODO: The Validation Login Form the Buyer
+            //TODO: The Validation the Buyer
         }
         #endregion
     }

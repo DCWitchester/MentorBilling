@@ -76,15 +76,15 @@ using MentorBilling.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "F:\MentorBilling\MBilling\MentorBilling\_Imports.razor"
-using Radzen;
+#line 11 "F:\MentorBilling\MBilling\MentorBilling\_Imports.razor"
+using Radzen.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "F:\MentorBilling\MBilling\MentorBilling\_Imports.razor"
-using Radzen.Blazor;
+#line 2 "F:\MentorBilling\MBilling\MentorBilling\Invoice\Pages\InvoiceHeader.razor"
+using Radzen;
 
 #line default
 #line hidden
@@ -96,6 +96,7 @@ using Radzen.Blazor;
         {
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
     }
 }
 #pragma warning restore 1591

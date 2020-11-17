@@ -1,1 +1,77 @@
-﻿
+﻿@inject IJSRuntime JSRuntime
+@using Radzen;
+
+<h1 style="text-align:center; margin-top:10px; ">FACTURA FISCALA</h1>
+<br />
+<br />
+
+<div style="border:1px black solid; vertical-align:middle; padding:5px">
+    <EditForm @ref="InvoiceHeaderForm" EditContext="EditContext" OnValidSubmit="(()=>ValidateForm(true))" OnInvalidSubmit="(()=>ValidateForm(false))" @onfocusout="SubmitForm">
+        <DataAnnotationsValidator />
+        <!--#region Document Series-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Serie Document</label>
+            <!--The div containing the input text and validation message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputText class="form-control" placeholder="Serie Document" @bind-Value="@PageController.DocumentSeries" disabled="@PageController.DisableController" />
+            </div>
+        </div>
+        <!--#endregion-->
+        <!--#region Document Number-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Numar Document</label>
+            <!--The div containing the input text and validation message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputNumber class="form-control" placeholder="Numar Document" @bind-Value="@PageController.DocumentNumber" disabled="@PageController.DisableController" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(() => PageController.DocumentNumber)" />
+            </div>
+        </div>
+        <!--#endregion-->
+        <!--#region Data Document-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Data Document</label>
+            <!--The div containing the input text and validation message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputDate class="form-control" placeholder="Data Document" @bind-Value="@PageController.DocumentDate" disabled="@PageController.DisableController" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(() => PageController.DocumentDate)" />
+            </div>
+        </div>
+        <!--#endregion-->
+        <!--#region Numar aviz-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <!--The Label for the Object-->
+            <label class="col-sm-3 col-form-label">Nuamr Aviz</label>
+            <!--The div containing the input text and validation message-->
+            <div class="col-sm-9">
+                <!--The Input Controller-->
+                <InputNumber class="form-control" placeholder="Numar aviz de insotire a marfii" @bind-Value="@PageController.DeliveryNoticeNumber" disabled="@PageController.DisableController" />
+                <!--The Validation Message-->
+                <ValidationMessage For="@(() => PageController.DeliveryNoticeNumber)" />
+            </div>
+        </div>
+        <!--#endregion-->
+        <!--#region VAT at Collection-->
+        <!--The Central Div Containing an object group for an item: Label, InputText, ValidationMessage-->
+        <div class="form-group row mb-1">
+            <div class="col-sm-10" style="display:flex">
+                <!--The Label object bound to the checkbox-->
+                <RadzenLabel Text="Factura cu TVA la incasare?" Style="padding-right:10px;" @onclick="@(()=>ChangeCheckValue())" />
+                <!--The CheckBox bound to the controller value-->
+                <RadzenSwitch @bind-Value="@PageController.VATatCollection" TValue="Boolean" />
+            </div>
+        </div>
+        <!--#endregion-->
+    </EditForm>
+</div>

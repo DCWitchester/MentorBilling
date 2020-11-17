@@ -21,7 +21,7 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// <summary>
         /// the document date property
         /// </summary>
-        protected DateTime documentDate { get; set; } = new DateTime();
+        protected DateTime documentDate { get; set; } = DateTime.Now;
         /// <summary>
         /// the delivery notice number property
         /// </summary>

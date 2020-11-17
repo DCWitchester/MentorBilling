@@ -69,8 +69,9 @@ namespace MentorBilling.Invoice.Controllers
         #endregion
 
         #region Constructors
-
-
+        /// <summary>
+        /// the base invoice header controller
+        /// </summary>
         public InvoiceHeaderController() { }
         /// <summary>
         /// the main contructor that will receive the instance settings from the parent
@@ -80,16 +81,29 @@ namespace MentorBilling.Invoice.Controllers
         {
             this.instanceSettings = settings;
         }
+        public InvoiceHeaderController(ControllerLink controllerLink)
+        {
+            this.sellerLink = controllerLink;
+            this.sellerLink.OnChange += SetVATatCollectionFromLinkController;
+        }
         /// <summary>
         /// the main contructor that will receive the instance settings and controller link from the parent
         /// </summary>
         /// <param name="settings">the instance settings will alter core functionality</param>
+        /// <param name="controllerLink">the link to the seller item</param>
         public InvoiceHeaderController(InstanceSettings settings,ControllerLink controllerLink)
         {
             this.instanceSettings = settings;
             this.sellerLink = controllerLink;
             this.sellerLink.OnChange += SetVATatCollectionFromLinkController;
         }
+        #endregion
+
+        #region Auxilliary Display Settings
+        /// <summary>
+        /// this controller will permit the disablement of the page editForm
+        /// </summary>
+        public Boolean DisableController { get; set; } = false;
         #endregion
 
         #region Aditional Checks
@@ -140,7 +154,21 @@ namespace MentorBilling.Invoice.Controllers
         public void SetVATatCollectionFromLinkController()
         {
             this.VATatCollection = sellerLink.GetBooleanValue;
+            NotifyStateChanged();
         }
+
+
+        #endregion
+
+        #region Form Refresh Link Request
+        /// <summary>
+        /// the onChange Action Caller => will contain the invocable action on page refresh
+        /// </summary>
+        public event Action OnChange;
+        /// <summary>
+        /// this function will invoke the OnChange Event for the class
+        /// </summary>
+        private void NotifyStateChanged() => OnChange?.Invoke();
         #endregion
     }
 }
