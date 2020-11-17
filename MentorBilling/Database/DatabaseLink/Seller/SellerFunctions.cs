@@ -1,13 +1,11 @@
 ﻿using MentorBilling.Database.DatabaseController;
 using MentorBilling.Login.UserControllers;
-using MentorBilling.Miscellaneous.Emails;
 using MentorBilling.ObjectStructures.Auxilliary;
 using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 
 namespace MentorBilling.Database.DatabaseLink.Seller
 {

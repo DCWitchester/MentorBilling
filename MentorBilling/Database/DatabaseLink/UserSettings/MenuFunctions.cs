@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 
 namespace MentorBilling.Database.DatabaseLink.UserSettings
 {
@@ -129,7 +128,7 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
                 {
                     new NpgsqlParameter(String.Format("p_user_id_{0}",element.MenuItemID),user.ID),
                     new NpgsqlParameter(String.Format("p_record_id_{0}",element.MenuItemID),element.MenuItemID),
-                    new NpgsqlParameter(String.Format("p_activ",element.MenuItemID),element.IsActive)
+                    new NpgsqlParameter(String.Format("p_activ_{0}",element.MenuItemID),element.IsActive)
                 };
                 //once that is done we add the newly created parameters to the list
                 queryParameters.AddRange(commadParameters);

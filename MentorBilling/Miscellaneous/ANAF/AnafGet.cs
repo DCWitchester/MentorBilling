@@ -4,8 +4,6 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Miscellaneous.ANAF
 {
@@ -22,15 +20,15 @@ namespace MentorBilling.Miscellaneous.ANAF
         private static String anaf_ws_platitor_tva = "PlatitorTvaRest/api/v3/ws/tva";
         */
 
-        private static String anaf_ws = "https://webservicesp.anaf.ro";
-        private static String[] anaf_ws_platitor_tva = new string[]
+        private static readonly String anaf_ws = "https://webservicesp.anaf.ro";
+        private static readonly String[] anaf_ws_platitor_tva = new string[]
                                                        { "PlatitorTvaRest/api/v4/ws/tva" };
 
 
         #region ERROR Codes
-        private static String input_error_code = "600"; //input invalid code
-        private static String notfound_error_code = "601"; //not found error code
-        private static String queryfailed_error_code = "602";//query failed error code
+        private static readonly String input_error_code = "600"; //input invalid code
+        private static readonly String notfound_error_code = "601"; //not found error code
+        private static readonly String queryfailed_error_code = "602";//query failed error code
         #endregion
 
         /*
@@ -151,7 +149,6 @@ namespace MentorBilling.Miscellaneous.ANAF
         /// <returns> all the colected info </returns>
         private static String GetByCui(String cui)
         {
-            JObject jObject = new JObject();
             String result = AnafGetCui(cui,DateTime.Now);
             if (result.StartsWith(input_error_code))
             {

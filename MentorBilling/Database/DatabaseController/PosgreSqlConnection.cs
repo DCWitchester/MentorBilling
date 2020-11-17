@@ -1,8 +1,6 @@
 ﻿using System;
 using Npgsql;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.Common;
 
@@ -316,6 +314,7 @@ namespace MentorBilling.Database.DatabaseController
         public void Dispose()
         {
             Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         #region Create Commands
@@ -449,7 +448,7 @@ namespace MentorBilling.Database.DatabaseController
         /// </summary>
         /// <param name="command">the query command</param>
         /// <param name="npgsqlParameters">the query parameters</param>
-        private void SetCommandParameters(NpgsqlCommand command, NpgsqlParameter[] npgsqlParameters)
+        private static void SetCommandParameters(NpgsqlCommand command, NpgsqlParameter[] npgsqlParameters)
         {
             command.Parameters.AddRange(npgsqlParameters);
         }
@@ -459,7 +458,7 @@ namespace MentorBilling.Database.DatabaseController
         /// </summary>
         /// <param name="command">the query command</param>
         /// <param name="npgsqlParameters">the query parameters</param>
-        private void SetCommandParameters(NpgsqlCommand command, List<NpgsqlParameter> npgsqlParameters)
+        private static void SetCommandParameters(NpgsqlCommand command, List<NpgsqlParameter> npgsqlParameters)
         {
             command.Parameters.AddRange(npgsqlParameters.ToArray());
         }

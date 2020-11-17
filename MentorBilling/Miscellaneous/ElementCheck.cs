@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Miscellaneous
 {
@@ -23,8 +21,8 @@ namespace MentorBilling.Miscellaneous
             if (!Int32.TryParse(CIF, out Int32 valueResult)) return false;
             if (valueResult.ToString().Length != CIF.Length) return false;
             //we retrieve the last key to use as a control character and remove it from the fiscal code
-            Int32 controlKey = Int32.Parse(CIF.Substring(CIF.Length - 1));
-            CIF = CIF.Substring(0, CIF.Length - 1);
+            Int32 controlKey = Int32.Parse(CIF[^1..]);
+            CIF = CIF[0..^1];
             Int32 controlSum = 0;
             // we calculate the control sum as the  multiple of the fiscal codes characters taken in reverse with the test keys characters
             for (int i = 0; i < CIF.Length; i++) controlSum += Int32.Parse(CIF.Substring(CIF.Length - (i + 1), 1)) * Int32.Parse(testKey.Substring(i, 1));

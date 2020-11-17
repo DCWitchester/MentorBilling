@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.ObjectStructures.Auxilliary
 {
@@ -11,7 +8,7 @@ namespace MentorBilling.ObjectStructures.Auxilliary
         /// the base logo property
         /// </summary>
 #pragma warning disable IDE1006 // Naming Styles
-        private Byte[] logo { get; set; } = new Byte[0];
+        private Byte[] logo { get; set; } = Array.Empty<Byte>();
 #pragma warning restore IDE1006 // Naming Styles
 
         /// <summary>

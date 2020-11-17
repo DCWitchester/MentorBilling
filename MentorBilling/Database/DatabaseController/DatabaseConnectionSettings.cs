@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Database.DatabaseController
 {
     public class DatabaseConnectionSettings
     {
         #region Properties
+#pragma warning disable IDE1006
         /// <summary>
         /// the host property
         /// </summary>
@@ -28,6 +26,7 @@ namespace MentorBilling.Database.DatabaseController
         /// the password property
         /// </summary>
         String password { get; set; } = "pgsql";
+#pragma warning restore IDE1006
         #endregion
         #region Public Callers
         /// <summary>

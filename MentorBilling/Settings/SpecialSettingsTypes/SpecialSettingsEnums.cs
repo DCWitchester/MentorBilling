@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MentorBilling.Settings.SpecialSettingsTypes
+﻿namespace MentorBilling.Settings.SpecialSettingsTypes
 {
     public class SpecialSettingsEnums
     {

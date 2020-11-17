@@ -1,13 +1,10 @@
 ﻿using MentorBilling.AuxilliaryComponents.Controllers;
 using MentorBilling.AuxilliaryComponents.DisplayControllers;
-using MentorBilling.ControllerService;
 using MentorBilling.Miscellaneous.ANAF;
 using MentorBilling.ObjectStructures.Invoice;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Invoice.Controllers
 {

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.ObjectStructures.Invoice
 {
@@ -81,8 +78,8 @@ namespace MentorBilling.ObjectStructures.Invoice
         }
         public DateTime DocumentDate
         {
-            get => DocumentDate;
-            set => DocumentDate = value;
+            get => documentDate;
+            set => documentDate = value;
         }
         /// <summary>
         /// the main caller for the delivery notice number property

@@ -2,13 +2,11 @@
 using MentorBilling.Login.UserControllers;
 using MentorBilling.SettingsComponents;
 using MentorBilling.SettingsComponents.Controllers;
-using Microsoft.AspNetCore.Builder;
 using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Database.DatabaseLink.UserSettings
 {

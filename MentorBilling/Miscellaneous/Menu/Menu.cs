@@ -3,7 +3,6 @@ using MentorBilling.MainPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MentorBilling.Miscellaneous.Menu
 {
@@ -131,7 +130,7 @@ namespace MentorBilling.Miscellaneous.Menu
         /// this function will return a subscription based menu item
         /// </summary>
         /// <returns>the menu item</returns>
-        MenuItem InitializeSubscription()
+        static MenuItem InitializeSubscription()
         {
             return new MenuItem()
             {
@@ -146,7 +145,7 @@ namespace MentorBilling.Miscellaneous.Menu
         /// this function will generate a group based menu item
         /// </summary>
         /// <returns>the menu item</returns>
-        MenuItem InitializeGroup()
+        static MenuItem InitializeGroup()
         {
             return new MenuItem()
             {
@@ -161,7 +160,7 @@ namespace MentorBilling.Miscellaneous.Menu
         /// this function will generate an invoice based menu item
         /// </summary>
         /// <returns>the menu item</returns>
-        MenuItem InitializeInvoices()
+        static MenuItem InitializeInvoices()
         {
             return new MenuItem()
             {
@@ -176,7 +175,7 @@ namespace MentorBilling.Miscellaneous.Menu
         /// this function will generate a settings based menu item
         /// </summary>
         /// <returns>the menu item</returns>
-        MenuItem InitializeSettings()
+        static MenuItem InitializeSettings()
         {
             return new MenuItem()
             {
@@ -191,7 +190,7 @@ namespace MentorBilling.Miscellaneous.Menu
         /// this function will generate an empty menu item
         /// </summary>
         /// <returns>the menu item</returns>
-        MenuItem InitializeVoidItem()
+        static MenuItem InitializeVoidItem()
         {
             return new MenuItem();
         }

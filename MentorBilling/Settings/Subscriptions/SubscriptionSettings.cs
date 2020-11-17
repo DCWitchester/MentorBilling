@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MentorBilling.Settings.Subscriptions
+﻿namespace MentorBilling.Settings.Subscriptions
 {
     public class SubscriptionSettings
     {
