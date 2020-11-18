@@ -41,7 +41,11 @@ namespace MentorBilling.Settings.SpecialSettingsTypes
             PermitInvoiceInMonthsPrior = 8,
             PermitInvoiceInMonthsFollowing = 9,
             NumberOfMonthsPrior = 10,
-            NumberOfMonthsFollowing = 11
+            NumberOfMonthsFollowing = 11,
+            UseProductsControl = 12,
+            SearchByProductCode = 13,
+            UseBarcode = 14,
+            BarcodeType = 15
         }
 
         /// <summary>
@@ -49,9 +53,8 @@ namespace MentorBilling.Settings.SpecialSettingsTypes
         /// </summary>
         public enum EANCodes
         {
-            None = 0,
-            EAN8 = 1,
-            EAN13 = 2
+            EAN8 = 0,
+            EAN13 = 1
         }
     }
 }
