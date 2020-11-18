@@ -43,8 +43,9 @@
             <div class="col-sm-9">
                 <!--The Input Controller-->
                 <InputDate class="form-control" placeholder="Data Document" @bind-Value="@PageController.DocumentDate" disabled="@PageController.DisableController" />
-                <!--The Validation Message-->
+                <!--The Validation Messages-->
                 <ValidationMessage For="@(() => PageController.DocumentDate)" />
+                <ValidationMessage For="@(() => PageController.IsDocumentDateValid)" />
             </div>
         </div>
         <!--#endregion-->
