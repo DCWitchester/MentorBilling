@@ -829,6 +829,15 @@ INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_i
     VALUES(10,'Numarul de luni anterioare in care se pot emite facturi:',1,1,'0');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
     VALUES(11,'Numarul de luni ulterioare in care se pot emite facturi:',1,1,'0');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(12,'Se doreste gestionarea produselor?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(13,'Se doreste cautarea produselor dupa cod?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(14,'Se vor folosi coduri de bare?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(15,'Se folosesc Coduri de bare EAN:',1,7,'0');
+INSERT INTO settings.setari
 --#endregion Setari
 
 --#region Setari Utilizatori
@@ -996,8 +1005,10 @@ COMMENT ON TABLE invoice.produse IS 'Tabela aceasta va contine toate produsele u
 CREATE TABLE invoice.factura_detalii (
   id bigserial PRIMARY KEY NOT NULL,
   produs_id bigint NOT NULL DEFAULT 0 REFERENCES invoice.produse(id),
+  factura_id bigint NOT NULL DEFAULT 0 REFERENCES invoices.factura(id),
   cantitate double precision NOT NULL DEFAULT 0,
   pret_unitar double precision NOT NULL DEFAULT 0,
+  discount double precision NOT NULL DEFAULT 0,
   activ boolean NOT NULL DEFAULT true
 );
 

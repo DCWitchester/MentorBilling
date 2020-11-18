@@ -43,5 +43,15 @@ namespace MentorBilling.Settings.SpecialSettingsTypes
             NumberOfMonthsPrior = 10,
             NumberOfMonthsFollowing = 11
         }
+
+        /// <summary>
+        /// the enum containing the EAN Codes liKed to the prodcut scanner code settings
+        /// </summary>
+        public enum EANCodes
+        {
+            None = 0,
+            EAN8 = 1,
+            EAN13 = 2
+        }
     }
 }

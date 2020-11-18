@@ -1,0 +1,4 @@
+﻿--> Sales with fiscal receipt
+--> Pay methods for link to the receipt
+--> Sales on different currencies
+--> Discount Settings
