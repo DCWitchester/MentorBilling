@@ -11,7 +11,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <summary>
         /// the property controller for the insert
         /// </summary>
-        protected LogActiuni logActiuni { get;set;}
+        protected static LogActiuni logActiuni { get;set;}
 #pragma warning restore IDE1006 // Naming Styles
 
 
@@ -19,7 +19,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// this function will log a given action
         /// </summary>
         /// <param name="Action">the given action</param>
-        public LogActiuni LogAction(String Action)
+        public static LogActiuni LogAction(String Action)
         {
             logActiuni = new LogActiuni()
             {
@@ -33,7 +33,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// </summary>
         /// <param name="Action">the given action</param>
         /// <param name="IP">the ip adress</param>
-        public LogActiuni LogAction(String Action, String IP)
+        public static LogActiuni LogAction(String Action, String IP)
         {
             logActiuni = new LogActiuni()
             {
@@ -49,7 +49,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <param name="Action">the given action</param>
         /// <param name="IP">the ip adress</param>
         /// <param name="Command">the database command</param>
-        public LogActiuni LogAction(String Action, String IP, String Command)
+        public static LogActiuni LogAction(String Action, String IP, String Command)
         {
             logActiuni = new LogActiuni()
             {
@@ -65,7 +65,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// </summary>
         /// <param name="Action">the given action</param>
         /// <param name="User">the specific user</param>
-        public LogActiuni LogAction(String Action, User User)
+        public static LogActiuni LogAction(String Action, User User)
         {
             logActiuni = new LogActiuni()
             {
@@ -81,7 +81,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <param name="Action">the given action</param>
         /// <param name="User">the specific user</param>
         /// <param name="Command">the database command</param>
-        public LogActiuni LogAction(String Action, User User, String Command)
+        public static LogActiuni LogAction(String Action, User User, String Command)
         {
             logActiuni = new LogActiuni()
             {
@@ -98,7 +98,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <param name="Action">the given action</param>
         /// <param name="IP">the specific ip adress</param>
         /// <param name="User">the specific user</param>
-        public LogActiuni LogAction(String Action, String IP, User User)
+        public static LogActiuni LogAction(String Action, String IP, User User)
         {
             logActiuni = new LogActiuni()
             {
@@ -116,7 +116,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <param name="IP">the specific ip adress</param>
         /// <param name="User">the specific user</param>
         /// <param name="Command">the database command</param>
-        public LogActiuni LogAction(String Action, String IP, User User, String Command)
+        public static LogActiuni LogAction(String Action, String IP, User User, String Command)
         {
             logActiuni = new LogActiuni()
             {
