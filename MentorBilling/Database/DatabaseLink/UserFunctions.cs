@@ -109,7 +109,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <summary>
         /// this function will check if there is already an account with the current login controllers username or email
         /// </summary>
-        /// <param name="registerController">the current login controller</param>
+        /// <param name="loginController">the current login controller</param>
         /// <returns>wether another account with the controllers username or email exists or not</returns>
         public static Boolean CheckUsernameOrEmail(LoginController loginController)
         {
@@ -260,7 +260,7 @@ namespace MentorBilling.Database.DatabaseLink
         /// <param name="user">the user for which we will update the password</param>
         /// <param name="resetPasswordController">the password</param>
         /// <returns>the state of the query</returns>
-        public static Boolean UpdatePasswordFunctions(User user, ResetPasswordController resetPasswordController)
+        public static Boolean UpdatePassword(User user, ResetPasswordController resetPasswordController)
         {
             #region LogAction
             //the main Action for the log

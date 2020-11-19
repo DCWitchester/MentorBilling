@@ -78,7 +78,7 @@ namespace MentorBilling.MiscellaneousPages
         {
             if (validInput)
             {
-                if (!UserFunctions.UpdatePasswordFunctions(User, PageController)) ErrorMessage = true;
+                if (!UserFunctions.UpdatePassword(User, PageController)) ErrorMessage = true;
                 else
                 {
                     myNavigationManager.NavigateTo("/");
