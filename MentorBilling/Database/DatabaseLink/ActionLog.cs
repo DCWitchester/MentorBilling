@@ -72,12 +72,6 @@ namespace MentorBilling.Database.DatabaseLink
             connection.ExecuteNonQuery(QueryCommand, QueryParameters);
         }
 
-        /// <summary>
-        /// this function will log a given action to a specific IP Adress with the database command
-        /// </summary>
-        /// <param name="Action">the given action</param>
-        /// <param name="IP">the ip adress</param>
-        /// <param name="Command">the database command</param>
         public static void LogAction(String Action, String IP, String Command)
         {
             String QueryCommand = "INSERT INTO log.log_actiuni(actiune,ip_actiune,comanda) VALUES(:p_action,:p_ip,:p_command)";
