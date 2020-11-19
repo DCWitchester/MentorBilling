@@ -81,6 +81,10 @@ namespace MentorBilling.Database.DatabaseController
         /// the main connection string for the class instance
         /// </summary>
         public String ConnectionString { get; private set; } = String.Empty;
+        public String CurrentConnectionString
+        {
+            get => "Host = " + host + ";Port = " + port + ";Database = " + database + ";User Id = " + userId + ";Password = " + password;
+        }
         /// <summary>
         /// the main constructor for the class will initialize the connection string with the default preoperties
         /// </summary>
