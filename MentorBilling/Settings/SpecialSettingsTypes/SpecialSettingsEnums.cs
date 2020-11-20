@@ -36,7 +36,20 @@
             PermitInvoiceInMonthsPrior = 8,
             PermitInvoiceInMonthsFollowing = 9,
             NumberOfMonthsPrior = 10,
-            NumberOfMonthsFollowing = 11
+            NumberOfMonthsFollowing = 11,
+            UseProductsControl = 12,
+            SearchByProductCode = 13,
+            UseBarcode = 14,
+            BarcodeType = 15
+        }
+
+        /// <summary>
+        /// the enum containing the EAN Codes liKed to the prodcut scanner code settings
+        /// </summary>
+        public enum EANCodes
+        {
+            EAN8 = 0,
+            EAN13 = 1
         }
     }
 }
