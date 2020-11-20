@@ -10,7 +10,7 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// <summary>
         /// the Seller ID property
         /// </summary>
-        private Int32 id { get; set; } = new Int32();
+        private Int64 id { get; set; } = new Int64();
         /// <summary>
         /// the private fiscal code property
         /// </summary>
@@ -58,7 +58,7 @@ namespace MentorBilling.ObjectStructures.Invoice
         /// <summary>
         /// the Seller ID property caller
         /// </summary>
-        public Int32 ID
+        public Int64 ID
         {
             get => id;
             set => id = value;
