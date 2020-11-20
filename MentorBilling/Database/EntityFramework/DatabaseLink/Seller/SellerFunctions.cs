@@ -87,9 +87,29 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink.Seller
                              }).FirstOrDefault();
         }
 
+        /// <summary>
+        /// this function will retrieve the last seller used by the current user
+        /// </summary>
+        /// <param name="user">the current user</param>
+        /// <returns>the last used seller object</returns>
         public ObjectStructures.Invoice.Seller GetLastUsedSeller(User user)
         {
-
+            return (from u in base.UtilizatoriLastUsed
+                    join f in base.Furnizori
+                    on u.FurnizoriLastUsed equals f.Id
+                    where u.UtilizatorId == user.ID && (u.Activ ?? false)
+                    select new ObjectStructures.Invoice.Seller
+                    {
+                        ID = f.Id,
+                        Name = f.Denumire,
+                        CommercialRegistryNumber = f.NrRegistruComert,
+                        FiscalCode = f.CodFiscal,
+                        Headquarters = f.Sediul,
+                        WorkPoint = f.PunctLucru,
+                        Phone = f.Telefon,
+                        Email = f.Email,
+                        Logo = new Logo(f.Sigla)
+                    }).FirstOrDefault();
         }
         #endregion
     }
