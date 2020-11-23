@@ -9,24 +9,24 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Utilizatori()
         {
-            AbonamenteUtilizatoris = new HashSet<AbonamenteUtilizatori>();
-            CoteTvaUtilizatoris = new HashSet<CoteTvaUtilizatori>();
-            Cumparatoris = new HashSet<Cumparatori>();
-            Delegatis = new HashSet<Delegati>();
-            DrepturiUtilizatoris = new HashSet<DrepturiUtilizatori>();
-            FacturaCreators = new HashSet<Factura>();
-            FacturaUtilizators = new HashSet<Factura>();
-            Furnizoris = new HashSet<Furnizori>();
-            GrupuriUtilizatoris = new HashSet<GrupuriUtilizatori>();
-            Grupuris = new HashSet<Grupuri>();
-            LogActiunis = new HashSet<LogActiuni>();
-            LogUtilizatoris = new HashSet<LogUtilizatori>();
-            MeniuUtilizators = new HashSet<MeniuUtilizator>();
-            PlajeDocumentes = new HashSet<PlajeDocumente>();
-            Produses = new HashSet<Produse>();
-            SetariUtilizatoris = new HashSet<SetariUtilizatori>();
-            UtilizatoriLastUseds = new HashSet<UtilizatoriLastUsed>();
-            UtilizatoriPlajes = new HashSet<UtilizatoriPlaje>();
+            AbonamenteUtilizatori = new HashSet<AbonamenteUtilizatori>();
+            CoteTvaUtilizatori = new HashSet<CoteTvaUtilizatori>();
+            Cumparatori = new HashSet<Cumparatori>();
+            Delegati = new HashSet<Delegati>();
+            DrepturiUtilizatori = new HashSet<DrepturiUtilizatori>();
+            FacturaCreator = new HashSet<Factura>();
+            FacturaUtilizator = new HashSet<Factura>();
+            Furnizori = new HashSet<Furnizori>();
+            GrupuriUtilizatori = new HashSet<GrupuriUtilizatori>();
+            Grupuri = new HashSet<Grupuri>();
+            LogActiuni = new HashSet<LogActiuni>();
+            LogUtilizatori = new HashSet<LogUtilizatori>();
+            MeniuUtilizator = new HashSet<MeniuUtilizator>();
+            PlajeDocumente = new HashSet<PlajeDocumente>();
+            Produse = new HashSet<Produse>();
+            SetariUtilizatori = new HashSet<SetariUtilizatori>();
+            UtilizatoriLastUsed = new HashSet<UtilizatoriLastUsed>();
+            UtilizatoriPlaje = new HashSet<UtilizatoriPlaje>();
         }
 
         public long Id { get; set; }
@@ -39,23 +39,23 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public bool Sysadmin { get; set; }
         public bool? Activ { get; set; }
 
-        public virtual ICollection<AbonamenteUtilizatori> AbonamenteUtilizatoris { get; set; }
-        public virtual ICollection<CoteTvaUtilizatori> CoteTvaUtilizatoris { get; set; }
-        public virtual ICollection<Cumparatori> Cumparatoris { get; set; }
-        public virtual ICollection<Delegati> Delegatis { get; set; }
-        public virtual ICollection<DrepturiUtilizatori> DrepturiUtilizatoris { get; set; }
-        public virtual ICollection<Factura> FacturaCreators { get; set; }
-        public virtual ICollection<Factura> FacturaUtilizators { get; set; }
-        public virtual ICollection<Furnizori> Furnizoris { get; set; }
-        public virtual ICollection<GrupuriUtilizatori> GrupuriUtilizatoris { get; set; }
-        public virtual ICollection<Grupuri> Grupuris { get; set; }
-        public virtual ICollection<LogActiuni> LogActiunis { get; set; }
-        public virtual ICollection<LogUtilizatori> LogUtilizatoris { get; set; }
-        public virtual ICollection<MeniuUtilizator> MeniuUtilizators { get; set; }
-        public virtual ICollection<PlajeDocumente> PlajeDocumentes { get; set; }
-        public virtual ICollection<Produse> Produses { get; set; }
-        public virtual ICollection<SetariUtilizatori> SetariUtilizatoris { get; set; }
-        public virtual ICollection<UtilizatoriLastUsed> UtilizatoriLastUseds { get; set; }
-        public virtual ICollection<UtilizatoriPlaje> UtilizatoriPlajes { get; set; }
+        public virtual ICollection<AbonamenteUtilizatori> AbonamenteUtilizatori { get; set; }
+        public virtual ICollection<CoteTvaUtilizatori> CoteTvaUtilizatori { get; set; }
+        public virtual ICollection<Cumparatori> Cumparatori { get; set; }
+        public virtual ICollection<Delegati> Delegati { get; set; }
+        public virtual ICollection<DrepturiUtilizatori> DrepturiUtilizatori { get; set; }
+        public virtual ICollection<Factura> FacturaCreator { get; set; }
+        public virtual ICollection<Factura> FacturaUtilizator { get; set; }
+        public virtual ICollection<Furnizori> Furnizori { get; set; }
+        public virtual ICollection<GrupuriUtilizatori> GrupuriUtilizatori { get; set; }
+        public virtual ICollection<Grupuri> Grupuri { get; set; }
+        public virtual ICollection<LogActiuni> LogActiuni { get; set; }
+        public virtual ICollection<LogUtilizatori> LogUtilizatori { get; set; }
+        public virtual ICollection<MeniuUtilizator> MeniuUtilizator { get; set; }
+        public virtual ICollection<PlajeDocumente> PlajeDocumente { get; set; }
+        public virtual ICollection<Produse> Produse { get; set; }
+        public virtual ICollection<SetariUtilizatori> SetariUtilizatori { get; set; }
+        public virtual ICollection<UtilizatoriLastUsed> UtilizatoriLastUsed { get; set; }
+        public virtual ICollection<UtilizatoriPlaje> UtilizatoriPlaje { get; set; }
     }
 }

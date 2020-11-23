@@ -208,8 +208,8 @@ CREATE SCHEMA seller AUTHORIZATION postgres;
 CREATE TABLE seller.furnizori (
   id bigserial PRIMARY KEY NOT NULL,
   denumire varchar NOT NULL DEFAULT (''),
-  nr_registru_comert varchar NOT NULL DEFAULT ('') UNIQUE,
-  cod_fiscal varchar NOT NULL DEFAULT ('') UNIQUE,
+  nr_registru_comert varchar NOT NULL DEFAULT (''),
+  cod_fiscal varchar NOT NULL DEFAULT (''),
   capital_social double precision NOT NULL DEFAULT 0,
   sediul varchar NOT NULL DEFAULT (''),
   punct_lucru varchar NOT NULL DEFAULT (''),
@@ -218,6 +218,7 @@ CREATE TABLE seller.furnizori (
   sigla bytea NOT NULL DEFAULT (''),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
+  UNIQUE(cod_fiscal,utilizator_id)
 );
 
 ALTER TABLE seller.furnizori OWNER TO postgres;
@@ -909,7 +910,7 @@ CREATE TABLE buyer.cumparatori (
   cod_partener varchar NOT NULL DEFAULT (''),
   denumire varchar NOT NULL DEFAULT (''),
   nr_registru_comert varchar NOT NULL DEFAULT (''),
-  cod_fiscal varchar NOT NULL DEFAULT ('') UNIQUE,
+  cod_fiscal varchar NOT NULL DEFAULT (''),
   sediul varchar NOT NULL DEFAULT (''),
   adresa_livrare varchar NOT NULL DEFAULT(''),
   email varchar NOT NULL DEFAULT(''),
@@ -917,6 +918,7 @@ CREATE TABLE buyer.cumparatori (
   judetul bigint NOT NULL DEFAULT 0 REFERENCES glossary.judete(id),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
+  UNIQUE(cod_fiscal,utilizator_id)
 );
 
 ALTER TABLE buyer.cumparatori OWNER TO postgres;

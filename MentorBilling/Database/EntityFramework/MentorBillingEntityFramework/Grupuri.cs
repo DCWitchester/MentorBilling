@@ -9,7 +9,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Grupuri()
         {
-            GrupuriUtilizatoris = new HashSet<GrupuriUtilizatori>();
+            GrupuriUtilizatori = new HashSet<GrupuriUtilizatori>();
         }
 
         public long Id { get; set; }
@@ -18,6 +18,6 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public bool? Activ { get; set; }
 
         public virtual Utilizatori AdministratorGrupNavigation { get; set; }
-        public virtual ICollection<GrupuriUtilizatori> GrupuriUtilizatoris { get; set; }
+        public virtual ICollection<GrupuriUtilizatori> GrupuriUtilizatori { get; set; }
     }
 }

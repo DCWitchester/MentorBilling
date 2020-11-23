@@ -139,13 +139,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                     .HasComment("Coloana aceasta va contine valoare efectiva de plata a utilizatorului curent");
 
                 entity.HasOne(d => d.Abonament)
-                    .WithMany(p => p.AbonamenteUtilizatoris)
+                    .WithMany(p => p.AbonamenteUtilizatori)
                     .HasForeignKey(d => d.AbonamentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("abonamente_utilizatori_abonament_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.AbonamenteUtilizatoris)
+                    .WithMany(p => p.AbonamenteUtilizatori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("abonamente_utilizatori_utilizator_id_fkey");
@@ -201,13 +201,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                     .HasComment("Coloana asta va contine valoare efectiva a dreptului relativ la coloana de tip_drept din tabela de drepturi");
 
                 entity.HasOne(d => d.Clasa)
-                    .WithMany(p => p.ClaseDrepturis)
+                    .WithMany(p => p.ClaseDrepturi)
                     .HasForeignKey(d => d.ClasaId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("clase_drepturi_clasa_id_fkey");
 
                 entity.HasOne(d => d.Drept)
-                    .WithMany(p => p.ClaseDrepturis)
+                    .WithMany(p => p.ClaseDrepturi)
                     .HasForeignKey(d => d.DreptId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("clase_drepturi_drept_id_fkey");
@@ -261,7 +261,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.CumparatoriId).HasColumnName("cumparatori_id");
 
                 entity.HasOne(d => d.Cumparatori)
-                    .WithMany(p => p.ConturiBancareCumparatoris)
+                    .WithMany(p => p.ConturiBancareCumparatori)
                     .HasForeignKey(d => d.CumparatoriId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("conturi_bancare_cumparatori_cumparatori_id_fkey");
@@ -295,7 +295,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.FurnizorId).HasColumnName("furnizor_id");
 
                 entity.HasOne(d => d.Furnizor)
-                    .WithMany(p => p.ConturiBancareFurnizoris)
+                    .WithMany(p => p.ConturiBancareFurnizori)
                     .HasForeignKey(d => d.FurnizorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("conturi_bancare_furnizori_furnizor_id_fkey");
@@ -363,13 +363,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.CotaTva)
-                    .WithMany(p => p.CoteTvaUtilizatoris)
+                    .WithMany(p => p.CoteTvaUtilizatori)
                     .HasForeignKey(d => d.CotaTvaId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("cote_tva_utilizatori_cota_tva_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.CoteTvaUtilizatoris)
+                    .WithMany(p => p.CoteTvaUtilizatori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("cote_tva_utilizatori_utilizator_id_fkey");
@@ -437,19 +437,19 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.JudetulNavigation)
-                    .WithMany(p => p.Cumparatoris)
+                    .WithMany(p => p.Cumparatori)
                     .HasForeignKey(d => d.Judetul)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("cumparatori_judetul_fkey");
 
                 entity.HasOne(d => d.TaraNavigation)
-                    .WithMany(p => p.Cumparatoris)
+                    .WithMany(p => p.Cumparatori)
                     .HasForeignKey(d => d.Tara)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("cumparatori_tara_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.Cumparatoris)
+                    .WithMany(p => p.Cumparatori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("cumparatori_utilizator_id_fkey");
@@ -477,13 +477,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.FacturaId).HasColumnName("factura_id");
 
                 entity.HasOne(d => d.Delegat)
-                    .WithMany(p => p.DateExpedities)
+                    .WithMany(p => p.DateExpeditie)
                     .HasForeignKey(d => d.DelegatId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("date_expeditie_delegat_id_fkey");
 
                 entity.HasOne(d => d.Factura)
-                    .WithMany(p => p.DateExpedities)
+                    .WithMany(p => p.DateExpeditie)
                     .HasForeignKey(d => d.FacturaId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("date_expeditie_factura_id_fkey");
@@ -541,7 +541,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.Delegatis)
+                    .WithMany(p => p.Delegati)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("delegati_utilizator_id_fkey");
@@ -597,13 +597,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                     .HasComment("Coloana asta va contine valoare efectiva a dreptului relativ la coloana de tip_drept din tabela de drepturi");
 
                 entity.HasOne(d => d.Drept)
-                    .WithMany(p => p.DrepturiUtilizatoris)
+                    .WithMany(p => p.DrepturiUtilizatori)
                     .HasForeignKey(d => d.DreptId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("drepturi_utilizatori_drept_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.DrepturiUtilizatoris)
+                    .WithMany(p => p.DrepturiUtilizatori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("drepturi_utilizatori_utilizator_id_fkey");
@@ -653,23 +653,23 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.Creator)
-                    .WithMany(p => p.FacturaCreators)
+                    .WithMany(p => p.FacturaCreator)
                     .HasForeignKey(d => d.CreatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("factura_creator_id_fkey");
 
                 entity.HasOne(d => d.Cumparator)
-                    .WithMany(p => p.Facturas)
+                    .WithMany(p => p.Factura)
                     .HasForeignKey(d => d.CumparatorId)
                     .HasConstraintName("factura_cumparator_id_fkey");
 
                 entity.HasOne(d => d.Furnizor)
-                    .WithMany(p => p.Facturas)
+                    .WithMany(p => p.Factura)
                     .HasForeignKey(d => d.FurnizorId)
                     .HasConstraintName("factura_furnizor_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.FacturaUtilizators)
+                    .WithMany(p => p.FacturaUtilizator)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("factura_utilizator_id_fkey");
@@ -699,13 +699,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.ProdusId).HasColumnName("produs_id");
 
                 entity.HasOne(d => d.Factura)
-                    .WithMany(p => p.FacturaDetaliis)
+                    .WithMany(p => p.FacturaDetalii)
                     .HasForeignKey(d => d.FacturaId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("factura_detalii_factura_id_fkey");
 
                 entity.HasOne(d => d.Produs)
-                    .WithMany(p => p.FacturaDetaliis)
+                    .WithMany(p => p.FacturaDetalii)
                     .HasForeignKey(d => d.ProdusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("factura_detalii_produs_id_fkey");
@@ -798,7 +798,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.Furnizoris)
+                    .WithMany(p => p.Furnizori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("furnizori_utilizator_id_fkey");
@@ -828,7 +828,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                     .HasDefaultValueSql("''::character varying");
 
                 entity.HasOne(d => d.AdministratorGrupNavigation)
-                    .WithMany(p => p.Grupuris)
+                    .WithMany(p => p.Grupuri)
                     .HasForeignKey(d => d.AdministratorGrup)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("grupuri_administrator_grup_fkey");
@@ -852,13 +852,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.Grup)
-                    .WithMany(p => p.GrupuriUtilizatoris)
+                    .WithMany(p => p.GrupuriUtilizatori)
                     .HasForeignKey(d => d.GrupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("grupuri_utilizatori_grup_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.GrupuriUtilizatoris)
+                    .WithMany(p => p.GrupuriUtilizatori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("grupuri_utilizatori_utilizator_id_fkey");
@@ -952,7 +952,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.LogActiunis)
+                    .WithMany(p => p.LogActiuni)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("log_actiuni_utilizator_id_fkey");
@@ -987,7 +987,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.LogUtilizatoris)
+                    .WithMany(p => p.LogUtilizatori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("log_utilizatori_utilizator_id_fkey");
@@ -1013,7 +1013,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.MeniuUtilizators)
+                    .WithMany(p => p.MeniuUtilizator)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("meniu_utilizator_utilizator_id_fkey");
@@ -1053,7 +1053,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.ValoareInitiala).HasColumnName("valoare_initiala");
 
                 entity.HasOne(d => d.CreatorPlajaNavigation)
-                    .WithMany(p => p.PlajeDocumentes)
+                    .WithMany(p => p.PlajeDocumente)
                     .HasForeignKey(d => d.CreatorPlaja)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("plaje_documente_creator_plaja_fkey");
@@ -1097,13 +1097,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.CotaTva)
-                    .WithMany(p => p.Produses)
+                    .WithMany(p => p.Produse)
                     .HasForeignKey(d => d.CotaTvaId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("produse_cota_tva_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.Produses)
+                    .WithMany(p => p.Produse)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("produse_utilizator_id_fkey");
@@ -1184,13 +1184,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                     .HasComment("Coloana aceasta va contine valoarea efectiva a setari pentru utilizatorul selectat");
 
                 entity.HasOne(d => d.Setare)
-                    .WithMany(p => p.SetariUtilizatoris)
+                    .WithMany(p => p.SetariUtilizatori)
                     .HasForeignKey(d => d.SetareId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("setari_utilizatori_setare_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.SetariUtilizatoris)
+                    .WithMany(p => p.SetariUtilizatori)
                     .HasForeignKey(d => d.UtilizatorId)
                     .HasConstraintName("setari_utilizatori_utilizator_id_fkey");
             });
@@ -1320,25 +1320,25 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.ConturiBancareLastUsedNavigation)
-                    .WithMany(p => p.UtilizatoriLastUseds)
+                    .WithMany(p => p.UtilizatoriLastUsed)
                     .HasForeignKey(d => d.ConturiBancareLastUsed)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("utilizatori_last_used_conturi_bancare_last_used_fkey");
 
                 entity.HasOne(d => d.DelegatiLastUsedNavigation)
-                    .WithMany(p => p.UtilizatoriLastUseds)
+                    .WithMany(p => p.UtilizatoriLastUsed)
                     .HasForeignKey(d => d.DelegatiLastUsed)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("utilizatori_last_used_delegati_last_used_fkey");
 
                 entity.HasOne(d => d.FurnizoriLastUsedNavigation)
-                    .WithMany(p => p.UtilizatoriLastUseds)
+                    .WithMany(p => p.UtilizatoriLastUsed)
                     .HasForeignKey(d => d.FurnizoriLastUsed)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("utilizatori_last_used_furnizori_last_used_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.UtilizatoriLastUseds)
+                    .WithMany(p => p.UtilizatoriLastUsed)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("utilizatori_last_used_utilizator_id_fkey");
@@ -1362,13 +1362,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
                 entity.Property(e => e.UtilizatorId).HasColumnName("utilizator_id");
 
                 entity.HasOne(d => d.PlajeDocument)
-                    .WithMany(p => p.UtilizatoriPlajes)
+                    .WithMany(p => p.UtilizatoriPlaje)
                     .HasForeignKey(d => d.PlajeDocumentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("utilizatori_plaje_plaje_document_id_fkey");
 
                 entity.HasOne(d => d.Utilizator)
-                    .WithMany(p => p.UtilizatoriPlajes)
+                    .WithMany(p => p.UtilizatoriPlaje)
                     .HasForeignKey(d => d.UtilizatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("utilizatori_plaje_utilizator_id_fkey");

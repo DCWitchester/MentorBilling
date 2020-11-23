@@ -72,7 +72,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink.Seller
                 Banca = bankAccount.Bank
             };
             base.ConturiBancareFurnizori.Add(contBancarFurnizor);
-            base.LogActiuni.Add(ActionLog.LogAction(LogAction, LogCommand, IP));
+            base.LogActiuni.Add(ActionLog.LogAction(LogAction, IP, LogCommand));
             base.SaveChanges();
             bankAccount.ID = contBancarFurnizor.Id;
         }
@@ -102,7 +102,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink.Seller
                 Banca = bankAccount.Bank
             };
             base.ConturiBancareFurnizori.Add(contBancarFurnizor);
-            base.LogActiuni.Add(ActionLog.LogAction(LogAction, LogCommand, IP));
+            base.LogActiuni.Add(ActionLog.LogAction(LogAction, IP, LogCommand));
             bankAccount.ID = contBancarFurnizor.Id;
         }
 
@@ -143,7 +143,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink.Seller
             contBancarFurnizor.Activ = true;
 
             base.Update(contBancarFurnizor);
-            base.LogActiuni.Add(ActionLog.LogAction(LogAction, LogCommand, IP));
+            base.LogActiuni.Add(ActionLog.LogAction(LogAction, IP, LogCommand));
             base.SaveChanges();
         }
 
@@ -170,7 +170,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink.Seller
             contBancarFurnizor.Activ = true;
 
             base.Update(contBancarFurnizor);
-            base.LogActiuni.Add(ActionLog.LogAction(LogAction, LogCommand, IP));
+            base.LogActiuni.Add(ActionLog.LogAction(LogAction, IP, LogCommand));
             base.SaveChanges();
         }
         #endregion

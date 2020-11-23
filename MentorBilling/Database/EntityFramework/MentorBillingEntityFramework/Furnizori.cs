@@ -9,9 +9,9 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Furnizori()
         {
-            ConturiBancareFurnizoris = new HashSet<ConturiBancareFurnizori>();
-            Facturas = new HashSet<Factura>();
-            UtilizatoriLastUseds = new HashSet<UtilizatoriLastUsed>();
+            ConturiBancareFurnizori = new HashSet<ConturiBancareFurnizori>();
+            Factura = new HashSet<Factura>();
+            UtilizatoriLastUsed = new HashSet<UtilizatoriLastUsed>();
         }
 
         public long Id { get; set; }
@@ -28,8 +28,8 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public bool? Activ { get; set; }
 
         public virtual Utilizatori Utilizator { get; set; }
-        public virtual ICollection<ConturiBancareFurnizori> ConturiBancareFurnizoris { get; set; }
-        public virtual ICollection<Factura> Facturas { get; set; }
-        public virtual ICollection<UtilizatoriLastUsed> UtilizatoriLastUseds { get; set; }
+        public virtual ICollection<ConturiBancareFurnizori> ConturiBancareFurnizori { get; set; }
+        public virtual ICollection<Factura> Factura { get; set; }
+        public virtual ICollection<UtilizatoriLastUsed> UtilizatoriLastUsed { get; set; }
     }
 }

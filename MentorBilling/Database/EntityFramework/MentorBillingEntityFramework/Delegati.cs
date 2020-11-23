@@ -9,8 +9,8 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Delegati()
         {
-            DateExpedities = new HashSet<DateExpeditie>();
-            UtilizatoriLastUseds = new HashSet<UtilizatoriLastUsed>();
+            DateExpeditie = new HashSet<DateExpeditie>();
+            UtilizatoriLastUsed = new HashSet<UtilizatoriLastUsed>();
         }
 
         public long Id { get; set; }
@@ -24,7 +24,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public bool? Activ { get; set; }
 
         public virtual Utilizatori Utilizator { get; set; }
-        public virtual ICollection<DateExpeditie> DateExpedities { get; set; }
-        public virtual ICollection<UtilizatoriLastUsed> UtilizatoriLastUseds { get; set; }
+        public virtual ICollection<DateExpeditie> DateExpeditie { get; set; }
+        public virtual ICollection<UtilizatoriLastUsed> UtilizatoriLastUsed { get; set; }
     }
 }

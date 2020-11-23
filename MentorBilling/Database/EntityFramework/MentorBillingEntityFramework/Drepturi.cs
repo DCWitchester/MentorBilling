@@ -9,8 +9,8 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Drepturi()
         {
-            ClaseDrepturis = new HashSet<ClaseDrepturi>();
-            DrepturiUtilizatoris = new HashSet<DrepturiUtilizatori>();
+            ClaseDrepturi = new HashSet<ClaseDrepturi>();
+            DrepturiUtilizatori = new HashSet<DrepturiUtilizatori>();
         }
 
         public long Id { get; set; }
@@ -18,7 +18,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public int TipDrept { get; set; }
         public bool? Activ { get; set; }
 
-        public virtual ICollection<ClaseDrepturi> ClaseDrepturis { get; set; }
-        public virtual ICollection<DrepturiUtilizatori> DrepturiUtilizatoris { get; set; }
+        public virtual ICollection<ClaseDrepturi> ClaseDrepturi { get; set; }
+        public virtual ICollection<DrepturiUtilizatori> DrepturiUtilizatori { get; set; }
     }
 }

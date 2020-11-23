@@ -9,7 +9,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public PlajeDocumente()
         {
-            UtilizatoriPlajes = new HashSet<UtilizatoriPlaje>();
+            UtilizatoriPlaje = new HashSet<UtilizatoriPlaje>();
         }
 
         public long Id { get; set; }
@@ -22,6 +22,6 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public bool? Activ { get; set; }
 
         public virtual Utilizatori CreatorPlajaNavigation { get; set; }
-        public virtual ICollection<UtilizatoriPlaje> UtilizatoriPlajes { get; set; }
+        public virtual ICollection<UtilizatoriPlaje> UtilizatoriPlaje { get; set; }
     }
 }
