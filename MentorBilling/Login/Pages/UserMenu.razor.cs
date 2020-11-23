@@ -3,6 +3,7 @@ using MentorBilling.Database.DatabaseLink.UserSettings;
 using MentorBilling.Messages;
 using MentorBilling.Miscellaneous.Menu;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,11 @@ namespace MentorBilling.Login.Pages
         /// <summary>
         /// the display menu property
         /// </summary>
-        void DisplayMenu()
+        async void DisplayMenu()
         {
             IsMenuVisible = !IsMenuVisible;
+            if (IsMenuVisible) await JSRuntime.InvokeVoidAsync("sendBuyerBack");
+            else await JSRuntime.InvokeVoidAsync("bringBuyerFront");
         }
 
         /// <summary>
