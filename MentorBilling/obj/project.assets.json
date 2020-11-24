@@ -3417,7 +3417,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.4.5.317",
+    "version": "0.5.0.351",
     "restore": {
       "projectUniqueName": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
       "projectName": "MentorBilling",
