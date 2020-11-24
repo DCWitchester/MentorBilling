@@ -73,6 +73,9 @@ namespace MentorBilling.ObjectStructures.Auxilliary
             get => displayCode;
             set => displayCode = value;
         }
+
+        public String DisplayName => vat == 0 ? DisplayCode : DisplayCode + ": " + VAT.ToString() + "%";
+
         #endregion
     }
 }

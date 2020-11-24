@@ -69,5 +69,26 @@ namespace MentorBilling.Database.DatabaseLink
                 }).ToList();
             else return null;
         }
+
+        /// <summary>
+        /// this function will retrieve the complete list of VAT Rates from the database glossary
+        /// </summary>
+        /// <returns>the VAT list</returns>
+        public static List<VATRate> GetVatRates()
+        {
+            String QueryCommand = "SELECT * FROM glossary.cote_tva WHERE activ";
+            if (!PgSqlConnection.OpenConnection()) return null;
+            DataTable result = PgSqlConnection.ExecuteReaderToDataTable(QueryCommand);
+            if (result != null && result.Rows.Count > 0)
+                return result.AsEnumerable().Select(row => new VATRate()
+                {
+                    ID = row.Field<Int64>("ID"),
+                    CharID = row.Field<String>("COTA"),
+                    VAT = row.Field<Int32>("TVA"),
+                    RegistryIndex = row.Field<String>("INDICE_CASA_MARCAT"),
+                    DisplayCode = row.Field<String>("COD")
+                }).ToList();
+            else return null;
+        }
     }
 }

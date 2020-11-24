@@ -1,6 +1,7 @@
 ﻿using MentorBilling.AuxilliaryComponents.Controllers;
 using MentorBilling.Database.EntityFramework.MentorBillingEntityFramework;
 using MentorBilling.ObjectStructures.Auxilliary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,7 +28,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <returns>the country list</returns>
         public List<Country> GetCountries()
         {
-            return base.Tari.Where(element => element.Activ ?? false).Select(element => new Country()
+            return base.Tari.Where(element => element.Activ ?? false).Select(element => new Country
             {
                 ID = element.Id,
                 CountryCodeISO2 = element.CodTaraIso2,
@@ -44,10 +45,27 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <returns>the county list</returns>
         public List<County> GetCounties()
         {
-            return base.Judete.Where(element => element.Activ ?? false).Select(element => new County() {
+            return base.Judete.Where(element => element.Activ ?? false).Select(element => new County
+            {
                 ID = element.Id,
                 CountyCode = element.CodJudet,
                 CountyName = element.DenJudet
+            }).ToList();
+        }
+
+        /// <summary>
+        /// this function will retrieve the complete list of VAT Rates from the database glossary
+        /// </summary>
+        /// <returns>the VAT list</returns>
+        public List<VATRate> GetVatRates()
+        {
+            return base.CoteTva.Where(element => element.Activ ?? false).Select(element => new VATRate
+            {
+                ID = element.Id,
+                CharID = element.Cota,
+                VAT = (Int32)element.Tva,
+                RegistryIndex = element.IndiceCasaMarcat,
+                DisplayCode = element.Cod
             }).ToList();
         }
     }
