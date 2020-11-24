@@ -123,7 +123,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink.UserSettings
         /// this function will update a given specific menu item into the database 
         /// </summary>
         /// <param name="user">the given user</param>
-        /// <param name="menuItem">the specific menu item</param>
+        /// <param name="menuItems">the specific menu item</param>
         public void UpdateMenuSettingsForUser(User user, List<MenuItem> menuItems)
         {
             #region ActionLog

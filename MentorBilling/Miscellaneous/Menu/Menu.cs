@@ -74,7 +74,7 @@ namespace MentorBilling.Miscellaneous.Menu
         /// <param name="user">the given user</param>
         public void UpdateMenuSettings(User user)
         {
-            Database.DatabaseLink.UserSettings.MenuFunctions.UpdateMenuSettingForUser(user, UserMenu);
+            Database.DatabaseLink.UserSettings.MenuFunctions.UpdateMenuSettingsForUser(user, UserMenu);
         }
 
         /// <summary>
