@@ -9,8 +9,8 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Factura()
         {
-            DateExpedities = new HashSet<DateExpeditie>();
-            FacturaDetaliis = new HashSet<FacturaDetalii>();
+            DateExpeditie = new HashSet<DateExpeditie>();
+            FacturaDetalii = new HashSet<FacturaDetalii>();
         }
 
         public long Id { get; set; }
@@ -31,7 +31,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public virtual Cumparatori Cumparator { get; set; }
         public virtual Furnizori Furnizor { get; set; }
         public virtual Utilizatori Utilizator { get; set; }
-        public virtual ICollection<DateExpeditie> DateExpedities { get; set; }
-        public virtual ICollection<FacturaDetalii> FacturaDetaliis { get; set; }
+        public virtual ICollection<DateExpeditie> DateExpeditie { get; set; }
+        public virtual ICollection<FacturaDetalii> FacturaDetalii { get; set; }
     }
 }

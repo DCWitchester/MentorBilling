@@ -9,8 +9,8 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public CoteTva()
         {
-            CoteTvaUtilizatoris = new HashSet<CoteTvaUtilizatori>();
-            Produses = new HashSet<Produse>();
+            CoteTvaUtilizatori = new HashSet<CoteTvaUtilizatori>();
+            Produse = new HashSet<Produse>();
         }
 
         public long Id { get; set; }
@@ -20,7 +20,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public string Cod { get; set; }
         public bool? Activ { get; set; }
 
-        public virtual ICollection<CoteTvaUtilizatori> CoteTvaUtilizatoris { get; set; }
-        public virtual ICollection<Produse> Produses { get; set; }
+        public virtual ICollection<CoteTvaUtilizatori> CoteTvaUtilizatori { get; set; }
+        public virtual ICollection<Produse> Produse { get; set; }
     }
 }

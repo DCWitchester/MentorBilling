@@ -9,8 +9,8 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Cumparatori()
         {
-            ConturiBancareCumparatoris = new HashSet<ConturiBancareCumparatori>();
-            Facturas = new HashSet<Factura>();
+            ConturiBancareCumparatori = new HashSet<ConturiBancareCumparatori>();
+            Factura = new HashSet<Factura>();
         }
 
         public long Id { get; set; }
@@ -29,7 +29,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public virtual Judete JudetulNavigation { get; set; }
         public virtual Tari TaraNavigation { get; set; }
         public virtual Utilizatori Utilizator { get; set; }
-        public virtual ICollection<ConturiBancareCumparatori> ConturiBancareCumparatoris { get; set; }
-        public virtual ICollection<Factura> Facturas { get; set; }
+        public virtual ICollection<ConturiBancareCumparatori> ConturiBancareCumparatori { get; set; }
+        public virtual ICollection<Factura> Factura { get; set; }
     }
 }

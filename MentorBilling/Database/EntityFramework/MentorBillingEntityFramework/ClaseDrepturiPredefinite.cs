@@ -9,13 +9,13 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public ClaseDrepturiPredefinite()
         {
-            ClaseDrepturis = new HashSet<ClaseDrepturi>();
+            ClaseDrepturi = new HashSet<ClaseDrepturi>();
         }
 
         public long Id { get; set; }
         public string Denumire { get; set; }
         public bool? Activ { get; set; }
 
-        public virtual ICollection<ClaseDrepturi> ClaseDrepturis { get; set; }
+        public virtual ICollection<ClaseDrepturi> ClaseDrepturi { get; set; }
     }
 }

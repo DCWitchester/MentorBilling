@@ -37,7 +37,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// </summary>
         /// <param name="registerController">the register controller for the new user</param>
         /// <returns>the newly added user</returns>
-        public User RegistryUser(RegisterController registerController)
+        public User RegisterUser(RegisterController registerController)
         {
             //we set the log action
             #region LogAction
@@ -189,7 +189,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// <param name="user">the user for which we will update the password</param>
         /// <param name="resetPasswordController">the password</param>
         /// <returns>the state of the query</returns>
-        public void UpdatePassword(User user, ResetPasswordController resetPasswordController)
+        public Boolean UpdatePassword(User user, ResetPasswordController resetPasswordController)
         {
             #region LogAction
             //the main Action for the log
@@ -203,7 +203,12 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
             utilizator.Parola = resetPasswordController.Password;
             base.Update(utilizator);
             base.LogActiuni.Add(ActionLog.LogAction(Action, IP, Command));
-            base.SaveChanges();
+            try
+            {
+                base.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
         #endregion
     }

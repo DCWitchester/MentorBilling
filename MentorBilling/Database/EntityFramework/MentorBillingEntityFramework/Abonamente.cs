@@ -9,7 +9,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Abonamente()
         {
-            AbonamenteUtilizatoris = new HashSet<AbonamenteUtilizatori>();
+            AbonamenteUtilizatori = new HashSet<AbonamenteUtilizatori>();
         }
 
         public long Id { get; set; }
@@ -20,6 +20,6 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public int DimensiuneMaximaGrup { get; set; }
         public bool? Activ { get; set; }
 
-        public virtual ICollection<AbonamenteUtilizatori> AbonamenteUtilizatoris { get; set; }
+        public virtual ICollection<AbonamenteUtilizatori> AbonamenteUtilizatori { get; set; }
     }
 }

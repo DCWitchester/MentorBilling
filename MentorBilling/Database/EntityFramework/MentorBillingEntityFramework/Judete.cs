@@ -9,7 +9,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Judete()
         {
-            Cumparatoris = new HashSet<Cumparatori>();
+            Cumparatori = new HashSet<Cumparatori>();
         }
 
         public long Id { get; set; }
@@ -17,6 +17,6 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public string DenJudet { get; set; }
         public bool? Activ { get; set; }
 
-        public virtual ICollection<Cumparatori> Cumparatoris { get; set; }
+        public virtual ICollection<Cumparatori> Cumparatori { get; set; }
     }
 }

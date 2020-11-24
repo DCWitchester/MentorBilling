@@ -9,7 +9,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Setari()
         {
-            SetariUtilizatoris = new HashSet<SetariUtilizatori>();
+            SetariUtilizatori = new HashSet<SetariUtilizatori>();
         }
 
         public long Id { get; set; }
@@ -21,6 +21,6 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
         public string Tooltip { get; set; }
         public bool? Activ { get; set; }
 
-        public virtual ICollection<SetariUtilizatori> SetariUtilizatoris { get; set; }
+        public virtual ICollection<SetariUtilizatori> SetariUtilizatori { get; set; }
     }
 }

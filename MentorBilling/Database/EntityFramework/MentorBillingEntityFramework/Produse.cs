@@ -9,7 +9,7 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
     {
         public Produse()
         {
-            FacturaDetaliis = new HashSet<FacturaDetalii>();
+            FacturaDetalii = new HashSet<FacturaDetalii>();
         }
 
         public long Id { get; set; }
@@ -23,6 +23,6 @@ namespace MentorBilling.Database.EntityFramework.MentorBillingEntityFramework
 
         public virtual CoteTva CotaTva { get; set; }
         public virtual Utilizatori Utilizator { get; set; }
-        public virtual ICollection<FacturaDetalii> FacturaDetaliis { get; set; }
+        public virtual ICollection<FacturaDetalii> FacturaDetalii { get; set; }
     }
 }

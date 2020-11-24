@@ -12,7 +12,7 @@ namespace MentorBilling.ObjectStructures.Invoice.Details
         /// <summary>
         /// the id property for the object
         /// </summary>
-        protected Int64 id { get; set; } = new Int64();
+        protected new Int64 id { get; set; } = new Int64();
         /// <summary>
         /// the quantity property for the object
         /// </summary>
@@ -20,7 +20,7 @@ namespace MentorBilling.ObjectStructures.Invoice.Details
         /// <summary>
         /// the unitary price for the object
         /// </summary>
-        protected Double pricePerUnit { get; set; } = new Double();
+        protected new Double pricePerUnit { get; set; } = new Double();
         /// <summary>
         /// the discount for the object
         /// </summary>

@@ -22,7 +22,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
         /// </summary>
         /// <param name="user">the newly created user</param>
         /// <returns>the state of the command</returns>
-        public void GenerateInactiveSubscription(User user)
+        public Boolean GenerateInactiveSubscription(User user)
         {
             #region Action Log
             String Action = "Initializat abonamentul inactiv pentru utilizatorul " + user.Email;
@@ -39,7 +39,12 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
             //and log the action
             base.LogActiuni.Add(ActionLog.LogAction(Action, IP, Command));
             //and save the changes to the database
-            base.SaveChanges();
+            try
+            {
+                base.SaveChanges();
+                return true;
+            }
+            catch { return false; }
         }
 
         /// <summary>

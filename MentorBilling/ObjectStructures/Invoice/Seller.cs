@@ -156,5 +156,40 @@ namespace MentorBilling.ObjectStructures.Invoice
             set => logo.LogoBase = value;
         }
         #endregion
+
+        #region Consume Functions
+        /// <summary>
+        /// this function will consume a context object to set the values of the current object from it
+        /// </summary>
+        /// <param name="furnizor">the context object</param>
+        public void ConsumeDatabaseObject(Database.EntityFramework.MentorBillingEntityFramework.Furnizori furnizor)
+        {
+            this.id = furnizor.Id;
+            this.name = furnizor.Denumire;
+            this.commercialRegistryNumber = furnizor.NrRegistruComert;
+            this.fiscalCode = furnizor.CodFiscal;
+            this.headquarters = furnizor.Sediul;
+            this.workPoint = furnizor.PunctLucru;
+            this.phone = furnizor.Telefon;
+            this.email = furnizor.Email;
+            this.logo = new Logo(furnizor.Sigla);
+        }
+
+        /// <summary>
+        /// this function will dump the current object into a given context object
+        /// </summary>
+        /// <param name="furnizor">the context object</param>
+        public void DumpIntoDatabaseObject(Database.EntityFramework.MentorBillingEntityFramework.Furnizori furnizor)
+        {
+            furnizor.Denumire = this.name;
+            furnizor.NrRegistruComert = this.commercialRegistryNumber;
+            furnizor.CapitalSocial = this.jointStock;
+            furnizor.Sediul = this.headquarters;
+            furnizor.PunctLucru = this.workPoint;
+            furnizor.Telefon = this.phone;
+            furnizor.Email = this.email;
+            furnizor.Sigla = this.logo.LogoBase;
+        }
+        #endregion
     }
 }

@@ -25,7 +25,8 @@ namespace MentorBilling.SettingsComponents.Pages
         /// <returns>the base Task</returns>
         protected override Task OnInitializedAsync()
         {
-            GeneralComponentControllers = Database.DatabaseLink.UserSettings.UserSettings.RetrieveDisplayElementSettingsForUser(InstanceController.UserSettings.LoggedInUser);
+            using Database.EntityFramework.DatabaseLink.UserSettings.UserSettings userSettings = new Database.EntityFramework.DatabaseLink.UserSettings.UserSettings();
+            GeneralComponentControllers = userSettings.RetrieveDisplayElementSettingsForUser(InstanceController.UserSettings.LoggedInUser);
             return base.OnInitializedAsync();
         }
 
