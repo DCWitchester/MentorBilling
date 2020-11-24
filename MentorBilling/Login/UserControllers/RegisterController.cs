@@ -1,4 +1,4 @@
-﻿using MentorBilling.Database.DatabaseLink;
+﻿using MentorBilling.Database.EntityFramework.DatabaseLink;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -48,18 +48,40 @@ namespace MentorBilling.Login.UserControllers
         /// the error for trying to make an account on an already in use email
         /// </summary>
         [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator legat de acesta adresa de email")]
-        public Boolean EmailAlreadyExists { get => UserFunctions.CheckEmail(this);}
+        public Boolean EmailAlreadyExists { get => CheckEmail(); }
 
         /// <summary>
         /// the error for trying to make an account with the same username as another
         /// </summary>
         [Range(typeof(bool), "false", "false", ErrorMessage = "Deja exista un utilizator cu aceast nume")]
-        public Boolean UsernameAlreadyExists { get => UserFunctions.CheckUsername(this);}
+        public Boolean UsernameAlreadyExists { get => CheckUsername(); }
 
         /// <summary>
         /// the error for trying to make an account with an invalid email Adress
         /// </summary>
         [Range(typeof(bool),"true","true",ErrorMessage = "Adresa de email introdusa nu este valida")]
         public Boolean IsEmailValid { get => Miscellaneous.MailCheck.TestMail(Email); }
+
+        #region Database Checks
+        /// <summary>
+        /// this function will check the username validity
+        /// </summary>
+        /// <returns>if the username exists or not</returns>
+        Boolean CheckUsername()
+        {
+            using UserFunctions userFunctions = new UserFunctions();
+            return userFunctions.CheckUsername(this);
+        }
+
+        /// <summary>
+        /// this function will check the email validity
+        /// </summary>
+        /// <returns>if the email exists or not</returns>
+        Boolean CheckEmail()
+        {
+            using UserFunctions userFunctions = new UserFunctions();
+            return userFunctions.CheckEmail(this);
+        }
+        #endregion
     }
 }

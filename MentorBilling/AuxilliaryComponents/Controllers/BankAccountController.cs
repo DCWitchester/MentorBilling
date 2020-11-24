@@ -123,7 +123,8 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
             base.Account = Value;
             if (Miscellaneous.ElementCheck.VerifyIBAN(Value))
             {
-                Database.DatabaseLink.GlossaryFunctions.GetBankOfAccount(this);
+                using Database.EntityFramework.DatabaseLink.GlossaryFunctions glossaryFunctions = new Database.EntityFramework.DatabaseLink.GlossaryFunctions();
+                glossaryFunctions.GetBankOfAccount(this);
             }
             return Value;
         }

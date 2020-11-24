@@ -35,7 +35,8 @@ namespace MentorBilling.MiscellaneousPages
         /// </summary>
         void RetriveUser()
         {
-            User = Database.DatabaseLink.UserFunctions.RetrieveUser(RetrieveParameter());
+            using Database.EntityFramework.DatabaseLink.UserFunctions userFunctions = new Database.EntityFramework.DatabaseLink.UserFunctions();
+            User = userFunctions.RetrieveUser(RetrieveParameter());
         }
 
         /// <summary>
@@ -46,7 +47,10 @@ namespace MentorBilling.MiscellaneousPages
             if (User == null)
                 ErrorMessage = true;
             else
-                Database.DatabaseLink.SubscriptionFunctions.ActivateTrialSubscription(User);
+            {
+                using Database.EntityFramework.DatabaseLink.SubscriptionFunctions subscriptionFunctions = new Database.EntityFramework.DatabaseLink.SubscriptionFunctions();
+                subscriptionFunctions.ActivateTrialSubscription(User);
+            }
         }
 
         /// <summary>

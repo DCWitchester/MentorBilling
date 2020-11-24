@@ -20,7 +20,8 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// </summary>
         public CountiesController()
         {
-            this.counties = Database.DatabaseLink.GlossaryFunctions.GetCounties();
+            using Database.EntityFramework.DatabaseLink.GlossaryFunctions glossaryFunctions = new Database.EntityFramework.DatabaseLink.GlossaryFunctions();
+            this.counties = glossaryFunctions.GetCounties();
         }
     }
 }

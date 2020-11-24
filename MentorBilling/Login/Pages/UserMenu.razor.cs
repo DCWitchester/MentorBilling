@@ -1,8 +1,9 @@
 ﻿using MentorBilling.ControllerService;
-using MentorBilling.Database.DatabaseLink.UserSettings;
+using MentorBilling.Database.EntityFramework.DatabaseLink.UserSettings;
 using MentorBilling.Messages;
 using MentorBilling.Miscellaneous.Menu;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,11 @@ namespace MentorBilling.Login.Pages
         /// <summary>
         /// the display menu property
         /// </summary>
-        void DisplayMenu()
+        async void DisplayMenu()
         {
             IsMenuVisible = !IsMenuVisible;
+            if (IsMenuVisible) await JSRuntime.InvokeVoidAsync("sendBuyerBack");
+            else await JSRuntime.InvokeVoidAsync("bringBuyerFront");
         }
 
         /// <summary>
@@ -37,8 +40,10 @@ namespace MentorBilling.Login.Pages
             //the update is done here and not at login for two main reasons
             //REASON 1 : It matters not that it is here for this component is called at the exact moment of the login
             //REASON 2 : The control is far better here than on the form
-            await Task.Run(()=>MenuFunctions.UpdateLocalUserMenu(InstanceController.UserSettings.LoggedInUser, InstanceController.UserMenu))
-                .ContinueWith(t=>InstanceController.UserMenu.SetMenuActions(InstanceController.DisplaySettings));
+            await Task.Run(()=> {
+                using MenuFunctions menuFunction = new MenuFunctions();
+                menuFunction.UpdateLocalUserMenu(InstanceController.UserSettings.LoggedInUser, InstanceController.UserMenu);
+            }).ContinueWith(t=>InstanceController.UserMenu.SetMenuActions(InstanceController.DisplaySettings));
         }
 
         /// <summary>

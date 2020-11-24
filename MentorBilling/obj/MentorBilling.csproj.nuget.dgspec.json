@@ -5,7 +5,7 @@
   },
   "projects": {
     "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj": {
-      "version": "0.4.2.289",
+      "version": "0.5.0.351",
       "restore": {
         "projectUniqueName": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
         "projectName": "MentorBilling",
@@ -62,11 +62,25 @@
               "target": "Package",
               "version": "[7.7.0.5, )"
             },
+            "EntityFramework6.Npgsql": {
+              "target": "Package",
+              "version": "[6.4.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
             },
             "Npgsql": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.0, )"
             },

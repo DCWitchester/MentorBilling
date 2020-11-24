@@ -1,5 +1,5 @@
 ﻿using MentorBilling.ControllerService;
-using MentorBilling.Database.DatabaseLink;
+using MentorBilling.Database.EntityFramework.DatabaseLink;
 using MentorBilling.Login.UserControllers;
 using MentorBilling.Miscellaneous.Emails;
 using Microsoft.AspNetCore.Components;
@@ -33,7 +33,8 @@ namespace MentorBilling.Login.Pages
         {
             if (validInput)
             {
-                Email.SendPasswordResetEmail(UserFunctions.RetrieveUser(PageController.Email));
+                using UserFunctions userFunctions = new UserFunctions();
+                Email.SendPasswordResetEmail(userFunctions.RetrieveUser(PageController.Email));
                 MainPage.ComponentDisplay.CallMain(InstanceController.DisplaySettings);
             }
         }

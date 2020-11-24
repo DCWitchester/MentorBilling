@@ -1,4 +1,4 @@
-﻿using MentorBilling.Database.DatabaseLink;
+﻿using MentorBilling.Database.EntityFramework.DatabaseLink;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -16,6 +16,14 @@ namespace MentorBilling.Login.UserControllers
         /// the main item for the user/email validity
         /// </summary>
         [Range(typeof(bool), "true", "true", ErrorMessage = "Adresa de email introdusa nu are nici un cont atribuit")]
-        public Boolean DoesUsernameExist { get => UserFunctions.CheckEmail(this); }
+        public Boolean DoesUsernameExist { get => CheckEmail(); }
+
+        #region Database Caller
+        Boolean CheckEmail()
+        {
+            using UserFunctions userFunctions = new UserFunctions();
+            return userFunctions.CheckEmail(this);
+        }
+        #endregion
     }
 }

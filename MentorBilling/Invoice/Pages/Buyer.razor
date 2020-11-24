@@ -1,6 +1,6 @@
 ﻿@inject IJSRuntime JSRuntime 
 
-<div style="position:relative; z-index:-1">
+<div id="buyerElementContainer" style="position:relative">
     <EditForm @ref="BuyerForm" EditContext="EditContext" OnValidSubmit="(()=>ValidateForm(true))" OnInvalidSubmit="(()=>ValidateForm(false))" @onfocusout="SubmitForm">
         <DataAnnotationsValidator />
         <!--#region Seller Name-->

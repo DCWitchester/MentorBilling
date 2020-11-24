@@ -208,8 +208,8 @@ CREATE SCHEMA seller AUTHORIZATION postgres;
 CREATE TABLE seller.furnizori (
   id bigserial PRIMARY KEY NOT NULL,
   denumire varchar NOT NULL DEFAULT (''),
-  nr_registru_comert varchar NOT NULL DEFAULT ('') UNIQUE,
-  cod_fiscal varchar NOT NULL DEFAULT ('') UNIQUE,
+  nr_registru_comert varchar NOT NULL DEFAULT (''),
+  cod_fiscal varchar NOT NULL DEFAULT (''),
   capital_social double precision NOT NULL DEFAULT 0,
   sediul varchar NOT NULL DEFAULT (''),
   punct_lucru varchar NOT NULL DEFAULT (''),
@@ -218,6 +218,7 @@ CREATE TABLE seller.furnizori (
   sigla bytea NOT NULL DEFAULT (''),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
+  UNIQUE(cod_fiscal,utilizator_id)
 );
 
 ALTER TABLE seller.furnizori OWNER TO postgres;
@@ -829,6 +830,15 @@ INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_i
     VALUES(10,'Numarul de luni anterioare in care se pot emite facturi:',1,1,'0');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
     VALUES(11,'Numarul de luni ulterioare in care se pot emite facturi:',1,1,'0');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(12,'Se doreste gestionarea produselor?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(13,'Se doreste cautarea produselor dupa cod?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(14,'Se vor folosi coduri de bare?',4,3,'false');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(15,'Se folosesc Coduri de bare EAN:',1,7,'0');
+INSERT INTO settings.setari
 --#endregion Setari
 
 --#region Setari Utilizatori
@@ -900,7 +910,7 @@ CREATE TABLE buyer.cumparatori (
   cod_partener varchar NOT NULL DEFAULT (''),
   denumire varchar NOT NULL DEFAULT (''),
   nr_registru_comert varchar NOT NULL DEFAULT (''),
-  cod_fiscal varchar NOT NULL DEFAULT ('') UNIQUE,
+  cod_fiscal varchar NOT NULL DEFAULT (''),
   sediul varchar NOT NULL DEFAULT (''),
   adresa_livrare varchar NOT NULL DEFAULT(''),
   email varchar NOT NULL DEFAULT(''),
@@ -908,6 +918,7 @@ CREATE TABLE buyer.cumparatori (
   judetul bigint NOT NULL DEFAULT 0 REFERENCES glossary.judete(id),
   utilizator_id bigint NOT NULL DEFAULT 0 REFERENCES users.utilizatori(id) ON DELETE CASCADE,
   activ boolean NOT NULL DEFAULT true
+  UNIQUE(cod_fiscal,utilizator_id)
 );
 
 ALTER TABLE buyer.cumparatori OWNER TO postgres;
@@ -998,8 +1009,10 @@ COMMENT ON TABLE invoice.produse IS 'Tabela aceasta va contine toate produsele u
 CREATE TABLE invoice.factura_detalii (
   id bigserial PRIMARY KEY NOT NULL,
   produs_id bigint NOT NULL DEFAULT 0 REFERENCES invoice.produse(id),
+  factura_id bigint NOT NULL DEFAULT 0 REFERENCES invoices.factura(id),
   cantitate double precision NOT NULL DEFAULT 0,
   pret_unitar double precision NOT NULL DEFAULT 0,
+  discount double precision NOT NULL DEFAULT 0,
   activ boolean NOT NULL DEFAULT true
 );
 
