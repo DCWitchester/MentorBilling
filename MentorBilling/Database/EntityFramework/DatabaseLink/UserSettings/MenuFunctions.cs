@@ -19,9 +19,12 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink.UserSettings
         public void UpdateLocalUserMenu(User user, Menu menu)
         {
             List<MeniuUtilizator> localUserMenu = base.MeniuUtilizator.Where(element => element.UtilizatorId == user.ID).ToList();
-            foreach(MenuItem menuItem in menu.UserMenu)
+            if (localUserMenu.Count > 0)
             {
-                menuItem.IsActive = localUserMenu.Where(element => element.Id == menuItem.MenuItemID).FirstOrDefault().Activ ?? false;
+                foreach (MenuItem menuItem in menu.UserMenu)
+                {
+                    menuItem.IsActive = localUserMenu.Where(element => element.Id == menuItem.MenuItemID).FirstOrDefault().Activ ?? false;
+                }
             }
         }
         #endregion

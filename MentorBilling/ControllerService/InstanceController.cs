@@ -55,7 +55,8 @@ namespace MentorBilling.ControllerService
         /// </summary>
         public void RetrieveUserSettings()
         {
-            this.InstanceSettings.ConsumeSettings(Database.DatabaseLink.UserSettings.UserSettings.RetrieveSettingsListForUser(this.GetControlUser()));
+            using Database.EntityFramework.DatabaseLink.UserSettings.UserSettings userSettings = new Database.EntityFramework.DatabaseLink.UserSettings.UserSettings();
+            this.InstanceSettings.ConsumeSettings(userSettings.RetrieveSettingsListForUser(this.GetControlUser()));
         }
 
         /// <summary>

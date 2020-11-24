@@ -1,4 +1,4 @@
-﻿using MentorBilling.Database.DatabaseLink;
+﻿using MentorBilling.Database.EntityFramework.DatabaseLink;
 using MentorBilling.Login.UserControllers;
 using MentorBilling.MiscellaneousPages.Controllers;
 using Microsoft.AspNetCore.Components;
@@ -67,7 +67,8 @@ namespace MentorBilling.MiscellaneousPages
         /// </summary>
         void RetrieveUser()
         {
-            User = UserFunctions.RetrieveUser(RetrieveParameter());
+            using UserFunctions userFunctions = new UserFunctions();
+            User = userFunctions.RetrieveUser(RetrieveParameter());
         }
 
         /// <summary>
@@ -78,7 +79,8 @@ namespace MentorBilling.MiscellaneousPages
         {
             if (validInput)
             {
-                if (!UserFunctions.UpdatePassword(User, PageController)) ErrorMessage = true;
+                using UserFunctions userFunctions = new UserFunctions();
+                if (!userFunctions.UpdatePassword(User, PageController)) ErrorMessage = true;
                 else
                 {
                     myNavigationManager.NavigateTo("/");

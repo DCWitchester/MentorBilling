@@ -35,8 +35,9 @@ namespace MentorBilling.Login.Pages
             //if the controller state is valid
             if (ControllerState)
             {
+                using Database.EntityFramework.DatabaseLink.UserFunctions userFunctions = new Database.EntityFramework.DatabaseLink.UserFunctions();
                 //we retrieve the logged in user
-                User loggedUser =  Database.DatabaseLink.UserFunctions.RetrieveUser(PageController);
+                User loggedUser =  userFunctions.RetrieveUser(PageController);
                 //then login the user
                 Functions.Login(loggedUser, InstanceController);
             }

@@ -65,7 +65,8 @@ namespace MentorBilling.Miscellaneous.Menu
         public void InitializeUserMenuSettingsForUser(User user)
         {
             //the menu settings for the generation
-            Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(user, UserMenu);
+            using Database.EntityFramework.DatabaseLink.UserSettings.MenuFunctions menuFunctions = new Database.EntityFramework.DatabaseLink.UserSettings.MenuFunctions();
+            menuFunctions.GenerateMenuSettingsForUser(user, UserMenu);
         }
 
         /// <summary>
@@ -74,7 +75,8 @@ namespace MentorBilling.Miscellaneous.Menu
         /// <param name="user">the given user</param>
         public void UpdateMenuSettings(User user)
         {
-            Database.DatabaseLink.UserSettings.MenuFunctions.UpdateMenuSettingsForUser(user, UserMenu);
+            using Database.EntityFramework.DatabaseLink.UserSettings.MenuFunctions menuFunctions = new Database.EntityFramework.DatabaseLink.UserSettings.MenuFunctions();
+            menuFunctions.UpdateMenuSettingsForUser(user, UserMenu);
         }
 
         /// <summary>

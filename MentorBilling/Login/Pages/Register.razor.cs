@@ -1,4 +1,4 @@
-﻿using MentorBilling.Database.DatabaseLink;
+﻿using MentorBilling.Database.EntityFramework.DatabaseLink;
 using MentorBilling.Login.UserControllers;
 using System;
 using Microsoft.JSInterop;
@@ -37,7 +37,8 @@ namespace MentorBilling.Login.Pages
             {
                 //if the registerController has been validated
                 //we register the controller to the database retrieving the newly created user
-                User newUser = UserFunctions.RegisterUser(RegisterController);
+                using UserFunctions userFunctions = new UserFunctions();
+                User newUser = userFunctions.RegisterUser(RegisterController); 
                 //if the creation of the user has failed we call the database connection error
                 if (newUser == null)
                 {
@@ -45,13 +46,17 @@ namespace MentorBilling.Login.Pages
                     //we return so as not to continue code execution
                     return;
                 }
-                //seeing as we now have our user we need to initialize the new Subscription for it
-                if (!SubscriptionFunctions.GenerateInactiveSubscription(newUser))
                 {
-                    //if we fail we call error
-                    MessageDisplay.CallDatabaseError(InstanceController.MessageDisplaySettings);
-                    //we return so as not to continue code execution
-                    return;
+                    using SubscriptionFunctions subscriptionFunctions = new SubscriptionFunctions();
+                    //seeing as we now have our user we need to initialize the new Subscription for it
+                    
+                    if (!subscriptionFunctions.GenerateInactiveSubscription(newUser))
+                    {
+                        //if we fail we call error
+                        MessageDisplay.CallDatabaseError(InstanceController.MessageDisplaySettings);
+                        //we return so as not to continue code execution
+                        return;
+                    } 
                 }
                 //if this point has been reached a new user has been created and we need to send an activation Link
                 //as such we need to send them a link to activate the email;
@@ -64,7 +69,10 @@ namespace MentorBilling.Login.Pages
                 InstanceController.UserMenu.DeactivateMenu();
                 //then insert the initial settings
                 Database.DatabaseLink.UserSettings.UserSettings.GenerateInitialUserSettings(newUser);
-                Database.DatabaseLink.UserSettings.MenuFunctions.GenerateMenuSettingsForUser(newUser, InstanceController.UserMenu.UserMenu);
+                {
+                    using Database.EntityFramework.DatabaseLink.UserSettings.MenuFunctions menuFunctions = new Database.EntityFramework.DatabaseLink.UserSettings.MenuFunctions();
+                    menuFunctions.GenerateMenuSettingsForUser(newUser, InstanceController.UserMenu.UserMenu); 
+                }
                 #endregion
                 //now we also Login the user
                 Functions.Login(newUser, InstanceController);

@@ -20,7 +20,8 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         /// </summary>
         public CountriesController() 
         {
-            countries = Database.DatabaseLink.GlossaryFunctions.GetCountries();
+            using Database.EntityFramework.DatabaseLink.GlossaryFunctions glossaryFunctions = new Database.EntityFramework.DatabaseLink.GlossaryFunctions();
+            countries = glossaryFunctions.GetCountries();
         }
     }
 }
