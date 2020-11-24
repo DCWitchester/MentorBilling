@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 
 namespace MentorBilling.Database.DatabaseLink.UserSettings
 {
@@ -96,12 +97,12 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             //the specific log action
             String logAction = $"Actualizat valoarea tuturor setarilor pentru utilizatorul {user.DisplayName}";
             //we generate the log Command
-            String logCommand = String.Empty;
+            StringBuilder logCommand = new StringBuilder(250*settings.Count);
             //we generate the Computer IP
             String IP = MentorBilling.Miscellaneous.IPFunctions.GetWANIp();
             #endregion
             //the update command for a single setting
-            String QueryCommand = String.Empty;
+            StringBuilder QueryCommand = new StringBuilder(300*settings.Count);
             //the query parameters for a single setting
             List<NpgsqlParameter> QueryParameters = new List<NpgsqlParameter>();
             //we iterate the settings list to create our query
@@ -109,15 +110,15 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             {
                 #region Action Log
                 //we generate the log command for each inser command
-                logCommand += "UPDATE setari_utilizatori " +
+                logCommand.Append("UPDATE setari_utilizatori " +
                                     $"SET valoare_setare = {setting.Value} " +
-                                    $"WHERE utilizator_id = {user.ID} AND setare_id = {setting.ID}";
+                                    $"WHERE utilizator_id = {user.ID} AND setare_id = {setting.ID}");
                 #endregion
 
                 //the update command for a single setting
-                QueryCommand += "UPDATE settings.setari_utilizatori " +
+                QueryCommand.Append("UPDATE settings.setari_utilizatori " +
                                     String.Format("SET valoare_setare = :p_value_{0} ",setting.ID) +
-                                    String.Format("WHERE utilizator_id = :p_user_id_{0} AND setare_id = :p_setting_id_{0}",setting.ID);
+                                    String.Format("WHERE utilizator_id = :p_user_id_{0} AND setare_id = :p_setting_id_{0}",setting.ID));
                 //we add the query Parameters to the command
                 QueryParameters.AddRange(new List<NpgsqlParameter>() 
                 {
@@ -129,9 +130,9 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             //if we are unable to connect to the server we abandon execution
             if (!PgSqlConnection.OpenConnection()) return;
             //else we call the execution of the procedure
-            PgSqlConnection.ExecuteScalar(QueryCommand, QueryParameters);
+            PgSqlConnection.ExecuteScalar(QueryCommand.ToString(), QueryParameters);
             //we will log the multi-insert
-            ActionLog.LogAction(logAction, IP, user, logCommand, PgSqlConnection);
+            ActionLog.LogAction(logAction, IP, user, logCommand.ToString(), PgSqlConnection);
             //and as always never forget to close the connection
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
         }

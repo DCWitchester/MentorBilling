@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 
 namespace MentorBilling.Database.DatabaseLink.UserSettings
 {
@@ -101,12 +102,12 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             String logAction = String.Format("S-au generat setarile generale din meniu pentru utilizatorul {0}",
                                         user.ID);
             //we generate the log Command
-            String logCommand = String.Empty;
+            StringBuilder logCommand = new StringBuilder(250 * menuItems.Count);
             //we generate the Computer IP
             String IP = MentorBilling.Miscellaneous.IPFunctions.GetWANIp();
             #endregion
             //we initialize an empty command
-            String queryCommand = String.Empty;
+            StringBuilder queryCommand = new StringBuilder(250 * menuItems.Count);
             //and an empty parameter list
             List<NpgsqlParameter>  queryParameters = new List<NpgsqlParameter>();
             //then foreach element in the list
@@ -114,15 +115,15 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             {
                 #region ActionLog
                 //we generate the log command for each inser command
-                logCommand += String.Format("INSERT INTO settings.meniu_utilizator(utilizator_id, inregistrare_meniu, activ) " +
+                logCommand.Append(String.Format("INSERT INTO settings.meniu_utilizator(utilizator_id, inregistrare_meniu, activ) " +
                                     "VALUES({0},{1},{2});"+Environment.NewLine,
                                     user.ID,
                                     element.MenuItemID,
-                                    element.IsActive);
+                                    element.IsActive));
                 #endregion
                 //we add a specific insert command for the element 
-                queryCommand += "INSERT INTO settings.meniu_utilizator(utilizator_id,inregistrare_meniu,activ) " +
-                                    String.Format("VALUES(:p_user_id_{0},:p_record_id_{0},:p_activ_{0});"+Environment.NewLine, element.MenuItemID);
+                queryCommand.Append("INSERT INTO settings.meniu_utilizator(utilizator_id,inregistrare_meniu,activ) " +
+                                    String.Format("VALUES(:p_user_id_{0},:p_record_id_{0},:p_activ_{0});"+Environment.NewLine, element.MenuItemID));
                 //then we generate the specific parameter lists for the newly added command
                 NpgsqlParameter[] commadParameters =
                 {
@@ -136,9 +137,9 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             //if we are unable to connect to the server we abandon execution
             if (!PgSqlConnection.OpenConnection()) return;
             //else we call the execution of the procedure
-            PgSqlConnection.ExecuteScalar(queryCommand, queryParameters);
+            PgSqlConnection.ExecuteScalar(queryCommand.ToString(), queryParameters);
             //we will log the multi-insert
-            ActionLog.LogAction(logAction, IP, user, logCommand, PgSqlConnection);
+            ActionLog.LogAction(logAction, IP, user, logCommand.ToString(), PgSqlConnection);
             //and as always never forget to close the connection
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
         }
@@ -189,26 +190,26 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             //the main log display
             String logAction = $"S-a actualizat starea setarilor pentru utilizatorul {user.DisplayName}";
             //the log command will be updated for each item
-            String logCommand = String.Empty;
+            StringBuilder logCommand = new StringBuilder(250*menuItems.Count);
             //the local element IP
             String IP = MentorBilling.Miscellaneous.IPFunctions.GetWANIp();
             #endregion
 
             //the query command
-            String queryCommand = String.Empty;
+            StringBuilder queryCommand = new StringBuilder(250*menuItems.Count);
             //the parameter list
             List<NpgsqlParameter> queryParameters = new List<NpgsqlParameter>();
             foreach (MenuItem menuItem in menuItems)
             {
                 #region ActionLog
-                logCommand += $"UPDATE settings.meniu_utilizator SET activ = {menuItem.IsActive} " +
-                                    $"WHERE utilizator_id = {user.ID} AND inregistrare_meniu = {menuItem.MenuItemID};";
+                logCommand.Append($"UPDATE settings.meniu_utilizator SET activ = {menuItem.IsActive} " +
+                                    $"WHERE utilizator_id = {user.ID} AND inregistrare_meniu = {menuItem.MenuItemID};");
                 #endregion
                 //the update command for the query
-                queryCommand += String.Format("UPDATE settings.meniu_utilizator SET activ = :p_activ_{0} ",
+                queryCommand.Append(String.Format("UPDATE settings.meniu_utilizator SET activ = :p_activ_{0} ",
                                                 menuItem.MenuItemID) +
                                         String.Format("WHERE utilizator_id = :p_user_id_{0} AND inregistrare_meniu = :p_record_id_{0};"+Environment.NewLine,
-                                                        menuItem.MenuItemID);
+                                                        menuItem.MenuItemID));
                 //we instantiate the query parameter
                 NpgsqlParameter[] commandParameters =
                 {
@@ -227,9 +228,9 @@ namespace MentorBilling.Database.DatabaseLink.UserSettings
             //if we are unable to connect to the server we abandon execution
             if (!PgSqlConnection.OpenConnection()) return;
             //else we call the execution of the procedure
-            PgSqlConnection.ExecuteScalar(queryCommand, queryParameters);
+            PgSqlConnection.ExecuteScalar(queryCommand.ToString(), queryParameters);
             //we also log the current action
-            ActionLog.LogAction(logAction, IP, user, logCommand, PgSqlConnection);
+            ActionLog.LogAction(logAction, IP, user, logCommand.ToString(), PgSqlConnection);
             //lets have happy functions without forgetting to close the 
             Miscellaneous.NormalConnectionClose(PgSqlConnection);
         }
