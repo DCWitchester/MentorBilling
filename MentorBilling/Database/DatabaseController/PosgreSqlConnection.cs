@@ -304,6 +304,30 @@ namespace MentorBilling.Database.DatabaseController
         }
         #endregion
 
+        #region File
+        /// <summary>
+        /// executes a command script stored in the given file
+        /// </summary>
+        /// <param name="filename">the path to the given script file</param>
+        /// <returns>the number of affected rows</returns>
+        public int ExecuteFile(String filename)
+        {
+            String sqlCommand = System.IO.File.ReadAllText(filename, System.Text.Encoding.UTF8);
+            return Create(sqlCommand).ExecuteNonQuery();
+        }
+        /// <summary>
+        /// executes a command script stored in the given file
+        /// </summary>
+        /// <param name="filename">the given file</param>
+        /// <param name="encoding">the given file encoding</param>
+        /// <returns></returns>
+        public int ExecuteFile(String filename, System.Text.Encoding encoding)
+        {
+            String sqlCommand = System.IO.File.ReadAllText(filename, encoding);
+            return Create(sqlCommand).ExecuteNonQuery();
+        }
+        #endregion
+
         #endregion
 
         protected virtual void Dispose(Boolean status)

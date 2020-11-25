@@ -4,7 +4,6 @@ using MentorBilling.ObjectStructures.Auxilliary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 namespace MentorBilling.Database.EntityFramework.DatabaseLink
 {
     public class GlossaryFunctions : MentorBillingContext
