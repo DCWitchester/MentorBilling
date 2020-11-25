@@ -25,7 +25,6 @@ namespace MentorBilling.AuxilliaryComponents.Controllers
         {
             using Database.EntityFramework.DatabaseLink.GlossaryFunctions glossaryFunctions = new Database.EntityFramework.DatabaseLink.GlossaryFunctions();
             glossaryFunctions.GetVatRates();
-
         }
     }
 }

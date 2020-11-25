@@ -74,6 +74,10 @@ namespace MentorBilling.ObjectStructures.Auxilliary
             set => displayCode = value;
         }
 
+        /// <summary>
+        /// <br> the caller for the display name property </br>
+        /// <br> will be used for the binding to the object </br>
+        /// </summary>
         public String DisplayName => vat == 0 ? DisplayCode : DisplayCode + ": " + VAT.ToString() + "%";
 
         #endregion
