@@ -45,7 +45,8 @@ namespace MentorBilling.Settings.SpecialSettingsTypes
             UseProductsControl = 12,
             SearchByProductCode = 13,
             UseBarcode = 14,
-            BarcodeType = 15
+            BarcodeType = 15,
+            DefaultVATRate = 16
         }
 
         /// <summary>

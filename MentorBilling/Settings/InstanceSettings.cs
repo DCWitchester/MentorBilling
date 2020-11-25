@@ -144,10 +144,18 @@ namespace MentorBilling.Settings
             get => base.eanCode;
             set => base.eanCode = value;
         }
+
+        /// <summary>
+        /// the default VAT Rate used by the instance
+        /// </summary>
+        public Int64 DefaultVATRate
+        {
+            get => base.defaultVATRate;
+            set => base.defaultVATRate = value;
+        }
         #endregion
 
         #region Functionality
-        //TODO: Link the Settings to the Database
         /// <summary>
         /// this function will consume the settings list and set the settings needed values
         /// </summary>
@@ -208,6 +216,9 @@ namespace MentorBilling.Settings
                         break;
                     case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.BarcodeType:
                         this.EANCode = (SpecialSettingsEnums.EANCodes)setting.GetIntegerValue;
+                        break;
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.DefaultVATRate:
+                        this.DefaultVATRate = setting.GetIntegerValue;
                         break;
                 }
             }
