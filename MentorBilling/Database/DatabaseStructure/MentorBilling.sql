@@ -838,7 +838,8 @@ INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_i
     VALUES(14,'Se vor folosi coduri de bare?',4,3,'false');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
     VALUES(15,'Se folosesc Coduri de bare EAN:',1,7,'0');
-INSERT INTO settings.setari
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(16,'Cota default de TVA :',1,7,'1');
 --#endregion Setari
 
 --#region Setari Utilizatori

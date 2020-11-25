@@ -73,6 +73,10 @@ namespace MentorBilling.Settings
         /// the eanCode property
         /// </summary>
         protected SpecialSettingsEnums.EANCodes eanCode { get; set; } = SpecialSettingsEnums.EANCodes.EAN13;
+        /// <summary>
+        /// the default VAT Rate 
+        /// </summary>
+        protected Int64 defaultVATRate { get; set; } = 1;
 #pragma warning restore IDE1006 // Naming Styles
         #endregion
 
