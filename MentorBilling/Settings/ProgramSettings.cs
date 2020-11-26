@@ -80,6 +80,10 @@ namespace MentorBilling.Settings
         /// the default VAT Rate 
         /// </summary>
         protected Int64 defaultVATRate { get; set; } = 1;
+        /// <summary>
+        /// the default VAT in the Price
+        /// </summary>
+        protected Boolean vatInPrice { get; set; } = true;
 #pragma warning restore IDE1006 // Naming Styles
         #endregion
     }
