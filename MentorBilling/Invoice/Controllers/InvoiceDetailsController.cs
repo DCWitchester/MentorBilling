@@ -81,7 +81,7 @@ namespace MentorBilling.Invoice.Controllers
         /// <summary>
         /// TODO once the settings needed are done
         /// </summary>
-        public Double TotalValue;
+        public Double TotalValue => ( instanceSettings.VATinPrice ? (this.PricePerUnit) : this.PricePerUnit ) * this.Quantity;
         /// <summary>
         /// TODO once the settings needed are done
         /// </summary>
