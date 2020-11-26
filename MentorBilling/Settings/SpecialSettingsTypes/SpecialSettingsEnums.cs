@@ -42,7 +42,8 @@
             UseBarcode = 14,
             BarcodeType = 15,
             DefaultVATRate = 16,
-            VATinPrice = 17
+            VATinPrice = 17,
+            RoundAt = 18
         }
 
         /// <summary>

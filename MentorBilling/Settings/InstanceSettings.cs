@@ -175,6 +175,14 @@ namespace MentorBilling.Settings
             get => base.vatInPrice;
             set => base.vatInPrice = true;
         }
+        /// <summary>
+        /// the default value of the rounding point for display purpouses only
+        /// </summary>
+        public Int32 RoundAT
+        {
+            get => base.roundAt;
+            set => base.roundAt = value;
+        }
         #endregion
 
         #region Functionality
@@ -244,6 +252,9 @@ namespace MentorBilling.Settings
                         break;
                     case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.VATinPrice:
                         this.VATinPrice = setting.GetBooleanValue;
+                        break;
+                    case (Int32)SpecialSettingsEnums.DatabaseSettingsLink.RoundAt:
+                        this.RoundAT = setting.GetIntegerValue;
                         break;
                 }
             }

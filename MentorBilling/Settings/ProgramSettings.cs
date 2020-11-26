@@ -81,6 +81,10 @@ namespace MentorBilling.Settings
         /// the default VAT in the Price
         /// </summary>
         protected Boolean vatInPrice { get; set; } = true;
+        /// <summary>
+        /// the default value of the rounding point for display purpouses only
+        /// </summary>
+        protected Int32 roundAt { get; set; } = 2;
 #pragma warning restore IDE1006 // Naming Styles
         #endregion
 
