@@ -85,6 +85,14 @@ namespace MentorBilling.ObjectStructures.Invoice.Details
             get => vatRate; 
             set => vatRate = value;
         }
+
+        /// <summary>
+        /// the caller for the value of this object
+        /// </summary>
+        public Product Value
+        {
+            get => this;
+        }
         #endregion
     }
 }

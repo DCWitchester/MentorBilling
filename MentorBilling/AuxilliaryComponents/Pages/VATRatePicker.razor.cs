@@ -43,13 +43,17 @@ namespace MentorBilling.AuxilliaryComponents.Pages
         #endregion
 
         #region Functionality
+        /// <summary>
+        /// this function will force the change and 
+        /// </summary>
+        /// <param name="selectedVATRate">the selected VAT Rate Display Controller</param>
         private void SelectElement(String selectedVATRate)
         {
             if (selectedVATRate.Trim().Length >= 2)
                 PageController.SelectedVATRate = PageController.VATRates.Where(vatRate => selectedVATRate.Contains(vatRate.DisplayCode)).FirstOrDefault();
             else
             {
-                //TODO once default VAT setting has been made
+                PageController.SelectedVATRate = PageController.VATRates.Where(vatRate => vatRate.ID == InstanceController.InstanceSettings.DefaultVATRate).FirstOrDefault();
             }
                 
         }

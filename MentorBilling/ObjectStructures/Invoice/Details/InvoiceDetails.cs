@@ -112,7 +112,22 @@ namespace MentorBilling.ObjectStructures.Invoice.Details
             get => base.vatRate;
             set => base.vatRate = value;
         }
+        /// <summary>
+        /// the caller for the base value of the object
+        /// </summary>
+        public Product ProductValue
+        {
+            get => base.Value;
+        }
+        /// <summary>
+        /// the caller for the value of this object
+        /// </summary>
+        public new InvoiceDetails Value
+        {
+            get => this;
+        }
         #endregion
         #endregion
+
     }
 }
