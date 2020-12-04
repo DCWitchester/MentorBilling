@@ -34,6 +34,15 @@ namespace MentorBilling.Invoice.Controllers
 
         #region Primary Properties
 
+        #region Local Properties
+        /// <summary>
+        /// the VAT Value for the object(used for calculating the total object Values)
+        /// </summary>
+#pragma warning disable IDE1006 // Naming Styles
+        private Int32 vatValue { get; set; }
+#pragma warning restore IDE1006 // Naming Styles
+        #endregion
+
         #region Common
         /// <summary>
         /// the caller for the ID property
@@ -78,14 +87,24 @@ namespace MentorBilling.Invoice.Controllers
         #endregion
 
         #region Grid Only Properties
+#pragma warning disable IDE1006 // Naming Styles
         /// <summary>
-        /// TODO once the settings needed are done
+        /// the totalValue for each position
         /// </summary>
-        public Double TotalValue => ( instanceSettings.VATinPrice ? (this.PricePerUnit) : this.PricePerUnit ) * this.Quantity;
+        private Double totalValue => (instanceSettings.VATinPrice ? ( this.PricePerUnit / ( 1 + this.vatValue/100) ) : this.PricePerUnit ) * this.Quantity;
         /// <summary>
-        /// TODO once the settings needed are done
+        /// the totalVAT Value for each position
         /// </summary>
-        public Double TotalVATValue;
+        private Double totalVATValue => totalValue * this.vatValue / 100 ;
+#pragma warning restore IDE1006 // Naming Styles
+        /// <summary>
+        /// the display element for the total Value
+        /// </summary>
+        public Double TotalValue => Math.Round(totalValue, instanceSettings.RoundAT, MidpointRounding.AwayFromZero);
+        /// <summary>
+        /// the display element for the total VAT Value
+        /// </summary>
+        public Double TotalVATValue => Math.Round(totalVATValue, instanceSettings.RoundAT, MidpointRounding.AwayFromZero);
         #endregion
 
         #region Edit Form Properties
@@ -135,6 +154,7 @@ namespace MentorBilling.Invoice.Controllers
         void SetVATRateFromController()
         {
             VATRate = VATRateController.SelectedVATRate.ID;
+            SetVATValue();
         }
         /// <summary>
         /// this function will set the Controller value from the VAT Rate
@@ -142,6 +162,14 @@ namespace MentorBilling.Invoice.Controllers
         void SetControllerValueFromVAT()
         {
             VATRateController.SelectedVATRate = VATRateController.VATRates.Find(element => element.ID == VATRate);
+        }
+        /// <summary>
+        /// this function will set the VAT Value from the database based on the id
+        /// </summary>
+        void SetVATValue()
+        {
+            using Database.EntityFramework.DatabaseLink.GlossaryFunctions glossaryFunctions = new Database.EntityFramework.DatabaseLink.GlossaryFunctions();
+            vatValue = glossaryFunctions.GetValueOfRate(this.VATRate);
         }
         #endregion
     }

@@ -52,6 +52,7 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
             }).ToList();
         }
 
+        #region VAT Values
         /// <summary>
         /// this function will retrieve the complete list of VAT Rates from the database glossary
         /// </summary>
@@ -67,5 +68,15 @@ namespace MentorBilling.Database.EntityFramework.DatabaseLink
                 DisplayCode = element.Cod
             }).ToList();
         }
+        /// <summary>
+        /// this function will retrieve the value of a given VATRate based on its id
+        /// </summary>
+        /// <param name="VATRate">the given VATRate</param>
+        /// <returns>the VAT Value</returns>
+        public Int32 GetValueOfRate(Int64 VATRate)
+        {
+            return (Int32)base.CoteTva.Find(VATRate).Tva;
+        }
+        #endregion
     }
 }
