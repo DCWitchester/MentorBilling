@@ -20,7 +20,13 @@ namespace MentorBilling.Invoice.Controllers
         /// <br> the property dictating the active status of the add/alter element </br>
         /// <br> linked to the Active Element Display </br>
         /// </summary>
-        public Boolean IsElementDisplayActive { get; set; } = false;
+        private Boolean IsElementDisplayActive { get; set; } = false;
+
+        /// <summary>
+        /// <br> the property dictating the active status of the add/alter element </br>
+        /// <br> linked to the Active Element Display </br>
+        /// </summary>
+        public String ActiveElementVisibility => IsElementDisplayActive ? "visible" : "hidden" ;
         #endregion
 
         #region Controller
@@ -28,6 +34,7 @@ namespace MentorBilling.Invoice.Controllers
         /// the complete list of invoice detail items
         /// </summary>
         public List<InvoiceDetailController> InvoiceDetailControllers { get; set; } = new List<InvoiceDetailController>();
+
         /// <summary>
         /// <br> the selected invoice detail </br>
         /// <br> used for add / alter element </br>
@@ -59,16 +66,55 @@ namespace MentorBilling.Invoice.Controllers
         public void InitializeActiveDetailElement()
         {
             ActiveDetailController = new InvoiceDetailController(instanceSettings);
+            ShowActiveElement();
         }
 
+        /// <summary>
+        /// this function will initialize the ActiveDetailController with a given controller
+        /// </summary>
+        /// <param name="invoiceDetailController">the given controller</param>
         public void InitializeActiveDetailElement(InvoiceDetailController invoiceDetailController)
         {
             ActiveDetailController = invoiceDetailController;
+            ShowActiveElement();
+        }
+
+        /// <summary>
+        /// this function will save the active element to the list if it is a new element
+        /// </summary>
+        public void SaveNewActiveElement()
+        {
+            InvoiceDetailControllers.Add(ActiveDetailController);
+            ActiveDetailController = new InvoiceDetailController(instanceSettings);
+            HideActiveElement();
+        }
+
+        /// <summary>
+        /// this function will save the active element that is already linked to the list
+        /// </summary>
+        public void SaveExistingElement()
+        {
+            ActiveDetailController = new InvoiceDetailController(instanceSettings);
+            HideActiveElement();
         }
         #endregion Public Functionality
 
         #region Private Functionality
+        /// <summary>
+        /// this function will show the active element display object
+        /// </summary>
+        private void ShowActiveElement()
+        {
+            IsElementDisplayActive = true;
+        }
 
+        /// <summary>
+        /// this function will hide the active element display object
+        /// </summary>
+        private void HideActiveElement()
+        {
+            IsElementDisplayActive = false;
+        }
         #endregion Private Functionality
         #endregion
     }

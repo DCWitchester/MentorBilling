@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
-    <Version>0.5.1.365</Version>
+    <Version>0.5.2.371</Version>
     <Description>Online Billing App</Description>
     <Copyright>Mentor SRL</Copyright>
     <PackageIcon>favicon.ico</PackageIcon>

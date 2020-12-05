@@ -10,6 +10,42 @@ html, body {
 }
 */
 
+/* #region Animation Test */
+
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    opacity: 0;
+    animation: mymove 8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    0% {
+        top: 0px;
+        left: 0px;
+    }
+
+    50% {
+        top: 200px;
+        left: 200px;
+        background-color: blue;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        background-color: red;
+        opacity: 0;
+    }
+}
+
+/* #endregion */
+
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: small;
