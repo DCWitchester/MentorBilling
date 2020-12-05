@@ -1,15 +1,5 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
-/*
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
- html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size:smaller;
-}
-*/
-
 /* #region Animation Test */
 
 div {
@@ -45,6 +35,7 @@ div {
 
 /* #endregion */
 
+/*#region Body*/
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -54,6 +45,8 @@ html, body {
 a, .btn-link {
     color: #0366d6;
 }
+
+/*#endregion*/
 
 /*#region DataTip*/
 
@@ -513,6 +506,7 @@ input[type="number"] {
 }
 /*#endregion*/
 
+/*#region Primary Objects*/
 
 .btn-primary {
     color: #fff;
@@ -540,6 +534,9 @@ app {
     align-items: center;
 }
 
+/*#endregion*/
+
+/*#region Main*/
 .main {
     flex: 1;
 }
@@ -559,6 +556,9 @@ app {
             overflow: hidden;
             text-overflow: ellipsis;
         }
+/*#endregion*/
+
+/*#region Sidebar*/
 
 .sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
@@ -611,6 +611,10 @@ app {
                 color: white;
             }
 
+/*#endregion*/
+
+/*#region Miscellaneous*/
+
 .content {
     padding-top: 1.1rem;
 }
@@ -631,6 +635,10 @@ app {
     color: red;
 }
 
+/*#endregion*/
+
+/*#region Blazor-Error*/
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -649,6 +657,10 @@ app {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+/*#endregion*/
+
+/* #region Media */
 
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {
@@ -695,3 +707,5 @@ app {
         display: block;
     }
 }
+
+/*#endregion*/
