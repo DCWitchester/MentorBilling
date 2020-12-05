@@ -139,3 +139,4 @@ F:\MentorBilling\MBilling\MentorBilling\obj\Debug\net5.0\MentorBilling.pdb
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\net5.0\MentorBilling.genruntimeconfig.cache
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\net5.0\RazorDeclaration\AuxilliaryComponents\Pages\VATRatePicker.razor.g.cs
 F:\MentorBilling\MBilling\MentorBilling\obj\Debug\net5.0\Razor\AuxilliaryComponents\Pages\VATRatePicker.razor.g.cs
+F:\MentorBilling\MBilling\MentorBilling\bin\Debug\net5.0\BlazorAnimate.dll

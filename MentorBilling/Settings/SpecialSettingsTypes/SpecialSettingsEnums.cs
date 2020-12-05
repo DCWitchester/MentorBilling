@@ -43,16 +43,27 @@
             BarcodeType = 15,
             DefaultVATRate = 16,
             VATinPrice = 17,
-            RoundAt = 18
+            RoundAt = 18,
+            RoundingMode = 19
         }
 
         /// <summary>
-        /// the enum containing the EAN Codes liKed to the prodcut scanner code settings
+        /// the enum containing the EAN Codes linked to the prodcut scanner code settings
         /// </summary>
         public enum EANCodes
         {
             EAN8 = 0,
             EAN13 = 1
+        }
+
+        /// <summary>
+        /// the Rounding mode linked to the midpoint rounding
+        /// </summary>
+        public enum RoundingMode
+        {
+            Default = 0,
+            RoundUp = 1,
+            RoundDown
         }
     }
 }

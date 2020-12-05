@@ -85,6 +85,10 @@ namespace MentorBilling.Settings
         /// the default value of the rounding point for display purpouses only
         /// </summary>
         protected Int32 roundAt { get; set; } = 2;
+        /// <summary>
+        /// the default value of the rounding Mode
+        /// </summary>
+        protected SpecialSettingsEnums.RoundingMode roundingMode { get; set; } = SpecialSettingsEnums.RoundingMode.Default;
 #pragma warning restore IDE1006 // Naming Styles
         #endregion
 

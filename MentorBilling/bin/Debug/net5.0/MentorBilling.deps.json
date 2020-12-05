@@ -23,8 +23,9 @@
   },
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "MentorBilling/0.5.0.351": {
+      "MentorBilling/0.5.1.365": {
         "dependencies": {
+          "BlazorAnimate": "3.0.0",
           "BlazorInputFile": "0.2.0",
           "BlazorStrap": "1.3.3",
           "BuildWebCompiler": "1.12.405",
@@ -326,6 +327,22 @@
         },
         "compile": {
           "MentorBilling.dll": {}
+        }
+      },
+      "BlazorAnimate/3.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "5.0.0-rc.2.20475.17",
+          "Microsoft.AspNetCore.Components.Web": "5.0.0-rc.2.20475.17",
+          "MinVer": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/BlazorAnimate.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/BlazorAnimate.dll": {}
         }
       },
       "BlazorComponentUtilities/1.6.0": {
@@ -633,6 +650,7 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
+      "MinVer/2.0.0": {},
       "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -2647,10 +2665,17 @@
     }
   },
   "libraries": {
-    "MentorBilling/0.5.0.351": {
+    "MentorBilling/0.5.1.365": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BlazorAnimate/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IUX/IFdEKiQ5ncZ5/iVhaZynWL2dA04lH9ieza9JhBj/jJH8f2NwM6OqdJFm7RfkFdbkIH8t2Bxd/laZS2EXWQ==",
+      "path": "blazoranimate/3.0.0",
+      "hashPath": "blazoranimate.3.0.0.nupkg.sha512"
     },
     "BlazorComponentUtilities/1.6.0": {
       "type": "package",
@@ -2917,6 +2942,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "MinVer/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1U1JIwD47a/m9S1LXdDm+fByP3LYR9hTeFfi1MlizScXF4e4yUpZvunEyQAovVfi4qYaUlVzIbk08OXFfz3FfQ==",
+      "path": "minver/2.0.0",
+      "hashPath": "minver.2.0.0.nupkg.sha512"
     },
     "Newtonsoft.Json/12.0.3": {
       "type": "package",

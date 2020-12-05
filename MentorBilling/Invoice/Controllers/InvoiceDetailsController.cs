@@ -1,6 +1,4 @@
-﻿using MentorBilling.AuxilliaryComponents.Controllers;
-using MentorBilling.ObjectStructures.Invoice.Details;
-using MentorBilling.Settings;
+﻿using MentorBilling.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MentorBilling.Invoice.Controllers
 {
-    public class InvoiceDetailsController : InvoiceDetails
+    public class InvoiceDetailsController
     {
         #region Settings Link
         /// <summary>
@@ -17,13 +15,34 @@ namespace MentorBilling.Invoice.Controllers
         readonly InstanceSettings instanceSettings;
         #endregion
 
-        #region Contructors
+        #region Display Settings
         /// <summary>
-        /// the base invoice header controller
+        /// <br> the property dictating the active status of the add/alter element </br>
+        /// <br> linked to the Active Element Display </br>
+        /// </summary>
+        public Boolean IsElementDisplayActive { get; set; } = false;
+        #endregion
+
+        #region Controller
+        /// <summary>
+        /// the complete list of invoice detail items
+        /// </summary>
+        public List<InvoiceDetailController> InvoiceDetailControllers { get; set; } = new List<InvoiceDetailController>();
+        /// <summary>
+        /// <br> the selected invoice detail </br>
+        /// <br> used for add / alter element </br>
+        /// </summary>
+        public InvoiceDetailController ActiveDetailController { get; set; }
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// this is the main constructor for the class
         /// </summary>
         public InvoiceDetailsController() { }
+
         /// <summary>
-        /// the base invoice header controller
+        /// this constructor will initialize the controller with the instance settings
         /// </summary>
         /// <param name="settings">the instance settings</param>
         public InvoiceDetailsController(InstanceSettings settings)
@@ -32,145 +51,25 @@ namespace MentorBilling.Invoice.Controllers
         }
         #endregion
 
-        #region Primary Properties
-
-        #region Local Properties
-        /// <summary>
-        /// the VAT Value for the object(used for calculating the total object Values)
-        /// </summary>
-#pragma warning disable IDE1006 // Naming Styles
-        private Int32 vatValue { get; set; }
-#pragma warning restore IDE1006 // Naming Styles
-        #endregion
-
-        #region Common
-        /// <summary>
-        /// the caller for the ID property
-        /// </summary>
-        public new Int64 ID
-        {
-            get => base.ID;
-            set => base.ID = value;
-        }
-        /// <summary>
-        /// the caller for the ProductName property
-        /// </summary>
-        public new String ProductName
-        {
-            get => base.ProductName;
-            set => base.ProductName = value;
-        }
-        /// <summary>
-        /// the caller for the Products Unit of Measure property
-        /// </summary>
-        public new String ProductUnitOfMeasure
-        {
-            get => base.ProductUnitOfMeasure;
-            set => base.ProductUnitOfMeasure = value;
-        }
-        /// <summary>
-        /// the caller for the quantity property
-        /// </summary>
-        public new Double Quantity
-        {
-            get => base.Quantity;
-            set => base.Quantity = value;
-        }
-        /// <summary>
-        /// the caller for the price per unit
-        /// </summary>
-        public new Double PricePerUnit
-        {
-            get => base.PricePerUnit == 0  && base.ProductPricePerUnit !=0 ? base.ProductPricePerUnit : base.PricePerUnit; 
-            set => base.PricePerUnit = value;
-        }
-        #endregion
-
-        #region Grid Only Properties
-#pragma warning disable IDE1006 // Naming Styles
-        /// <summary>
-        /// the totalValue for each position
-        /// </summary>
-        private Double totalValue => (instanceSettings.VATinPrice ? ( this.PricePerUnit / ( 1 + this.vatValue/100) ) : this.PricePerUnit ) * this.Quantity;
-        /// <summary>
-        /// the totalVAT Value for each position
-        /// </summary>
-        private Double totalVATValue => totalValue * this.vatValue / 100 ;
-#pragma warning restore IDE1006 // Naming Styles
-        /// <summary>
-        /// the display element for the total Value
-        /// </summary>
-        public Double TotalValue => Math.Round(totalValue, instanceSettings.RoundAT, MidpointRounding.AwayFromZero);
-        /// <summary>
-        /// the display element for the total VAT Value
-        /// </summary>
-        public Double TotalVATValue => Math.Round(totalVATValue, instanceSettings.RoundAT, MidpointRounding.AwayFromZero);
-        #endregion
-
-        #region Edit Form Properties
-        /// <summary>
-        /// the caller for the ProductCode property
-        /// </summary>
-        public new String ProductCode
-        {
-            get => base.ProductCode;
-            set => base.ProductCode = value;
-        }
-        /// <summary>
-        /// the caller for the VATRate property
-        /// </summary>
-        public new Int64 VATRate
-        {
-            get => base.ProductVATRate;
-            set => base.ProductVATRate = value; 
-        }
-
-        /// <summary>
-        /// the VAT Rate Controller for the object link
-        /// </summary>
-        public VATRateController VATRateController { get; set; } = new VATRateController();
-        #endregion
-
-        #endregion
-
         #region Functionality
+        #region Public Functionality
         /// <summary>
-        /// this function will dump all controller values into the apropriate base elements
+        /// this function will initialize the detail element as needed
         /// </summary>
-        public void SetBaseValuesFromControllers() 
+        public void InitializeActiveDetailElement()
         {
-            SetVATRateFromController();
+            ActiveDetailController = new InvoiceDetailController(instanceSettings);
         }
-        /// <summary>
-        /// this function will dump all controller values into the apropriate base elements
-        /// </summary>
-        public void SetControllerValuesFromBaseObjects()
+
+        public void InitializeActiveDetailElement(InvoiceDetailController invoiceDetailController)
         {
-            SetControllerValueFromVAT();
+            ActiveDetailController = invoiceDetailController;
         }
-        /// <summary>
-        /// this function will set the VAT Rate value from the controller
-        /// </summary>
-        void SetVATRateFromController()
-        {
-            VATRate = VATRateController.SelectedVATRate.ID;
-            SetVATValue();
-        }
-        /// <summary>
-        /// this function will set the Controller value from the VAT Rate
-        /// </summary>
-        void SetControllerValueFromVAT()
-        {
-            VATRateController.SelectedVATRate = VATRateController.VATRates.Find(element => element.ID == VATRate);
-        }
-        /// <summary>
-        /// this function will set the VAT Value from the database based on the id
-        /// </summary>
-        void SetVATValue()
-        {
-            using Database.EntityFramework.DatabaseLink.GlossaryFunctions glossaryFunctions = new Database.EntityFramework.DatabaseLink.GlossaryFunctions();
-            vatValue = glossaryFunctions.GetValueOfRate(this.VATRate);
-        }
+        #endregion Public Functionality
+
+        #region Private Functionality
+
+        #endregion Private Functionality
         #endregion
     }
 }

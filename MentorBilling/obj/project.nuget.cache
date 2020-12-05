@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IdwLBVQwWg673X6lCGuqf4ZB3/fhz3pvRKc/X9L3HlqsdgglSI1jg9y/zALmlcy0QkqslXp7wSo1F+eFlUTdvg==",
+  "dgSpecHash": "dvu++ePuklCckWsAU6MsWRZ/Q6dVNFk/V38k/mfOhet5Wc5+ECGPSFaL4Je83GmFpgJ2r6FZ/FxmIe5PzV77fQ==",
   "success": true,
   "projectFilePath": "F:\\MentorBilling\\MBilling\\MentorBilling\\MentorBilling.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DCW\\.nuget\\packages\\blazoranimate\\3.0.0\\blazoranimate.3.0.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\blazorcomponentutilities\\1.6.0\\blazorcomponentutilities.1.6.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\blazorstrap\\1.3.3\\blazorstrap.1.3.3.nupkg.sha512",
@@ -42,6 +43,7 @@
     "C:\\Users\\DCW\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\DCW\\.nuget\\packages\\minver\\2.0.0\\minver.2.0.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\npgsql\\5.0.0\\npgsql.5.0.0.nupkg.sha512",
     "C:\\Users\\DCW\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\5.0.0\\npgsql.entityframeworkcore.postgresql.5.0.0.nupkg.sha512",

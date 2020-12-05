@@ -843,7 +843,9 @@ INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_i
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
     VALUES(17,'Pretul unitar contine TVA?',4,3,'true');
 INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
-    VALUES(18,'Numarul de zecimale pentru aproximarea valorilor:',1,7,'2');
+    VALUES(18,'Numarul de zecimale pentru aproximarea valorilor:',1,1,'2');
+INSERT INTO settings.setari(id,setare,tip_date_setare,tip_input_setare,valoare_initiala)
+    VALUES(19,'Tipul de aproximare: ',1,7,'0');
 --#endregion Setari
 
 --#region Setari Utilizatori
