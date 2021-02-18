@@ -1,7 +1,7 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 /* #region Animation Test */
-
+/*
 div {
     width: 100px;
     height: 100px;
@@ -11,7 +11,7 @@ div {
     animation: mymove 8s;
     animation-fill-mode: forwards;
 }
-
+*/
 @keyframes mymove {
     0% {
         top: 0px;
