@@ -491,7 +491,7 @@ INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_t
 INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('PR', 'PRI', '630', 'Puerto Rico', 'Puerto Rico');
 INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('QA', 'QAT', '634', 'Qatar', 'Qatar');
 INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('RE', 'REU', '638', 'Reunion', 'Reunion');
-INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('RO', 'ROM', '642', 'Romania', 'Romania');
+INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('RO', 'ROU', '642', 'Romania', 'Romania');
 INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('RU', 'RUS', '643', 'Rusia', 'Russia');
 INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('RW', 'RWA', '646', 'Rwanda', 'Rwanda');
 INSERT INTO glossary.tari (cod_tara_iso2, cod_tara_iso3, cod_tara_iso_m49, den_tara_ro, den_tara_en) VALUES ('EH', 'ESH', '732', 'Sahara Occidentala', 'Western Sahara');
